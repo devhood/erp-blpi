@@ -2,7 +2,8 @@
 
 return array(
     'modules' => array(
-        'Main'
+        'Main',
+        'Product'
     ),
     'module_listener_options' => array(
         'module_paths' => array(
