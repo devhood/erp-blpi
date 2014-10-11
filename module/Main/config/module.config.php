@@ -23,7 +23,7 @@ return array(
 		),
 	'router' => array(
 		'routes' => array(
-			'home' => array(
+			__NAMESPACE__.'_Index_Home' => array(
 				'type' => 'Literal',
 				'options' => array(
 					'route'    => '/',
