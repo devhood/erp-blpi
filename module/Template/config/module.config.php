@@ -1,5 +1,5 @@
 <?php
-namespace Product;
+namespace Template;
 
 return array(
 	'view_manager' => array(
@@ -12,7 +12,7 @@ return array(
 			'home' => array(
 				'type' => 'Literal',
 				'options' => array(
-					'route'    => '/product',
+					'route'    => '/template',
 					'defaults' => array(
 						'controller' => __NAMESPACE__ . '\Index',
 						'action'     => 'index',

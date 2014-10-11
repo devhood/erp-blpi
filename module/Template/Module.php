@@ -1,5 +1,5 @@
 <?php
-namespace Product;
+namespace Template;
 
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
