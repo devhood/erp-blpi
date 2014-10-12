@@ -1,2 +1,271 @@
-sample layout
-<?php echo $content ?>
+<?php echo $this->doctype(); ?>
+<?php $children = $this->viewModel()->getCurrent()->getChildren(); 
+?>
+
+<!-- 
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.1.1
+Version: 2.0.2
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+<meta charset="utf-8"/>
+<title>BeautyLane | ERP - Account | Users</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+
+<?php 
+   $this->headLink()
+        ->prependStylesheet($this->basePath('/assets/css/custom.css'))
+        ->prependStylesheet($this->basePath('/assets/css/themes/default.css'),'screen',true,array( 'id' => "style_color"))
+        ->prependStylesheet($this->basePath('/assets/css/plugins.css'))
+        ->prependStylesheet($this->basePath('/assets/css/style-responsive.css'))
+        ->prependStylesheet($this->basePath('/assets/css/style.css'))
+        ->prependStylesheet($this->basePath('/assets/css/style-metronic.css'))
+        ->prependStylesheet($this->basePath('/assets/plugins/uniform/css/uniform.default.css'))
+        ->prependStylesheet($this->basePath('/assets/plugins/bootstrap/css/bootstrap.min.css'))
+        ->prependStylesheet($this->basePath('assets/plugins/font-awesome/css/font-awesome.min.css'))
+        ->prependStylesheet('http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all')
+?>
+<?php echo $this->headLink() ?>
+<link rel="shortcut icon" href="/assets/img/favicon.ico"/>
+<?php 
+    echo $this->headScript()
+        ->appendFile($this->basePath('/assets/plugins/jquery-1.10.2.min.js'))
+        ->appendFile($this->basePath('/assets/plugins/jquery-migrate-1.2.1.min.js'))
+?>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="page-header-fixed">
+<!-- BEGIN HEADER -->
+<div class="header navbar navbar-fixed-top">
+	<!-- BEGIN TOP NAVIGATION BAR -->
+	<div class="header-inner">
+		<!-- BEGIN LOGO -->
+		<a class="navbar-brand" href="index.html">
+			<img src="<?php echo $this->basePath('/assets/img/logo.png')?> " alt="logo" class="img-responsive"/>
+		</a>
+		<!-- END LOGO -->
+		<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+		<a href="javascript:;" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			<img src="<?php echo $this->basePath('/assets/img/menu-toggler.png')?> " alt=""/>
+		</a>
+		<!-- END RESPONSIVE MENU TOGGLER -->
+		<!-- BEGIN TOP NAVIGATION MENU -->
+		<ul class="nav navbar-nav pull-right">
+		<!-- BEGIN USER LOGIN DROPDOWN -->
+			<li class="dropdown user">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+					<img alt="" src="<?php $this->basePath('/assets/img/avatar1_small.jpg') ?>"/>
+					<span class="username">
+						 Bob Nilson
+					</span>
+					<i class="fa fa-angle-down"></i>
+				</a>
+				<ul class="dropdown-menu">
+					<li>
+						<a href="extra_profile.html">
+							<i class="fa fa-user"></i> My Profile
+						</a>
+					</li>
+					<li>
+						<a href="page_calendar.html">
+							<i class="fa fa-calendar"></i> My Calendar
+						</a>
+					</li>
+					<li>
+						<a href="inbox.html">
+							<i class="fa fa-envelope"></i> My Inbox
+							<span class="badge badge-danger">
+								 3
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fa fa-tasks"></i> My Tasks
+							<span class="badge badge-success">
+								 7
+							</span>
+						</a>
+					</li>
+					<li class="divider">
+					</li>
+					<li>
+						<a href="javascript:;" id="trigger_fullscreen">
+							<i class="fa fa-arrows"></i> Full Screen
+						</a>
+					</li>
+					<li>
+						<a href="extra_lock.html">
+							<i class="fa fa-lock"></i> Lock Screen
+						</a>
+					</li>
+					<li>
+						<a href="login.html">
+							<i class="fa fa-key"></i> Log Out
+						</a>
+					</li>
+				</ul>
+			</li>
+			<!-- END USER LOGIN DROPDOWN -->
+		</ul>
+		
+		<!-- END TOP NAVIGATION MENU -->
+	</div>
+	<!-- END TOP NAVIGATION BAR -->
+</div>
+<!-- END HEADER -->
+<div class="clearfix">
+</div>
+<!-- BEGIN CONTAINER -->
+<div class="page-container">
+	<!-- BEGIN SIDEBAR -->
+	<div class="page-sidebar-wrapper">
+		<div class="page-sidebar navbar-collapse collapse">
+			<!-- BEGIN SIDEBAR MENU -->
+			<ul class="page-sidebar-menu" data-auto-scroll="true" data-slide-speed="200">
+				<li class="sidebar-toggler-wrapper">
+					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+					<div class="sidebar-toggler hidden-phone">
+					</div>
+					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+				</li>
+				<li class="sidebar-search-wrapper">
+					<!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+					<form class="sidebar-search" action="extra_search.html" method="POST">
+						<div class="form-container">
+							<div class="input-box">
+								<a href="javascript:;" class="remove">
+								</a>
+								<input type="text" placeholder="Search..."/>
+								<input type="button" class="submit" value=" "/>
+							</div>
+						</div>
+					</form>
+					<!-- END RESPONSIVE QUICK SEARCH FORM -->
+				</li>
+				<li class="start ">
+					<a href="javascript:;">
+						<i class="fa fa-gears"></i>
+						<span class="title">
+							Admin
+						</span>
+						<span class="arrow ">
+						</span>
+					</a>
+					<ul class="sub-menu">
+						<li><a href="<?php echo $this->basePath('/account/user')?>">User</a></li>
+						<li><a href="<?php echo $this->basePath('/customer/customer')?>">Customer</a></li>
+						<li><a href="<?php echo $this->basePath('/product/product')?>">Product</a>
+						</li>
+					</ul>
+				</li>
+				<li class="last ">
+					<a href="charts.html">
+						<i class="fa fa-bar-chart-o"></i>
+						<span class="title">
+							Visual Charts
+						</span>
+					</a>
+				</li>
+			</ul>
+			<!-- END SIDEBAR MENU -->
+		</div>
+	</div>
+	<!-- END SIDEBAR -->
+	<!-- BEGIN CONTENT -->
+	<div class="page-content-wrapper">
+		<div class="page-content">
+			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			<div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+							<h4 class="modal-title">Modal title</h4>
+						</div>
+						<div class="modal-body">
+							 Widget settings form goes here
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn blue">Save changes</button>
+							<button type="button" class="btn default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
+			<!-- /.modal -->
+			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			<!-- BEGIN PAGE HEADER-->
+			<div class="row">
+				<div class="col-md-12">
+					<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+					<h3 class="page-title">
+					 <?php echo $children[0]->controller ?> <small><?php echo $children[0]->action ?></small>
+					</h3>
+					<!-- END PAGE TITLE & BREADCRUMB-->
+				</div>
+			</div>
+			<!-- END PAGE HEADER-->
+			<!-- BEGIN PAGE CONTENT-->
+			<div class="row">
+				<div class="col-md-12">
+					 <?php echo $this->content ?>
+				</div>
+			</div>
+			<!-- END PAGE CONTENT-->
+		</div>
+	</div>
+	<!-- END CONTENT -->
+</div>
+<!-- END CONTAINER -->
+<!-- BEGIN FOOTER -->
+<div class="footer">
+	<div class="footer-inner">
+		 2014 &copy; Beautylane Phils Inc.
+	</div>
+	<div class="footer-tools">
+		<span class="go-top">
+			<i class="fa fa-angle-up"></i>
+		</span>
+	</div>
+</div>
+<!-- END FOOTER -->
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE PLUGINS -->
+<?php 
+    $this->inlineScript()
+        ->prependFile($this->basePath('/assets/scripts/core/app.js'))
+        ->prependFile($this->basePath('/assets/plugins/uniform/jquery.uniform.min.js'))
+        ->prependFile($this->basePath('/assets/plugins/jquery.cokie.min.js'))
+        ->prependFile($this->basePath('/assets/plugins/jquery.blockui.min.js'))
+        ->prependFile($this->basePath('/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js'))
+        ->prependFile($this->basePath('/assets/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js'))
+        ->prependFile($this->basePath('/assets/plugins/bootstrap/js/bootstrap.min.js'))
+        ->prependFile($this->basePath('/assets/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js'))
+        ->prependFile($this->basePath('/assets/plugins/excanvas.min.js'),'text/javascript',array('conditional' => 'lt IE 9'))
+        ->prependFile($this->basePath('/assets/plugins/respond.min.js'),'text/javascript',array('conditional' => 'lt IE 9'))  
+?>
+<?php
+    echo $this->inlineScript();
+    
+?>
+<!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

@@ -19,6 +19,16 @@ return array(
 					),
 				),
 			),
+			__NAMESPACE__.'_Index_Add' => array(
+				'type' => 'Literal',
+				'options' => array(
+					'route'    => '/product/add',
+					'defaults' => array(
+						'controller' => __NAMESPACE__ . '\Index',
+						'action'     => 'add',
+					),
+				),
+			),
 		),
 	),
 	'controllers' => array(
