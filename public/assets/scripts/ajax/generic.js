@@ -44,13 +44,6 @@ var ajaxUpdate = function(table,id,data,cb){
 };
 
 /**
- * Generic Endpoint to perform remove record
- **/
-var ajaxRemove = function(table,id,cb){
-	callAjaxRequest("DEL","/api/del/"+table+"/"+id,null,cb);
-};
-
-/**
  * Generic Endpoint to perform same server api calls
  **/
 var OptionsToHTML = function(value,text,options,content){

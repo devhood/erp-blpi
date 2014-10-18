@@ -56,6 +56,16 @@ return array(
 					),
 				),
 			),
+			__NAMESPACE__.'_Api_Edit' => array(
+				'type' => 'segment',
+				'options' => array(
+					'route'    => '/api/edit/:table',
+					'defaults' => array(
+						'controller' => __NAMESPACE__ . '\Api',
+						'action'     => 'edit',
+					),
+				),
+			),
 		),
 	),
 	'controllers' => array(
