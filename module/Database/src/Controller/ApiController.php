@@ -9,7 +9,8 @@ use DoctrineModule\Stdlib\Hydrator\DoctrineObject as DoctrineHydrator;
 
 class ApiController extends AbstractRestfulController
 {
-protected $em = null;
+	const DBNS = "Database\\Entity\\";
+	protected $em = null;
 
 	public function setEntityManager(\Doctrine\ORM\EntityManager $em)
 	{
@@ -29,7 +30,7 @@ protected $em = null;
 
 		$queryBuilder = $this->getEntityManager()->createQueryBuilder();
 		$queryBuilder->select('t')
-			->from("Database\\Entity\\".$table, 't');
+			->from(DBNS.$table, 't');
 		$results = $queryBuilder->getQuery()
 			->getResult(\Doctrine\ORM\AbstractQuery::HYDRATE_ARRAY);
 		return new JsonModel(array(
@@ -40,8 +41,23 @@ protected $em = null;
 	{
 		$table = ucwords($this->params()->fromRoute('table'));
 		$request = (array)$this->getRequest()->getPost();
-		$table = "Database\\Entity\\".$table;
+		$table = DBNS.$table;
 		$object = new $table();
+		$hydrator = new DoctrineHydrator($this->getEntityManager());
+		$object = $hydrator->hydrate($request, $object);
+		$this->getEntityManager()->persist($object);
+		$this->getEntityManager()->flush();
+		$return = $hydrator->extract($object);
+		return new JsonModel($return);
+	}
+	public function editAction()
+	{
+		$request = (array)$this->getRequest()->getPost();
+		$table = ucwords($this->params()->fromRoute('table'));
+		$id = (int) $this->params()->fromRoute('id');
+		$table = DBNS.$table;
+		$object = $this->getEntityManager()
+			->find($table, $id);
 		$hydrator = new DoctrineHydrator($this->getEntityManager());
 		$object = $hydrator->hydrate($request, $object);
 		$this->getEntityManager()->persist($object);
