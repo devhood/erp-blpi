@@ -1,0 +1,39 @@
+<?php
+
+namespace Database\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Suppliers
+ *
+ * @ORM\Table(name="Suppliers")
+ * @ORM\Entity
+ */
+class Suppliers
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="supplier_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $supplierId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="supplier_name", type="string", length=100, nullable=false)
+     */
+    private $supplierName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="supplier_status", type="string", length=45, nullable=false)
+     */
+    private $supplierStatus = 'Active';
+
+
+}

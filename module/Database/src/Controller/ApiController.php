@@ -46,9 +46,7 @@ protected $em = null;
 		$object = $hydrator->hydrate($request, $object);
 		$this->getEntityManager()->persist($object);
 		$this->getEntityManager()->flush();
-		$newId = $person->getIntpersonid();
-		return new JsonModel(array(
-			 'id' => $newId,
-		));
+		$return = $hydrator->extract($object);
+		return new JsonModel($return);
 	}
 }

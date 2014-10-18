@@ -15,7 +15,7 @@ class Suppliers
     /**
      * @var integer
      *
-     * @ORM\Column(name="supplier_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="supplier_id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,16 +24,17 @@ class Suppliers
     /**
      * @var string
      *
-     * @ORM\Column(name="supplier_name", type="string", length=100, precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="supplier_name", type="string", length=100, nullable=false)
      */
     private $supplierName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="supplier_status", type="string", length=45, precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="supplier_status", type="string", length=45, nullable=false)
      */
-    private $supplierStatus;
+    private $supplierStatus = 'Active';
+
 
 
     /**

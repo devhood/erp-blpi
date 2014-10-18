@@ -15,7 +15,7 @@ class Brands
     /**
      * @var integer
      *
-     * @ORM\Column(name="brand_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="brand_id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,16 +24,17 @@ class Brands
     /**
      * @var string
      *
-     * @ORM\Column(name="brand_name", type="string", length=45, precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="brand_name", type="string", length=45, nullable=false)
      */
     private $brandName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="brand_status", type="string", length=45, precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="brand_status", type="string", length=45, nullable=false)
      */
-    private $brandStatus;
+    private $brandStatus = 'Active';
+
 
 
     /**

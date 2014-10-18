@@ -1,0 +1,39 @@
+<?php
+
+namespace Database\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Currencies
+ *
+ * @ORM\Table(name="Currencies", uniqueConstraints={@ORM\UniqueConstraint(name="currency_name_UNIQUE", columns={"currency_name"})})
+ * @ORM\Entity
+ */
+class Currencies
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="currency_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $currencyId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="currency_name", type="string", length=45, nullable=false)
+     */
+    private $currencyName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="currency_status", type="string", length=45, nullable=true)
+     */
+    private $currencyStatus = 'Active';
+
+
+}
