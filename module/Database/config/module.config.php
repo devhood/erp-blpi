@@ -36,13 +36,23 @@ return array(
 	),
 	'router' => array(
 		'routes' => array(
-			__NAMESPACE__.'_Index_Home' => array(
-				'type' => 'Literal',
+			__NAMESPACE__.'_Api_List' => array(
+				'type' => 'segment',
 				'options' => array(
-					'route'    => '/api',
+					'route'    => '/api/list/:table',
 					'defaults' => array(
 						'controller' => __NAMESPACE__ . '\Api',
-						'action'     => 'index',
+						'action'     => 'list',
+					),
+				),
+			),
+			__NAMESPACE__.'_Api_Add' => array(
+				'type' => 'segment',
+				'options' => array(
+					'route'    => '/api/add/:table',
+					'defaults' => array(
+						'controller' => __NAMESPACE__ . '\Api',
+						'action'     => 'add',
 					),
 				),
 			),
