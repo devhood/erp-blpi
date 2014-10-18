@@ -4,9 +4,9 @@
 span.help-block {
     text-align: center;
 }
-div.left {
+.custom-left {
 	float:left;
 }
-div.right {
+.custom-right {
     float:right;
 }
