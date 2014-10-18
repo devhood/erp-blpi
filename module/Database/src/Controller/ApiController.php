@@ -30,7 +30,7 @@ class ApiController extends AbstractRestfulController
 
 		$queryBuilder = $this->getEntityManager()->createQueryBuilder();
 		$queryBuilder->select('t')
-			->from(DBNS.$table, 't');
+			->from(self::DBNS.$table, 't');
 		$results = $queryBuilder->getQuery()
 			->getResult(\Doctrine\ORM\AbstractQuery::HYDRATE_ARRAY);
 		return new JsonModel(array(
@@ -41,7 +41,7 @@ class ApiController extends AbstractRestfulController
 	{
 		$table = ucwords($this->params()->fromRoute('table'));
 		$request = (array)$this->getRequest()->getPost();
-		$table = DBNS.$table;
+		$table = self::DBNS.$table;
 		$object = new $table();
 		$hydrator = new DoctrineHydrator($this->getEntityManager());
 		$object = $hydrator->hydrate($request, $object);
@@ -55,7 +55,7 @@ class ApiController extends AbstractRestfulController
 		$request = (array)$this->getRequest()->getPost();
 		$table = ucwords($this->params()->fromRoute('table'));
 		$id = (int) $this->params()->fromRoute('id');
-		$table = DBNS.$table;
+		$table = self::DBNS.$table;
 		$object = $this->getEntityManager()
 			->find($table, $id);
 		$hydrator = new DoctrineHydrator($this->getEntityManager());
