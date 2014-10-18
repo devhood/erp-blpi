@@ -1,3 +1,4 @@
+
 /**
  * Generic Endpoint to perform same server api calls
  **/
@@ -20,24 +21,28 @@ var callAjaxRequest = function(method,endpoint,data,cb){
 		cb(textStatus);
 	});
 };
+
 /**
  * Generic Endpoint to perform search record
  **/
 var ajaxSelect = function(table,query,cb){
 	callAjaxRequest("POST","/api/list/"+table,query,cb);
 };
+
 /**
  * Generic Endpoint to perform add record
  **/
 var ajaxCreate = function(table,data,cb){
 	callAjaxRequest("POST","/api/add"+table,data,cb);
 };
+
 /**
  * Generic Endpoint to perform edit record
  **/
 var ajaxUpdate = function(table,id,data,cb){
 	callAjaxRequest("PUT","/api/edit/"+table+"/"+id,data,cb);
 };
+
 /**
  * Generic Endpoint to perform remove record
  **/

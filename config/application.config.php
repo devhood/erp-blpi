@@ -2,8 +2,11 @@
 
 return array(
     'modules' => array(
+        'DoctrineModule',
+        'DoctrineORMModule',
         'Main',
-        'Product'
+        'Product',
+        'Database'
     ),
     'module_listener_options' => array(
         'module_paths' => array(
