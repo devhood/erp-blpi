@@ -36,20 +36,25 @@ class IndexController extends BaseController
             '2'=>'Discontinued',
             '3'=>'Cancelled',)));
 
-        // Price Modal
-
         $pricemodal = $this->_getOptions("priceTypes","priceTypeId","priceTypeName");
         $form->get("priceTypes[priceTypeId]")->setOptions(array('value_options' => $pricemodal));
 
         $currencies = $this->_getOptions("currencies","currencyId","currencyName");
         $form->get("currencies[currencyId]")->setOptions(array('value_options' => $currencies));
 
-        // Bundle Modal
 
         $productmodal = $this->_getOptions("products","productId","productName");
         $form->get("products[productId]")->setOptions(array('value_options' => $productmodal));
-    	
-    	return new ViewModel(array('form' => $form));
+        
+       $bundles = $this->_getContents("Bundles");
+       $uoms = $this->_getContents("ProductUoms");
+       
+       return new ViewModel(array(
+       		'form' => $form, 
+       		'bundles' => $bundles,
+       		'uoms' => $uoms
+       		
+       ));
     }
     public function editAction()
     {
