@@ -32,7 +32,7 @@ $this->headLink()
 								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
 									<?php  echo $this->formRow($form->get('productCode')); ?>
 									<span class="help-block">
-										 Code
+										 Item Code
 									</span>
 								</div>
 							</div>
@@ -50,7 +50,57 @@ $this->headLink()
 						</div>
 						<!--/span-->
 					</div>
-					
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+									<?php  echo $this->formRow($form->get('payment_term[paymenttermId]')); ?>
+									<span class="help-block">
+										 Payment Terms
+									</span>
+								</div>
+							</div>
+						</div>
+							<!--/span-->
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+									<?php  echo $this->formRow($form->get('part_number')); ?>
+									<span class="help-block">
+										 Part Number
+									</span>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+					</div>		
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+									<?php  echo $this->formRow($form->get('blCode')); ?>
+									<span class="help-block">
+										 BL Code
+									</span>
+								</div>
+							</div>
+						</div>
+							<!--/span-->
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+									<?php  echo $this->formRow($form->get('printed_code')); ?>
+									<span class="help-block">
+										 Printed Code
+									</span>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+					</div>
+
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
@@ -75,7 +125,7 @@ $this->headLink()
 						</div>
 						<!--/span-->
 					</div>
-					
+
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
@@ -135,7 +185,7 @@ $this->headLink()
 						Add New
 							<i class="fa fa-plus"></i>
 						</button>
-						</div>
+						</div>F
 						
 						
 						

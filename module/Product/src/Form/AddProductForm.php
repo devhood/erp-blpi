@@ -112,5 +112,51 @@ class AddProductForm extends Form
 // 						),
 				)
 		));
+
+		$this->add(array(
+				'name' => 'payment_term[paymenttermId]',
+				'type' => 'Select',
+				'attributes' => array(
+						'class' => 'select2me form-control',
+						'data-placeholder' => 'Choose Payment Terms',
+						'tabindex' => '1',
+						'id' => 'paymenttermId',
+				),
+				'options' => array(
+// 						'value_options' => array(
+// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
+// 						),
+				)
+		));
+
+		$this->add( array(
+				'name' => 'part_number',
+				'type' => 'Text',
+				'attributes' => array(
+						'class' => 'form-control',
+						'placeholder' => 'Enter Part Number',
+						'id' => 'part_number',
+				)
+		));
+
+		$this->add( array(
+				'name' => 'blCode',
+				'type' => 'Text',
+				'attributes' => array(
+						'class' => 'form-control',
+						'placeholder' => 'Enter BL Code',
+						'id' => 'blCode',
+				)
+		));
+
+		$this->add( array(
+				'name' => 'printed_code',
+				'type' => 'Text',
+				'attributes' => array(
+						'class' => 'form-control',
+						'placeholder' => 'Enter Printed Code',
+						'id' => 'printed_code',
+				)
+		));
 	}
 }
