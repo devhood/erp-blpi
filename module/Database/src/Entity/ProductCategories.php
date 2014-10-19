@@ -15,7 +15,7 @@ class ProductCategories
     /**
      * @var integer
      *
-     * @ORM\Column(name="pc_id", type="integer", nullable=false)
+     * @ORM\Column(name="pc_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -26,7 +26,7 @@ class ProductCategories
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Categories")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="category_id", referencedColumnName="category_id")
+     *   @ORM\JoinColumn(name="category_id", referencedColumnName="category_id", nullable=true)
      * })
      */
     private $category;
@@ -36,11 +36,10 @@ class ProductCategories
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Products")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="product_id", referencedColumnName="product_id")
+     *   @ORM\JoinColumn(name="product_id", referencedColumnName="product_id", nullable=true)
      * })
      */
     private $product;
-
 
 
     /**

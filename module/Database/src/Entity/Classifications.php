@@ -15,7 +15,7 @@ class Classifications
     /**
      * @var integer
      *
-     * @ORM\Column(name="classification_id", type="integer", nullable=false)
+     * @ORM\Column(name="classification_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,17 +24,16 @@ class Classifications
     /**
      * @var string
      *
-     * @ORM\Column(name="classification_name", type="string", length=45, nullable=false)
+     * @ORM\Column(name="classification_name", type="string", length=45, precision=0, scale=0, nullable=false, unique=false)
      */
     private $classificationName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="classification_status", type="string", length=45, nullable=false)
+     * @ORM\Column(name="classification_status", type="string", length=45, precision=0, scale=0, nullable=false, unique=false)
      */
-    private $classificationStatus = 'Active';
-
+    private $classificationStatus;
 
 
     /**

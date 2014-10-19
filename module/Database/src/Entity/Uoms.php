@@ -15,7 +15,7 @@ class Uoms
     /**
      * @var integer
      *
-     * @ORM\Column(name="uom_id", type="integer", nullable=false)
+     * @ORM\Column(name="uom_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,17 +24,16 @@ class Uoms
     /**
      * @var string
      *
-     * @ORM\Column(name="uom_name", type="string", length=45, nullable=false)
+     * @ORM\Column(name="uom_name", type="string", length=45, precision=0, scale=0, nullable=false, unique=false)
      */
     private $uomName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="uom_status", type="string", length=45, nullable=false)
+     * @ORM\Column(name="uom_status", type="string", length=45, precision=0, scale=0, nullable=false, unique=false)
      */
-    private $uomStatus = 'Active';
-
+    private $uomStatus;
 
 
     /**
