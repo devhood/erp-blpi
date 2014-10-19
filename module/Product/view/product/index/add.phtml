@@ -273,8 +273,8 @@ $this->headLink()
 							<tbody>
 							<?php foreach ($uoms as $uom) : ?>
                             	 <tr>
-                                	 <td><?php echo $this->escapeHtml($uom->getUnitMeasurement()); ?></td>
-                                	 <td><?php echo $this->escapeHtml($uom->getUnitQuantity()); ?></td>
+                                	 <td><?php echo $this->escapeHtml($uom->getUom()->getUomName()); ?></td>
+                                	 <td><?php echo $this->escapeHtml($uom->getQuantity()); ?></td>
 
                             	 </tr>
                             <?php endforeach; ?>
@@ -327,8 +327,8 @@ $this->headLink()
 							<?php foreach ($prices as $price) : ?>
                             	 <tr>
                                 	 <td><?php echo $this->escapeHtml($price->getPriceType()->getPriceTypeName()); ?></td>
-                                	 <td><?php echo $this->escapeHtml($price->getPriceAmount()); ?></td>
-                                	 <td><?php echo $this->escapeHtml($price->getCurrency->getCurrencyName()); ?></td>
+                                	 <td><?php echo $this->escapeHtml($price->getPrice()); ?></td>
+                                	 <td><?php echo $this->escapeHtml($price->getCurrency()->getCurrencyName()); ?></td>
                             	 </tr>
                             <?php endforeach; ?>
 							</tbody>

@@ -5,28 +5,28 @@ namespace Database\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * PaymentTerms
+ * CustomerTypes
  *
- * @ORM\Table(name="Payment_Terms")
+ * @ORM\Table(name="Customer_Types")
  * @ORM\Entity
  */
-class PaymentTerms
+class CustomerTypes
 {
     /**
      * @var integer
      *
-     * @ORM\Column(name="payment_term_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="customer_type_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $paymentTermId;
+    private $customerTypeId;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="payment_term_name", type="string", length=45, precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="customer_type_name", type="string", length=45, precision=0, scale=0, nullable=false, unique=false)
      */
-    private $paymentTermName;
+    private $customerTypeName;
 
     /**
      * @var string
@@ -37,43 +37,43 @@ class PaymentTerms
 
 
     /**
-     * Get paymentTermId
+     * Get customerTypeId
      *
      * @return integer 
      */
-    public function getPaymentTermId()
+    public function getCustomerTypeId()
     {
-        return $this->paymentTermId;
+        return $this->customerTypeId;
     }
 
     /**
-     * Set paymentTermName
+     * Set customerTypeName
      *
-     * @param string $paymentTermName
-     * @return PaymentTerms
+     * @param string $customerTypeName
+     * @return CustomerTypes
      */
-    public function setPaymentTermName($paymentTermName)
+    public function setCustomerTypeName($customerTypeName)
     {
-        $this->paymentTermName = $paymentTermName;
+        $this->customerTypeName = $customerTypeName;
 
         return $this;
     }
 
     /**
-     * Get paymentTermName
+     * Get customerTypeName
      *
      * @return string 
      */
-    public function getPaymentTermName()
+    public function getCustomerTypeName()
     {
-        return $this->paymentTermName;
+        return $this->customerTypeName;
     }
 
     /**
      * Set recordStatus
      *
      * @param string $recordStatus
-     * @return PaymentTerms
+     * @return CustomerTypes
      */
     public function setRecordStatus($recordStatus)
     {

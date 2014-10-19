@@ -38,9 +38,9 @@ class Categories
     /**
      * @var string
      *
-     * @ORM\Column(name="category_status", type="string", length=45, precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="record_status", type="string", length=45, precision=0, scale=0, nullable=false, unique=false)
      */
-    private $categoryStatus;
+    private $recordStatus;
 
 
     /**
@@ -100,25 +100,25 @@ class Categories
     }
 
     /**
-     * Set categoryStatus
+     * Set recordStatus
      *
-     * @param string $categoryStatus
+     * @param string $recordStatus
      * @return Categories
      */
-    public function setCategoryStatus($categoryStatus)
+    public function setRecordStatus($recordStatus)
     {
-        $this->categoryStatus = $categoryStatus;
+        $this->recordStatus = $recordStatus;
 
         return $this;
     }
 
     /**
-     * Get categoryStatus
+     * Get recordStatus
      *
      * @return string 
      */
-    public function getCategoryStatus()
+    public function getRecordStatus()
     {
-        return $this->categoryStatus;
+        return $this->recordStatus;
     }
 }

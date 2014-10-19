@@ -31,9 +31,9 @@ class PriceTypes
     /**
      * @var string
      *
-     * @ORM\Column(name="price_type_status", type="string", length=45, precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="record_status", type="string", length=45, precision=0, scale=0, nullable=false, unique=false)
      */
-    private $priceTypeStatus;
+    private $recordStatus;
 
 
     /**
@@ -70,25 +70,25 @@ class PriceTypes
     }
 
     /**
-     * Set priceTypeStatus
+     * Set recordStatus
      *
-     * @param string $priceTypeStatus
+     * @param string $recordStatus
      * @return PriceTypes
      */
-    public function setPriceTypeStatus($priceTypeStatus)
+    public function setRecordStatus($recordStatus)
     {
-        $this->priceTypeStatus = $priceTypeStatus;
+        $this->recordStatus = $recordStatus;
 
         return $this;
     }
 
     /**
-     * Get priceTypeStatus
+     * Get recordStatus
      *
      * @return string 
      */
-    public function getPriceTypeStatus()
+    public function getRecordStatus()
     {
-        return $this->priceTypeStatus;
+        return $this->recordStatus;
     }
 }

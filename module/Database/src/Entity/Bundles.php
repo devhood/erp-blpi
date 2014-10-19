@@ -29,6 +29,13 @@ class Bundles
     private $bundleQuantity;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="record_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     */
+    private $recordStatus;
+
+    /**
      * @var \Database\Entity\Products
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Products")
@@ -80,6 +87,29 @@ class Bundles
     public function getBundleQuantity()
     {
         return $this->bundleQuantity;
+    }
+
+    /**
+     * Set recordStatus
+     *
+     * @param string $recordStatus
+     * @return Bundles
+     */
+    public function setRecordStatus($recordStatus)
+    {
+        $this->recordStatus = $recordStatus;
+
+        return $this;
+    }
+
+    /**
+     * Get recordStatus
+     *
+     * @return string 
+     */
+    public function getRecordStatus()
+    {
+        return $this->recordStatus;
     }
 
     /**

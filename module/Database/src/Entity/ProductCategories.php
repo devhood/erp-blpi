@@ -22,6 +22,13 @@ class ProductCategories
     private $pcId;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="record_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     */
+    private $recordStatus;
+
+    /**
      * @var \Database\Entity\Categories
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Categories")
@@ -50,6 +57,29 @@ class ProductCategories
     public function getPcId()
     {
         return $this->pcId;
+    }
+
+    /**
+     * Set recordStatus
+     *
+     * @param string $recordStatus
+     * @return ProductCategories
+     */
+    public function setRecordStatus($recordStatus)
+    {
+        $this->recordStatus = $recordStatus;
+
+        return $this;
+    }
+
+    /**
+     * Get recordStatus
+     *
+     * @return string 
+     */
+    public function getRecordStatus()
+    {
+        return $this->recordStatus;
     }
 
     /**

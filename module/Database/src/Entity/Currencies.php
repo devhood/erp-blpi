@@ -31,9 +31,9 @@ class Currencies
     /**
      * @var string
      *
-     * @ORM\Column(name="currency_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="record_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
-    private $currencyStatus;
+    private $recordStatus;
 
 
     /**
@@ -70,25 +70,25 @@ class Currencies
     }
 
     /**
-     * Set currencyStatus
+     * Set recordStatus
      *
-     * @param string $currencyStatus
+     * @param string $recordStatus
      * @return Currencies
      */
-    public function setCurrencyStatus($currencyStatus)
+    public function setRecordStatus($recordStatus)
     {
-        $this->currencyStatus = $currencyStatus;
+        $this->recordStatus = $recordStatus;
 
         return $this;
     }
 
     /**
-     * Get currencyStatus
+     * Get recordStatus
      *
      * @return string 
      */
-    public function getCurrencyStatus()
+    public function getRecordStatus()
     {
-        return $this->currencyStatus;
+        return $this->recordStatus;
     }
 }

@@ -22,6 +22,20 @@ class ProductUoms
     private $puId;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="record_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     */
+    private $recordStatus;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="quantity", type="float", precision=10, scale=0, nullable=true, unique=false)
+     */
+    private $quantity;
+
+    /**
      * @var \Database\Entity\Products
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Products")
@@ -50,6 +64,52 @@ class ProductUoms
     public function getPuId()
     {
         return $this->puId;
+    }
+
+    /**
+     * Set recordStatus
+     *
+     * @param string $recordStatus
+     * @return ProductUoms
+     */
+    public function setRecordStatus($recordStatus)
+    {
+        $this->recordStatus = $recordStatus;
+
+        return $this;
+    }
+
+    /**
+     * Get recordStatus
+     *
+     * @return string 
+     */
+    public function getRecordStatus()
+    {
+        return $this->recordStatus;
+    }
+
+    /**
+     * Set quantity
+     *
+     * @param float $quantity
+     * @return ProductUoms
+     */
+    public function setQuantity($quantity)
+    {
+        $this->quantity = $quantity;
+
+        return $this;
+    }
+
+    /**
+     * Get quantity
+     *
+     * @return float 
+     */
+    public function getQuantity()
+    {
+        return $this->quantity;
     }
 
     /**

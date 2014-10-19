@@ -31,9 +31,9 @@ class Uoms
     /**
      * @var string
      *
-     * @ORM\Column(name="uom_status", type="string", length=45, precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="record_status", type="string", length=45, precision=0, scale=0, nullable=false, unique=false)
      */
-    private $uomStatus;
+    private $recordStatus;
 
 
     /**
@@ -70,25 +70,25 @@ class Uoms
     }
 
     /**
-     * Set uomStatus
+     * Set recordStatus
      *
-     * @param string $uomStatus
+     * @param string $recordStatus
      * @return Uoms
      */
-    public function setUomStatus($uomStatus)
+    public function setRecordStatus($recordStatus)
     {
-        $this->uomStatus = $uomStatus;
+        $this->recordStatus = $recordStatus;
 
         return $this;
     }
 
     /**
-     * Get uomStatus
+     * Get recordStatus
      *
      * @return string 
      */
-    public function getUomStatus()
+    public function getRecordStatus()
     {
-        return $this->uomStatus;
+        return $this->recordStatus;
     }
 }

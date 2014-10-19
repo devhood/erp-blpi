@@ -29,6 +29,13 @@ class ProductPrice
     private $price;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="record_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     */
+    private $recordStatus;
+
+    /**
      * @var \Database\Entity\Currencies
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Currencies")
@@ -90,6 +97,29 @@ class ProductPrice
     public function getPrice()
     {
         return $this->price;
+    }
+
+    /**
+     * Set recordStatus
+     *
+     * @param string $recordStatus
+     * @return ProductPrice
+     */
+    public function setRecordStatus($recordStatus)
+    {
+        $this->recordStatus = $recordStatus;
+
+        return $this;
+    }
+
+    /**
+     * Get recordStatus
+     *
+     * @return string 
+     */
+    public function getRecordStatus()
+    {
+        return $this->recordStatus;
     }
 
     /**
