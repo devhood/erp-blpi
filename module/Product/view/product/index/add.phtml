@@ -50,7 +50,20 @@ $this->headLink()
 						</div>
 						<!--/span-->
 					</div>
-
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<div class="col-md-2 col-lg-2 "></div>
+								<div class="col-md-8 col-xs-12 col-sm-12 col-lg-8 ">
+									<textarea class="wysihtml5 form-control" rows="6"></textarea>
+									<span class="help-block">
+										 Description
+									</span>
+								</div>
+								<div class="col-md-2 col-lg-2 "></div>
+							</div>
+						</div>
+					</div>
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
@@ -396,21 +409,17 @@ $this->headLink()
    <?php echo $this->render('product/unit') ?>	
 							
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-<script type="text/javascript" src="/assets/plugins/select2/select2.min.js"></script>
-<script type="text/javascript" src="/assets/plugins/data-tables/jquery.dataTables.js"></script>
-<script type="text/javascript" src="/assets/plugins/data-tables/DT_bootstrap.js"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="/assets/scripts/core/app.js"></script>
 <?php 
 	$this->inlineScript()
-		->appendFile($this->basePath('/assets/scripts/ajax/generic.js'))
 		->appendFile($this->basePath('/assets/scripts/product.js'))
 ?>
 <?php $this->inlineScript()->captureStart() ?>
 	jQuery(document).ready(function() {	
 		App.init();
 		Product.init();
+		ComponentsEditors.init();
 	});
 <?php $this->inlineScript()->captureEnd() ?>
 							
