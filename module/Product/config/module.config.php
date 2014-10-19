@@ -8,6 +8,8 @@ return array(
 		),
 		'template_map' => array(
 			'product/price'           =>   __DIR__ . '/../view/product/partial/price.phtml',
+			'product/bundle'           =>   __DIR__ . '/../view/product/partial/bundle.phtml',
+			'product/unit'           =>   __DIR__ . '/../view/product/partial/unit.phtml',
 			
 		),
 	),

@@ -98,13 +98,13 @@ class ProductForm extends Form
 		));
 
 		$this->add(array(
-				'name' => 'product_status',
+				'name' => 'productStatus',
 				'type' => 'Select',
 				'attributes' => array(
 						'class' => 'select2me form-control',
 						'data-placeholder' => 'Choose Status',
 						'tabindex' => '1',
-						'id' => 'product_status',
+						'id' => 'productStatus',
 				),
 				'options' => array(
 // 						'value_options' => array(
@@ -114,7 +114,7 @@ class ProductForm extends Form
 		));
 
 		$this->add(array(
-				'name' => 'payment_term[paymenttermId]',
+				'name' => 'paymentTerms[paymenttermId]',
 				'type' => 'Select',
 				'attributes' => array(
 						'class' => 'select2me form-control',
@@ -130,12 +130,12 @@ class ProductForm extends Form
 		));
 
 		$this->add( array(
-				'name' => 'part_number',
+				'name' => 'partNumber',
 				'type' => 'Text',
 				'attributes' => array(
 						'class' => 'form-control',
 						'placeholder' => 'Enter Part Number',
-						'id' => 'part_number',
+						'id' => 'partNumber',
 				)
 		));
 
@@ -150,12 +150,12 @@ class ProductForm extends Form
 		));
 
 		$this->add( array(
-				'name' => 'printed_code',
+				'name' => 'printedCode',
 				'type' => 'Text',
 				'attributes' => array(
 						'class' => 'form-control',
 						'placeholder' => 'Enter Printed Code',
-						'id' => 'printed_code',
+						'id' => 'printedCode',
 				)
 		));
 	}

@@ -55,7 +55,7 @@ $this->headLink()
 						<div class="col-md-6">
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-									<?php  echo $this->formRow($form->get('payment_term[paymenttermId]')); ?>
+									<?php  echo $this->formRow($form->get('paymentTerms[paymenttermId]')); ?>
 									<span class="help-block">
 										 Payment Terms
 									</span>
@@ -66,7 +66,7 @@ $this->headLink()
 						<div class="col-md-6">
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-									<?php  echo $this->formRow($form->get('part_number')); ?>
+									<?php  echo $this->formRow($form->get('partNumber')); ?>
 									<span class="help-block">
 										 Part Number
 									</span>
@@ -91,7 +91,7 @@ $this->headLink()
 						<div class="col-md-6">
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-									<?php  echo $this->formRow($form->get('printed_code')); ?>
+									<?php  echo $this->formRow($form->get('printedCode')); ?>
 									<span class="help-block">
 										 Printed Code
 									</span>
@@ -166,7 +166,7 @@ $this->headLink()
 						<div class="col-md-6">
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left select">
-									<?php  echo $this->formRow($form->get('product_status')); ?>
+									<?php  echo $this->formRow($form->get('productStatus')); ?>
 									<span class="help-block">
 										 Product Status
 									</span>
@@ -181,7 +181,7 @@ $this->headLink()
 							<h4 class="">Bundled Items?</h4>
 						</div>
 						<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
-							<button id="sample_editable_1_new" class="btn-sm green custom-right">
+							<button id="sample_editable_1_new" type="button" data-toggle="modal" href="#responsive" class="btn-sm green custom-right">
 						Add New
 							<i class="fa fa-plus"></i>
 						</button>
@@ -243,7 +243,7 @@ $this->headLink()
 							<h4 class="">Unit of Measurement</h4>
 						</div>
 						<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
-							<button id="sample_editable_1_new" class="btn-sm green custom-right">
+							<button id="sample_editable_1_new" type="button" data-toggle="modal" href="#responsive" class="btn-sm green custom-right">
 						Add New
 							<i class="fa fa-plus"></i>
 						</button>
@@ -397,7 +397,9 @@ $this->headLink()
 			<!-- END FORM-->
 		</div>
 	</div>
-   <?php echo $this->render('product/price') ?>			
+   <?php echo $this->render('product/price') ?>	
+   <?php echo $this->render('product/bundle') ?>	
+   <?php echo $this->render('product/unit') ?>	
 							
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 <script type="text/javascript" src="/assets/plugins/select2/select2.min.js"></script>
