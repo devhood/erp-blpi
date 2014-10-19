@@ -1,0 +1,416 @@
+<!-- BEGIN PAGE LEVEL STYLES -->
+<?php
+$this->headLink()
+		->appendStylesheet($this->basePath('/assets/plugins/select2/select2.css'))
+		->appendStylesheet($this->basePath('/assets/plugins/select2/select2-metronic.css'))
+		->appendStylesheet($this->basePath('/assets/plugins/data-tables/DT_bootstrap.css'))
+?>
+	<div class="portlet box grey">
+		<div class="portlet-title">
+			<div class="caption">
+				<i class="fa fa-reorder"></i>Customer Profile
+			</div>
+			<div class="tools">
+				<a href="javascript:;" class="collapse">
+				</a>
+				<a href="#portlet-config" data-toggle="modal" class="config">
+				</a>
+				<a href="javascript:;" class="reload">
+				</a>
+				<a href="javascript:;" class="remove">
+				</a>
+			</div>
+		</div>
+		<div class="portlet-body form">
+			<!-- BEGIN FORM-->
+			<form action="#" class="form-horizontal">
+				<div class="form-body">
+					<h4 class="form-section">General Info</h4>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+									<?php  echo $this->formRow($form->get('customerCode')); ?>
+									<span class="help-block">
+										 Item Code
+									</span>
+								</div>
+							</div>
+						</div>
+							<!--/span-->
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+									<?php  echo $this->formRow($form->get('customerName')); ?>
+									<span class="help-block">
+										 Name
+									</span>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+					</div>
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+									<?php  echo $this->formRow($form->get('payment_term[paymenttermId]')); ?>
+									<span class="help-block">
+										 Payment Terms
+									</span>
+								</div>
+							</div>
+						</div>
+							<!--/span-->
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+									<?php  echo $this->formRow($form->get('part_number')); ?>
+									<span class="help-block">
+										 Part Number
+									</span>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+					</div>
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+									<?php  echo $this->formRow($form->get('blCode')); ?>
+									<span class="help-block">
+										 BL Code
+									</span>
+								</div>
+							</div>
+						</div>
+							<!--/span-->
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+									<?php  echo $this->formRow($form->get('printed_code')); ?>
+									<span class="help-block">
+										 Printed Code
+									</span>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+					</div>
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+									<?php  echo $this->formRow($form->get('classifications[classificationId]')); ?>
+									<span class="help-block">
+										 Classification
+									</span>
+								</div>
+							</div>
+						</div>
+							<!--/span-->
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+									<?php  echo $this->formRow($form->get('brand[brandId]')); ?>
+									<span class="help-block">
+										 Brand
+									</span>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+					</div>
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+									<?php  echo $this->formRow($form->get('supplier[supplierId]')); ?>
+									<span class="help-block">
+										 Supplier
+									</span>
+								</div>
+							</div>
+						</div>
+							<!--/span-->
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+									<?php  echo $this->formRow($form->get('size')); ?>
+									<span class="help-block">
+										 Size
+									</span>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+					</div>
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+									<?php  echo $this->formRow($form->get('weight')); ?>
+									<span class="help-block">
+										 Weight
+									</span>
+								</div>
+							</div>
+						</div>
+							<!--/span-->
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left select">
+									<?php  echo $this->formRow($form->get('customer_status')); ?>
+									<span class="help-block">
+										 customer Status
+									</span>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+					</div>
+					<div class="row form-section">
+					<div class="col-md-12">
+						<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
+							<h4 class="">Bundled Items?</h4>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
+							<button id="sample_editable_1_new" class="btn-sm green custom-right">
+						Add New
+							<i class="fa fa-plus"></i>
+						</button>
+						</div>F
+
+
+
+
+					</div>
+					</div>
+					<div class="form-group">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+			<div class="row">
+				<div class="col-md-12">
+					<!-- BEGIN SAMPLE TABLE PORTLET-->
+						<div class="portlet-body flip-scroll">
+							<table class="table table-bordered table-condensed flip-content">
+							<thead class="flip-content bg-grey">
+							<tr>
+								<th width="20%">
+									 Items Included
+								</th>
+								<th>
+									 Quantity
+								</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>
+									 AAC
+								</td>
+								<td>
+									 AUSTRALIAN AGRICULTURAL COMPANY LIMITED.
+								</td>
+							</tr>
+							<tr>
+								<td>
+									 AAD
+								</td>
+								<td>
+									 ARDENT LEISURE GROUP
+								</td>
+							</tr>
+							</tbody>
+							</table>
+						</div>
+					<!-- END SAMPLE TABLE PORTLET-->
+				</div>
+			</div>
+			</div>
+			<div class="col-md-2"></div>
+					</div>
+
+					<div class="row form-section">
+					<div class="col-md-12">
+						<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
+							<h4 class="">Unit of Measurement</h4>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
+							<button id="sample_editable_1_new" class="btn-sm green custom-right">
+						Add New
+							<i class="fa fa-plus"></i>
+						</button>
+						</div>
+
+
+
+
+					</div>
+					</div>
+					<div class="form-group">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+			<div class="row">
+				<div class="col-md-12">
+					<!-- BEGIN SAMPLE TABLE PORTLET-->
+						<div class="portlet-body flip-scroll">
+							<table class="table table-bordered table-condensed flip-content">
+							<thead class="flip-content bg-grey">
+							<tr>
+								<th width="20%">
+									 Unit of Measurement
+								</th>
+								<th>
+									 Quantity
+								</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>
+									 AAC
+								</td>
+								<td>
+									 AUSTRALIAN AGRICULTURAL COMPANY LIMITED.
+								</td>
+							</tr>
+							<tr>
+								<td>
+									 AAD
+								</td>
+								<td>
+									 ARDENT LEISURE GROUP
+								</td>
+							</tr>
+							</tbody>
+							</table>
+						</div>
+					<!-- END SAMPLE TABLE PORTLET-->
+				</div>
+			</div>
+			</div>
+			<div class="col-md-2"></div>
+					</div>
+					<div class="row form-section">
+					<div class="col-md-12">
+						<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
+							<h4 class="">Price</h4>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
+							<button id="sample_editable_1_new" class="btn-sm green custom-right">
+						Add New
+							<i class="fa fa-plus"></i>
+						</button>
+						</div>
+
+					</div>
+					</div>
+					<div class="form-group">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+			<div class="row">
+				<div class="col-md-12">
+					<!-- BEGIN SAMPLE TABLE PORTLET-->
+						<div class="portlet-body flip-scroll">
+							<table class="table table-bordered table-condensed flip-content">
+							<thead class="flip-content bg-grey">
+							<tr>
+								<th width="20%">
+									 Price Type
+								</th>
+								<th>
+									 Amount
+								</th>
+								<th>
+									 Currency
+								</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>
+									 AAC
+								</td>
+								<td>
+									 AUSTRALIAN AGRICULTURAL COMPANY LIMITED.
+								</td>
+								<td>
+									 AUSTRALIAN AGRICULTURAL COMPANY LIMITED.
+								</td>
+							</tr>
+							<tr>
+								<td>
+									 AAD
+								</td>
+								<td>
+									 ARDENT LEISURE GROUP
+								</td>
+								<td>
+									 AUSTRALIAN AGRICULTURAL COMPANY LIMITED.
+								</td>
+							</tr>
+							<tr>
+								<td>
+									 AAE
+								</td>
+								<td>
+									 ARDENT LEISURE GROUP2
+								</td>
+								<td>
+									 AUSTRALIAN AGRICULTURAL COMPANY LIMITED.
+								</td>
+							</tr>
+							</tbody>
+							</table>
+						</div>
+					<!-- END SAMPLE TABLE PORTLET-->
+				</div>
+			</div>
+			</div>
+			<div class="col-md-2"></div>
+					</div>
+
+			<!-- BEGIN PAGE CONTENT-->
+
+				</div>
+				<div class="form-actions fluid">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="col-md-offset-3 col-md-9">
+								<button type="submit" class="btn green">Submit</button>
+								<button type="button" class="btn default">Cancel</button>
+							</div>
+						</div>
+						<div class="col-md-6">
+						</div>
+					</div>
+				</div>
+			</form>
+			<!-- END FORM-->
+		</div>
+	</div>
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script type="text/javascript" src="/assets/plugins/select2/select2.min.js"></script>
+<script type="text/javascript" src="/assets/plugins/data-tables/jquery.dataTables.js"></script>
+<script type="text/javascript" src="/assets/plugins/data-tables/DT_bootstrap.js"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="/assets/scripts/core/app.js"></script>
+<?php
+	$this->inlineScript()
+		->appendFile($this->basePath('/assets/scripts/ajax/generic.js'))
+		->appendFile($this->basePath('/assets/scripts/customer.js'))
+?>
+<?php $this->inlineScript()->captureStart() ?>
+	jQuery(document).ready(function() {
+		App.init();
+		Customer.init();
+	});
+<?php $this->inlineScript()->captureEnd() ?>
