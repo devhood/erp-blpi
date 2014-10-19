@@ -19,4 +19,14 @@ class IndexController extends BaseController
     	$form = new \Product\Form\AddProductForm();
     	return new ViewModel(array('form' => $form));
     }
+    public function editAction()
+    {
+    	$form = new \Product\Form\EditProductForm();
+    	return new ViewModel(array('form' => $form));
+    }
+    public function viewAction()
+    {
+    	$form = new \Product\Form\ViewProductForm();
+    	return new ViewModel(array('form' => $form));
+    }
 }
