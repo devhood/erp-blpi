@@ -78,6 +78,7 @@ class IndexController extends BaseController
         $form->get("classifications[classificationId]")->setAttribute("disabled", true);
         $form->get("supplier[supplierId]")->setAttribute("disabled", true);
         $form->get("productStatus")->setAttribute("disabled", true);
+        $form->get("desc")->setAttribute("disabled", true);
     	return new ViewModel(array('form' => $form));
     }
 }

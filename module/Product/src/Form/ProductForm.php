@@ -250,7 +250,18 @@ class ProductForm extends Form
 						'placeholder' => 'Enter Quantity',
 						'id' => 'bundleQuantity',
 				)
-		));		
+		));	
+		
+		$this->add( array(
+				'name' => 'desc',
+				'type' => 'Textarea',
+				'attributes' => array(
+						'class' => 'wysihtml5 form-control',
+						'placeholder' => 'Enter Description',
+						'id' => 'desc',
+						'rows' => '6'
+				)
+		));
 
 	}
 }
