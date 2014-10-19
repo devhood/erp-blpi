@@ -206,9 +206,9 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN CORE PLUGINS -->
 <?php 
     $this->inlineScript()
-        ->prependFile($this->basePath('/assets/plugins/select2/select2.min.js'))
-        ->prependFile($this->basePath('/assets/plugins/data-tables/jquery.dataTables.js'))
         ->prependFile($this->basePath('/assets/plugins/data-tables/DT_bootstrap.js'))
+        ->prependFile($this->basePath('/assets/plugins/data-tables/jquery.dataTables.js'))
+        ->prependFile($this->basePath('/assets/plugins/select2/select2.min.js'))
         ->prependFile($this->basePath('/assets/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js'))
         ->prependFile($this->basePath('/assets/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js'))
         ->prependFile($this->basePath('/assets/scripts/ajax/generic.js'))

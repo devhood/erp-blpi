@@ -36,4 +36,13 @@ class BaseController extends AbstractActionController
 		}
 		return $content;
 	}
+	protected function _getContents($table){
+		
+		$queryBuilder = $this->_getEntityManager()->createQueryBuilder();
+		$queryBuilder->select('t')
+			->from(self::DBNS.$table, 't');
+		$results = $queryBuilder->getQuery()
+			->getResult(\Doctrine\ORM\AbstractQuery::HYDRATE_ARRAY);
+		return $results;
+	}
 }
