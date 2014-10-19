@@ -22,7 +22,7 @@ var TableEditable = function () {
                 var aData = oTable.fnGetData(nRow);
                 var jqTds = $('>td', nRow);
                 ajaxGetPersonTypeOptions(function(err,result){
-                		var personTypeOption = OptionsToHTML("intpersontypeid","strpersontype",result.data,aData[4]);
+                	var personTypeOption = OptionsToHTML("intpersontypeid","strpersontype",result.data,aData[4]);
                     var activeOption = OptionsToHTML("intactive","stractive",
                                [{intactive:1,stractive:"Active"},
                                 {intactive:0,stractive:"Inactive"}],

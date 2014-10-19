@@ -30,7 +30,7 @@ $this->headLink()
 						<div class="col-md-6">
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-									<input type="text" class="form-control" placeholder="Code">
+									<input type="text" class="form-control" placeholder="Code" id="productCode" name="productCode">
 									<span class="help-block">
 										 Code
 									</span>
@@ -41,11 +41,7 @@ $this->headLink()
 						<div class="col-md-6">
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-									<select name="product_code" class="select2me form-control">
-										<option value="1">Abc</option>
-										<option value="1">Abc</option>
-										<option value="1">This is a really long value that breaks the fluid design for a select2</option>
-									</select>
+									<input type="text" class="form-control" placeholder="Name" id="productName" name="productName">
 									<span class="help-block">
 										 Name
 									</span>
@@ -59,11 +55,7 @@ $this->headLink()
 						<div class="col-md-6">
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-									<select name="classification_id" class="select2me form-control">
-										<option value="1">Abc</option>
-										<option value="1">Abc</option>
-										<option value="1">This is a really long value that breaks the fluid design for a select2</option>
-									</select>
+									<input type="hidden" class="form-control" placeholder="Name" id="classificationId" name="classificationId">
 									<span class="help-block">
 										 Classification
 									</span>
@@ -375,14 +367,13 @@ $this->headLink()
 <script src="/assets/scripts/core/app.js"></script>
 <?php 
 	$this->inlineScript()
-		->appendFile($this->basePath('/assets/scripts/datatable/realms.index.js'))
-		->appendFile($this->basePath('/assets/scripts/ajax/realms.js'))
 		->appendFile($this->basePath('/assets/scripts/ajax/generic.js'))
+		->appendFile($this->basePath('/assets/scripts/product.js'))
 ?>
 <?php $this->inlineScript()->captureStart() ?>
 	jQuery(document).ready(function() {	
 		App.init();
-		TableEditable.init();
+		Product.init();
 	});
 <?php $this->inlineScript()->captureEnd() ?>
 							
