@@ -1,6 +1,7 @@
 <!-- BEGIN PAGE LEVEL STYLES -->
 <?php 
 $this->headLink()
+		->appendStylesheet($this->basePath('/assets/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css'))
 		->appendStylesheet($this->basePath('/assets/plugins/select2/select2.css'))
 		->appendStylesheet($this->basePath('/assets/plugins/select2/select2-metronic.css'))
 		->appendStylesheet($this->basePath('/assets/plugins/data-tables/DT_bootstrap.css'))
@@ -50,7 +51,20 @@ $this->headLink()
 						</div>
 						<!--/span-->
 					</div>
-
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<div class="col-md-2 col-lg-2 "></div>
+								<div class="col-md-8 col-xs-12 col-sm-12 col-lg-8 ">
+									<textarea class="wysihtml5 form-control" rows="6"></textarea>
+									<span class="help-block">
+										 Description
+									</span>
+								</div>
+								<div class="col-md-2 col-lg-2 "></div>
+							</div>
+						</div>
+					</div>
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
@@ -405,9 +419,12 @@ $this->headLink()
 <script type="text/javascript" src="/assets/plugins/select2/select2.min.js"></script>
 <script type="text/javascript" src="/assets/plugins/data-tables/jquery.dataTables.js"></script>
 <script type="text/javascript" src="/assets/plugins/data-tables/DT_bootstrap.js"></script>
+<script type="text/javascript" src="/assets/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script>
+<script type="text/javascript" src="/assets/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="/assets/scripts/core/app.js"></script>
+<script src="/assets/scripts/custom/components-editors.js"></script>
 <?php 
 	$this->inlineScript()
 		->appendFile($this->basePath('/assets/scripts/ajax/generic.js'))
@@ -417,6 +434,7 @@ $this->headLink()
 	jQuery(document).ready(function() {	
 		App.init();
 		Product.init();
+		ComponentsEditors.init();
 	});
 <?php $this->inlineScript()->captureEnd() ?>
 							
