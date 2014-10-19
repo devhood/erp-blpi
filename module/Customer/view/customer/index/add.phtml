@@ -293,7 +293,7 @@ $this->headLink()
 							<h4 class="">Address</h4>
 						</div>
 						<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
-							<button id="sample_editable_1_new" class="btn-sm green custom-right">
+							<button id="" type="button"  data-toggle="modal" href="#addressModal" class="btn-sm green custom-right">
 								Add New
 								<i class="fa fa-plus"></i>
 							</button>
@@ -352,26 +352,6 @@ $this->headLink()
 													Philippines
 												</td>
 											</tr>
-
-											<tr>
-												<td>
-													Metro
-												</td>
-												<td>
-													Sogo Hotel
-												</td>
-												<td>
-													Makati
-												</td>
-												<td>
-													MM
-												</td>
-												<td>
-													2020
-												</td>
-												<td>
-													Philippines
-												</td>										</tr>
 										</tbody>
 									</table>
 								</div>
@@ -390,14 +370,13 @@ $this->headLink()
 							<h4 class="">Contact</h4>
 						</div>
 						<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
-							<button id="sample_editable_1_new" class="btn-sm green custom-right">
+							<button href="#contactModal" type="button"  data-toggle="modal" class="btn-sm green custom-right">
 								Add New
 								<i class="fa fa-plus"></i>
 							</button>
 						</div>
 					</div>
 				</div>
-
 				<div class="form-group">
 					<div class="col-md-2"></div>
 					<div class="col-md-8">
@@ -474,6 +453,8 @@ $this->headLink()
 		<!-- END FORM-->
 	</div>
 </div>
+<?php echo $this->render('customer/address') ?>
+<?php echo $this->render('customer/contact') ?>
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 <script type="text/javascript" src="/assets/plugins/select2/select2.min.js"></script>
 <script type="text/javascript" src="/assets/plugins/data-tables/jquery.dataTables.js"></script>

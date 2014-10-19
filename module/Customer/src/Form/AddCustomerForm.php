@@ -291,5 +291,142 @@ $this->add(array(
 			)
 		));
 
+		$this->add(array(
+			'name' => 'addressType[addressTypeId]',
+			'type' => 'Select',
+			'attributes' => array(
+				'class' => 'select2me form-control',
+				'data-placeholder' => 'Choose Address Type',
+				'tabindex' => '1',
+				'id' => 'addressTypeId',
+			),
+			'options' => array(
+				// 						'value_options' => array(
+				// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
+				// 						),
+			)
+		));
+
+
+		//Modal Properties (ADDRESS)
+		$this->add(array(
+			'name' => 'streetLandmark',
+			'type' => 'Text',
+			'attributes' => array(
+		'class' => 'form-control',
+		'placeholder' => 'Enter Street Landmark',
+		'id' => 'streetLandmark',
+	)
+));
+
+$this->add(array(
+	'name' => 'city[cityId]',
+	'type' => 'Select',
+	'attributes' => array(
+		'class' => 'select2me form-control',
+		'data-placeholder' => 'Choose City',
+		'tabindex' => '1',
+		'id' => 'cityId',
+	),
+	'options' => array(
+		// 						'value_options' => array(
+		// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
+		// 						),
+	)
+));
+
+$this->add(array(
+	'name' => 'province[provinceId]',
+	'type' => 'Select',
+	'attributes' => array(
+		'class' => 'select2me form-control',
+		'data-placeholder' => 'Choose Province',
+		'tabindex' => '1',
+		'id' => 'provinceId',
+	),
+	'options' => array(
+		// 						'value_options' => array(
+		// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
+		// 						),
+	)
+));
+
+$this->add(array(
+	'name' => 'country[countryId]',
+	'type' => 'Select',
+	'attributes' => array(
+		'class' => 'select2me form-control',
+		'data-placeholder' => 'Choose Country',
+		'tabindex' => '1',
+		'id' => 'countryId',
+	),
+	'options' => array(
+		// 						'value_options' => array(
+		// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
+		// 						),
+	)
+));
+
+$this->add( array(
+	'name' => 'zipcode',
+	'type' => 'Text',
+	'attributes' => array(
+		'class' => 'form-control',
+		'placeholder' => 'Enter Zipcode',
+		'id' => 'zipcode',
+	)
+));
+
+
+//Modal Properties (Contact)
+
+$this->add( array(
+	'name' => 'position',
+	'type' => 'Text',
+	'attributes' => array(
+		'class' => 'form-control',
+		'placeholder' => 'Enter Position',
+		'id' => 'position',
+	)
+));
+$this->add( array(
+	'name' => 'primary',
+	'type' => 'Text',
+	'attributes' => array(
+		'class' => 'form-control',
+		'placeholder' => 'Enter Primary',
+		'id' => 'primary',
+	)
+));
+
+$this->add( array(
+	'name' => 'fullname',
+	'type' => 'Text',
+	'attributes' => array(
+		'class' => 'form-control',
+		'placeholder' => 'Enter Fullname',
+		'id' => 'fullname',
+	)
+));
+
+$this->add( array(
+	'name' => 'zipcode',
+	'type' => 'email',
+	'attributes' => array(
+		'class' => 'form-control',
+		'placeholder' => 'Enter Email',
+		'id' => 'email',
+	)
+));
+$this->add( array(
+	'name' => 'phone',
+	'type' => 'Text',
+	'attributes' => array(
+		'class' => 'form-control',
+		'placeholder' => 'Enter Phone Number',
+		'id' => 'phone',
+	)
+));
+
 	}
 }

@@ -1,0 +1,87 @@
+<div id="contactModal" class="modal fade" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+				<h4 class="modal-title">Contact</h4>
+			</div>
+			<div class="modal-body">
+				<div class="scroller" style="height:250px;" data-always-visible="1" data-rail-visible1="1">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
+									<?php  echo $this->formRow($form->get('position')); ?>
+									<span class="help-block">
+										Position
+									</span>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
+									<?php  echo $this->formRow($form->get('primary')); ?>
+									<span class="help-block">
+										Primary
+									</span>
+								</div>
+							</div>
+						</div>
+
+						<!--/span-->
+					</div>
+					<!--/row-->
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
+									<?php  echo $this->formRow($form->get('fullname')); ?>
+									<span class="help-block">
+										Full Name
+									</span>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
+									<?php  echo $this->formRow($form->get('email')); ?>
+									<span class="help-block">
+										Email Address
+									</span>
+								</div>
+							</div>
+						</div>
+
+						<!--/span-->
+					</div>
+					<!--/row-->
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
+									<?php  echo $this->formRow($form->get('phone')); ?>
+									<span class="help-block">
+										Phone
+									</span>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+					</div>
+					<!--/row-->
+				</div>
+				<!--/scroller-->
+			</div>
+			<div class="modal-footer">
+				<button type="button" data-dismiss="modal" class="btn default">Close</button>
+				<button type="button" class="btn green">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>
