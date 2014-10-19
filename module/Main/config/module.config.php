@@ -11,6 +11,7 @@ return array(
 				'template_map' => array(
 						'layout/layout'           =>   __DIR__ . '/../view/layout/main.phtml',
 						'layout/login'           =>   __DIR__ . '/../view/layout/login.phtml',
+						'layout/menu'           =>   __DIR__ . '/../view/partial/menu.phtml',
 						'layout/404'           =>   getcwd() . '/module/Main/view/error/error.phtml',
 						'layout/index'           =>   getcwd() . '/module/Main/view/error/exception.phtml',
 				),
