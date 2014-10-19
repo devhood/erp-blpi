@@ -15,7 +15,7 @@ class Currencies
     /**
      * @var integer
      *
-     * @ORM\Column(name="currency_id", type="integer", nullable=false)
+     * @ORM\Column(name="currency_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,17 +24,16 @@ class Currencies
     /**
      * @var string
      *
-     * @ORM\Column(name="currency_name", type="string", length=45, nullable=false)
+     * @ORM\Column(name="currency_name", type="string", length=45, precision=0, scale=0, nullable=false, unique=false)
      */
     private $currencyName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="currency_status", type="string", length=45, nullable=true)
+     * @ORM\Column(name="currency_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
-    private $currencyStatus = 'Active';
-
+    private $currencyStatus;
 
 
     /**

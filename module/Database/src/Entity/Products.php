@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Products
  *
- * @ORM\Table(name="Products", uniqueConstraints={@ORM\UniqueConstraint(name="product_code_UNIQUE", columns={"product_code"})}, indexes={@ORM\Index(name="fk_Products_Suppliers_idx", columns={"supplier_id"}), @ORM\Index(name="fk_Products_Brands1_idx", columns={"brand_id"}), @ORM\Index(name="fk_Products_Classifications1_idx", columns={"classification_id"})})
+ * @ORM\Table(name="Products", uniqueConstraints={@ORM\UniqueConstraint(name="product_code_UNIQUE", columns={"product_code"})}, indexes={@ORM\Index(name="fk_Products_Suppliers_idx", columns={"supplier_id"}), @ORM\Index(name="fk_Products_Brands1_idx", columns={"brand_id"}), @ORM\Index(name="fk_Products_Classifications1_idx", columns={"classification_id"}), @ORM\Index(name="fk_Products_Payment_Terms1_idx", columns={"payment_term_id"})})
  * @ORM\Entity
  */
 class Products
@@ -15,7 +15,7 @@ class Products
     /**
      * @var integer
      *
-     * @ORM\Column(name="product_id", type="integer", nullable=false)
+     * @ORM\Column(name="product_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,51 +24,72 @@ class Products
     /**
      * @var string
      *
-     * @ORM\Column(name="product_code", type="string", length=100, nullable=false)
+     * @ORM\Column(name="product_code", type="string", length=100, precision=0, scale=0, nullable=false, unique=false)
      */
     private $productCode;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="product_name", type="string", length=100, nullable=false)
+     * @ORM\Column(name="product_name", type="string", length=100, precision=0, scale=0, nullable=false, unique=false)
      */
     private $productName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="product_description", type="string", length=500, nullable=true)
+     * @ORM\Column(name="product_description", type="string", length=500, precision=0, scale=0, nullable=true, unique=false)
      */
     private $productDescription;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="size", type="string", length=45, nullable=true)
+     * @ORM\Column(name="size", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $size;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="weight", type="string", length=45, nullable=true)
+     * @ORM\Column(name="weight", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $weight;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="product_status", type="string", length=45, nullable=true)
+     * @ORM\Column(name="product_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
-    private $productStatus = 'Active';
+    private $productStatus;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="part_number", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     */
+    private $partNumber;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="bl_code", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     */
+    private $blCode;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="printed_code", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     */
+    private $printedCode;
 
     /**
      * @var \Database\Entity\Brands
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Brands")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="brand_id", referencedColumnName="brand_id")
+     *   @ORM\JoinColumn(name="brand_id", referencedColumnName="brand_id", nullable=true)
      * })
      */
     private $brand;
@@ -78,21 +99,30 @@ class Products
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Classifications")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="classification_id", referencedColumnName="classification_id")
+     *   @ORM\JoinColumn(name="classification_id", referencedColumnName="classification_id", nullable=true)
      * })
      */
     private $classification;
+
+    /**
+     * @var \Database\Entity\PaymentTerms
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\PaymentTerms")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="payment_term_id", referencedColumnName="payment_term_id", nullable=true)
+     * })
+     */
+    private $paymentTerm;
 
     /**
      * @var \Database\Entity\Suppliers
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Suppliers")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="supplier_id", referencedColumnName="supplier_id")
+     *   @ORM\JoinColumn(name="supplier_id", referencedColumnName="supplier_id", nullable=true)
      * })
      */
     private $supplier;
-
 
 
     /**
@@ -244,6 +274,75 @@ class Products
     }
 
     /**
+     * Set partNumber
+     *
+     * @param string $partNumber
+     * @return Products
+     */
+    public function setPartNumber($partNumber)
+    {
+        $this->partNumber = $partNumber;
+
+        return $this;
+    }
+
+    /**
+     * Get partNumber
+     *
+     * @return string 
+     */
+    public function getPartNumber()
+    {
+        return $this->partNumber;
+    }
+
+    /**
+     * Set blCode
+     *
+     * @param string $blCode
+     * @return Products
+     */
+    public function setBlCode($blCode)
+    {
+        $this->blCode = $blCode;
+
+        return $this;
+    }
+
+    /**
+     * Get blCode
+     *
+     * @return string 
+     */
+    public function getBlCode()
+    {
+        return $this->blCode;
+    }
+
+    /**
+     * Set printedCode
+     *
+     * @param string $printedCode
+     * @return Products
+     */
+    public function setPrintedCode($printedCode)
+    {
+        $this->printedCode = $printedCode;
+
+        return $this;
+    }
+
+    /**
+     * Get printedCode
+     *
+     * @return string 
+     */
+    public function getPrintedCode()
+    {
+        return $this->printedCode;
+    }
+
+    /**
      * Set brand
      *
      * @param \Database\Entity\Brands $brand
@@ -287,6 +386,29 @@ class Products
     public function getClassification()
     {
         return $this->classification;
+    }
+
+    /**
+     * Set paymentTerm
+     *
+     * @param \Database\Entity\PaymentTerms $paymentTerm
+     * @return Products
+     */
+    public function setPaymentTerm(\Database\Entity\PaymentTerms $paymentTerm = null)
+    {
+        $this->paymentTerm = $paymentTerm;
+
+        return $this;
+    }
+
+    /**
+     * Get paymentTerm
+     *
+     * @return \Database\Entity\PaymentTerms 
+     */
+    public function getPaymentTerm()
+    {
+        return $this->paymentTerm;
     }
 
     /**
