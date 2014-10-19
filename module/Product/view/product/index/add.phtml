@@ -304,7 +304,8 @@ $this->headLink()
 							<h4 class="">Price</h4>
 						</div>
 						<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
-							<button id="sample_editable_1_new" class="btn-sm green custom-right">
+				
+							<button id="sample_editable_1_new" data-toggle="modal" href="#responsive" class="btn-sm green custom-right">
 						Add New
 							<i class="fa fa-plus"></i>
 						</button>
@@ -396,6 +397,75 @@ $this->headLink()
 			<!-- END FORM-->
 		</div>
 	</div>
+	
+	<div id="responsive" class="modal fade" tabindex="-1" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+											<h4 class="modal-title">Responsive & Scrollable</h4>
+										</div>
+										<div class="modal-body">
+											<div class="scroller" style="height:300px" data-always-visible="1" data-rail-visible1="1">
+												<div class="row">
+													<div class="col-md-6">
+														<h4>Some Input</h4>
+														<p>
+															<input type="text" class="col-md-12 form-control">
+														</p>
+														<p>
+															<input type="text" class="col-md-12 form-control">
+														</p>
+														<p>
+															<input type="text" class="col-md-12 form-control">
+														</p>
+														<p>
+															<input type="text" class="col-md-12 form-control">
+														</p>
+														<p>
+															<input type="text" class="col-md-12 form-control">
+														</p>
+														<p>
+															<input type="text" class="col-md-12 form-control">
+														</p>
+														<p>
+															<input type="text" class="col-md-12 form-control">
+														</p>
+													</div>
+													<div class="col-md-6">
+														<h4>Some More Input</h4>
+														<p>
+															<input type="text" class="col-md-12 form-control">
+														</p>
+														<p>
+															<input type="text" class="col-md-12 form-control">
+														</p>
+														<p>
+															<input type="text" class="col-md-12 form-control">
+														</p>
+														<p>
+															<input type="text" class="col-md-12 form-control">
+														</p>
+														<p>
+															<input type="text" class="col-md-12 form-control">
+														</p>
+														<p>
+															<input type="text" class="col-md-12 form-control">
+														</p>
+														<p>
+															<input type="text" class="col-md-12 form-control">
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="modal-footer">
+											<button type="button" data-dismiss="modal" class="btn default">Close</button>
+											<button type="button" class="btn green">Save changes</button>
+										</div>
+									</div>
+								</div>
+							</div>
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 <script type="text/javascript" src="/assets/plugins/select2/select2.min.js"></script>
 <script type="text/javascript" src="/assets/plugins/data-tables/jquery.dataTables.js"></script>
