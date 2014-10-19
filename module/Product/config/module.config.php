@@ -29,6 +29,26 @@ return array(
 					),
 				),
 			),
+			__NAMESPACE__.'_Index_Edit' => array(
+				'type' => 'Literal',
+				'options' => array(
+					'route'    => '/product/edit',
+					'defaults' => array(
+						'controller' => __NAMESPACE__ . '\Index',
+						'action'     => 'edit',
+					),
+				),
+			),
+			__NAMESPACE__.'_Index_View' => array(
+				'type' => 'Literal',
+				'options' => array(
+					'route'    => '/product/view',
+					'defaults' => array(
+						'controller' => __NAMESPACE__ . '\Index',
+						'action'     => 'view',
+					),
+				),
+			),
 		),
 	),
 	'controllers' => array(
