@@ -48,11 +48,13 @@ class IndexController extends BaseController
         
        $bundles = $this->_getContents("Bundles");
        $uoms = $this->_getContents("ProductUoms");
+       $prices = $this->_getContents("PriceTypes");
        
        return new ViewModel(array(
        		'form' => $form, 
        		'bundles' => $bundles,
-       		'uoms' => $uoms
+       		'uoms' => $uoms,
+            'prices' => $prices,
        		
        ));
     }

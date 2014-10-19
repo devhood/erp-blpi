@@ -271,22 +271,13 @@ $this->headLink()
 							</tr>
 							</thead>
 							<tbody>
-							<tr>
-								<td>
-									 AAC
-								</td>
-								<td>
-									 AUSTRALIAN AGRICULTURAL COMPANY LIMITED.
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 AAD
-								</td>
-								<td>
-									 ARDENT LEISURE GROUP
-								</td>
-							</tr>
+							<?php foreach ($uoms as $uom) : ?>
+                            	 <tr>
+                                	 <td><?php echo $this->escapeHtml($uom->getUnitMeasurement()); ?></td>
+                                	 <td><?php echo $this->escapeHtml($uom->getUnitQuantity()); ?></td>
+
+                            	 </tr>
+                            <?php endforeach; ?>
 							</tbody>
 							</table>
 						</div>
@@ -333,39 +324,13 @@ $this->headLink()
 							</tr>
 							</thead>
 							<tbody>
-							<tr>
-								<td>
-									 AAC
-								</td>
-								<td>
-									 AUSTRALIAN AGRICULTURAL COMPANY LIMITED.
-								</td>
-								<td>
-									 AUSTRALIAN AGRICULTURAL COMPANY LIMITED.
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 AAD
-								</td>
-								<td>
-									 ARDENT LEISURE GROUP
-								</td>
-								<td>
-									 AUSTRALIAN AGRICULTURAL COMPANY LIMITED.
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 AAE
-								</td>
-								<td>
-									 ARDENT LEISURE GROUP2
-								</td>
-								<td>
-									 AUSTRALIAN AGRICULTURAL COMPANY LIMITED.
-								</td>
-							</tr>
+							<?php foreach ($prices as $price) : ?>
+                            	 <tr>
+                                	 <td><?php echo $this->escapeHtml($price->getPriceType()->getPriceTypeName()); ?></td>
+                                	 <td><?php echo $this->escapeHtml($price->getPriceAmount()); ?></td>
+                                	 <td><?php echo $this->escapeHtml($price->getCurrency->getCurrencyName()); ?></td>
+                            	 </tr>
+                            <?php endforeach; ?>
 							</tbody>
 							</table>
 						</div>
