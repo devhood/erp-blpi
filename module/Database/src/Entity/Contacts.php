@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Contacts
  *
- * @ORM\Table(name="Contacts")
+ * @ORM\Table(name="Contacts", indexes={@ORM\Index(name="fk_Contacts_Customers1_idx", columns={"customer_id"})})
  * @ORM\Entity
  */
 class Contacts
@@ -62,6 +62,16 @@ class Contacts
      * @ORM\Column(name="record_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $recordStatus;
+
+    /**
+     * @var \Database\Entity\Customers
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Customers")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="customer_id", referencedColumnName="customer_id", nullable=true)
+     * })
+     */
+    private $customer;
 
 
     /**
@@ -210,5 +220,28 @@ class Contacts
     public function getRecordStatus()
     {
         return $this->recordStatus;
+    }
+
+    /**
+     * Set customer
+     *
+     * @param \Database\Entity\Customers $customer
+     * @return Contacts
+     */
+    public function setCustomer(\Database\Entity\Customers $customer = null)
+    {
+        $this->customer = $customer;
+
+        return $this;
+    }
+
+    /**
+     * Get customer
+     *
+     * @return \Database\Entity\Customers 
+     */
+    public function getCustomer()
+    {
+        return $this->customer;
     }
 }
