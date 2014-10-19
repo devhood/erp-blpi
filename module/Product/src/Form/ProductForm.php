@@ -210,7 +210,7 @@ class ProductForm extends Form
 				'attributes' => array(
 						'class' => 'form-control',
 						'placeholder' => 'Enter Unit',
-						'id' => 'priceQuantity',
+						'id' => 'unitMeasurement',
 				)
 		));
 
