@@ -22,7 +22,7 @@ class IndexController extends BaseController
         $form->get("paymentTerms[paymenttermId]")->setOptions(array('value_options' => $payment));
 
     	$brand = $this->_getOptions("Brands","brandId","brandName");
-    	$form->get("brand[brandId]")->setOptions(array('value_options' => $brand));
+    	$form->get("brands[brandId]")->setOptions(array('value_options' => $brand));
 
         $classification = $this->_getOptions("Classifications","classificationId","classificationName");
         $form->get("classifications[classificationId]")->setOptions(array('value_options' => $classification));
@@ -35,6 +35,19 @@ class IndexController extends BaseController
             '1'=>'Inactive',
             '2'=>'Discontinued',
             '3'=>'Cancelled',)));
+
+        // Price Modal
+
+        $pricemodal = $this->_getOptions("priceTypes","priceTypeId","priceTypeName");
+        $form->get("priceTypes[priceTypeId]")->setOptions(array('value_options' => $pricemodal));
+
+        $currencies = $this->_getOptions("currencies","currencyId","currencyName");
+        $form->get("currencies[currencyId]")->setOptions(array('value_options' => $currencies));
+
+        // Bundle Modal
+
+        $productmodal = $this->_getOptions("products","productId","productName");
+        $form->get("products[productId]")->setOptions(array('value_options' => $productmodal));
     	
     	return new ViewModel(array('form' => $form));
     }

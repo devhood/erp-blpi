@@ -46,7 +46,7 @@ class ProductForm extends Form
 		));
 
 		$this->add(array(
-				'name' => 'brand[brandId]',
+				'name' => 'brands[brandId]',
 				'type' => 'Select',
 				'attributes' => array(
 						'class' => 'select2me form-control',
@@ -158,5 +158,99 @@ class ProductForm extends Form
 						'id' => 'printedCode',
 				)
 		));
+
+		// Price Modal
+		$this->add(array(
+				'name' => 'priceTypes[priceTypeId]',
+				'type' => 'Select',
+				'attributes' => array(
+						'class' => 'select2me form-control',
+						'data-placeholder' => 'Choose Price Type',
+						'tabindex' => '1',
+						'id' => 'priceTypeId',
+				),
+				'options' => array(
+// 						'value_options' => array(
+// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
+// 						),
+				)
+		));
+
+		$this->add( array(
+				'name' => 'priceAmount',
+				'type' => 'Text',
+				'attributes' => array(
+						'class' => 'form-control',
+						'placeholder' => 'Enter Amount',
+						'id' => 'priceQuantity',
+				)
+		));
+
+		$this->add(array(
+				'name' => 'currencies[currencyId]',
+				'type' => 'Select',
+				'attributes' => array(
+						'class' => 'select2me form-control',
+						'data-placeholder' => 'Choose Currency',
+						'tabindex' => '1',
+						'id' => 'currencyId',
+				),
+				'options' => array(
+// 						'value_options' => array(
+// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
+// 						),
+				)
+		));
+
+		// Unit Modal
+
+		$this->add( array(
+				'name' => 'unitMeasurement',
+				'type' => 'Text',
+				'attributes' => array(
+						'class' => 'form-control',
+						'placeholder' => 'Enter Unit',
+						'id' => 'priceQuantity',
+				)
+		));
+
+		$this->add( array(
+				'name' => 'unitQuantity',
+				'type' => 'Text',
+				'attributes' => array(
+						'class' => 'form-control',
+						'placeholder' => 'Enter Quantity',
+						'id' => 'unitQuantity',
+				)
+		));
+
+		// Bundle Modal
+
+		$this->add(array(
+				'name' => 'products[productId]',
+				'type' => 'Select',
+				'attributes' => array(
+						'class' => 'select2me form-control',
+						'data-placeholder' => 'Choose Product',
+						'tabindex' => '1',
+						'id' => 'productId',
+				),
+				'options' => array(
+// 						'value_options' => array(
+// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
+// 						),
+				)
+		));
+
+		$this->add( array(
+				'name' => 'bundleQuantity',
+				'type' => 'Text',
+				'attributes' => array(
+						'class' => 'form-control',
+						'placeholder' => 'Enter Quantity',
+						'id' => 'bundleQuantity',
+				)
+		));		
+
 	}
 }
