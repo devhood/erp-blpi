@@ -136,52 +136,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	<div class="page-sidebar-wrapper">
 		<div class="page-sidebar navbar-collapse collapse">
 			<!-- BEGIN SIDEBAR MENU -->
-			<ul class="page-sidebar-menu" data-auto-scroll="true" data-slide-speed="200">
-				<li class="sidebar-toggler-wrapper">
-					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-					<div class="sidebar-toggler hidden-phone">
-					</div>
-					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-				</li>
-				<li class="sidebar-search-wrapper">
-					<!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
-					<form class="sidebar-search" action="extra_search.html" method="POST">
-						<div class="form-container">
-							<div class="input-box">
-								<a href="javascript:;" class="remove">
-								</a>
-								<input type="text" placeholder="Search..."/>
-								<input type="button" class="submit" value=" "/>
-							</div>
-						</div>
-					</form>
-					<!-- END RESPONSIVE QUICK SEARCH FORM -->
-				</li>
-				<li class="start ">
-					<a href="javascript:;">
-						<i class="fa fa-gears"></i>
-						<span class="title">
-							Admin
-						</span>
-						<span class="arrow ">
-						</span>
-					</a>
-					<ul class="sub-menu">
-						<li><a href="<?php echo $this->basePath('/account/user')?>">User</a></li>
-						<li><a href="<?php echo $this->basePath('/customer/customer')?>">Customer</a></li>
-						<li><a href="<?php echo $this->basePath('/product/product')?>">Product</a>
-						</li>
-					</ul>
-				</li>
-				<li class="last ">
-					<a href="charts.html">
-						<i class="fa fa-bar-chart-o"></i>
-						<span class="title">
-							Visual Charts
-						</span>
-					</a>
-				</li>
-			</ul>
+			<?php echo $this->render('layout/menu') ?>	
 			<!-- END SIDEBAR MENU -->
 		</div>
 	</div>
