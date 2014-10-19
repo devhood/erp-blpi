@@ -7,6 +7,7 @@ use Zend\Mvc\Controller\AbstractActionController;
 
 class BaseController extends AbstractActionController
 {
+	const DBNS = "Database\\Entity\\";
 	protected $em = null;
 	
 	protected function _setEntityManager(\Doctrine\ORM\EntityManager $em)
@@ -20,5 +21,19 @@ class BaseController extends AbstractActionController
 			$this->em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
 		}
 		return $this->em;
+	}
+	
+	protected function _getOptions($table,$key,$value){
+
+		$queryBuilder = $this->_getEntityManager()->createQueryBuilder();
+		$queryBuilder->select('t')
+			->from(self::DBNS.$table, 't');
+		$results = $queryBuilder->getQuery()
+			->getResult(\Doctrine\ORM\AbstractQuery::HYDRATE_ARRAY);
+		$content = array();
+		for($i=0;$i<count($results);$i++){
+			$content[$results[$i][$key]] = $results[$i][$value];
+		}
+		return $content;
 	}
 }
