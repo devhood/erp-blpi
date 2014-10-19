@@ -114,7 +114,7 @@ class ProductForm extends Form
 		));
 
 		$this->add(array(
-				'name' => 'paymentTerms[paymenttermId]',
+				'name' => 'paymentTerms[paymentTermId]',
 				'type' => 'Select',
 				'attributes' => array(
 						'class' => 'select2me form-control',

@@ -18,8 +18,8 @@ class IndexController extends BaseController
     {
     	$form = new \Product\Form\ProductForm();
 
-        $payment = $this->_getOptions("Paymentterms","paymenttermId","paymentTermName");
-        $form->get("paymentTerms[paymenttermId]")->setOptions(array('value_options' => $payment));
+        $payment = $this->_getOptions("PaymentTerms","paymentTermId","paymentTermName");
+        $form->get("paymentTerms[paymentTermId]")->setOptions(array('value_options' => $payment));
 
     	$brand = $this->_getOptions("Brands","brandId","brandName");
     	$form->get("brands[brandId]")->setOptions(array('value_options' => $brand));
@@ -68,7 +68,7 @@ class IndexController extends BaseController
     	$form = new \Product\Form\ProductForm();
         $form->get("productCode")->setAttribute("readonly", true);
         $form->get("productName")->setAttribute("readonly", true);
-        $form->get("paymentTerms[paymenttermId]")->setAttribute("disabled", true);
+        $form->get("paymentTerms[paymentTermId]")->setAttribute("disabled", true);
         $form->get("partNumber")->setAttribute("readonly", true);
         $form->get("blCode")->setAttribute("readonly", true);
         $form->get("printedCode")->setAttribute("readonly", true);
