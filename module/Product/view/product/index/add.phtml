@@ -41,7 +41,7 @@ $this->headLink()
 						<div class="col-md-6">
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-									<input type="text" class="form-control" placeholder="Name" id="productName" name="productName">
+									<?php  echo $this->formRow($form->get('productName')); ?>
 									<span class="help-block">
 										 Name
 									</span>
@@ -55,12 +55,7 @@ $this->headLink()
 						<div class="col-md-6">
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-									<select id="classificationId" name="classifications[classificationId]" class="select2me form-control">
-										<option value="1">Abc</option>
-										<option value="1">Abc</option>
-										<option value="1">This is a really long value that breaks the fluid design for a select2</option>
-									</select>
-									
+									<?php  echo $this->formRow($form->get('classifications[classificationId]')); ?>
 									<span class="help-block">
 										 Classification
 									</span>
@@ -85,11 +80,7 @@ $this->headLink()
 						<div class="col-md-6">
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-									<select name="supplier_is" class="select2me form-control">
-										<option value="1">Abc</option>
-										<option value="1">Abc</option>
-										<option value="1">This is a really long value that breaks the fluid design for a select2</option>
-									</select>
+									<?php  echo $this->formRow($form->get('supplier[supplierId]')); ?>
 									<span class="help-block">
 										 Supplier
 									</span>
@@ -100,7 +91,7 @@ $this->headLink()
 						<div class="col-md-6">
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-									<input type="text" name="size" class="form-control" placeholder="Size">
+									<?php  echo $this->formRow($form->get('size')); ?>
 									<span class="help-block">
 										 Size
 									</span>
@@ -114,7 +105,7 @@ $this->headLink()
 						<div class="col-md-6">
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-									<input type="text" name="weight" class="form-control" placeholder="Weight">
+									<?php  echo $this->formRow($form->get('weight')); ?>
 									<span class="help-block">
 										 Weight
 									</span>
@@ -125,11 +116,7 @@ $this->headLink()
 						<div class="col-md-6">
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left select">
-									<select name="product_status" class="select2me form-control">
-										<option value="1">Abc</option>
-										<option value="1">Abc</option>
-										<option value="1">This is a really long value that breaks the fluid design for a select2</option>
-									</select>
+									<?php  echo $this->formRow($form->get('product_status')); ?>
 									<span class="help-block">
 										 Product Status
 									</span>
