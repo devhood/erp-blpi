@@ -1,92 +1,92 @@
-	<div id="bundleModal" class="modal fade" tabindex="-1" aria-hidden="true">
+	<div id="addressModal" class="modal fade" tabindex="-1" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-					<h4 class="modal-title">Bundle</h4>
+					<h4 class="modal-title">Address</h4>
 				</div>
 				<div class="modal-body">
-					<div class="scroller" style="height:150px" data-always-visible="1" data-rail-visible1="1">
+					<div class="scroller" style="height:250px" data-always-visible="1" data-rail-visible1="1">
 						<div class="row">
-						<div class="col-md-6">
-							<div class="form-group">
-								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-									<?php  echo $this->formRow($form->get('addressType[addressTypeId]')); ?>
-									<span class="help-block">
-										 Address Type
-									</span>
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
+										<?php  echo $this->formRow($form->get('addressType[addressTypeId]')); ?>
+										<span class="help-block">
+											Address Type
+										</span>
+									</div>
 								</div>
 							</div>
-						</div>
 							<!--/span-->
-						<div class="col-md-6">
-							<div class="form-group">
-								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
-									<?php  echo $this->formRow($form->get('streetLandmark')); ?>
-									<span class="help-block">
-										 Street/Landmark
-									</span>
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
+										<?php  echo $this->formRow($form->get('streetLandmark')); ?>
+										<span class="help-block">
+											Street/Landmark
+										</span>
+									</div>
 								</div>
 							</div>
-						</div>
-					</div><!--end of row  -->
+						</div><!--end of row  -->
 
-					<div class="row">
-					<div class="col-md-6">
-						<div class="form-group">
-							<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-								<?php  echo $this->formRow($form->get('city[cityI]')); ?>
-								<span class="help-block">
-									City
-								</span>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
+										<?php  echo $this->formRow($form->get('city[cityId]')); ?>
+										<span class="help-block">
+											City
+										</span>
+									</div>
+								</div>
 							</div>
-						</div>
-					</div>
-						<!--/span-->
-					<div class="col-md-6">
-						<div class="form-group">
-							<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
-								<?php  echo $this->formRow($form->get('province[provinceId]')); ?>
-								<span class="help-block">
-								Province
-								</span>
+							<!--/span-->
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
+										<?php  echo $this->formRow($form->get('province[provinceId]')); ?>
+										<span class="help-block">
+											Province
+										</span>
+									</div>
+								</div>
 							</div>
-						</div>
-					</div>
-				</div><!--end of row  -->
+						</div><!--end of row  -->
 
-				<div class="row">
-				<div class="col-md-6">
-					<div class="form-group">
-						<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-							<?php  echo $this->formRow($form->get('country[countryId]')); ?>
-							<span class="help-block">
-								Country
-							</span>
-						</div>
-					</div>
-				</div>
-					<!--/span-->
-				<div class="col-md-6">
-					<div class="form-group">
-						<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
-							<?php  echo $this->formRow($form->get('zipcode')); ?>
-							<span class="help-block">
-								Zipcode
-							</span>
-						</div>
-					</div>
-				</div>
-			</div><!--end of row  -->
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
+										<?php  echo $this->formRow($form->get('country[countryId]')); ?>
+										<span class="help-block">
+											Country
+										</span>
+									</div>
+								</div>
+							</div>
+							<!--/span-->
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
+										<?php  echo $this->formRow($form->get('zipcode')); ?>
+										<span class="help-block">
+											Zipcode
+										</span>
+									</div>
+								</div>
+							</div>
+						</div><!--end of row  -->
 
-				</div>
-				<div class="modal-footer">
-					<button type="button" data-dismiss="modal" class="btn default">Close</button>
+					</div>
+					<div class="modal-footer">
+						<button type="button" data-dismiss="modal" class="btn default">Close</button>
 						<button type="button" class="btn green">Save changes</button>
 					</div>
 				</div>
-								</div>
-							</div>
+			</div>
+		</div>
 
 
-							<!-- addressType	Street/Landmark	City	Province	Country	Zipcode -->
+		<!-- addressType	Street/Landmark	City	Province	Country	Zipcode -->
