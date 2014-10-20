@@ -9,11 +9,13 @@ class IndexController extends AbstractActionController
 {
 	protected $em = null;
 
+
+	//ORM Entity
 	public function setEntityManager(\Doctrine\ORM\EntityManager $em)
 	{
 		$this->em = $em;
 	}
-
+	//ORM Entity
 	public function getEntityManager()
 	{
 		if (null === $this->em) {
@@ -22,13 +24,20 @@ class IndexController extends AbstractActionController
 		return $this->em;
 	}
 
+
+
+
+
+		//calling customer/ page
     public function indexAction()
     {
     	return new ViewModel();
     }
+
+		//calling customer/add page
     public function addAction()
     {
-    	$form = new \Customer\Form\AddCustomer();
+    	$form = new \Customer\Form\AddCustomerForm();
     	return new ViewModel(array('form' => $form));
     }
 }

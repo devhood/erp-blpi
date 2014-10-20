@@ -6,7 +6,8 @@ return array(
         'DoctrineORMModule',
         'Main',
         'Product',
-        'Database'
+        'Database',
+        'Customer'
     ),
     'module_listener_options' => array(
         'module_paths' => array(
