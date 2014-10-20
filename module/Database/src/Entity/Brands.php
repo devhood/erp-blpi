@@ -31,9 +31,9 @@ class Brands
     /**
      * @var string
      *
-     * @ORM\Column(name="brand_status", type="string", length=45, precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="record_status", type="string", length=45, precision=0, scale=0, nullable=false, unique=false)
      */
-    private $brandStatus;
+    private $recordStatus;
 
 
     /**
@@ -70,25 +70,25 @@ class Brands
     }
 
     /**
-     * Set brandStatus
+     * Set recordStatus
      *
-     * @param string $brandStatus
+     * @param string $recordStatus
      * @return Brands
      */
-    public function setBrandStatus($brandStatus)
+    public function setRecordStatus($recordStatus)
     {
-        $this->brandStatus = $brandStatus;
+        $this->recordStatus = $recordStatus;
 
         return $this;
     }
 
     /**
-     * Get brandStatus
+     * Get recordStatus
      *
      * @return string 
      */
-    public function getBrandStatus()
+    public function getRecordStatus()
     {
-        return $this->brandStatus;
+        return $this->recordStatus;
     }
 }

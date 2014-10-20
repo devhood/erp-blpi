@@ -5,28 +5,28 @@ namespace Database\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * PaymentTerms
+ * ShippingModes
  *
- * @ORM\Table(name="Payment_Terms")
+ * @ORM\Table(name="shipping_modes")
  * @ORM\Entity
  */
-class PaymentTerms
+class ShippingModes
 {
     /**
      * @var integer
      *
-     * @ORM\Column(name="payment_term_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="shipping_mode_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $paymentTermId;
+    private $shippingModeId;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="payment_term_name", type="string", length=45, precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="shipping_mode_name", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
-    private $paymentTermName;
+    private $shippingModeName;
 
     /**
      * @var string
@@ -37,43 +37,43 @@ class PaymentTerms
 
 
     /**
-     * Get paymentTermId
+     * Get shippingModeId
      *
      * @return integer 
      */
-    public function getPaymentTermId()
+    public function getShippingModeId()
     {
-        return $this->paymentTermId;
+        return $this->shippingModeId;
     }
 
     /**
-     * Set paymentTermName
+     * Set shippingModeName
      *
-     * @param string $paymentTermName
-     * @return PaymentTerms
+     * @param string $shippingModeName
+     * @return ShippingModes
      */
-    public function setPaymentTermName($paymentTermName)
+    public function setShippingModeName($shippingModeName)
     {
-        $this->paymentTermName = $paymentTermName;
+        $this->shippingModeName = $shippingModeName;
 
         return $this;
     }
 
     /**
-     * Get paymentTermName
+     * Get shippingModeName
      *
      * @return string 
      */
-    public function getPaymentTermName()
+    public function getShippingModeName()
     {
-        return $this->paymentTermName;
+        return $this->shippingModeName;
     }
 
     /**
      * Set recordStatus
      *
      * @param string $recordStatus
-     * @return PaymentTerms
+     * @return ShippingModes
      */
     public function setRecordStatus($recordStatus)
     {

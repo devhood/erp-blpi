@@ -5,28 +5,28 @@ namespace Database\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * PaymentTerms
+ * Designations
  *
- * @ORM\Table(name="Payment_Terms")
+ * @ORM\Table(name="Designations")
  * @ORM\Entity
  */
-class PaymentTerms
+class Designations
 {
     /**
      * @var integer
      *
-     * @ORM\Column(name="payment_term_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="designation_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $paymentTermId;
+    private $designationId;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="payment_term_name", type="string", length=45, precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="designation_name", type="string", length=250, precision=0, scale=0, nullable=true, unique=false)
      */
-    private $paymentTermName;
+    private $designationName;
 
     /**
      * @var string
@@ -37,43 +37,43 @@ class PaymentTerms
 
 
     /**
-     * Get paymentTermId
+     * Get designationId
      *
      * @return integer 
      */
-    public function getPaymentTermId()
+    public function getDesignationId()
     {
-        return $this->paymentTermId;
+        return $this->designationId;
     }
 
     /**
-     * Set paymentTermName
+     * Set designationName
      *
-     * @param string $paymentTermName
-     * @return PaymentTerms
+     * @param string $designationName
+     * @return Designations
      */
-    public function setPaymentTermName($paymentTermName)
+    public function setDesignationName($designationName)
     {
-        $this->paymentTermName = $paymentTermName;
+        $this->designationName = $designationName;
 
         return $this;
     }
 
     /**
-     * Get paymentTermName
+     * Get designationName
      *
      * @return string 
      */
-    public function getPaymentTermName()
+    public function getDesignationName()
     {
-        return $this->paymentTermName;
+        return $this->designationName;
     }
 
     /**
      * Set recordStatus
      *
      * @param string $recordStatus
-     * @return PaymentTerms
+     * @return Designations
      */
     public function setRecordStatus($recordStatus)
     {

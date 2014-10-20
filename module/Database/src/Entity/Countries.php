@@ -5,75 +5,75 @@ namespace Database\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Suppliers
+ * Countries
  *
- * @ORM\Table(name="Suppliers")
+ * @ORM\Table(name="Countries")
  * @ORM\Entity
  */
-class Suppliers
+class Countries
 {
     /**
      * @var integer
      *
-     * @ORM\Column(name="supplier_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="country_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $supplierId;
+    private $countryId;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="supplier_name", type="string", length=100, precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="country_name", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
-    private $supplierName;
+    private $countryName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="record_status", type="string", length=45, precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="record_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $recordStatus;
 
 
     /**
-     * Get supplierId
+     * Get countryId
      *
      * @return integer 
      */
-    public function getSupplierId()
+    public function getCountryId()
     {
-        return $this->supplierId;
+        return $this->countryId;
     }
 
     /**
-     * Set supplierName
+     * Set countryName
      *
-     * @param string $supplierName
-     * @return Suppliers
+     * @param string $countryName
+     * @return Countries
      */
-    public function setSupplierName($supplierName)
+    public function setCountryName($countryName)
     {
-        $this->supplierName = $supplierName;
+        $this->countryName = $countryName;
 
         return $this;
     }
 
     /**
-     * Get supplierName
+     * Get countryName
      *
      * @return string 
      */
-    public function getSupplierName()
+    public function getCountryName()
     {
-        return $this->supplierName;
+        return $this->countryName;
     }
 
     /**
      * Set recordStatus
      *
      * @param string $recordStatus
-     * @return Suppliers
+     * @return Countries
      */
     public function setRecordStatus($recordStatus)
     {
