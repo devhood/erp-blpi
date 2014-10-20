@@ -6,12 +6,10 @@ return array(
 		'template_path_stack' => array(
 			__DIR__ . '/../view',
 		),
-		// 'template_map' => array(
-		// 	'product/price'           =>   __DIR__ . '/../view/product/partial/price.phtml',
-		// 	'product/bundle'           =>   __DIR__ . '/../view/product/partial/bundle.phtml',
-		// 	'product/units'           =>   __DIR__ . '/../view/product/partial/units.phtml',
-		// 	
-		// ),
+		'template_map' => array(
+			'customer/address'           =>   __DIR__ . '/../view/customer/partial/address.phtml',
+			'customer/contact'           =>   __DIR__ . '/../view/customer/partial/contact.phtml',
+			),
 
 	),
 	'router' => array(
