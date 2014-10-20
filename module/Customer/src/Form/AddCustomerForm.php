@@ -124,25 +124,26 @@ class AddCustomerForm extends Form
 			)
 		));
 
-		$this->add(array(
-			'type' => 'Zend\Form\Element\Checkbox',
-			'name' => 'consignee',
-			'options' => array(
-				'label' => 'Consignee',
-				'use_hidden_element' => true,
-				'checked_value' => '1',
-				'unchecked_value' => '0'
-			)
-		));
+		//
+		// $this->add(array(
+		// 	'type' => 'Zend\Form\Element\Checkbox',
+		// 	'name' => 'consignee',
+		// 	'options' => array(
+		// 		'label' => 'Consignee',
+		// 		'use_hidden_element' => true,
+		// 		'checked_value' => '1',
+		// 		'unchecked_value' => '0'
+		// 	)
+		// ));
 
 
 		$this->add( array(
-			'name' => 'consigneee',
+			'name' => 'consignee',
 			'type' => 'checkbox',
 			'attributes' => array(
 				'class' => 'form-control',
 				'label' => 'Consignee',
-				'id' => 'companyName',
+				'id' => 'consignee',
 				'checked_value' => '1',
 				'unchecked_value' => '0'
 			)
@@ -184,93 +185,111 @@ $this->add( array(
 		));
 
 
-		$this->add( array(
-			'name' => 'paymentTerms',
-			'type' => 'Text',
-			'attributes' => array(
-				'class' => 'form-control',
-				'placeholder' => 'Enter Payment Terms',
-				'id' => 'paymentTerms',
-			)
-		));
-
+$this->add(array(
+	'name' => 'paymentTerms[paymentTermsId]',
+	'type' => 'Select',
+	'attributes' => array(
+		'class' => 'select2me form-control',
+		'data-placeholder' => 'Choose Payment Terms',
+		'tabindex' => '1',
+		'id' => 'paymentTermsId',
+	),
+	'options' => array(
+		// 						'value_options' => array(
+		// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
+		// 						),
+	)
+));
 
 		$this->add( array(
 			'name' => 'percentCommission',
 			'type' => 'Text',
 			'attributes' => array(
 				'class' => 'form-control',
-				'placeholder' => 'Enter Percent Commission',
+				'placeholder' => 'Enter % Commission',
 				'id' => 'percentCommission',
 			)
 		));
 
-		$this->add( array(
-			'name' => 'shippingMode',
-			'type' => 'Text',
+		$this->add(array(
+			'name' => 'shippingMode[shippingModeId]',
+			'type' => 'Select',
 			'attributes' => array(
-				'class' => 'form-control',
-				'placeholder' => 'Enter Shipping Mode',
-				'id' => 'shippingMode',
+				'class' => 'select2me form-control',
+				'data-placeholder' => 'Choose Shipping Mode',
+				'tabindex' => '1',
+				'id' => 'shippingModeId',
+			),
+			'options' => array(
+				// 						'value_options' => array(
+				// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
+				// 						),
+			)
+		));
+		$this->add(array(
+			'name' => 'salesExecutive[salesExecutiveId]',
+			'type' => 'Select',
+			'attributes' => array(
+				'class' => 'select2me form-control',
+				'data-placeholder' => 'Choose Sales Executive',
+				'tabindex' => '1',
+				'id' => 'salesExecutiveId',
+			),
+			'options' => array(
+				// 						'value_options' => array(
+				// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
+				// 						),
 			)
 		));
 
-		$this->add( array(
-			'name' => 'paymentTerms',
-			'type' => 'Text',
+$this->add(array(
+	'name' => 'priceType[priceTypeId]',
+	'type' => 'Select',
+	'attributes' => array(
+		'class' => 'select2me form-control',
+		'data-placeholder' => 'Choose Price Type',
+		'tabindex' => '1',
+		'id' => 'priceTypeId',
+	),
+	'options' => array(
+		// 						'value_options' => array(
+		// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
+		// 						),
+	)
+));
+
+
+		$this->add(array(
+			'name' => 'customerStatus[customerStatusId]',
+			'type' => 'Select',
 			'attributes' => array(
-				'class' => 'form-control',
-				'placeholder' => 'Enter Sales Executive',
-				'id' => 'paymentTerms',
+				'class' => 'select2me form-control',
+				'data-placeholder' => 'Choose Customer Status',
+				'tabindex' => '1',
+				'id' => 'customerStatusId',
+			),
+			'options' => array(
+				// 						'value_options' => array(
+				// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
+				// 						),
 			)
 		));
 
-		$this->add( array(
-			'name' => 'salesExecutive',
-			'type' => 'Text',
+		$this->add(array(
+			'name' => 'salesExecutive[salesExecutiveId]',
+			'type' => 'Select',
 			'attributes' => array(
-				'class' => 'form-control',
-				'placeholder' => 'Enter Sales Executive',
-				'id' => 'salesExecutive',
+				'class' => 'select2me form-control',
+				'data-placeholder' => 'Choose Sales Executive',
+				'tabindex' => '1',
+				'id' => 'salesExecutiveId',
+			),
+			'options' => array(
+				// 						'value_options' => array(
+				// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
+				// 						),
 			)
 		));
-
-		$this->add( array(
-			'name' => 'priceType',
-			'type' => 'Text',
-			'attributes' => array(
-				'class' => 'form-control',
-				'placeholder' => 'Enter Price Type',
-				'id' => 'priceType',
-			)
-		));
-		$this->add( array(
-			'name' => 'customerStatus',
-			'type' => 'Text',
-			'attributes' => array(
-				'class' => 'form-control',
-				'placeholder' => 'Enter Customer Status',
-				'id' => 'customerStatus',
-			)
-		));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	}
 }

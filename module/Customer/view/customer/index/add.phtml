@@ -156,21 +156,27 @@ $this->headLink()
 
 <div class="row">
 	<div class="col-md-6">
+		<div class="form-group">
 			<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-				<!-- <label class="checkbox"><input type="checkbox" name="consignee" value="">Consignee</label> -->
+				<label class="checkbox">
+				<!-- <input type="checkbox" name="consignee" value=""> -->
 				<?php  echo $this->formRow($form->get('consignee')); ?>
+				Consignee</label>
 			</div>
-
+</div>
 	</div>
 
 
 	<div class="col-md-6">
+		<div class="form-group">
 			<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-				<!-- <label class="checkbox"><input type="checkbox" name="consignee" value="">Consignee</label> -->
+				<label class="checkbox">
+				<!-- <input type="checkbox" name="consignee" value=""> -->
 				<?php  echo $this->formRow($form->get('franchise')); ?>
+				Franchise</label>
 			</div>
 		</div>
-
+		</div>
 </div><!--/row  -->
 
 
@@ -206,7 +212,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-								<?php  echo $this->formRow($form->get('paymentTerms')); ?>
+								<?php  echo $this->formRow($form->get('paymentTerms[paymentTermsId]')); ?>
 								<span class="help-block">
 									Payment Terms
 								</span>
@@ -232,7 +238,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-								<?php  echo $this->formRow($form->get('shippingMode')); ?>
+								<?php  echo $this->formRow($form->get('shippingMode[shippingModeId]')); ?>
 								<span class="help-block">
 									Shipping Mode
 								</span>
@@ -243,7 +249,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left select">
-								<?php  echo $this->formRow($form->get('salesExecutive')); ?>
+								<?php  echo $this->formRow($form->get('salesExecutive[salesExecutiveId]')); ?>
 								<span class="help-block">
 									Sales Executive
 								</span>
@@ -257,7 +263,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-								<?php  echo $this->formRow($form->get('priceType')); ?>
+								<?php  echo $this->formRow($form->get('priceType[priceTypeId]')); ?>
 								<span class="help-block">
 									Price Type
 								</span>
@@ -268,7 +274,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left select">
-								<?php  echo $this->formRow($form->get('customerStatus')); ?>
+								<?php  echo $this->formRow($form->get('customerStatus[customerStatusId]')); ?>
 								<span class="help-block">
 									Customer Status
 								</span>
