@@ -434,6 +434,10 @@ $this->headLink()
 		$('.tags').tagsInput({
             width: '100%',
         });
+        $('.date-picker').datepicker({
+                rtl: App.isRTL(),
+                autoclose: true
+        });
 	});
 <?php $this->inlineScript()->captureEnd() ?>
 							
