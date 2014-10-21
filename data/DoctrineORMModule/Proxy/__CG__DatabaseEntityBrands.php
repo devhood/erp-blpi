@@ -64,10 +64,10 @@ class Brands extends \Database\Entity\Brands implements \Doctrine\ORM\Proxy\Prox
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'Database\\Entity\\Brands' . "\0" . 'brandId', '' . "\0" . 'Database\\Entity\\Brands' . "\0" . 'brandName', '' . "\0" . 'Database\\Entity\\Brands' . "\0" . 'brandStatus');
+            return array('__isInitialized__', '' . "\0" . 'Database\\Entity\\Brands' . "\0" . 'brandId', '' . "\0" . 'Database\\Entity\\Brands' . "\0" . 'brandName', '' . "\0" . 'Database\\Entity\\Brands' . "\0" . 'recordStatus');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'Database\\Entity\\Brands' . "\0" . 'brandId', '' . "\0" . 'Database\\Entity\\Brands' . "\0" . 'brandName', '' . "\0" . 'Database\\Entity\\Brands' . "\0" . 'brandStatus');
+        return array('__isInitialized__', '' . "\0" . 'Database\\Entity\\Brands' . "\0" . 'brandId', '' . "\0" . 'Database\\Entity\\Brands' . "\0" . 'brandName', '' . "\0" . 'Database\\Entity\\Brands' . "\0" . 'recordStatus');
     }
 
     /**
@@ -213,23 +213,23 @@ class Brands extends \Database\Entity\Brands implements \Doctrine\ORM\Proxy\Prox
     /**
      * {@inheritDoc}
      */
-    public function setBrandStatus($brandStatus)
+    public function setRecordStatus($recordStatus)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBrandStatus', array($brandStatus));
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setRecordStatus', array($recordStatus));
 
-        return parent::setBrandStatus($brandStatus);
+        return parent::setRecordStatus($recordStatus);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getBrandStatus()
+    public function getRecordStatus()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBrandStatus', array());
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getRecordStatus', array());
 
-        return parent::getBrandStatus();
+        return parent::getRecordStatus();
     }
 
 }

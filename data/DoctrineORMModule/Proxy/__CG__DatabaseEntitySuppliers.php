@@ -64,10 +64,10 @@ class Suppliers extends \Database\Entity\Suppliers implements \Doctrine\ORM\Prox
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'Database\\Entity\\Suppliers' . "\0" . 'supplierId', '' . "\0" . 'Database\\Entity\\Suppliers' . "\0" . 'supplierName', '' . "\0" . 'Database\\Entity\\Suppliers' . "\0" . 'supplierStatus');
+            return array('__isInitialized__', '' . "\0" . 'Database\\Entity\\Suppliers' . "\0" . 'supplierId', '' . "\0" . 'Database\\Entity\\Suppliers' . "\0" . 'supplierName', '' . "\0" . 'Database\\Entity\\Suppliers' . "\0" . 'recordStatus');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'Database\\Entity\\Suppliers' . "\0" . 'supplierId', '' . "\0" . 'Database\\Entity\\Suppliers' . "\0" . 'supplierName', '' . "\0" . 'Database\\Entity\\Suppliers' . "\0" . 'supplierStatus');
+        return array('__isInitialized__', '' . "\0" . 'Database\\Entity\\Suppliers' . "\0" . 'supplierId', '' . "\0" . 'Database\\Entity\\Suppliers' . "\0" . 'supplierName', '' . "\0" . 'Database\\Entity\\Suppliers' . "\0" . 'recordStatus');
     }
 
     /**
@@ -213,23 +213,23 @@ class Suppliers extends \Database\Entity\Suppliers implements \Doctrine\ORM\Prox
     /**
      * {@inheritDoc}
      */
-    public function setSupplierStatus($supplierStatus)
+    public function setRecordStatus($recordStatus)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setSupplierStatus', array($supplierStatus));
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setRecordStatus', array($recordStatus));
 
-        return parent::setSupplierStatus($supplierStatus);
+        return parent::setRecordStatus($recordStatus);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getSupplierStatus()
+    public function getRecordStatus()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSupplierStatus', array());
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getRecordStatus', array());
 
-        return parent::getSupplierStatus();
+        return parent::getRecordStatus();
     }
 
 }
