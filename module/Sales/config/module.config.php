@@ -18,7 +18,7 @@ return array(
 				'options' => array(
 					'route'    => '/sales',
 					'defaults' => array(
-						'controller' => __NAMESPACE__ . '\Index',
+						'controller' => __NAMESPACE__ . '\Order',
 						'action'     => 'index',
 					),
 				),
@@ -28,7 +28,7 @@ return array(
 				'options' => array(
 					'route'    => '/sales/add',
 					'defaults' => array(
-						'controller' => __NAMESPACE__ . '\Index',
+						'controller' => __NAMESPACE__ . '\Order',
 						'action'     => 'add',
 					),
 				),
@@ -38,7 +38,7 @@ return array(
 				'options' => array(
 					'route'    => '/sales/edit',
 					'defaults' => array(
-						'controller' => __NAMESPACE__ . '\Index',
+						'controller' => __NAMESPACE__ . '\Order',
 						'action'     => 'edit',
 					),
 				),
@@ -48,7 +48,7 @@ return array(
 				'options' => array(
 					'route'    => '/sales/view',
 					'defaults' => array(
-						'controller' => __NAMESPACE__ . '\Index',
+						'controller' => __NAMESPACE__ . '\Order',
 						'action'     => 'view',
 					),
 				),
@@ -57,7 +57,7 @@ return array(
 	),
 	'controllers' => array(
 		'invokables' => array(
-			__NAMESPACE__ . '\Index' => __NAMESPACE__ . '\Controller\IndexController',
+			__NAMESPACE__ . '\Order' => __NAMESPACE__ . '\Controller\OrderController',
 		),
 	),
 );
