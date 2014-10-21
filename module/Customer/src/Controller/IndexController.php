@@ -55,6 +55,9 @@ class IndexController extends BaseController
         $shipping = $this->_getOptions("shippingModes","shippingModeId","shippingModeName");
         $form->get("shippingModes[shippingModeId]")->setOptions(array('value_options' => $shipping));
 
+        $users = $this->_getOptions("users","userId","fullName","designation","2");
+        $form->get("users")->setOptions(array('value_options' => $users));
+
         $form->get("customerStatus")->setOptions(array('value_options' => array(
             '0'=>'Active',
             '1'=>'Inactive',

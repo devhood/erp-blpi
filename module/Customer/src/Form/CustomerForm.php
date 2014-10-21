@@ -227,13 +227,13 @@ $this->add(array(
 			)
 		));
 		$this->add(array(
-			'name' => 'salesExecutive[salesExecutiveId]',
+			'name' => 'users',
 			'type' => 'Select',
 			'attributes' => array(
 				'class' => 'select2me form-control',
 				'data-placeholder' => 'Choose Sales Executive',
 				'tabindex' => '1',
-				'id' => 'salesExecutiveId',
+				'id' => 'users',
 			),
 			'options' => array(
 				// 						'value_options' => array(
