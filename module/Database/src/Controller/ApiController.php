@@ -68,16 +68,16 @@ class ApiController extends AbstractRestfulController
 	public function optionAction()
 	{
 		$table = ucwords($this->params()->fromRoute('table'));
-		$key = ucwords($this->params()->fromRoute('key'));
-		$value = ucwords($this->params()->fromRoute('value'));
-		$queryBuilder = $this->_getEntityManager()->createQueryBuilder();
+		$key = $this->params()->fromRoute('key');
+		$value = $this->params()->fromRoute('value');
+		$queryBuilder = $this->getEntityManager()->createQueryBuilder();
 		$queryBuilder->select('t')
 			->from(self::DBNS.$table, 't');
 		$results = $queryBuilder->getQuery()
 			->getResult(\Doctrine\ORM\AbstractQuery::HYDRATE_ARRAY);
 		$content = array();
 		for($i=0;$i<count($results);$i++){
-			$content[$results[$i][$key]] = $results[$i][$value];
+			$content[] = $results[$i][$value];
 		}
 		return new JsonModel($content);
 	}
