@@ -74,7 +74,7 @@ class IndexController extends BaseController
         $form->get("printedCode")->setAttribute("readonly", true);
         $form->get("size")->setAttribute("readonly", true);
         $form->get("weight")->setAttribute("readonly", true);
-    	$form->get("brand[brandId]")->setAttribute("disabled", true);
+    	$form->get("brands[brandId]")->setAttribute("disabled", true);
         $form->get("classifications[classificationId]")->setAttribute("disabled", true);
         $form->get("supplier[supplierId]")->setAttribute("disabled", true);
         $form->get("productStatus")->setAttribute("disabled", true);
