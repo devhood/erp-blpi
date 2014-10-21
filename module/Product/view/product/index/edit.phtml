@@ -294,7 +294,7 @@ $this->headLink()
                             	 <tr>
                                 	 <td><?php echo $this->escapeHtml($uom->getUom()->getUomName()); ?></td>
                                 	 <td><?php echo $this->escapeHtml($uom->getQuantity()); ?></td>
-                                	 <td><a id="" data-toggle="modal" href="#bundleModal" class="btn-sm green custom-right">
+                                	 <td><a id="" data-toggle="modal" href="#unitModal" class="btn-sm green custom-right">
 									Edit
 										<i class="fa fa-edit"></i>
 									</a></td>
@@ -361,7 +361,7 @@ $this->headLink()
                                 	 <td><?php echo $this->escapeHtml($price->getPriceType()->getPriceTypeName()); ?></td>
                                 	 <td><?php echo $this->escapeHtml($price->getPrice()); ?></td>
                                 	 <td><?php echo $this->escapeHtml($price->getCurrency()->getCurrencyName()); ?></td>
-                                	 <td><a id="" data-toggle="modal" href="#bundleModal" class="btn-sm green custom-right">
+                                	 <td><a id="" data-toggle="modal" href="#priceModal" class="btn-sm green custom-right">
 									Edit
 										<i class="fa fa-edit"></i>
 									</a></td>

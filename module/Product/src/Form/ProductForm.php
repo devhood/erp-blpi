@@ -263,5 +263,15 @@ class ProductForm extends Form
 				)
 		));
 
+		$this->add( array(
+				'name' => 'categories',
+				'type' => 'text',
+				'attributes' => array(
+						'class' => 'form-control tags medium',
+						'placeholder' => 'Add a Tag',
+						'id' => 'categories',
+				)
+		));
+
 	}
 }

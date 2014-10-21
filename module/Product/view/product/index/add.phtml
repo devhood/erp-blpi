@@ -50,20 +50,7 @@ $this->headLink()
 						</div>
 						<!--/span-->
 					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="form-group">
-								<div class="col-md-2 col-lg-2 "></div>
-									<div class="col-md-8 col-xs-12 col-sm-12 col-lg-8 ">
-										<input id="categories" type="text" class="form-control tags medium" value="tag1,tag2"/>
-										<span class="help-block">
-											Categories
-										</span>
-									</div>
-								<div class="col-md-2 col-lg-2 "></div>
-							</div>
-						</div>
-					</div>
+					
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-group">
@@ -232,6 +219,9 @@ $this->headLink()
 								<th>
 									 Quantity
 								</th>
+								<th width="12%">
+									 Delete
+								</th>
 							</tr>
 							</thead>
 							<tbody>
@@ -239,6 +229,10 @@ $this->headLink()
                             	 <tr>
                                 	 <td><?php echo $this->escapeHtml($bundle->getChildProduct()->getProductName()); ?></td>
                                 	 <td><?php echo $this->escapeHtml($bundle->getBundleQuantity()); ?></td>
+                                	 <td><a id="" data-toggle="modal" href="#" class="btn-sm green custom-right">
+									Delete
+										<i class="fa fa-times"></i>
+									</a></td>
 
                             	 </tr>
                             <?php endforeach; ?>
@@ -282,6 +276,9 @@ $this->headLink()
 								<th>
 									 Quantity
 								</th>
+								<th width="12%">
+									 Delete
+								</th>
 							</tr>
 							</thead>
 							<tbody>
@@ -289,6 +286,10 @@ $this->headLink()
                             	 <tr>
                                 	 <td><?php echo $this->escapeHtml($uom->getUom()->getUomName()); ?></td>
                                 	 <td><?php echo $this->escapeHtml($uom->getQuantity()); ?></td>
+                                	 <td><a id="" data-toggle="modal" href="#" class="btn-sm green custom-right">
+									Delete
+										<i class="fa fa-times"></i>
+									</a></td>
 
                             	 </tr>
                             <?php endforeach; ?>
@@ -299,6 +300,30 @@ $this->headLink()
 				</div>
 			</div>
 			</div>
+
+			
+			<div class="col-md-12">
+				<div class="row form-section">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
+						<h4 class="">Categories</h4>
+					</div>	
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<div class="col-md-2 col-lg-2 "></div>
+							<div class="col-md-8 col-xs-12 col-sm-12 col-lg-8 ">
+								<?php  echo $this->formRow($form->get('categories')); ?>
+								<span class="help-block">
+									Categories
+								</span>
+							</div>
+						<div class="col-md-2 col-lg-2 "></div>
+					</div>
+				</div>
+			</div>
+
 			<div class="col-md-2"></div>
 					</div>
 					<div class="row form-section">
@@ -335,6 +360,9 @@ $this->headLink()
 								<th>
 									 Currency
 								</th>
+								<th width="12%">
+									 Delete
+								</th>
 							</tr>
 							</thead>
 							<tbody>
@@ -343,6 +371,10 @@ $this->headLink()
                                 	 <td><?php echo $this->escapeHtml($price->getPriceType()->getPriceTypeName()); ?></td>
                                 	 <td><?php echo $this->escapeHtml($price->getPrice()); ?></td>
                                 	 <td><?php echo $this->escapeHtml($price->getCurrency()->getCurrencyName()); ?></td>
+                                	 <td><a id="" data-toggle="modal" href="#" class="btn-sm green custom-right">
+									Delete
+										<i class="fa fa-times"></i>
+									</a></td>
                             	 </tr>
                             <?php endforeach; ?>
 							</tbody>
