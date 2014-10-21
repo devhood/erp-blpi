@@ -30,7 +30,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-								<?php  echo $this->formRow($form->get('customerCategory[customerCategoryId]')); ?>
+								<?php  echo $this->formRow($form->get('categories[categoryId]')); ?>
 								<span class="help-block">
 									Category
 								</span>
@@ -41,7 +41,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-								<?php  echo $this->formRow($form->get('customerType[customerTypeId]')); ?>
+								<?php  echo $this->formRow($form->get('customerTypes[customerTypeId]')); ?>
 								<span class="help-block">
 									Type
 								</span>
@@ -212,7 +212,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-								<?php  echo $this->formRow($form->get('paymentTerms[paymentTermsId]')); ?>
+								<?php  echo $this->formRow($form->get('paymentTerms[paymentTermId]')); ?>
 								<span class="help-block">
 									Payment Terms
 								</span>
@@ -238,7 +238,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-								<?php  echo $this->formRow($form->get('shippingMode[shippingModeId]')); ?>
+								<?php  echo $this->formRow($form->get('shippingModes[shippingModeId]')); ?>
 								<span class="help-block">
 									Shipping Mode
 								</span>
@@ -263,7 +263,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-								<?php  echo $this->formRow($form->get('priceType[priceTypeId]')); ?>
+								<?php  echo $this->formRow($form->get('priceTypes[priceTypeId]')); ?>
 								<span class="help-block">
 									Price Type
 								</span>
@@ -274,7 +274,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left select">
-								<?php  echo $this->formRow($form->get('customerStatus[customerStatusId]')); ?>
+								<?php  echo $this->formRow($form->get('customerStatus')); ?>
 								<span class="help-block">
 									Customer Status
 								</span>
