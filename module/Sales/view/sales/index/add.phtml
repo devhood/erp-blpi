@@ -25,7 +25,7 @@ $this->headLink()
     <!-- BEGIN FORM-->
     <form action="#" class="form-horizontal">
       <div class="form-body">
-        <h4 class="form-section">Add Sales Order  </h4>
+        <h4 class="form-section">General Info  </h4>
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
@@ -40,7 +40,7 @@ $this->headLink()
           <!--/span-->
           <div class="col-md-6">
             <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
                 <?php  echo $this->formRow($form->get('transactionType[transactionTypeId]')); ?>
                 <span class="help-block">
                   Transaction Type
@@ -54,7 +54,7 @@ $this->headLink()
 
         <div id="row">
           <div class="col-md-6">
-            <div cl<a href="#"></a>ss="form-group">
+            <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
                 <?php  echo $this->formRow($form->get('customer[customerId]')); ?>
                 <span class="help-block">
@@ -378,7 +378,7 @@ $this->headLink()
       <!-- END FORM-->
     </div>
   </div>
-  <?php echo $this->render('sales/orderedItems') ?>
+  <?php echo $this->render('sales/order') ?>
 
 
   <!-- BEGIN PAGE LEVEL PLUGINS -->

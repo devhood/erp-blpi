@@ -6,6 +6,10 @@ return array(
 		'template_path_stack' => array(
 			__DIR__ . '/../view',
 		),
+		'template_map' => array(
+			'sales/order'           =>   __DIR__ . '/../view/sales/partial/order.phtml',
+			
+		),
 	),
 	'router' => array(
 		'routes' => array(
@@ -26,6 +30,26 @@ return array(
 					'defaults' => array(
 						'controller' => __NAMESPACE__ . '\Index',
 						'action'     => 'add',
+					),
+				),
+			),
+			__NAMESPACE__.'_Index_Edit' => array(
+				'type' => 'Literal',
+				'options' => array(
+					'route'    => '/sales/edit',
+					'defaults' => array(
+						'controller' => __NAMESPACE__ . '\Index',
+						'action'     => 'edit',
+					),
+				),
+			),
+			__NAMESPACE__.'_Index_View' => array(
+				'type' => 'Literal',
+				'options' => array(
+					'route'    => '/sales/view',
+					'defaults' => array(
+						'controller' => __NAMESPACE__ . '\Index',
+						'action'     => 'view',
 					),
 				),
 			),

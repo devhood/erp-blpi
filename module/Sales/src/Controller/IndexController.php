@@ -4,19 +4,20 @@ namespace Sales\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Main\Controller\BaseController;
 
-class IndexController extends AbstractActionController
+class IndexController extends BaseController
 {
     public function indexAction()
     {
-
-
         return new ViewModel();
     }
 
 
     public function addAction()
     {
+
+      $form = new \Sales\Form\SalesForm();
 
       // $brand = $this->_getOptions("Brands","brandId","brandName");
       // $form->get("brands[brandId]")->setOptions(array('value_options' => $brand));
@@ -28,11 +29,7 @@ class IndexController extends AbstractActionController
 
 
 
-        return new ViewModel(array(
-
-
-        'form' => $form
-      ));
+        return new ViewModel(array('form' => $form));
     }
 
     public function viewFunction()
