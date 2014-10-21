@@ -23,8 +23,16 @@ $this->headLink()
 		</div>
 		<div class="portlet-body form">
 			<!-- BEGIN FORM-->
-			<form action="#" class="form-horizontal">
+			<form action="#" class="form-horizontal" id="product_add">
 				<div class="form-body">
+					<div class="alert alert-danger display-hide">
+						<button class="close" data-close="alert"></button>
+							You have some form errors. Please check below.
+					</div>
+					<div class="alert alert-success display-hide">
+						<button class="close" data-close="alert"></button>
+							Your form validation is successful!
+					</div>
 					<h4 class="form-section">General Info</h4>
 					<div class="row">
 						<div class="col-md-6">
@@ -395,7 +403,7 @@ $this->headLink()
 					<div class="row">
 						<div class="col-md-6">
 							<div class="col-md-offset-3 col-md-9">
-								<button type="button" class="btn green">Submit</button>
+								<button type="submit" class="btn green">Submit</button>
 								<button type="button" class="btn default">Cancel</button>
 							</div>
 						</div>
