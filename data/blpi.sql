@@ -757,7 +757,7 @@ DROP TABLE IF EXISTS `blpi`.`Product_Conditions` ;
 
 CREATE TABLE IF NOT EXISTS `blpi`.`Product_Conditions` (
   `condition_id` INT NOT NULL AUTO_INCREMENT,
-  `condtion_name` VARCHAR(45) NULL,
+  `condition_name` VARCHAR(45) NULL,
   `record_status` VARCHAR(45) NULL DEFAULT 'Active',
   PRIMARY KEY (`condition_id`))
 ENGINE = InnoDB;

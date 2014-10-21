@@ -24,9 +24,9 @@ class ProductConditions
     /**
      * @var string
      *
-     * @ORM\Column(name="condtion_name", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="condition_name", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
-    private $condtionName;
+    private $conditionName;
 
     /**
      * @var string
@@ -47,26 +47,26 @@ class ProductConditions
     }
 
     /**
-     * Set condtionName
+     * Set conditionName
      *
-     * @param string $condtionName
+     * @param string $conditionName
      * @return ProductConditions
      */
-    public function setCondtionName($condtionName)
+    public function setConditionName($conditionName)
     {
-        $this->condtionName = $condtionName;
+        $this->conditionName = $conditionName;
 
         return $this;
     }
 
     /**
-     * Get condtionName
+     * Get conditionName
      *
      * @return string 
      */
-    public function getCondtionName()
+    public function getConditionName()
     {
-        return $this->condtionName;
+        return $this->conditionName;
     }
 
     /**
