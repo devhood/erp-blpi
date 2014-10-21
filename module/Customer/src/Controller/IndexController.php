@@ -43,7 +43,7 @@ class IndexController extends BaseController
     	$type = $this->_getOptions("CustomerTypes","customerTypeId","customerTypeName");
         $form->get("customerTypes[customerTypeId]")->setOptions(array('value_options' => $type));
 
-        $category = $this->_getOptions("Categories","categoryId","categoryName");
+        $category = $this->_getOptions("Categories","categoryId","categoryName","categoryType","customer");
         $form->get("categories[categoryId]")->setOptions(array('value_options' => $category));
 
         $payment = $this->_getOptions("PaymentTerms","paymentTermId","paymentTermName");

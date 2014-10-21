@@ -26,14 +26,15 @@ class BaseController extends AbstractActionController
 	protected function _getOptions($table, $key, $value, $colFilter = null, $colValue = null){
 
 		$queryBuilder = $this->_getEntityManager()->createQueryBuilder();
-		$queryBuilder->select('t')
+		$queries = $queryBuilder->select('t')
 			->from(self::DBNS.$table, 't');
-		$queries = $queryBuilder->getQuery();
+		
 		
 		if($colFilter){
-			$queries->where("u.".$colFilter.'= ?1')
+			$queries->where("t.".$colFilter.'= ?1')
 			->setParameter(1, $colValue);
 		}
+		$queries = $queryBuilder->getQuery();
 		$results = $queries->getResult(\Doctrine\ORM\AbstractQuery::HYDRATE_ARRAY);
 		
 		$content = array();
