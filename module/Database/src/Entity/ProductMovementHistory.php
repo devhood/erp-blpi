@@ -57,6 +57,13 @@ class ProductMovementHistory
     private $adjustmentId;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="transaction_time", type="datetime", precision=0, scale=0, nullable=true, unique=false)
+     */
+    private $transactionTime;
+
+    /**
      * @var \Database\Entity\ProductInventories
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\ProductInventories")
@@ -200,6 +207,29 @@ class ProductMovementHistory
     public function getAdjustmentId()
     {
         return $this->adjustmentId;
+    }
+
+    /**
+     * Set transactionTime
+     *
+     * @param \DateTime $transactionTime
+     * @return ProductMovementHistory
+     */
+    public function setTransactionTime($transactionTime)
+    {
+        $this->transactionTime = $transactionTime;
+
+        return $this;
+    }
+
+    /**
+     * Get transactionTime
+     *
+     * @return \DateTime 
+     */
+    public function getTransactionTime()
+    {
+        return $this->transactionTime;
     }
 
     /**

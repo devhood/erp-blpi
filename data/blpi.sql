@@ -817,6 +817,7 @@ CREATE TABLE IF NOT EXISTS `blpi`.`Product_Movement_History` (
   `sales_id` INT NULL,
   `shipment_id` INT NULL,
   `adjustment_id` INT NULL,
+  `transaction_time` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`pmh_id`),
   INDEX `fk_Product_Movement_History_Product_Inventories1_idx` (`inventory_id` ASC),
   INDEX `fk_Product_Movement_History_Sales1_idx` (`sales_id` ASC),
