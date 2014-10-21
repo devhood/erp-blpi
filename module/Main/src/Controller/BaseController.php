@@ -23,13 +23,18 @@ class BaseController extends AbstractActionController
 		return $this->em;
 	}
 	
-	protected function _getOptions($table,$key,$value){
+	protected function _getOptions($table, $key, $value, $colFilter = null, $colValue = null){
 
 		$queryBuilder = $this->_getEntityManager()->createQueryBuilder();
 		$queryBuilder->select('t')
 			->from(self::DBNS.$table, 't');
-		$results = $queryBuilder->getQuery()
-			->getResult(\Doctrine\ORM\AbstractQuery::HYDRATE_ARRAY);
+		$results = $queryBuilder->getQuery();
+		if($colFilter){
+			$results->where("u.".$colFilter.'= ?1')
+			->setParameter(1, $colValue);
+		}
+		$results->getResult(\Doctrine\ORM\AbstractQuery::HYDRATE_ARRAY);
+		
 		$content = array();
 		for($i=0;$i<count($results);$i++){
 			$content[$results[$i][$key]] = $results[$i][$value];

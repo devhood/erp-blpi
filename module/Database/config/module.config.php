@@ -59,10 +59,20 @@ return array(
 			__NAMESPACE__.'_Api_Edit' => array(
 				'type' => 'segment',
 				'options' => array(
-					'route'    => '/api/edit/:table',
+					'route'    => '/api/edit/:table/:id',
 					'defaults' => array(
 						'controller' => __NAMESPACE__ . '\Api',
 						'action'     => 'edit',
+					),
+				),
+			),
+			__NAMESPACE__.'_Api_Option' => array(
+				'type' => 'segment',
+				'options' => array(
+					'route'    => '/api/options/:table/:key/:value',
+					'defaults' => array(
+						'controller' => __NAMESPACE__ . '\Api',
+						'action'     => 'option',
 					),
 				),
 			),
