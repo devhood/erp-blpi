@@ -19,7 +19,7 @@ class OrderForm extends Form
         ));
 
         $this->add(array(
-                'name' => 'transactionType[transactionTypeId]',
+                'name' => 'transactionTypes[transactionTypeId]',
                 'type' => 'Select',
                 'attributes' => array(
                     'class' => 'select2me form-control',
@@ -35,7 +35,7 @@ class OrderForm extends Form
 
 
         $this->add(array(
-                'name' => 'customer[customerId]',
+                'name' => 'customers',
                 'type' => 'Select',
                 'attributes' => array(
                     'class' => 'select2me form-control',
@@ -52,7 +52,7 @@ class OrderForm extends Form
 
 
         $this->add(array(
-                'name' => 'inventoryLocation[inventoryLocationId]',
+                'name' => 'inventoryLocations[inventoryLocationId]',
                 'type' => 'Select',
                 'attributes' => array(
                     'class' => 'select2me form-control',
