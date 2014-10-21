@@ -46,12 +46,12 @@ class IndexController extends BaseController
         $productmodal = $this->_getOptions("products","productId","productName");
         $form->get("products[productId]")->setOptions(array('value_options' => $productmodal));
         
-       $bundles = $this->_getContents("Bundles");
-       $uoms = $this->_getContents("ProductUoms");
-       $prices = $this->_getContents("ProductPrice");
+        $bundles = $this->_getContents("Bundles");
+        $uoms = $this->_getContents("ProductUoms");
+        $prices = $this->_getContents("ProductPrice");
        
-       return new ViewModel(array(
-       		'form' => $form, 
+        return new ViewModel(array(
+    		'form' => $form, 
        		'bundles' => $bundles,
        		'uoms' => $uoms,
             'prices' => $prices,
@@ -90,11 +90,11 @@ class IndexController extends BaseController
         $productmodal = $this->_getOptions("products","productId","productName");
         $form->get("products[productId]")->setOptions(array('value_options' => $productmodal));
         
-       $bundles = $this->_getContents("Bundles");
-       $uoms = $this->_getContents("ProductUoms");
-       $prices = $this->_getContents("ProductPrice");
+        $bundles = $this->_getContents("Bundles");
+        $uoms = $this->_getContents("ProductUoms");
+        $prices = $this->_getContents("ProductPrice");
        
-       return new ViewModel(array(
+        return new ViewModel(array(
             'form' => $form, 
             'bundles' => $bundles,
             'uoms' => $uoms,
@@ -118,7 +118,7 @@ class IndexController extends BaseController
         $form->get("supplier[supplierId]")->setAttribute("disabled", true);
         $form->get("productStatus")->setAttribute("disabled", true);
         $form->get("desc")->setAttribute("disabled", true);
-        
+
     	$payment = $this->_getOptions("PaymentTerms","paymentTermId","paymentTermName");
         $form->get("paymentTerms[paymentTermId]")->setOptions(array('value_options' => $payment));
 
@@ -147,15 +147,19 @@ class IndexController extends BaseController
         $productmodal = $this->_getOptions("products","productId","productName");
         $form->get("products[productId]")->setOptions(array('value_options' => $productmodal));
         
-       $bundles = $this->_getContents("Bundles");
-       $uoms = $this->_getContents("ProductUoms");
-       $prices = $this->_getContents("ProductPrice");
+        $bundles = $this->_getContents("Bundles");
+        $uoms = $this->_getContents("ProductUoms");
+        $prices = $this->_getContents("ProductPrice");
+        $inventories = $this->_getContents("ProductInventories");
+        $histories = $this->_getContents("ProductMovementHistory");
        
-       return new ViewModel(array(
+        return new ViewModel(array(
             'form' => $form, 
             'bundles' => $bundles,
             'uoms' => $uoms,
             'prices' => $prices,
+            'inventories' => $inventories,
+            'histories' => $histories
             
        ));
     }
