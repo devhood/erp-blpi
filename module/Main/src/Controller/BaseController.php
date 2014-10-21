@@ -23,7 +23,8 @@ class BaseController extends AbstractActionController
 		return $this->em;
 	}
 	
-	protected function _getOptions($table, $key, $value, $colFilter = null, $colValue = null){
+	protected function _getOptions($table, $key, $value, $colFilter = null, $colValue = null)
+	{
 
 		$queryBuilder = $this->_getEntityManager()->createQueryBuilder();
 		$queries = $queryBuilder->select('t')

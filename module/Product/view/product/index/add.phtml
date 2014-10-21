@@ -54,6 +54,20 @@ $this->headLink()
 						<div class="col-md-12">
 							<div class="form-group">
 								<div class="col-md-2 col-lg-2 "></div>
+									<div class="col-md-8 col-xs-12 col-sm-12 col-lg-8 ">
+										<input id="categories" type="text" class="form-control tags medium" value="tag1,tag2"/>
+										<span class="help-block">
+											Categories
+										</span>
+									</div>
+								<div class="col-md-2 col-lg-2 "></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<div class="col-md-2 col-lg-2 "></div>
 								<div class="col-md-8 col-xs-12 col-sm-12 col-lg-8 ">
 									<?php echo $this->formRow($form->get('desc')); ?>
 									<span class="help-block">
@@ -376,6 +390,10 @@ $this->headLink()
 		App.init();
 		Product.init();
 		ComponentsEditors.init();
+		$('.tags').tagsInput({
+            width: '100%',
+            
+        });
 	});
 <?php $this->inlineScript()->captureEnd() ?>
 							
