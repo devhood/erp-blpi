@@ -1,5 +1,5 @@
 <!-- BEGIN PAGE LEVEL STYLES -->
-<?php 
+<?php
    $this->headLink()
         ->appendStylesheet($this->basePath('/assets/plugins/select2/select2.css'))
         ->appendStylesheet($this->basePath('/assets/plugins/select2/select2-metronic.css'))
@@ -10,7 +10,7 @@
 					<div class="portlet box grey">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-edit"></i>User List
+								<i class="fa fa-edit"></i>Customer List
 							</div>
 							<div class="tools">
 								<a href="javascript:;" class="collapse">
@@ -55,28 +55,38 @@
 							<table class="table table-striped table-hover table-bordered" id="sample_editable_1">
 							<thead>
 							<tr>
-							    <th>Id</th>
+							  <th>Category</th>
 								<th>Type</th>
-								<th>Key</th>
-								<th>Secret</th>
+								<th>Name</th>
+								<th>Branch</th>
+								<th>TIN</th>
+								<th>Phone</th>
+								<th>Email</th>
+								<th>Sales Executive</th>
+								<th>Price Type</th>
 								<th>Status</th>
-								<th>Edit</th>
-								<th>Delete</th>
+								<th>Action</th>
 							</tr>
 							</thead>
 							<tbody>
-              
-							 <?php foreach ($records as $record) : ?>
+
+							 <?php // foreach ($records as $record)?>
                             	 <tr>
-                                	 <td><?php echo $this->escapeHtml($record->getIntrealmid());?></td>
-                                	 <td><?php echo $this->escapeHtml($record->getIntrealmtypeid()->getStrrealmtype());?></td>
-                                	 <td><?php echo $this->escapeHtml($record->getStrrealmkey());?></td>
-                                	 <td><?php echo $this->escapeHtml($record->getStrrealmsecret());?></td>
-                                	 <td><?php echo $this->escapeHtml($record->getIntstatus()?"Active":"Inactive");?></td>
-                                	 <td><a class="edit" href="javascript:;">Edit</a></td>
-                                	 <td><a class="delete" href="javascript:;">Delete</a></td>
+                                	 <td><?php //echo $this->escapeHtml($record->getIntrealmid());?></td>
+                                	 <td><?php //echo $this->escapeHtml($record->getIntrealmtypeid()->getStrrealmtype());?></td>
+                                	 <td><?php //echo $this->escapeHtml($record->getStrrealmkey());?></td>
+                                	 <td><?php //echo $this->escapeHtml($record->getStrrealmsecret());?></td>
+                                	 <td><?php //echo $this->escapeHtml($record->getIntstatus()?"Active":"Inactive");?></td>
+                                	 <td> </td>
+                                	 <td> </td>
+                                	 <td> </td>
+                                	 <td> </td>
+                                	 <td> </td>
+                                	 <td> </td>
+                                   <!-- <td><a class="edit" href="javascript:;">Edit</a></td> -->
+                                	 <!-- <td><a class="delete" href="javascript:;">Delete</a></td> -->
                             	 </tr>
-                             <?php endforeach; ?>
+                             <?php// endforeach; ?>
 							</tbody>
 							</table>
 						</div>
@@ -90,14 +100,14 @@
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="/assets/scripts/core/app.js"></script>
-<?php 
+<?php
     $this->inlineScript()
         ->appendFile($this->basePath('/assets/scripts/datatable/realms.index.js'))
         ->appendFile($this->basePath('/assets/scripts/ajax/realms.js'))
         ->appendFile($this->basePath('/assets/scripts/ajax/generic.js'))
 ?>
 <?php $this->inlineScript()->captureStart() ?>
-    jQuery(document).ready(function() {    
+    jQuery(document).ready(function() {
         App.init();
         TableEditable.init();
     });

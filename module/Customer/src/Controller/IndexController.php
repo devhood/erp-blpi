@@ -26,13 +26,16 @@ class IndexController extends BaseController
 	}
 
 
-
-
-
 		//calling customer/ page
     public function indexAction()
     {
-    	return new ViewModel();
+			//$records = $this->_getContents("records");
+
+			return new ViewModel();
+
+			//	'form' => $form,
+			//	'record' => $records,
+
     }
 
 		//calling customer/add page
