@@ -308,7 +308,7 @@ class InvoiceForm extends Form
 
 
 
-        //Ordered Items Value
+        //Invoice Ordered Items Value
         $this->add(array(
                 'name' => 'items[itemsId]',
                 'type' => 'Select',

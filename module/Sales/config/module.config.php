@@ -7,8 +7,9 @@ return array(
 			__DIR__ . '/../view',
 		),
 		'template_map' => array(
-			'sales/order'           =>   __DIR__ . '/../view/product/partial/price.phtml',
-			
+			'sales/order'           =>   __DIR__ . '/../view/sales/partial/ordered.phtml',
+			'sales/invoice'           =>   __DIR__ . '/../view/sales/partial/invoice.phtml',
+
 		),
 	),
 	'router' => array(
