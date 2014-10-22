@@ -18,6 +18,55 @@ var Product = function () {
                         minlength: 2,
                         required: true
                     },
+                    productName : {
+                        minlength: 2,
+                        required: true
+                    },
+                    productCode : {
+                        minlength: 2,
+                        required: true
+                    },
+                    ClassificationId : {
+                        required: true
+                    },
+                    BrandId : {
+                        required: true
+                    },
+                    SupplierId : {
+                        required: true
+                    },
+                    size : {
+                        minlength: 1,
+                        required: true
+                    },
+                    weight : {
+                        minlength: 1,
+                        required: true
+                    },
+                    productStatus : {
+                        required: true
+                    },
+                    paymentTermId : {
+                        required: true
+                    },
+                    partNumber : {
+                        minlength: 2,
+                        required: true
+                    },
+                    blCode : {
+                        minlength: 2,
+                        required: true
+                    },
+                    printedCode : {
+                        minlength: 2,
+                        required: true
+                    },
+                    priceTypeId : {
+                        required: true
+                    },
+                    desc : {
+                        required: true
+                    },
                 },
                 invalidHandler: function (event, validator) { //display error alert on form submit              
                 success.hide();

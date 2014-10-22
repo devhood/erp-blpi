@@ -22,6 +22,9 @@ class DeliveryController extends BaseController
       $transaction = $this->_getOptions("TransactionTypes","transactionTypeId","transactionTypeName");
       $form->get("trasanctionTypes[transactionTypeId]")->setOptions(array('value_options' => $transaction));
 
+      $customer = $this->_getOptions("Customers","transactionTypeId","transactionTypeName");
+      $form->get("customers[customerId]")->setOptions(array('value_options' => $customer));
+
       return new ViewModel(array('form' => $form));
     }
 

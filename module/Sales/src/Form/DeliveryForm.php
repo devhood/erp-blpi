@@ -27,13 +27,28 @@ class DeliveryForm extends Form
                 )
         ));
 
-         $this->add(array(
+        $this->add(array(
                 'name' => 'trasanctionTypes[transactionTypeId]',
                 'type' => 'Select',
                 'attributes' => array(
                         'class' => 'select2me form-control',
                         'tabindex' => '1',
                         'id' => 'transactionTypeId',
+                ),
+                'options' => array(
+//                      'value_options' => array(
+//                              'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
+//                      ),
+                )
+        ));
+
+        $this->add(array(
+                'name' => 'customers[customerId]',
+                'type' => 'Select',
+                'attributes' => array(
+                        'class' => 'select2me form-control',
+                        'tabindex' => '1',
+                        'id' => 'customerId',
                 ),
                 'options' => array(
 //                      'value_options' => array(

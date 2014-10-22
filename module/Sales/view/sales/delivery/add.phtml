@@ -72,6 +72,31 @@ $this->headLink()
           <!--/span-->
         </div>
 
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+                <?php  echo $this->formRow($form->get('sono')); ?>
+                <span class="help-block">
+                  SO Number
+                </span>
+              </div>
+            </div>
+          </div>
+          <!--/span-->
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+                <?php  echo $this->formRow($form->get('trasanctionTypes[transactionTypeId]')); ?>
+                <span class="help-block">
+                  Transaction Type
+                </span>
+              </div>
+            </div>
+          </div>
+          <!--/span-->
+        </div>
+
       </div>
         <div class="form-actions fluid">
           <div class="row">

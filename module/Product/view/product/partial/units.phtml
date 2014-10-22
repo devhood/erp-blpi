@@ -5,13 +5,25 @@
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
 					<h4 class="modal-title">Unit of Measurement</h4>
 				</div>
+			
 				<div class="modal-body">
+				<form action="#" class="form-horizontal" id="product_units">
+				<div class="form-body">
+					<div class="alert alert-danger display-hide">
+						<button class="close" data-close="alert"></button>
+							You have some form errors. Please check below.
+					</div>
+					<div class="alert alert-success display-hide">
+						<button class="close" data-close="alert"></button>
+							Your form validation is successful!
+					</div>
+				</div>	
 					<div class="scroller" style="height:150px" data-always-visible="1" data-rail-visible1="1">
 						<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-									<?php   echo $this->formRow($form->get('unitMeasurement')); ?>
+									<?php   echo $this->formRow($form->get('uoms[uomId]')); ?>
 									<span class="help-block">
 										 Unit of Measurement
 									</span>
@@ -36,8 +48,18 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" data-dismiss="modal" class="btn default">Close</button>
-						<button type="button" class="btn green">Save changes</button>
-					</div>
+					<button type="submit" class="btn green">Save changes</button>
 				</div>
-								</div>
-							</div>
+			</form>
+			</div>
+		</div>
+	</div>
+<?php 
+// $this->inlineScript()
+	// ->appendFile($this->basePath('/assets/scripts/units.js'))
+?>
+ <?php //$this->inlineScript()->captureStart() ?>
+<!-- 	jQuery(document).ready(function() {	
+		Units.init();
+	}); -->
+<?php //$this->inlineScript()->captureEnd() ?>
