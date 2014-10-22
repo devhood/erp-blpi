@@ -67,8 +67,8 @@ class IndexController extends BaseController
             '2'=>'Suspended',
             '3'=>'Block',)));
 
- 			 $addresses = $this->_getContents("Address");
-       $contacts = $this->_getContents("Contacts");
+     	$addresses = $this->_getContents("Address");
+        $contacts = $this->_getContents("Contacts");
 
     	return new ViewModel(array(
 				'form' => $form,
@@ -77,6 +77,48 @@ class IndexController extends BaseController
 
 				));
     }
+
+
+public function editAction()
+    {
+    	$form = new \Customer\Form\CustomerForm();
+
+    	$type = $this->_getOptions("CustomerTypes","customerTypeId","customerTypeName");
+        $form->get("customerTypes[customerTypeId]")->setOptions(array('value_options' => $type));
+
+        $category = $this->_getOptions("Categories","categoryId","categoryName","categoryType","customer");
+        $form->get("categories[categoryId]")->setOptions(array('value_options' => $category));
+
+        $payment = $this->_getOptions("PaymentTerms","paymentTermId","paymentTermName");
+        $form->get("paymentTerms[paymentTermId]")->setOptions(array('value_options' => $payment));
+
+        $price = $this->_getOptions("priceTypes","priceTypeId","priceTypeName");
+        $form->get("priceTypes[priceTypeId]")->setOptions(array('value_options' => $price));
+
+        $shipping = $this->_getOptions("shippingModes","shippingModeId","shippingModeName");
+        $form->get("shippingModes[shippingModeId]")->setOptions(array('value_options' => $shipping));
+
+       	$users = $this->_getOptions("users","userId","fullName","designation","2");
+        $form->get("users")->setOptions(array('value_options' => $users));
+
+        $form->get("customerStatus")->setOptions(array('value_options' => array(
+            '0'=>'Active',
+            '1'=>'Inactive',
+            '2'=>'Suspended',
+            '3'=>'Block',)));
+
+ 		$addresses = $this->_getContents("Address");
+       	$contacts = $this->_getContents("Contacts");
+
+    	return new ViewModel(array(
+				'form' => $form,
+				'address' => $addresses,
+				'contact' => $contacts,
+
+				));
+    }
+
+
 
 		public function viewAction(){
 			$form = new \Customer\Form\CustomerForm();
