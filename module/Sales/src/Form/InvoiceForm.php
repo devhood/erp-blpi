@@ -58,7 +58,7 @@ class InvoiceForm extends Form
 
 
         $this->add(array(
-                'name' => 'customers',
+                'name' => 'customers[customerId]',
                 'type' => 'Select',
                 'attributes' => array(
                     'class' => 'select2me form-control',
@@ -133,7 +133,7 @@ class InvoiceForm extends Form
                 ),
                 'options' => array(
         // 						'value_options' => array(
-        // 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
+        // 								'value_options' f=> $this->getGatewayTable()['brandTable']->fetchSelectOption(),
         // 						),
              )
         ));
