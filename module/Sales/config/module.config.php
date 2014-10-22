@@ -23,6 +23,28 @@ return array(
 					),
 				),
 			),
+
+			__NAMESPACE__.'_Delivery_Approve' => array(
+				'type' => 'Literal',
+				'options' => array(
+					'route'    => '/sales/delivery/approve',
+					'defaults' => array(
+						'controller' => __NAMESPACE__ . '\Delivery',
+						'action'     => 'approve',
+					),
+				),
+			),
+
+			__NAMESPACE__.'_Delivery_Print' => array(
+				'type' => 'Literal',
+				'options' => array(
+					'route'    => '/sales/delivery/print',
+					'defaults' => array(
+						'controller' => __NAMESPACE__ . '\Delivery',
+						'action'     => 'print',
+					),
+				),
+			),
 		),
 	),
 	'router' => array(
