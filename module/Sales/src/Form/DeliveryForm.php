@@ -35,11 +35,6 @@ class DeliveryForm extends Form
                         'tabindex' => '1',
                         'id' => 'transactionTypeId',
                 ),
-                'options' => array(
-//                      'value_options' => array(
-//                              'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-//                      ),
-                )
         ));
 
         $this->add(array(
@@ -50,13 +45,7 @@ class DeliveryForm extends Form
                         'tabindex' => '1',
                         'id' => 'customerId',
                 ),
-                'options' => array(
-//                      'value_options' => array(
-//                              'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-//                      ),
-                )
         ));
-<<<<<<< HEAD
 
         $this->add(array(
                 'name' => 'inventorylocations[inventoryLocationId]',
@@ -66,11 +55,6 @@ class DeliveryForm extends Form
                         'tabindex' => '1',
                         'id' => 'inventoryLcationId',
                 ),
-                'options' => array(
-//                      'value_options' => array(
-//                              'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-//                      ),
-                )
         ));
 
         $this->add(array(
@@ -81,11 +65,6 @@ class DeliveryForm extends Form
                         'tabindex' => '1',
                         'id' => 'shippingAddress',
                 ),
-                'options' => array(
-//                      'value_options' => array(
-//                              'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-//                      ),
-                )
         ));
 
         $this->add(array(
@@ -96,11 +75,6 @@ class DeliveryForm extends Form
                         'tabindex' => '1',
                         'id' => 'billingAddress',
                 ),
-                'options' => array(
-//                      'value_options' => array(
-//                              'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-//                      ),
-                )
         ));
 
         $this->add(array(
@@ -111,11 +85,6 @@ class DeliveryForm extends Form
                         'tabindex' => '1',
                         'id' => 'orderSourceId',
                 ),
-                'options' => array(
-//                      'value_options' => array(
-//                              'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-//                      ),
-                )
         ));
 
         $this->add(array(
@@ -126,11 +95,6 @@ class DeliveryForm extends Form
                         'tabindex' => '1',
                         'id' => 'shippingModeId',
                 ),
-                'options' => array(
-//                      'value_options' => array(
-//                              'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-//                      ),
-                )
         ));
 
         $this->add(array(
@@ -141,11 +105,6 @@ class DeliveryForm extends Form
                         'tabindex' => '1',
                         'id' => 'userId',
                 ),
-                'options' => array(
-//                      'value_options' => array(
-//                              'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-//                      ),
-                )
         ));
 
         $this->add(array(
@@ -156,11 +115,6 @@ class DeliveryForm extends Form
                         'tabindex' => '1',
                         'id' => 'paymentTermId',
                 ),
-                'options' => array(
-//                      'value_options' => array(
-//                              'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-//                      ),
-                )
         ));
 
         $this->add( array(
@@ -180,11 +134,6 @@ class DeliveryForm extends Form
                         'tabindex' => '1',
                         'id' => 'priceTypeId',
                 ),
-                'options' => array(
-//                      'value_options' => array(
-//                              'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-//                      ),
-                )
         ));
 
        $this->add( array(
@@ -196,7 +145,5 @@ class DeliveryForm extends Form
                     'rows' => '6'
                 )
         ));
-=======
->>>>>>> 0f753098b8d10b053e0dd3e681893b4e730b2726
     }
 }
