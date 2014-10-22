@@ -1,0 +1,106 @@
+<!-- BEGIN PAGE LEVEL STYLES -->
+<?php
+$this->headLink()
+->appendStylesheet($this->basePath('/assets/plugins/select2/select2.css'))
+->appendStylesheet($this->basePath('/assets/plugins/select2/select2-metronic.css'))
+->appendStylesheet($this->basePath('/assets/plugins/data-tables/DT_bootstrap.css'))
+?>
+<div class="portlet box grey">
+  <div class="portlet-title">
+    <div class="caption">
+      <i class="fa fa-reorder"></i>Sales Profile
+    </div>
+    <div class="tools">
+      <a href="javascript:;" class="collapse">
+      </a>
+      <a href="#portlet-config" data-toggle="modal" class="config">
+      </a>
+      <a href="javascript:;" class="reload">
+      </a>
+      <a href="javascript:;" class="remove">
+      </a>
+    </div>
+  </div>
+  <div class="portlet-body form">
+    <!-- BEGIN FORM-->
+    <form action="#" class="form-horizontal">
+      <div class="form-body">
+        <h4 class="form-section">General Info  </h4>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+                <?php  echo $this->formRow($form->get('drno')); ?>
+                <span class="help-block">
+                  DR Number
+                </span>
+              </div>
+            </div>
+          </div>
+          <!--/span-->
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+              </div>
+            </div>
+          </div>
+          <!--/span-->
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+                <?php  echo $this->formRow($form->get('sono')); ?>
+                <span class="help-block">
+                  SO Number
+                </span>
+              </div>
+            </div>
+          </div>
+          <!--/span-->
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+                <?php  echo $this->formRow($form->get('trasanctionTypes[transactionTypeId]')); ?>
+                <span class="help-block">
+                  Transaction Type
+                </span>
+              </div>
+            </div>
+          </div>
+          <!--/span-->
+        </div>
+
+      </div>
+        <div class="form-actions fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="col-md-offset-3 col-md-9">
+                <button type="button" class="btn green">Submit</button>
+                <button type="button" class="btn default">Cancel</button>
+              </div>
+            </div>
+            <div class="col-md-6">
+            </div>
+          </div>
+        </div>
+      </form>
+      <!-- END FORM-->
+    </div>
+  </div>
+
+
+  <!-- BEGIN PAGE LEVEL PLUGINS -->
+  <!-- END PAGE LEVEL PLUGINS -->
+  <!-- BEGIN PAGE LEVEL SCRIPTS -->
+  <?php $this->inlineScript()->captureStart() ?>
+  jQuery(document).ready(function() {
+    App.init();
+    Product.init();
+    ComponentsEditors.init();
+    $('.tags').tagsInput({
+      width: '100%',
+    });
+  });
+  <?php $this->inlineScript()->captureEnd() ?>
