@@ -119,12 +119,6 @@ class IndexController extends BaseController
 				$form->get("email")->setAttribute("readonly", true);
 				$form->get("phone")->setAttribute("readonly", true);
 
-
-
-
-
-
-
 $addresses = $this->_getContents("Address");
 $contacts = $this->_getContents("Contacts");
 
@@ -132,7 +126,6 @@ return new ViewModel(array(
 'form' => $form,
 'addresses' => $addresses,
 'contacts' => $contacts,
-
 ));
 		}
 
