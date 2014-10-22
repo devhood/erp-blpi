@@ -6,33 +6,189 @@ $this->headLink()
 ->appendStylesheet($this->basePath('/assets/plugins/data-tables/DT_bootstrap.css'))
 ?>
 <div class="portlet box grey">
-	<div class="portlet-title">
-		<div class="caption">
-			<i class="fa fa-reorder"></i>Customer Profile
+<div class="portlet-title">
+<div class="caption">
+<i class="fa fa-reorder"></i>Customer Profile
+</div>
+<div class="tools">
+<a href="javascript:;" class="collapse">
+</a>
+<a href="#portlet-config" data-toggle="modal" class="config">
+</a>
+<a href="javascript:;" class="reload">
+</a>
+<a href="javascript:;" class="remove">
+</a>
+</div>
+</div>
+<div class="portlet-body form">
+<!-- BEGIN FORM-->
+<form action="#" class="form-horizontal">
+<div class="form-body">
+	<h4 class="form-section">Add Customer</h4>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group">
+				<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+					<?php  echo $this->formRow($form->get('categories[categoryId]')); ?>
+					<span class="help-block">
+						Category
+					</span>
+				</div>
+			</div>
 		</div>
-		<div class="tools">
-			<a href="javascript:;" class="collapse">
-			</a>
-			<a href="#portlet-config" data-toggle="modal" class="config">
-			</a>
-			<a href="javascript:;" class="reload">
-			</a>
-			<a href="javascript:;" class="remove">
-			</a>
+		<!--/span-->
+		<div class="col-md-6">
+			<div class="form-group">
+				<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+					<?php  echo $this->formRow($form->get('customerTypes[customerTypeId]')); ?>
+					<span class="help-block">
+						Type
+					</span>
+				</div>
+			</div>
 		</div>
+		<!--/span-->
 	</div>
-	<div class="portlet-body form">
-		<!-- BEGIN FORM-->
-		<form action="#" class="form-horizontal">
-			<div class="form-body">
-				<h4 class="form-section">Add Customer</h4>
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group">
+				<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+					<?php  echo $this->formRow($form->get('companyName')); ?>
+					<span class="help-block">
+						Company Name
+					</span>
+				</div>
+			</div>
+		</div>
+		<!--/span-->
+		<div class="col-md-6">
+			<div class="form-group">
+				<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+					<?php  echo $this->formRow($form->get('branch')); ?>
+					<span class="help-block">
+						Branch
+					</span>
+				</div>
+			</div>
+		</div>
+		<!--/span-->
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group">
+				<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+					<?php  echo $this->formRow($form->get('tradeName')); ?>
+					<span class="help-block">
+						Trade Name
+					</span>
+				</div>
+			</div>
+		</div>
+		<!--/span-->
+		<div class="col-md-6">
+			<div class="form-group">
+				<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+					<?php  echo $this->formRow($form->get('tinNumber')); ?>
+					<span class="help-block">
+						TIN
+					</span>
+				</div>
+			</div>
+		</div>
+		<!--/span-->
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group">
+				<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+					<?php  echo $this->formRow($form->get('phone')); ?>
+					<span class="help-block">
+						Phone
+					</span>
+				</div>
+			</div>
+		</div>
+		<!--/span-->
+		<div class="col-md-6">
+			<div class="form-group">
+				<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+					<?php  echo $this->formRow($form->get('email')); ?>
+					<span class="help-block">
+						Email
+					</span>
+				</div>
+			</div>
+		</div>
+		<!--/span-->
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group">
+				<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+					<?php  echo $this->formRow($form->get('website')); ?>
+					<span class="help-block">
+						Website
+					</span>
+				</div>
+			</div>
+		</div>
+		<!--/span-->
+		<div class="col-md-6">
+			<div class="form-group">
+				<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+					<?php  echo $this->formRow($form->get('secNumber')); ?>
+					<span class="help-block">
+						Sec. Number
+					</span>
+				</div>
+			</div>
+		</div>
+		<!--/span-->
+	</div>
+
+	<div class="row">
+
+
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+						<label class="checkbox">
+							<!-- <input type="checkbox" name="consignee" value=""> -->
+							<?php  echo $this->formRow($form->get('consignee')); ?>
+							Consignee</label>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col-md-6">
+					<div class="form-group">
+						<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+							<label class="checkbox">
+								<!-- <input type="checkbox" name="consignee" value=""> -->
+								<?php  echo $this->formRow($form->get('franchise')); ?>
+								Franchise</label>
+							</div>
+						</div>
+					</div>
+				</div><!--/row  -->
+
+
+
+
 				<div class="row">
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-								<?php  echo $this->formRow($form->get('categories[categoryId]')); ?>
+								<?php  echo $this->formRow($form->get('creditLimit')); ?>
 								<span class="help-block">
-									Category
+									Credit Limit
 								</span>
 							</div>
 						</div>
@@ -40,24 +196,25 @@ $this->headLink()
 					<!--/span-->
 					<div class="col-md-6">
 						<div class="form-group">
-							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-								<?php  echo $this->formRow($form->get('customerTypes[customerTypeId]')); ?>
+							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left select">
+								<?php  echo $this->formRow($form->get('unpaidTransactionLimit')); ?>
 								<span class="help-block">
-									Type
+									Unpaid Transaction Limit
 								</span>
 							</div>
 						</div>
 					</div>
 					<!--/span-->
-				</div>
+				</div><!--/row-->
+
 
 				<div class="row">
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-								<?php  echo $this->formRow($form->get('companyName')); ?>
+								<?php  echo $this->formRow($form->get('paymentTerms[paymentTermId]')); ?>
 								<span class="help-block">
-									Company Name
+									Payment Terms
 								</span>
 							</div>
 						</div>
@@ -65,24 +222,25 @@ $this->headLink()
 					<!--/span-->
 					<div class="col-md-6">
 						<div class="form-group">
-							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-								<?php  echo $this->formRow($form->get('branch')); ?>
+							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left select">
+								<?php  echo $this->formRow($form->get('percentCommission')); ?>
 								<span class="help-block">
-									Branch
+									%Commission
 								</span>
 							</div>
 						</div>
 					</div>
 					<!--/span-->
-				</div>
+				</div><!--/row-->
+
 
 				<div class="row">
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-								<?php  echo $this->formRow($form->get('tradeName')); ?>
+								<?php  echo $this->formRow($form->get('shippingModes[shippingModeId]')); ?>
 								<span class="help-block">
-									Trade Name
+									Shipping Mode
 								</span>
 							</div>
 						</div>
@@ -90,24 +248,24 @@ $this->headLink()
 					<!--/span-->
 					<div class="col-md-6">
 						<div class="form-group">
-							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-								<?php  echo $this->formRow($form->get('tinNumber')); ?>
+							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left select">
+								<?php  echo $this->formRow($form->get('users')); ?>
 								<span class="help-block">
-									TIN
+									Sales Executive
 								</span>
 							</div>
 						</div>
 					</div>
 					<!--/span-->
-				</div>
+				</div><!--/row-->
 
 				<div class="row">
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-								<?php  echo $this->formRow($form->get('phone')); ?>
+								<?php  echo $this->formRow($form->get('priceTypes[priceTypeId]')); ?>
 								<span class="help-block">
-									Phone
+									Price Type
 								</span>
 							</div>
 						</div>
@@ -115,362 +273,223 @@ $this->headLink()
 					<!--/span-->
 					<div class="col-md-6">
 						<div class="form-group">
-							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-								<?php  echo $this->formRow($form->get('email')); ?>
+							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left select">
+								<?php  echo $this->formRow($form->get('customerStatus')); ?>
 								<span class="help-block">
-									Email
+									Customer Status
 								</span>
 							</div>
 						</div>
 					</div>
 					<!--/span-->
+				</div><!--/row-->
+
+
+
+
+				<div class="row form-section">
+					<div class="col-md-12">
+						<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
+							<h4 class="">Address</h4>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
+							<button id="" type="button"  data-toggle="modal" href="#addressModal" class="btn-sm green custom-right">
+								Add New
+								<i class="fa fa-plus"></i>
+							</button>
+						</div>
+					</div>
 				</div>
 
-				<div class="row">
-					<div class="col-md-6">
-						<div class="form-group">
-							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-								<?php  echo $this->formRow($form->get('website')); ?>
-								<span class="help-block">
-									Website
-								</span>
+				<div class="form-group">
+					<div class="col-md-2"></div>
+					<div class="col-md-8">
+						<div class="row">
+							<div class="col-md-12">
+								<!-- BEGIN SAMPLE TABLE PORTLET-->
+								<div class="portlet-body flip-scroll">
+									<table class="table table-bordered table-condensed flip-content">
+										<thead class="flip-content bg-grey">
+											<tr>
+												<th width="20%">
+													Address Type
+												</th>
+												<th>
+													Street/Landmark
+												</th>
+												<th>
+													City
+												</th>
+												<th>
+													Province
+												</th>
+												<th>
+													Country
+												</th>
+												<th>
+													Zipcode
+												</th>
+												<th>
+													Edit
+												</th>
+												<th>
+													Delete
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+											<?php foreach ($addresses as $address) : ?>
+												<!-- ->getAddressId() -->
+											<tr>
+													<td><?php echo $this->escapeHtml($address->getAddressType()); ?></td>
+													<td><?php echo $this->escapeHtml($address->getStreetLandmark()); ?></td>
+													<td><?php echo $this->escapeHtml($address->getCity()->getCityName()); ?></td>
+													<td><?php echo $this->escapeHtml($address->getProvince()->getProvinceName()); ?></td>
+													<td><?php echo $this->escapeHtml($address->getCountry()->getCountryName()); ?></td>
+													<td><?php echo $this->escapeHtml($address->getZipcode()); ?></td>
+
+											<td><a id="" data-toggle="modal" href="#bundleModal" class="btn-sm green custom-right">
+												Edit
+												<i class="fa fa-edit"></i>
+											</a></td>
+											<td><a id="" data-toggle="modal" href="#" class="btn-sm green custom-right">
+												Delete
+												<i class="fa fa-times"></i>
+											</a></td>
+										</tr>
+										<?php endforeach; ?>
+											<tbody>
+											</table>
+										</div>
+										<!-- END SAMPLE TABLE PORTLET-->
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2"></div>
+						</div>
+
+
+
+						<div class="row form-section">
+							<div class="col-md-12">
+								<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
+									<h4 class="">Contact</h4>
+								</div>
+								<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
+									<button href="#contactModal" type="button"  data-toggle="modal" class="btn-sm green custom-right">
+										Add New
+										<i class="fa fa-plus"></i>
+									</button>
+								</div>
 							</div>
 						</div>
-					</div>
-					<!--/span-->
-					<div class="col-md-6">
 						<div class="form-group">
-							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-								<?php  echo $this->formRow($form->get('secNumber')); ?>
-								<span class="help-block">
-									Sec. Number
-								</span>
-							</div>
-						</div>
-					</div>
-					<!--/span-->
-				</div>
-
-				<div class="row">
-
-
-					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group">
-								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-									<label class="checkbox">
-										<!-- <input type="checkbox" name="consignee" value=""> -->
-										<?php  echo $this->formRow($form->get('consignee')); ?>
-										Consignee</label>
-									</div>
-								</div>
-							</div>
-
-
-							<div class="col-md-6">
-								<div class="form-group">
-									<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-										<label class="checkbox">
-											<!-- <input type="checkbox" name="consignee" value=""> -->
-											<?php  echo $this->formRow($form->get('franchise')); ?>
-											Franchise</label>
-										</div>
-									</div>
-								</div>
-							</div><!--/row  -->
-
-
-
-
-							<div class="row">
-								<div class="col-md-6">
-									<div class="form-group">
-										<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-											<?php  echo $this->formRow($form->get('creditLimit')); ?>
-											<span class="help-block">
-												Credit Limit
-											</span>
-										</div>
-									</div>
-								</div>
-								<!--/span-->
-								<div class="col-md-6">
-									<div class="form-group">
-										<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left select">
-											<?php  echo $this->formRow($form->get('unpaidTransactionLimit')); ?>
-											<span class="help-block">
-												Unpaid Transaction Limit
-											</span>
-										</div>
-									</div>
-								</div>
-								<!--/span-->
-							</div><!--/row-->
-
-
-							<div class="row">
-								<div class="col-md-6">
-									<div class="form-group">
-										<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-											<?php  echo $this->formRow($form->get('paymentTerms[paymentTermId]')); ?>
-											<span class="help-block">
-												Payment Terms
-											</span>
-										</div>
-									</div>
-								</div>
-								<!--/span-->
-								<div class="col-md-6">
-									<div class="form-group">
-										<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left select">
-											<?php  echo $this->formRow($form->get('percentCommission')); ?>
-											<span class="help-block">
-												%Commission
-											</span>
-										</div>
-									</div>
-								</div>
-								<!--/span-->
-							</div><!--/row-->
-
-
-							<div class="row">
-								<div class="col-md-6">
-									<div class="form-group">
-										<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-											<?php  echo $this->formRow($form->get('shippingModes[shippingModeId]')); ?>
-											<span class="help-block">
-												Shipping Mode
-											</span>
-										</div>
-									</div>
-								</div>
-								<!--/span-->
-								<div class="col-md-6">
-									<div class="form-group">
-										<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left select">
-											<?php  echo $this->formRow($form->get('users')); ?>
-											<span class="help-block">
-												Sales Executive
-											</span>
-										</div>
-									</div>
-								</div>
-								<!--/span-->
-							</div><!--/row-->
-
-							<div class="row">
-								<div class="col-md-6">
-									<div class="form-group">
-										<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-											<?php  echo $this->formRow($form->get('priceTypes[priceTypeId]')); ?>
-											<span class="help-block">
-												Price Type
-											</span>
-										</div>
-									</div>
-								</div>
-								<!--/span-->
-								<div class="col-md-6">
-									<div class="form-group">
-										<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left select">
-											<?php  echo $this->formRow($form->get('customerStatus')); ?>
-											<span class="help-block">
-												Customer Status
-											</span>
-										</div>
-									</div>
-								</div>
-								<!--/span-->
-							</div><!--/row-->
-
-
-
-
-							<div class="row form-section">
-								<div class="col-md-12">
-									<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
-										<h4 class="">Address</h4>
-									</div>
-									<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
-										<button id="" type="button"  data-toggle="modal" href="#addressModal" class="btn-sm green custom-right">
-											Add New
-											<i class="fa fa-plus"></i>
-										</button>
-									</div>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<div class="col-md-2"></div>
-								<div class="col-md-8">
-									<div class="row">
-										<div class="col-md-12">
-											<!-- BEGIN SAMPLE TABLE PORTLET-->
-											<div class="portlet-body flip-scroll">
-												<table class="table table-bordered table-condensed flip-content">
-													<thead class="flip-content bg-grey">
-														<tr>
-															<th width="20%">
-																Address Type
-															</th>
-															<th>
-																Street/Landmark
-															</th>
-															<th>
-																City
-															</th>
-															<th>
-																Province
-															</th>
-															<th>
-																Country
-															</th>
-															<th>
-																Zipcode
-															</th>
-															<th>
-																Edit
-															</th>
-															<th>
-																Delete
-															</th>
-														</tr>
-													</thead>
-													<tbody>
-														<?php foreach ($addresses as $address) : ?>
-															<!-- ->getAddressId() -->
-																						<tr>
-																								<td><?php echo $this->escapeHtml($address->getAddressType()); ?></td>
-																								<td><?php echo $this->escapeHtml($address->getStreetLandmark()); ?></td>
-																								<td><?php echo $this->escapeHtml($address->getCity()->getCityName()); ?></td>
-																								<td><?php echo $this->escapeHtml($address->getProvince()->getProvinceName()); ?></td>
-																								<td><?php echo $this->escapeHtml($address->getCountry()->getCountryName()); ?></td>
-																								<td><?php echo $this->escapeHtml($address->getZipcode()); ?></td>
-
-														<td><a id="" data-toggle="modal" href="#bundleModal" class="btn-sm green custom-right">
+							<div class="col-md-2"></div>
+							<div class="col-md-8">
+								<div class="row">
+									<div class="col-md-12">
+										<!-- BEGIN SAMPLE TABLE PORTLET-->
+										<div class="portlet-body flip-scroll">
+											<table class="table table-bordered table-condensed flip-content">
+												<thead class="flip-content bg-grey">
+													<tr>
+														<th width="20%">
+															Position
+														</th>
+														<th>
+															Primary
+														</th>
+														<th>
+															Full Name
+														</th>
+														<th>
+															Email
+														</th>
+														<th>
+															Phone
+														</th>
+														<th>
 															Edit
-															<i class="fa fa-edit"></i>
-														</a></td>
-														<td><a id="" data-toggle="modal" href="#" class="btn-sm green custom-right">
+														</th>
+														<th>
 															Delete
-															<i class="fa fa-times"></i>
-														</a></td>
-													</tr>
-													<?php endforeach; ?>
+														</th>
+														<tr>
+														</thead>
 														<tbody>
-														</table>
-													</div>
-													<!-- END SAMPLE TABLE PORTLET-->
-												</div>
-											</div>
-										</div>
-										<div class="col-md-2"></div>
-									</div>
-
-
-
-									<div class="row form-section">
-										<div class="col-md-12">
-											<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
-												<h4 class="">Contact</h4>
-											</div>
-											<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
-												<button href="#contactModal" type="button"  data-toggle="modal" class="btn-sm green custom-right">
-													Add New
-													<i class="fa fa-plus"></i>
-												</button>
-											</div>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="col-md-2"></div>
-										<div class="col-md-8">
-											<div class="row">
-												<div class="col-md-12">
-													<!-- BEGIN SAMPLE TABLE PORTLET-->
-													<div class="portlet-body flip-scroll">
-														<table class="table table-bordered table-condensed flip-content">
-															<thead class="flip-content bg-grey">
-																<tr>
-																	<th width="20%">
-																		Position
-																	</th>
-																	<th>
-																		Primary
-																	</th>
-																	<th>
-																		Full Name
-																	</th>
-																	<th>
-																		Email
-																	</th>
-																	<th>
-																		Phone
-																	</th>
-																	<th>
+															<?php foreach ($contacts as $contact) : ?>
+												<!-- ->getAddressId()- -->
+										<tr>
+												<td><?php echo $this->escapeHtml($contact->getPosition()); ?></td>
+												<td><?php echo $this->escapeHtml($contact->getPrimary()); ?></td>
+												<td><?php echo $this->escapeHtml($contact->getFullname()); ?></td>
+												<td><?php echo $this->escapeHtml($contact->getEmail()); ?></td>
+												<td><?php echo $this->escapeHtml($contact->getPhone()); ?></td>
+												<td><a id="" data-toggle="modal" href="#bundleModal" class="btn-sm green custom-right">
 																		Edit
-																	</th>
-																	<th>
-																		Delete
-																	</th>
-																	<tr>
-																	</thead>
-																	<tbody>
-																	</tbody>
-																</table>
+																		<i class="fa fa-edit"></i>
+											</a></td>
+											<td><a id="" data-toggle="modal" href="#" class="btn-sm green custom-right">
+												Delete
+												<i class="fa fa-times"></i>
+											</a></td>
+										</tr>
+										<?php endforeach; ?>
 
-															</div>
-															<!-- END SAMPLE TABLE PORTLET-->
-														</div>
-													</div>
+														</tbody>
+													</table>
+
 												</div>
-												<div class="col-md-2"></div>
-											</div>
-
-
-
-											<!-- BEGIN PAGE CONTENT-->
-
-										</div>
-										<div class="form-actions fluid">
-											<div class="row">
-												<div class="col-md-6">
-													<div class="col-md-offset-3 col-md-9">
-														<button type="submit" class="btn green">Submit</button>
-														<button type="button" class="btn default">Cancel</button>
-													</div>
-												</div>
-												<div class="col-md-6">
-												</div>
+												<!-- END SAMPLE TABLE PORTLET-->
 											</div>
 										</div>
-									</form>
-									<!-- END FORM-->
-									
+									</div>
+									<div class="col-md-2"></div>
+								</div>
+
+
+
+								<!-- BEGIN PAGE CONTENT-->
+
+							</div>
+							<div class="form-actions fluid">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="col-md-offset-3 col-md-9">
+											<button type="submit" class="btn green">Submit</button>
+											<button type="button" class="btn default">Cancel</button>
+										</div>
+									</div>
+									<div class="col-md-6">
+									</div>
 								</div>
 							</div>
-							<div>
-								<?php echo $this->render('customer/address') ?>
-							</div>
-							<div>
-								<?php echo $this->render('customer/contact') ?>
-							</div>
-							<!-- BEGIN PAGE LEVEL PLUGINS -->
-							<script type="text/javascript" src="/assets/plugins/select2/select2.min.js"></script>
-							<script type="text/javascript" src="/assets/plugins/data-tables/jquery.dataTables.js"></script>
-							<script type="text/javascript" src="/assets/plugins/data-tables/DT_bootstrap.js"></script>
-							<!-- END PAGE LEVEL PLUGINS -->
-							<!-- BEGIN PAGE LEVEL SCRIPTS -->
-							<script src="/assets/scripts/core/app.js"></script>
-							<?php
-							$this->inlineScript()
-							->appendFile($this->basePath('/assets/scripts/ajax/generic.js'))
-							->appendFile($this->basePath('/assets/scripts/customer.js'))
-							?>
-							<?php $this->inlineScript()->captureStart() ?>
-							jQuery(document).ready(function() {
-								App.init();
-								Customer.init();
-							});
-							<?php $this->inlineScript()->captureEnd() ?>
+						</form>
+						<!-- END FORM-->
+						
+					</div>
+				</div>
+				<div>
+					<?php echo $this->render('customer/address') ?>
+				</div>
+				<div>
+					<?php echo $this->render('customer/contact') ?>
+				</div>
+				<!-- BEGIN PAGE LEVEL PLUGINS -->
+				<script type="text/javascript" src="/assets/plugins/select2/select2.min.js"></script>
+				<script type="text/javascript" src="/assets/plugins/data-tables/jquery.dataTables.js"></script>
+				<script type="text/javascript" src="/assets/plugins/data-tables/DT_bootstrap.js"></script>
+				<!-- END PAGE LEVEL PLUGINS -->
+				<!-- BEGIN PAGE LEVEL SCRIPTS -->
+				<script src="/assets/scripts/core/app.js"></script>
+				<?php
+				$this->inlineScript()
+				->appendFile($this->basePath('/assets/scripts/ajax/generic.js'))
+				->appendFile($this->basePath('/assets/scripts/customer.js'))
+				?>
+				<?php $this->inlineScript()->captureStart() ?>
+				jQuery(document).ready(function() {
+					App.init();
+					Customer.init();
+				});
+				<?php $this->inlineScript()->captureEnd() ?>

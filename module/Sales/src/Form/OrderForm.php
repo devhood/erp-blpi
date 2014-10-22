@@ -18,7 +18,7 @@ class OrderForm extends Form
                 )
         ));
 
-        $this->add(array(
+    $this->add(array(
                 'name' => 'transactionTypes[transactionTypeId]',
                 'type' => 'Select',
                 'attributes' => array(
