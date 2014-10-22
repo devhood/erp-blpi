@@ -6,6 +6,10 @@ return array(
 		'template_path_stack' => array(
 			__DIR__ . '/../view',
 		),
+		'template_map' => array(
+			'sales/order'           =>   __DIR__ . '/../view/sales/partial/order.phtml',
+			
+		),
 	),
 	'router' => array(
 		'routes' => array(
@@ -14,7 +18,7 @@ return array(
 				'options' => array(
 					'route'    => '/sales',
 					'defaults' => array(
-						'controller' => __NAMESPACE__ . '\Index',
+						'controller' => __NAMESPACE__ . '\Order',
 						'action'     => 'index',
 					),
 				),
@@ -24,8 +28,28 @@ return array(
 				'options' => array(
 					'route'    => '/sales/add',
 					'defaults' => array(
-						'controller' => __NAMESPACE__ . '\Index',
+						'controller' => __NAMESPACE__ . '\Order',
 						'action'     => 'add',
+					),
+				),
+			),
+			__NAMESPACE__.'_Index_Edit' => array(
+				'type' => 'Literal',
+				'options' => array(
+					'route'    => '/sales/edit',
+					'defaults' => array(
+						'controller' => __NAMESPACE__ . '\Order',
+						'action'     => 'edit',
+					),
+				),
+			),
+			__NAMESPACE__.'_Index_View' => array(
+				'type' => 'Literal',
+				'options' => array(
+					'route'    => '/sales/view',
+					'defaults' => array(
+						'controller' => __NAMESPACE__ . '\Order',
+						'action'     => 'view',
 					),
 				),
 			),
@@ -33,7 +57,7 @@ return array(
 	),
 	'controllers' => array(
 		'invokables' => array(
-			__NAMESPACE__ . '\Index' => __NAMESPACE__ . '\Controller\IndexController',
+			__NAMESPACE__ . '\Order' => __NAMESPACE__ . '\Controller\OrderController',
 		),
 	),
 );

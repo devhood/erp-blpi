@@ -6,7 +6,7 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Main\Controller\BaseController;
 
-class IndexController extends BaseController
+class OrderController extends BaseController
 {
     public function indexAction()
     {
@@ -17,7 +17,7 @@ class IndexController extends BaseController
     public function addAction()
     {
 
-      $form = new \Sales\Form\SalesForm();
+      $form = new \Sales\Form\OrderForm();
 
       // $brand = $this->_getOptions("Brands","brandId","brandName");
       // $form->get("brands[brandId]")->setOptions(array('value_options' => $brand));
@@ -30,11 +30,6 @@ class IndexController extends BaseController
 
 
         return new ViewModel(array('form' => $form));
-    }
-
-    public function viewFunction()
-    {
-
     }
 
 }
