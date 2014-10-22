@@ -34,6 +34,17 @@ return array(
 					),
 				),
 			),
+			__NAMESPACE__.'_Index_view' => array(
+				'type' => 'Literal',
+				'options' => array(
+					'route'    => '/customer/view',
+					'defaults' => array(
+						'controller' => __NAMESPACE__ . '\Index',
+						'action'     => 'view',
+					),
+				),
+			),
+
 		),
 	),
 	'controllers' => array(

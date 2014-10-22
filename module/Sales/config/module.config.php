@@ -1,5 +1,5 @@
 <?php
-namespace Product;
+namespace Sales;
 
 return array(
 	'view_manager' => array(
@@ -12,7 +12,7 @@ return array(
 			__NAMESPACE__.'_Index_Home' => array(
 				'type' => 'Literal',
 				'options' => array(
-					'route'    => '/product',
+					'route'    => '/sales',
 					'defaults' => array(
 						'controller' => __NAMESPACE__ . '\Index',
 						'action'     => 'index',
@@ -22,7 +22,7 @@ return array(
 			__NAMESPACE__.'_Index_Add' => array(
 				'type' => 'Literal',
 				'options' => array(
-					'route'    => '/product/add',
+					'route'    => '/sales/add',
 					'defaults' => array(
 						'controller' => __NAMESPACE__ . '\Index',
 						'action'     => 'add',

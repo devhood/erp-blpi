@@ -293,10 +293,6 @@ $this->headLink()
 							<h4 class="">Address</h4>
 						</div>
 						<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
-							<button id="" type="button"  data-toggle="modal" href="#addressModal" class="btn-sm green custom-right">
-								Add New
-								<i class="fa fa-plus"></i>
-							</button>
 						</div>
 					</div>
 				</div>
@@ -332,11 +328,15 @@ $this->headLink()
 											</tr>
 										</thead>
 										<tbody>
-										<?php foreach ($address as $address) : ?>
+										<?php foreach ($addresses as $address) : ?>
+											<!-- ->getAddressId() -->
 																		<tr>
-																				<td><?php echo $this->escapeHtml($price->getAddressId()->getAddressType()); ?></td>
-																				<td><?php// echo $this->escapeHtml($price->getStreetLandmark()); ?></td>
-																				<td><?php// echo $this->escapeHtml($price->getCity()->()); ?></td>
+																				<td><?php echo $this->escapeHtml($address->getAddressType()); ?></td>
+																				<td><?php echo $this->escapeHtml($address->getStreetLandmark()); ?></td>
+																				<td><?php echo $this->escapeHtml($address->getCity()->getCityName()); ?></td>
+																				<td><?php echo $this->escapeHtml($address->getProvince()->getProvinceName()); ?></td>
+																				<td><?php echo $this->escapeHtml($address->getCountry()->getCountryName()); ?></td>
+																				<td><?php echo $this->escapeHtml($address->getZipcode()); ?></td>
 																		</tr>
 																	<?php endforeach; ?>
 										</tbody>
@@ -357,10 +357,7 @@ $this->headLink()
 							<h4 class="">Contact</h4>
 						</div>
 						<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
-							<button href="#contactModal" type="button"  data-toggle="modal" class="btn-sm green custom-right">
-								Add New
-								<i class="fa fa-plus"></i>
-							</button>
+
 						</div>
 					</div>
 				</div>

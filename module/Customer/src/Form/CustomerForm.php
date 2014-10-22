@@ -226,6 +226,7 @@ $this->add(array(
 				// 						),
 			)
 		));
+
 		$this->add(array(
 			'name' => 'users',
 			'type' => 'Select',
@@ -275,21 +276,6 @@ $this->add(array(
 			)
 		));
 
-		$this->add(array(
-			'name' => 'salesExecutive[salesExecutiveId]',
-			'type' => 'Select',
-			'attributes' => array(
-				'class' => 'select2me form-control',
-				'data-placeholder' => 'Choose Sales Executive',
-				'tabindex' => '1',
-				'id' => 'salesExecutiveId',
-			),
-			'options' => array(
-				// 						'value_options' => array(
-				// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-				// 						),
-			)
-		));
 
 		$this->add(array(
 			'name' => 'addressType[addressTypeId]',
@@ -378,7 +364,7 @@ $this->add( array(
 ));
 
 
-//Modal Properties (Contact)
+//Modal Properties (CONTACT)
 
 $this->add( array(
 	'name' => 'position',
@@ -410,7 +396,7 @@ $this->add( array(
 ));
 
 $this->add( array(
-	'name' => 'zipcode',
+	'name' => 'email',
 	'type' => 'email',
 	'attributes' => array(
 		'class' => 'form-control',

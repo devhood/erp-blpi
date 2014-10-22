@@ -40,7 +40,7 @@ class IndexController extends BaseController
     {
     	$form = new \Customer\Form\CustomerForm();
 
-    	$type = $this->_getOptions("CustomerTypes","customerTypeId","customerTypeName");
+    		$type = $this->_getOptions("CustomerTypes","customerTypeId","customerTypeName");
         $form->get("customerTypes[customerTypeId]")->setOptions(array('value_options' => $type));
 
         $category = $this->_getOptions("Categories","categoryId","categoryName","categoryType","customer");
@@ -55,7 +55,7 @@ class IndexController extends BaseController
         $shipping = $this->_getOptions("shippingModes","shippingModeId","shippingModeName");
         $form->get("shippingModes[shippingModeId]")->setOptions(array('value_options' => $shipping));
 
-        $users = $this->_getOptions("users","userId","fullName","designation","2");
+       	$users = $this->_getOptions("users","userId","fullName","designation","2");
         $form->get("users")->setOptions(array('value_options' => $users));
 
         $form->get("customerStatus")->setOptions(array('value_options' => array(
@@ -64,6 +64,74 @@ class IndexController extends BaseController
             '2'=>'Suspended',
             '3'=>'Block',)));
 
-    	return new ViewModel(array('form' => $form));
+ 			 $addresses = $this->_getContents("Address");
+       $contacts = $this->_getContents("Contacts");
+
+    	return new ViewModel(array(
+				'form' => $form,
+				'address' => $addresses,
+				'contact' => $contacts,
+
+				));
     }
+
+		public function viewAction(){
+			$form = new \Customer\Form\CustomerForm();
+				$form->get("categories[categoryId]")->setAttribute("disabled", true);
+				$form->get("customerTypes[customerTypeId]")->setAttribute("disabled", true);
+				$form->get("companyName")->setAttribute("readonly", true);
+				$form->get("branch")->setAttribute("readonly", true);
+
+				$form->get("tradeName")->setAttribute("readonly", true);
+
+				$form->get("tinNumber")->setAttribute("readonly", true);
+				$form->get("phone")->setAttribute("readonly", true);
+				$form->get("email")->setAttribute("readonly", true);
+				$form->get("website")->setAttribute("readonly", true);
+				$form->get("secNumber")->setAttribute("readonly", true);
+				$form->get("consignee")->setAttribute("readonly", true);
+				$form->get("franchise")->setAttribute("readonly", true);
+				$form->get("creditLimit")->setAttribute("readonly", true);
+				$form->get("unpaidTransactionLimit")->setAttribute("readonly", true);
+				$form->get("paymentTerms[paymentTermId]")->setAttribute("disabled", true);
+				$form->get("percentCommission")->setAttribute("readonly", true);
+				$form->get("shippingModes[shippingModeId]")->setAttribute("disabled", true);
+				$form->get("users")->setAttribute("readonly", true);
+			///	$form->get("users[userId]")->setAttribute("disabled", true);
+					$form->get("customerStatus")->setAttribute("readonly", true);
+			//	$form->get("salesExecutive[salesExecutiveId]")->setAttribute("disabled", true);
+
+				//address
+				$form->get("addressType[addressTypeId]")->setAttribute("disabled", true);
+				$form->get("streetLandmark")->setAttribute("readonly", true);
+				$form->get("city[cityId]")->setAttribute("disabled", true);
+				$form->get("province[provinceId]")->setAttribute("disabled", true);
+				$form->get("country[countryId]")->setAttribute("disabled", true);
+				$form->get("zipcode")->setAttribute("readonly", true);
+
+				//contact
+				$form->get("position")->setAttribute("readonly", true);
+				$form->get("primary")->setAttribute("readonly", true);
+				$form->get("fullname")->setAttribute("readonly", true);
+				$form->get("email")->setAttribute("readonly", true);
+				$form->get("phone")->setAttribute("readonly", true);
+
+
+
+
+
+
+
+$addresses = $this->_getContents("Address");
+$contacts = $this->_getContents("Contacts");
+
+return new ViewModel(array(
+'form' => $form,
+'addresses' => $addresses,
+'contacts' => $contacts,
+
+));
+		}
+
+
 }
