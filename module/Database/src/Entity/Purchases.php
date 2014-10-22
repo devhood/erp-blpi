@@ -50,6 +50,13 @@ class Purchases
     private $purchaseStatus;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="purchase_notes", type="text", precision=0, scale=0, nullable=true, unique=false)
+     */
+    private $purchaseNotes;
+
+    /**
      * @var \Database\Entity\Suppliers
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Suppliers")
@@ -160,6 +167,29 @@ class Purchases
     public function getPurchaseStatus()
     {
         return $this->purchaseStatus;
+    }
+
+    /**
+     * Set purchaseNotes
+     *
+     * @param string $purchaseNotes
+     * @return Purchases
+     */
+    public function setPurchaseNotes($purchaseNotes)
+    {
+        $this->purchaseNotes = $purchaseNotes;
+
+        return $this;
+    }
+
+    /**
+     * Get purchaseNotes
+     *
+     * @return string 
+     */
+    public function getPurchaseNotes()
+    {
+        return $this->purchaseNotes;
     }
 
     /**

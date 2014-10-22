@@ -57,6 +57,13 @@ class Shipments
     private $shipmentStatus;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="shipment_notes", type="text", precision=0, scale=0, nullable=true, unique=false)
+     */
+    private $shipmentNotes;
+
+    /**
      * @var \Database\Entity\Suppliers
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Suppliers")
@@ -190,6 +197,29 @@ class Shipments
     public function getShipmentStatus()
     {
         return $this->shipmentStatus;
+    }
+
+    /**
+     * Set shipmentNotes
+     *
+     * @param string $shipmentNotes
+     * @return Shipments
+     */
+    public function setShipmentNotes($shipmentNotes)
+    {
+        $this->shipmentNotes = $shipmentNotes;
+
+        return $this;
+    }
+
+    /**
+     * Get shipmentNotes
+     *
+     * @return string 
+     */
+    public function getShipmentNotes()
+    {
+        return $this->shipmentNotes;
     }
 
     /**
