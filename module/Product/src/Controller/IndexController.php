@@ -36,14 +36,14 @@ class IndexController extends BaseController
             '2'=>'Discontinued',
             '3'=>'Cancelled',)));
 
-        $pricemodal = $this->_getOptions("priceTypes","priceTypeId","priceTypeName");
+        $pricemodal = $this->_getOptions("PriceTypes","priceTypeId","priceTypeName");
         $form->get("priceTypes[priceTypeId]")->setOptions(array('value_options' => $pricemodal));
 
-        $currencies = $this->_getOptions("currencies","currencyId","currencyName");
+        $currencies = $this->_getOptions("Currencies","currencyId","currencyName");
         $form->get("currencies[currencyId]")->setOptions(array('value_options' => $currencies));
 
 
-        $productmodal = $this->_getOptions("products","productId","productName");
+        $productmodal = $this->_getOptions("Products","productId","productName");
         $form->get("products[productId]")->setOptions(array('value_options' => $productmodal));
         
         $bundles = $this->_getContents("Bundles");
@@ -52,9 +52,6 @@ class IndexController extends BaseController
        
         return new ViewModel(array(
     		'form' => $form, 
-       		'bundles' => $bundles,
-       		'uoms' => $uoms,
-            'prices' => $prices,
        		
        ));
     }
@@ -80,15 +77,17 @@ class IndexController extends BaseController
             '2'=>'Discontinued',
             '3'=>'Cancelled',)));
 
-        $pricemodal = $this->_getOptions("priceTypes","priceTypeId","priceTypeName");
+        $pricemodal = $this->_getOptions("PriceTypes","priceTypeId","priceTypeName");
         $form->get("priceTypes[priceTypeId]")->setOptions(array('value_options' => $pricemodal));
 
-        $currencies = $this->_getOptions("currencies","currencyId","currencyName");
+        $currencies = $this->_getOptions("Currencies","currencyId","currencyName");
         $form->get("currencies[currencyId]")->setOptions(array('value_options' => $currencies));
 
-
-        $productmodal = $this->_getOptions("products","productId","productName");
+        $productmodal = $this->_getOptions("Products","productId","productName");
         $form->get("products[productId]")->setOptions(array('value_options' => $productmodal));
+
+        $unit = $this->_getOptions("Uoms","uomId","uomName");
+        $form->get("uoms[uomId]")->setOptions(array('value_options' => $unit));
         
         $bundles = $this->_getContents("Bundles");
         $uoms = $this->_getContents("ProductUoms");
@@ -137,14 +136,14 @@ class IndexController extends BaseController
             '2'=>'Discontinued',
             '3'=>'Cancelled',)));
 
-        $pricemodal = $this->_getOptions("priceTypes","priceTypeId","priceTypeName");
+        $pricemodal = $this->_getOptions("PriceTypes","priceTypeId","priceTypeName");
         $form->get("priceTypes[priceTypeId]")->setOptions(array('value_options' => $pricemodal));
 
-        $currencies = $this->_getOptions("currencies","currencyId","currencyName");
+        $currencies = $this->_getOptions("Currencies","currencyId","currencyName");
         $form->get("currencies[currencyId]")->setOptions(array('value_options' => $currencies));
 
 
-        $productmodal = $this->_getOptions("products","productId","productName");
+        $productmodal = $this->_getOptions("Products","productId","productName");
         $form->get("products[productId]")->setOptions(array('value_options' => $productmodal));
         
         $bundles = $this->_getContents("Bundles");

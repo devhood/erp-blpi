@@ -1,4 +1,4 @@
-	<div id="orderModal" class="modal fade" tabindex="-1" aria-hidden="true">
+	<div id="orderedModal" class="modal fade" tabindex="-1" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -12,7 +12,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-										<?php  echo $this->formRow($form->get('items[itemsId]')); ?>
+										<?php  echo $this->formRow($form->get('sales_item[sales_items_id]')); ?>
 										<span class="help-block">
 											Items
 										</span>
@@ -48,7 +48,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
-										<?php  echo $this->formRow($form->get('discount[discountId]')); ?>
+										<?php  echo $this->formRow($form->get('discount[discount_id]')); ?>
 										<span class="help-block">
 											Discount
 										</span>
@@ -61,14 +61,53 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-										<?php  echo $this->formRow($form->get('freebie[freebieId]')); ?>
+										<?php  echo $this->formRow($form->get('price')); ?>
 										<span class="help-block">
-											Items Included
+											Price
 										</span>
 									</div>
 								</div>
 							</div>
-						</div>
+
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
+										<?php  echo $this->formRow($form->get('discount[discount_id]')); ?>
+										<span class="help-block">
+											Discount
+										</span>
+									</div>
+								</div>
+							</div>
+						</div><!--/row  -->
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
+										<?php  echo $this->formRow($form->get('sales_items[freebie]')); ?>
+										<span class="help-block">
+											Freebie
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
+										<?php  echo $this->formRow($form->get('sales_items[total_items]')); ?>
+										<span class="help-block">
+											Total
+										</span>
+									</div>
+								</div>
+							</div>
+						</div><!--/row  -->
+
+
+
+
 
 					<div class="modal-footer">
 						<button type="button" data-dismiss="modal" class="btn default">Close</button>

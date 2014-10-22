@@ -14,7 +14,6 @@ class ProductForm extends Form
 				'type' => 'Text',
 				'attributes' => array(
 						'class' => 'form-control',
-						'placeholder' => 'Enter Item Code',
 						'id' => 'productCode',
 				)
 		));
@@ -24,7 +23,6 @@ class ProductForm extends Form
 				'type' => 'Text',
 				'attributes' => array(
 						'class' => 'form-control',
-						'placeholder' => 'Enter Name',
 						'id' => 'productName',
 				)
 		));
@@ -34,7 +32,6 @@ class ProductForm extends Form
 				'type' => 'Select',
 				'attributes' => array(
 						'class' => 'select2me form-control',
-						'data-placeholder' => 'Choose Classification',
 						'tabindex' => '1',
 						'id' => 'classificationId',
 				),
@@ -50,7 +47,6 @@ class ProductForm extends Form
 				'type' => 'Select',
 				'attributes' => array(
 						'class' => 'select2me form-control',
-						'data-placeholder' => 'Choose a Brand',
 						'tabindex' => '1',
 						'id' => 'brandId',
 				),
@@ -66,7 +62,6 @@ class ProductForm extends Form
 				'type' => 'Select',
 				'attributes' => array(
 						'class' => 'select2me form-control',
-						'data-placeholder' => 'Choose Supplier',
 						'tabindex' => '1',
 						'id' => 'supplierId',
 				),
@@ -82,7 +77,6 @@ class ProductForm extends Form
 				'type' => 'Text',
 				'attributes' => array(
 						'class' => 'form-control',
-						'placeholder' => 'Enter Size',
 						'id' => 'size',
 				)
 		));
@@ -92,7 +86,6 @@ class ProductForm extends Form
 				'type' => 'Text',
 				'attributes' => array(
 						'class' => 'form-control',
-						'placeholder' => 'Enter Weight',
 						'id' => 'weight',
 				)
 		));
@@ -102,7 +95,6 @@ class ProductForm extends Form
 				'type' => 'Select',
 				'attributes' => array(
 						'class' => 'select2me form-control',
-						'data-placeholder' => 'Choose Status',
 						'tabindex' => '1',
 						'id' => 'productStatus',
 				),
@@ -118,7 +110,6 @@ class ProductForm extends Form
 				'type' => 'Select',
 				'attributes' => array(
 						'class' => 'select2me form-control',
-						'data-placeholder' => 'Choose Payment Terms',
 						'tabindex' => '1',
 						'id' => 'paymenttermId',
 				),
@@ -134,7 +125,6 @@ class ProductForm extends Form
 				'type' => 'Text',
 				'attributes' => array(
 						'class' => 'form-control',
-						'placeholder' => 'Enter Part Number',
 						'id' => 'partNumber',
 				)
 		));
@@ -144,7 +134,6 @@ class ProductForm extends Form
 				'type' => 'Text',
 				'attributes' => array(
 						'class' => 'form-control',
-						'placeholder' => 'Enter BL Code',
 						'id' => 'blCode',
 				)
 		));
@@ -154,7 +143,6 @@ class ProductForm extends Form
 				'type' => 'Text',
 				'attributes' => array(
 						'class' => 'form-control',
-						'placeholder' => 'Enter Printed Code',
 						'id' => 'printedCode',
 				)
 		));
@@ -165,7 +153,6 @@ class ProductForm extends Form
 				'type' => 'Select',
 				'attributes' => array(
 						'class' => 'select2me form-control',
-						'data-placeholder' => 'Choose Price Type',
 						'tabindex' => '1',
 						'id' => 'priceTypeId',
 				),
@@ -181,7 +168,6 @@ class ProductForm extends Form
 				'type' => 'Text',
 				'attributes' => array(
 						'class' => 'form-control',
-						'placeholder' => 'Enter Amount',
 						'id' => 'priceQuantity',
 				)
 		));
@@ -191,7 +177,6 @@ class ProductForm extends Form
 				'type' => 'Select',
 				'attributes' => array(
 						'class' => 'select2me form-control',
-						'data-placeholder' => 'Choose Currency',
 						'tabindex' => '1',
 						'id' => 'currencyId',
 				),
@@ -204,13 +189,18 @@ class ProductForm extends Form
 
 		// Unit Modal
 
-		$this->add( array(
-				'name' => 'unitMeasurement',
-				'type' => 'Text',
+		$this->add(array(
+				'name' => 'uoms[uomId]',
+				'type' => 'Select',
 				'attributes' => array(
-						'class' => 'form-control',
-						'placeholder' => 'Enter Unit',
-						'id' => 'unitMeasurement',
+						'class' => 'select2me form-control',
+						'tabindex' => '1',
+						'id' => 'uomId',
+				),
+				'options' => array(
+// 						'value_options' => array(
+// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
+// 						),
 				)
 		));
 
@@ -219,7 +209,6 @@ class ProductForm extends Form
 				'type' => 'Text',
 				'attributes' => array(
 						'class' => 'form-control',
-						'placeholder' => 'Enter Quantity',
 						'id' => 'unitQuantity',
 				)
 		));
@@ -231,7 +220,6 @@ class ProductForm extends Form
 				'type' => 'Select',
 				'attributes' => array(
 						'class' => 'select2me form-control',
-						'data-placeholder' => 'Choose Product',
 						'tabindex' => '1',
 						'id' => 'productId',
 				),
@@ -247,7 +235,6 @@ class ProductForm extends Form
 				'type' => 'Text',
 				'attributes' => array(
 						'class' => 'form-control',
-						'placeholder' => 'Enter Quantity',
 						'id' => 'bundleQuantity',
 				)
 		));	
@@ -257,7 +244,6 @@ class ProductForm extends Form
 				'type' => 'Textarea',
 				'attributes' => array(
 						'class' => 'wysihtml5 form-control',
-						'placeholder' => 'Enter Description',
 						'id' => 'desc',
 						'rows' => '6'
 				)
@@ -268,7 +254,6 @@ class ProductForm extends Form
 				'type' => 'text',
 				'attributes' => array(
 						'class' => 'form-control tags medium',
-						'placeholder' => 'Add a Tag',
 						'id' => 'categories',
 				)
 		));
