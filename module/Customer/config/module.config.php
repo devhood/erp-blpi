@@ -45,6 +45,18 @@ return array(
 				),
 			),
 
+			__NAMESPACE__.'_Index_edit' => array(
+				'type' => 'Literal',
+				'options' => array(
+					'route'    => '/customer/edit',
+					'defaults' => array(
+						'controller' => __NAMESPACE__ . '\Index',
+						'action'     => 'edit',
+					),
+				),
+			),
+
+
 		),
 	),
 	'controllers' => array(

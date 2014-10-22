@@ -5,6 +5,17 @@
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
 					<h4 class="modal-title">Bundle</h4>
 				</div>
+			<form action="#" class="form-horizontal" id="product_bundle">
+				<div class="form-body">
+					<div class="alert alert-danger display-hide">
+						<button class="close" data-close="alert"></button>
+							You have some form errors. Please check below.
+					</div>
+					<div class="alert alert-success display-hide">
+						<button class="close" data-close="alert"></button>
+							Your form validation is successful!
+					</div>
+				</div>
 				<div class="modal-body">
 					<div class="scroller" style="height:150px" data-always-visible="1" data-rail-visible1="1">
 						<div class="row">
@@ -33,8 +44,19 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" data-dismiss="modal" class="btn default">Close</button>
-						<button type="button" class="btn green">Save changes</button>
-					</div>
+					<button type="submit" class="btn green">Save changes</button>
 				</div>
-								</div>
-							</div>
+			</form>
+			</div>
+		</div>
+	</div>
+<?php 
+// $this->inlineScript()
+// 	->appendFile($this->basePath('/assets/scripts/bundle.js'))
+?>
+ <?php //$this->inlineScript()->captureStart() ?>
+	<!-- jQuery(document).ready(function() {	
+		App.init();
+		Bundle.init();
+	}); -->
+<?php //$this->inlineScript()->captureEnd() ?>

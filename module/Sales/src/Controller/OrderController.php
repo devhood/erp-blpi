@@ -19,12 +19,16 @@ class OrderController extends BaseController
 
       $form = new \Sales\Form\OrderForm();
 
-      // $brand = $this->_getOptions("Brands","brandId","brandName");
+      
+      // $ = $this->_getOptions("Brands","brandId","brandName");
       // $form->get("brands[brandId]")->setOptions(array('value_options' => $brand));
-      //
+      
       // $classification = $this->_getOptions("Classifications","classificationId","classificationName");
       // $form->get("classifications[classificationId]")->setOptions(array('value_options' => $classification));
-      //
+      
+
+
+
 
 
 
