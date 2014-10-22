@@ -67,15 +67,9 @@ class IndexController extends BaseController
             '2'=>'Suspended',
             '3'=>'Block',)));
 
-     	$addresses = $this->_getContents("Address");
-        $contacts = $this->_getContents("Contacts");
-
     	return new ViewModel(array(
 				'form' => $form,
-				'address' => $addresses,
-				'contact' => $contacts,
-
-				));
+			));
     }
 
 
@@ -114,7 +108,6 @@ public function editAction()
 				'form' => $form,
 				'addresses' => $addresses,
 				'contacts' => $contacts,
-
 				));
     }
 
