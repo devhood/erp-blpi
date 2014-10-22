@@ -692,6 +692,7 @@ CREATE TABLE IF NOT EXISTS `blpi`.`Sales_Items` (
   `quantity` INT NULL,
   `quantity_return` INT NULL,
   `price` FLOAT NULL,
+  `discount` FLOAT NULL,
   `freebie` VARCHAR(45) NULL,
   `vat` FLOAT NULL,
   `sales` FLOAT NULL,

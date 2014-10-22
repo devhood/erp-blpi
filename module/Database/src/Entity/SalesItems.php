@@ -50,6 +50,13 @@ class SalesItems
     private $price;
 
     /**
+     * @var float
+     *
+     * @ORM\Column(name="discount", type="float", precision=10, scale=0, nullable=true, unique=false)
+     */
+    private $discount;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="freebie", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
@@ -202,6 +209,29 @@ class SalesItems
     public function getPrice()
     {
         return $this->price;
+    }
+
+    /**
+     * Set discount
+     *
+     * @param float $discount
+     * @return SalesItems
+     */
+    public function setDiscount($discount)
+    {
+        $this->discount = $discount;
+
+        return $this;
+    }
+
+    /**
+     * Get discount
+     *
+     * @return float 
+     */
+    public function getDiscount()
+    {
+        return $this->discount;
     }
 
     /**
