@@ -112,8 +112,8 @@ public function editAction()
 
     	return new ViewModel(array(
 				'form' => $form,
-				'address' => $addresses,
-				'contact' => $contacts,
+				'addresses' => $addresses,
+				'contacts' => $contacts,
 
 				));
     }
