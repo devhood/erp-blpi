@@ -6,9 +6,9 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Main\Controller\BaseController;
 
-class DeliveryController extends BaseController
+class InvoiceController extends BaseController
 {
-    public function indexAction()
+    public function invoiceAction()
     {
         return new ViewModel();
     }
@@ -17,18 +17,20 @@ class DeliveryController extends BaseController
     public function addAction()
     {
 
-<<<<<<< HEAD
-   
-        return new ViewModel();
-=======
-      $form = new \Sales\Form\DeliveryForm();
+      $form = new \Sales\Form\InvoiceForm();
+
+
 
       $transaction = $this->_getOptions("TransactionTypes","transactionTypeId","transactionTypeName");
-      $form->get("trasanctionTypes[transactionTypeId]")->setOptions(array('value_options' => $transaction));
+      $form->get("transactionTypes[transactionTypeId]")->setOptions(array('value_options' => $transaction));
 
-<<<<<<< HEAD
+
       $customer = $this->_getOptions("Customers","customerId","customerName");
       $form->get("customers[customerId]")->setOptions(array('value_options' => $customer));
+
+
+      $inventory = $this->_getOptions("InventoryLocations","inventoryLocationId","inventoryLocationName");
+      $form->get("inventoryLocations[inventoryLocationId]")->setOptions(array('value_options' => $inventory));
 
       $shipping = $this->_getOptions("Address","addressId","addressType");
       $form->get("shippingAddress[AddressId]")->setOptions(array('value_options' => $shipping));
@@ -42,26 +44,39 @@ class DeliveryController extends BaseController
       $shippingmode = $this->_getOptions("ShippingModes","shippingModeId","shippingModeName");
       $form->get("shippingModes[shippingModeId]")->setOptions(array('value_options' => $shippingmode));
 
+
       $user = $this->_getOptions("Users","userId","fullName","designation","2");
       $form->get("users[userId]")->setOptions(array('value_options' => $user));
 
       $payment = $this->_getOptions("PaymentTerms","paymentTermId","paymentTermName");
       $form->get("paymentTerms[paymentTermId]")->setOptions(array('value_options' => $payment));
 
+      $customer = $this->_getOptions("Customers","customerId","customerName");
+      $form->get("customers[customerId]")->setOptions(array('value_options' => $customer));
 
-      return new ViewModel(array('form' => $form));
+
+
+        return new ViewModel(array('form' => $form));
     }
 
-     public function approveAction()
+    public function approvedAction()
     {
 
-      $form = new \Sales\Form\DeliveryForm();
+
+      $form = new \Sales\Form\InvoiceForm();
+
+
 
       $transaction = $this->_getOptions("TransactionTypes","transactionTypeId","transactionTypeName");
-      $form->get("trasanctionTypes[transactionTypeId]")->setOptions(array('value_options' => $transaction));
+      $form->get("transactionTypes[transactionTypeId]")->setOptions(array('value_options' => $transaction));
+
 
       $customer = $this->_getOptions("Customers","customerId","customerName");
       $form->get("customers[customerId]")->setOptions(array('value_options' => $customer));
+
+
+      $inventory = $this->_getOptions("InventoryLocations","inventoryLocationId","inventoryLocationName");
+      $form->get("inventoryLocations[inventoryLocationId]")->setOptions(array('value_options' => $inventory));
 
       $shipping = $this->_getOptions("Address","addressId","addressType");
       $form->get("shippingAddress[AddressId]")->setOptions(array('value_options' => $shipping));
@@ -75,26 +90,38 @@ class DeliveryController extends BaseController
       $shippingmode = $this->_getOptions("ShippingModes","shippingModeId","shippingModeName");
       $form->get("shippingModes[shippingModeId]")->setOptions(array('value_options' => $shippingmode));
 
+
       $user = $this->_getOptions("Users","userId","fullName","designation","2");
       $form->get("users[userId]")->setOptions(array('value_options' => $user));
 
       $payment = $this->_getOptions("PaymentTerms","paymentTermId","paymentTermName");
       $form->get("paymentTerms[paymentTermId]")->setOptions(array('value_options' => $payment));
 
+      $customer = $this->_getOptions("Customers","customerId","customerName");
+      $form->get("customers[customerId]")->setOptions(array('value_options' => $customer));
 
-      return new ViewModel(array('form' => $form));
+
+
+        return new ViewModel(array('form' => $form));
     }
 
-     public function printAction()
+    public function printAction()
     {
 
-      $form = new \Sales\Form\DeliveryForm();
+      $form = new \Sales\Form\InvoiceForm();
+
+
 
       $transaction = $this->_getOptions("TransactionTypes","transactionTypeId","transactionTypeName");
-      $form->get("trasanctionTypes[transactionTypeId]")->setOptions(array('value_options' => $transaction));
+      $form->get("transactionTypes[transactionTypeId]")->setOptions(array('value_options' => $transaction));
+
 
       $customer = $this->_getOptions("Customers","customerId","customerName");
       $form->get("customers[customerId]")->setOptions(array('value_options' => $customer));
+
+
+      $inventory = $this->_getOptions("InventoryLocations","inventoryLocationId","inventoryLocationName");
+      $form->get("inventoryLocations[inventoryLocationId]")->setOptions(array('value_options' => $inventory));
 
       $shipping = $this->_getOptions("Address","addressId","addressType");
       $form->get("shippingAddress[AddressId]")->setOptions(array('value_options' => $shipping));
@@ -108,20 +135,19 @@ class DeliveryController extends BaseController
       $shippingmode = $this->_getOptions("ShippingModes","shippingModeId","shippingModeName");
       $form->get("shippingModes[shippingModeId]")->setOptions(array('value_options' => $shippingmode));
 
+
       $user = $this->_getOptions("Users","userId","fullName","designation","2");
       $form->get("users[userId]")->setOptions(array('value_options' => $user));
 
       $payment = $this->_getOptions("PaymentTerms","paymentTermId","paymentTermName");
       $form->get("paymentTerms[paymentTermId]")->setOptions(array('value_options' => $payment));
 
-
-=======
-      $customer = $this->_getOptions("Customers","transactionTypeId","transactionTypeName");
+      $customer = $this->_getOptions("Customers","customerId","customerName");
       $form->get("customers[customerId]")->setOptions(array('value_options' => $customer));
 
->>>>>>> 0f753098b8d10b053e0dd3e681893b4e730b2726
-      return new ViewModel(array('form' => $form));
->>>>>>> c2b68337cbc76f960ce1699d72d45f983c679e25
+
+
+        return new ViewModel(array('form' => $form));
     }
 
 }
