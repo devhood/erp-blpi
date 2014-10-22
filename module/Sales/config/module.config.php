@@ -24,11 +24,29 @@ return array(
 					),
 				),
 			),
-		),
-	),
-	'router' => array(
-	 'routes' => array(
-			__NAMESPACE__.'_Delivery_Add' => array(
+
+			__NAMESPACE__.'_Delivery_Approve' => array(
+				'type' => 'Literal',
+				'options' => array(
+					'route'    => '/sales/delivery/approve',
+					'defaults' => array(
+						'controller' => __NAMESPACE__ . '\Delivery',
+						'action'     => 'approve',
+					),
+				),
+			),
+
+			__NAMESPACE__.'_Delivery_Print' => array(
+				'type' => 'Literal',
+				'options' => array(
+					'route'    => '/sales/delivery/print',
+					'defaults' => array(
+						'controller' => __NAMESPACE__ . '\Delivery',
+						'action'     => 'print',
+					),
+				),
+			),
+			__NAMESPACE__.'_Order_Add' => array(
 				'type' => 'Literal',
 				'options' => array(
 					'route'    => '/sales/order/add',
@@ -38,16 +56,6 @@ return array(
 					),
 				),
 			),
-		    __NAMESPACE__.'_Delivery_Home' => array(
-		        'type' => 'Literal',
-		        'options' => array(
-		            'route'    => '/sales/delivery',
-		            'defaults' => array(
-		                'controller' => __NAMESPACE__ . '\Delivery',
-		                'action'     => 'index',
-		            ),
-		        ),
-		    ),
 		    __NAMESPACE__.'Invoice_Add' => array(
 		        'type' => 'Literal',
 		        'options' => array(
@@ -65,8 +73,6 @@ return array(
 			__NAMESPACE__ . '\Delivery' => __NAMESPACE__ . '\Controller\DeliveryController',
 			__NAMESPACE__ . '\Invoice' => __NAMESPACE__ . '\Controller\InvoiceController',
 			__NAMESPACE__ . '\Order' => __NAMESPACE__ . '\Controller\OrderController',
-		    __NAMESPACE__ . '\Delivery' => __NAMESPACE__ . '\Controller\DeliveryController',
-		    __NAMESPACE__ . '\Invoice' => __NAMESPACE__ . '\Controller\InvoiceController',
 		),
 	),
 );

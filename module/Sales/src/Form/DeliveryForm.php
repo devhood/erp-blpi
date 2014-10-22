@@ -18,7 +18,7 @@ class DeliveryForm extends Form
                 )
         ));
 
-         $this->add( array(
+        $this->add( array(
                 'name' => 'sono',
                 'type' => 'Text',
                 'attributes' => array(
@@ -35,11 +35,6 @@ class DeliveryForm extends Form
                         'tabindex' => '1',
                         'id' => 'transactionTypeId',
                 ),
-                'options' => array(
-//                      'value_options' => array(
-//                              'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-//                      ),
-                )
         ));
 
         $this->add(array(
@@ -50,10 +45,104 @@ class DeliveryForm extends Form
                         'tabindex' => '1',
                         'id' => 'customerId',
                 ),
-                'options' => array(
-//                      'value_options' => array(
-//                              'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-//                      ),
+        ));
+
+        $this->add(array(
+                'name' => 'inventorylocations[inventoryLocationId]',
+                'type' => 'Select',
+                'attributes' => array(
+                        'class' => 'select2me form-control',
+                        'tabindex' => '1',
+                        'id' => 'inventoryLcationId',
+                ),
+        ));
+
+        $this->add(array(
+                'name' => 'shippingAddress[AddressId]',
+                'type' => 'Select',
+                'attributes' => array(
+                        'class' => 'select2me form-control',
+                        'tabindex' => '1',
+                        'id' => 'shippingAddress',
+                ),
+        ));
+
+        $this->add(array(
+                'name' => 'billingAddress[AddressId]',
+                'type' => 'Select',
+                'attributes' => array(
+                        'class' => 'select2me form-control',
+                        'tabindex' => '1',
+                        'id' => 'billingAddress',
+                ),
+        ));
+
+        $this->add(array(
+                'name' => 'orderSource[orderSourceId]',
+                'type' => 'Select',
+                'attributes' => array(
+                        'class' => 'select2me form-control',
+                        'tabindex' => '1',
+                        'id' => 'orderSourceId',
+                ),
+        ));
+
+        $this->add(array(
+                'name' => 'shippingModes[shippingModeId]',
+                'type' => 'Select',
+                'attributes' => array(
+                        'class' => 'select2me form-control',
+                        'tabindex' => '1',
+                        'id' => 'shippingModeId',
+                ),
+        ));
+
+        $this->add(array(
+                'name' => 'users[userId]',
+                'type' => 'Select',
+                'attributes' => array(
+                        'class' => 'select2me form-control',
+                        'tabindex' => '1',
+                        'id' => 'userId',
+                ),
+        ));
+
+        $this->add(array(
+                'name' => 'paymentTerms[paymentTermId]',
+                'type' => 'Select',
+                'attributes' => array(
+                        'class' => 'select2me form-control',
+                        'tabindex' => '1',
+                        'id' => 'paymentTermId',
+                ),
+        ));
+
+        $this->add( array(
+                'name' => 'deliveryDate',
+                'type' => 'Text',
+                'attributes' => array(
+                    'class' => 'form-control date-picker',
+                    'id' => 'deliveryDate',
+                )
+        ));
+
+         $this->add(array(
+                'name' => 'priceTypes[priceTypeId]',
+                'type' => 'Select',
+                'attributes' => array(
+                        'class' => 'select2me form-control',
+                        'tabindex' => '1',
+                        'id' => 'priceTypeId',
+                ),
+        ));
+
+       $this->add( array(
+            'name' => 'notes',
+            'type' => 'Textarea',
+            'attributes' => array(
+                    'class' => 'wysihtml5 form-control',
+                    'id' => 'notes',
+                    'rows' => '6'
                 )
         ));
     }
