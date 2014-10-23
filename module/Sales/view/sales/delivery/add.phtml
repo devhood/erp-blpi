@@ -89,11 +89,11 @@ $this->headLink()
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
                 <?php  echo $this->formRow($form->get('trasanctionTypes[transactionTypeId]')); ?>
                 <span class="help-block">
-<<<<<<< HEAD
+
                   Inventory Location
-=======
-                  Transaction Type
->>>>>>> cb2c42c04b9e5b58c59f750de0988f57d41a61ee
+  
+             
+
                 </span>
               </div>
             </div>
@@ -252,7 +252,7 @@ $this->headLink()
               <h4 class="">Ordered Items</h4>
                 </div>
                   <div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
-                    <button id="kalabaw" type="button" data-toggle="modal" href="#bundleModal" class="btn-sm green custom-right">
+                    <button id="kalabaw" type="button" data-toggle="modal" href="#deliveryModal" class="btn-sm green custom-right">
                       Add New
                     <i class="fa fa-plus"></i>
                     </button>
@@ -389,10 +389,7 @@ $this->headLink()
           <!--/span-->
         </div>
 
-<<<<<<< HEAD
 
-=======
->>>>>>> cb2c42c04b9e5b58c59f750de0988f57d41a61ee
       </div>
         <div class="form-actions fluid">
           <div class="row">
@@ -410,6 +407,7 @@ $this->headLink()
       <!-- END FORM-->
     </div>
   </div>
+  <?php echo $this->render('sales/delivery') ?>
 
 
   <!-- BEGIN PAGE LEVEL PLUGINS -->

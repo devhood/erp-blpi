@@ -14,7 +14,7 @@ class DeliveryController extends BaseController
     }
 
 
-    public function addAction()
+    public function addAction() 
     {
 
       $form = new \Sales\Form\DeliveryForm();
@@ -109,16 +109,16 @@ class DeliveryController extends BaseController
       $payment = $this->_getOptions("PaymentTerms","paymentTermId","paymentTermName");
       $form->get("paymentTerms[paymentTermId]")->setOptions(array('value_options' => $payment));
 
-<<<<<<< HEAD
+
 
       return new ViewModel(array('form' => $form));
-=======
+
       $customer = $this->_getOptions("Customers","transactionTypeId","transactionTypeName");
       $form->get("customers[customerId]")->setOptions(array('value_options' => $customer));
 
       return new ViewModel(array('form' => $form));
       
->>>>>>> cb2c42c04b9e5b58c59f750de0988f57d41a61ee
+
     }
 
 }

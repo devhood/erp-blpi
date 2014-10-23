@@ -6,14 +6,15 @@ return array(
 		'template_path_stack' => array(
 			__DIR__ . '/../view',
 		),
-<<<<<<< HEAD
-=======
+
+
 		'template_map' => array(
 			'sales/order'           =>   __DIR__ . '/../view/sales/partial/order.phtml',
 			'sales/invoice'           =>   __DIR__ . '/../view/sales/partial/invoice.phtml',
+			'sales/delivery'           =>   __DIR__ . '/../view/sales/partial/delivery.phtml',
 
 		),
->>>>>>> cb2c42c04b9e5b58c59f750de0988f57d41a61ee
+
 	),
 	'router' => array(
 		'routes' => array(
@@ -49,8 +50,7 @@ return array(
 					),
 				),
 			),
-<<<<<<< HEAD
-=======
+
 			__NAMESPACE__.'Order_Add' => array(
 				'type' => 'Literal',
 				'options' => array(
@@ -91,19 +91,19 @@ return array(
 		            ),
 		        ),
 		    ),
->>>>>>> cb2c42c04b9e5b58c59f750de0988f57d41a61ee
+
 		),
 	),
 	'controllers' => array(
 		'invokables' => array(
 			__NAMESPACE__ . '\Delivery' => __NAMESPACE__ . '\Controller\DeliveryController',
-<<<<<<< HEAD
-=======
+
+
 			__NAMESPACE__ . '\Invoice' => __NAMESPACE__ . '\Controller\InvoiceController',
 			__NAMESPACE__ . '\Order' => __NAMESPACE__ . '\Controller\OrderController',
 			__NAMESPACE__ . '\Payment' => __NAMESPACE__ . '\Controller\PaymentController',
 			__NAMESPACE__ . '\Receipt' => __NAMESPACE__ . '\Controller\ReceiptController',
->>>>>>> cb2c42c04b9e5b58c59f750de0988f57d41a61ee
+
 		),
 	),
 );
