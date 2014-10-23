@@ -9,7 +9,10 @@ return array(
 		'template_map' => array(
 			'sales/order'           =>   __DIR__ . '/../view/sales/partial/order.phtml',
 			'sales/invoice'           =>   __DIR__ . '/../view/sales/partial/invoice.phtml',
-
+		    'sales/creatermr'           =>   __DIR__ . '/../view/sales/partial/creatermr.phtml',
+		    'sales/approvermr'           =>   __DIR__ . '/../view/sales/partial/approvermr.phtml',
+		    'sales/creditmemo'           =>   __DIR__ . '/../view/sales/partial/creditmemo.phtml',
+		    
 		),
 	),
 	'router' => array(
@@ -59,7 +62,7 @@ return array(
 		    __NAMESPACE__.'Invoice_Add' => array(
 		        'type' => 'Literal',
 		        'options' => array(
-		            'route'    => '/invoice/add',
+		            'route'    => '/sales/invoice/add',
 		            'defaults' => array(
 		                'controller' => __NAMESPACE__ . '\Invoice',
 		                'action'     => 'add',
@@ -69,19 +72,39 @@ return array(
 		    __NAMESPACE__.'Payment_Add' => array(
 		        'type' => 'Literal',
 		        'options' => array(
-		            'route'    => '/payment/add',
+		            'route'    => '/sales/payment/add',
 		            'defaults' => array(
-		                'controller' => __NAMESPACE__ . '\Invoice',
+		                'controller' => __NAMESPACE__ . '\Payment',
 		                'action'     => 'add',
 		            ),
 		        ),
 		    ),
-		    __NAMESPACE__.'Receipt_Add' => array(
+		    __NAMESPACE__.'Creatermr_Add' => array(
 		        'type' => 'Literal',
 		        'options' => array(
-		            'route'    => '/receipt/add',
+		            'route'    => '/sales/creatermr/add',
 		            'defaults' => array(
-		                'controller' => __NAMESPACE__ . '\Invoice',
+		                'controller' => __NAMESPACE__ . '\Creatermr',
+		                'action'     => 'add',
+		            ),
+		        ),
+		    ),
+		    __NAMESPACE__.'Approvermr_Add' => array(
+		        'type' => 'Literal',
+		        'options' => array(
+		            'route'    => '/sales/approvermr/add',
+		            'defaults' => array(
+		                'controller' => __NAMESPACE__ . '\Approvermr',
+		                'action'     => 'add',
+		            ),
+		        ),
+		    ),
+		    __NAMESPACE__.'Creditmemo_Add' => array(
+		        'type' => 'Literal',
+		        'options' => array(
+		            'route'    => '/sales/creditmemo/add',
+		            'defaults' => array(
+		                'controller' => __NAMESPACE__ . '\Creditmemo',
 		                'action'     => 'add',
 		            ),
 		        ),
@@ -94,7 +117,10 @@ return array(
 			__NAMESPACE__ . '\Invoice' => __NAMESPACE__ . '\Controller\InvoiceController',
 			__NAMESPACE__ . '\Order' => __NAMESPACE__ . '\Controller\OrderController',
 			__NAMESPACE__ . '\Payment' => __NAMESPACE__ . '\Controller\PaymentController',
-			__NAMESPACE__ . '\Receipt' => __NAMESPACE__ . '\Controller\ReceiptController',
+			__NAMESPACE__ . '\Creatermr' => __NAMESPACE__ . '\Controller\CreatermrController',
+		    __NAMESPACE__ . '\Approvermr' => __NAMESPACE__ . '\Controller\ApprovermrController',
+		    __NAMESPACE__ . '\Creditmemo' => __NAMESPACE__ . '\Controller\CreditmemoController',
+		    
 		),
 	),
 );

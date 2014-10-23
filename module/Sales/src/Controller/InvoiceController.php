@@ -59,7 +59,7 @@ class InvoiceController extends BaseController
         return new ViewModel(array('form' => $form));
     }
 
-    public function approvedAction()
+    public function approveAction()
     {
 
 

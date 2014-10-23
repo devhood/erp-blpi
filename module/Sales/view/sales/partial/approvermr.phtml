@@ -1,9 +1,9 @@
-	<div id="invoiceModal" class="modal fade" tabindex="-1" aria-hidden="true">
+	<div id="approvermrModal" class="modal fade" tabindex="-1" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-					<h4 class="modal-title">Invoice Items</h4>
+					<h4 class="modal-title">Approve RMR</h4>
 				</div>
 				<div class="modal-body">
 					<div class="scroller" style="height:450px" data-always-visible="1" data-rail-visible1="1">
@@ -81,7 +81,22 @@
 									</div>
 								</div>
 							</div>
-					
+						</div><!--/row  -->
+
+						
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
+										<?php  echo $this->formRow($form->get('salesItems[freebie]')); ?>
+										<span class="help-block">
+											Qty Return
+										</span>
+									</div>
+								</div>
+							</div>
+							
 						</div><!--/row  -->
 
 

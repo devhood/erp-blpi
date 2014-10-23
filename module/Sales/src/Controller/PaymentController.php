@@ -11,7 +11,7 @@ class PaymentController extends BaseController
 
 
 
-    public function indexAction()
+    public function addAction()
     {
 
 
