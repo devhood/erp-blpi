@@ -13,8 +13,8 @@ return array(
 			'sales/invoice'           =>   __DIR__ . '/../view/sales/partial/invoice.phtml',
 			'sales/delivery'           =>   __DIR__ . '/../view/sales/partial/delivery.phtml',
 			'sales/creatermr'           =>   __DIR__ . '/../view/sales/partial/creatermr.phtml',
-		    'sales/approvermr'           =>   __DIR__ . '/../view/sales/partial/approvermr.phtml',
-    		'sales/creditmemo'           =>   __DIR__ . '/../view/sales/partial/creditmemo.phtml',
+		  'sales/approvermr'           =>   __DIR__ . '/../view/sales/partial/approvermr.phtml',
+    	'sales/creditmemo'           =>   __DIR__ . '/../view/sales/partial/creditmemo.phtml',
 		),
 
 	),
@@ -169,6 +169,7 @@ return array(
 			__NAMESPACE__ . '\Invoice' => __NAMESPACE__ . '\Controller\InvoiceController',
 			__NAMESPACE__ . '\Order' => __NAMESPACE__ . '\Controller\OrderController',
 			__NAMESPACE__ . '\Payment' => __NAMESPACE__ . '\Controller\PaymentController',
+			__NAMESPACE__ . '\Return' => __NAMESPACE__ . '\Controller\ReturnController',
 		),
 	),
 );
