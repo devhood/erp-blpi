@@ -1,5 +1,5 @@
 
-var Product = function () {
+var Customer = function () {
 
 	return {
 
@@ -14,11 +14,11 @@ var Product = function () {
                 focusInvalid: false, 
                 ignore: "",
                 rules: {
-                	productCode : {
+                	companyName : {
                         minlength: 2,
                         required: true
                     },
-                    productName : {
+                    branch : {
                         minlength: 2,
                         required: true
                     },
@@ -26,47 +26,65 @@ var Product = function () {
                         minlength: 2,
                         required: true
                     },
-                    ClassificationId : {
+                    categoryId : {
                         required: true
                     },
-                    BrandId : {
+                    customerTypeId : {
                         required: true
                     },
-                    SupplierId : {
-                        required: true
-                    },
-                    size : {
-                        minlength: 1,
-                        required: true
-                    },
-                    weight : {
-                        minlength: 1,
-                        required: true
-                    },
-                    productStatus : {
-                        required: true
-                    },
-                    paymentTermId : {
-                        required: true
-                    },
-                    partNumber : {
+                    tradeName : {
                         minlength: 2,
                         required: true
                     },
-                    blCode : {
+                    tinNumber : {
                         minlength: 2,
                         required: true
                     },
-                    printedCode : {
+                    phone : {
                         minlength: 2,
                         required: true
                     },
-                    priceTypeId : {
+                    email : {
+                        minlength: 2,
+                        required: true,
+                        email: true
+                    },
+                    website : {
+                        minlength: 2,
                         required: true
                     },
-                    productDescription : {
+                    secNumber : {
+                        minlength: 2,
                         required: true
                     },
+                    consignee: {
+                        required: true
+                    },
+                    franchise: {
+                        required: true
+                    },
+                    creditLimit: {
+                        minlength: 2,
+                        required: true
+                    }, 
+                    unpaidTransactionLimit: {
+                        minlength: 2,
+                        required: true
+                    },
+                    paymentTermId: {
+                       required: true
+                    },
+                    percentCommission: {
+                        minlength: 2,
+                       required: true
+                    },
+                    shippingModeId: {
+                        minlength: 2,
+                       required: true
+                    },
+
+
+                    
                 },
                 invalidHandler: function (event, validator) { //display error alert on form submit              
                 success.hide();

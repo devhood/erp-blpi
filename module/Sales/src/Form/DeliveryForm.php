@@ -145,5 +145,84 @@ class DeliveryForm extends Form
                     'rows' => '6'
                 )
         ));
+
+
+
+       //modal
+
+       $this->add(array(
+                'name' => 'products[productId]',
+                'type' => 'Select',
+                'attributes' => array(
+                    'class' => 'select2me form-control',
+                    'tabindex' => '1',
+                    'id' => 'itemsId',
+                ),
+                'options' => array(
+            //                      'value_options' => array(
+            //                              'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
+            //                      ),
+                )
+        ));
+
+        $this->add( array(
+                'name' => 'quantity',
+                'type' => 'Text',
+                'attributes' => array(
+                    'class' => 'form-control',
+                    'id' => 'quantity',
+
+                )
+        ));
+
+        $this->add( array(
+                'name' => 'price',
+                'type' => 'Text',
+                'attributes' => array(
+                    'class' => 'form-control',
+                    'id' => 'quantity',
+
+                )
+        ));
+
+        $this->add(array(
+                'name' => 'discounts[discountId]',
+                'type' => 'Select',
+                'attributes' => array(
+                    'class' => 'select2me form-control',
+                    'tabindex' => '1',
+                    'id' => 'discountId',
+                ),
+                'options' => array(
+            //                      'value_options' => array(
+            //                              'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
+            //                      ),
+                )
+        ));
+
+        $this->add(array(
+                'name' => 'salesItems[freebie]',
+                'type' => 'Select',
+                'attributes' => array(
+                    'class' => 'select2me form-control',
+                    'tabindex' => '1',
+                    'id' => 'freebieId',
+                ),
+                'options' => array(
+            //                      'value_options' => array(
+            //                              'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
+            //                      ),
+                )
+        ));
+
+        $this->add( array(
+                'name' => 'totalSales',
+                'type' => 'Text',
+                'attributes' => array(
+                    'class' => 'form-control',
+                    'id' => 'total',
+
+                )
+        ));
     }
 }

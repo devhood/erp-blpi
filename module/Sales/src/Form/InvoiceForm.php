@@ -91,12 +91,12 @@ class InvoiceForm extends Form
 
 
         $this->add(array(
-                'name' => 'shippingAddress[AddressId]',
+                'name' => 'shippingAddress[addressId]',
                 'type' => 'Select',
                 'attributes' => array(
                     'class' => 'select2me form-control',
                     'tabindex' => '1',
-                    'id' => 'shippingAddress[',
+                    'id' => 'addressId',
                 ),
                 'options' => array(
         // 						'value_options' => array(
@@ -113,7 +113,7 @@ class InvoiceForm extends Form
                 'attributes' => array(
                     'class' => 'select2me form-control',
                     'tabindex' => '1',
-                    'id' => ' billingAddress',
+                    'id' => ' addressId',
                 ),
                 'options' => array(
         // 						'value_options' => array(
@@ -177,7 +177,7 @@ class InvoiceForm extends Form
                 'attributes' => array(
                     'class' => 'select2me form-control',
                     'tabindex' => '1',
-                    'id' => 'paymentTerms',
+                    'id' => 'paymentTermsId',
                 ),
                 'options' => array(
         // 						'value_options' => array(
@@ -218,12 +218,12 @@ class InvoiceForm extends Form
         ));
 
         $this->add(array(
-                'name' => 'priceType[priceTypeId]',
+                'name' => 'priceTypes[priceTypeId]',
                 'type' => 'Select',
                 'attributes' => array(
                     'class' => 'select2me form-control',
                     'tabindex' => '1',
-                    'id' => 'orderedBy',
+                    'id' => 'priceTypeId',
                 ),
                 'options' => array(
         // 						'value_options' => array(
@@ -259,12 +259,12 @@ class InvoiceForm extends Form
         ));
 
         $this->add(array(
-                'name' => 'vatPercentage[vatPercentageId]',
+                'name' => 'percentVat',
                 'type' => 'Select',
                 'attributes' => array(
                     'class' => 'select2me form-control',
                     'tabindex' => '1',
-                    'id' => 'priceTypeId',
+                    'id' => 'percentVat',
                 ),
                 'options' => array(
         // 						'value_options' => array(
@@ -277,7 +277,7 @@ class InvoiceForm extends Form
                 'type' => 'Text',
                 'attributes' => array(
                     'class' => 'form-control',
-                    'id' => 'Items',
+                    'id' => 'items',
                 )
         ));
         $this->add( array(
@@ -289,28 +289,28 @@ class InvoiceForm extends Form
                 )
         ));
         $this->add( array(
-                'name' => 'vat',
+                'name' => 'totalVat',
                 'type' => 'Text',
                 'attributes' => array(
                     'class' => 'form-control',
-                      'id' => 'vat',
+                      'id' => 'totalVat',
                 )
         ));
         $this->add( array(
-                'name' => 'total',
+                'name' => 'totalSales',
                 'type' => 'Text',
                 'attributes' => array(
                     'class' => 'form-control',
-                    'id' => 'vat',
+                    'id' => 'totalSales',
                     'readonly' => 'readonly',
                 )
         ));
 
 
 
-        //Invoice Ordered Items Value
+        //Invoice Items Value for Modal
         $this->add(array(
-                'name' => 'sales_items[salesItemId]',
+                'name' => 'salesItems[salesItemId]',
                 'type' => 'Select',
                 'attributes' => array(
                     'class' => 'select2me form-control',
@@ -365,7 +365,7 @@ class InvoiceForm extends Form
                 'attributes' => array(
                     'class' => 'select2me form-control',
                     'tabindex' => '1',
-                    'id' => 'freebieId',
+                    'id' => 'freebie',
                 ),
                 'options' => array(
             // 						'value_options' => array(
@@ -374,7 +374,15 @@ class InvoiceForm extends Form
                 )
         ));
 
-        $this->add(array( 'name' => 'totalSales', 'type' => 'Text', 'attributes'=> array( 'class' => 'form-control', 'id'=> 'totalSales') ));
+    
+        $this->add( array(
+                'name' => 'totalSales',
+                'type' => 'Text',
+                'attributes' => array(
+                    'class' => 'form-control',
+                    'id' => 'totalSales',
 
+                )
+        ));
     }
 }

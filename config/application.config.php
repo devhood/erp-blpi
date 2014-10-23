@@ -8,7 +8,8 @@ return array(
         'Product',
         'Database',
         'Customer',
-        'Sales'
+        'Sales',
+        'Shipment'
     ),
     'module_listener_options' => array(
         'module_paths' => array(
