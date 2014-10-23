@@ -6,6 +6,10 @@ return array(
 		'template_path_stack' => array(
 			__DIR__ . '/../view',
 		),
+		'template_map' => array(
+			'sales/order'           =>   __DIR__ . '/../view/product/partial/price.phtml',
+			
+		),
 	),
 	'router' => array(
 		'routes' => array(

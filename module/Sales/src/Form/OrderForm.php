@@ -254,7 +254,7 @@ class OrderForm extends Form
                 'type' => 'Text',
                 'attributes' => array(
                     'class' => 'form-control',
-                    'id' => 'Items',
+                    'id' => 'items',
                 )
         ));
         $this->add( array(
@@ -266,26 +266,26 @@ class OrderForm extends Form
                 )
         ));
         $this->add( array(
-                'name' => 'vat',
+                'name' => 'totalVat',
                 'type' => 'Text',
                 'attributes' => array(
                     'class' => 'form-control',
-                      'id' => 'vat',
+                      'id' => 'totalVat',
                 )
         ));
         $this->add( array(
-                'name' => 'total',
+                'name' => 'totalSales',
                 'type' => 'Text',
                 'attributes' => array(
                     'class' => 'form-control',
-                    'id' => 'vat',
+                    'id' => 'totalSales',
                     'readonly' => 'readonly',
                 )
         ));
 
 
 
-        //Ordered Items Value
+        //Ordered Items Value for Modal
         $this->add(array(
                 'name' => 'items[itemsId]',
                 'type' => 'Select',
