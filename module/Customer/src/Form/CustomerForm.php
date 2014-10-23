@@ -124,18 +124,6 @@ class CustomerForm extends Form
 			)
 		));
 
-		//
-		// $this->add(array(
-		// 	'type' => 'Zend\Form\Element\Checkbox',
-		// 	'name' => 'consignee',
-		// 	'options' => array(
-		// 		'label' => 'Consignee',
-		// 		'use_hidden_element' => true,
-		// 		'checked_value' => '1',
-		// 		'unchecked_value' => '0'
-		// 	)
-		// ));
-
 
 		$this->add( array(
 			'name' => 'consignee',
@@ -365,7 +353,6 @@ $this->add( array(
 
 
 //Modal Properties (CONTACT)
-
 $this->add( array(
 	'name' => 'position',
 	'type' => 'Text',

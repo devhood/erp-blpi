@@ -20,10 +20,24 @@ return array(
 				),
 			),
 		),
+	
+		'routes' => array(
+			__NAMESPACE__.'_Purchase_Home' => array(
+				'type' => 'Literal',
+				'options' => array(
+					'route'    => '/purchase/add',
+					'defaults' => array(
+						'controller' => __NAMESPACE__ . '\Purchase',
+						'action'     => 'add',
+					),
+				),
+			),
+		),
 	),
 	'controllers' => array(
 		'invokables' => array(
 			__NAMESPACE__ . '\Shipment' => __NAMESPACE__ . '\Controller\ShipmentController',
+			__NAMESPACE__ . '\Purchase' => __NAMESPACE__ . '\Controller\PurchaseController',
 		),
 	),
 );

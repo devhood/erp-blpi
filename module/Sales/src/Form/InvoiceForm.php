@@ -188,12 +188,12 @@ class InvoiceForm extends Form
 
 
         $this->add(array(
-                'name' => 'deliveryDates[deliveryDateId]',
-                'type' => 'Select',
+                'name' => 'deliveryDate',
+                'type' => 'Text',
                 'attributes' => array(
-                    'class' => 'select2me form-control',
-                    'tabindex' => '1',
-                    'id' => 'deliveryDateId',
+                    'class' => 'form-control date-picker',
+
+                    'id' => 'deliveryDate',
                 ),
                 'options' => array(
         // 						'value_options' => array(
@@ -308,14 +308,14 @@ class InvoiceForm extends Form
 
 
 
-        //Ordered Items Value
+        //Invoice Ordered Items Value
         $this->add(array(
-                'name' => 'items[itemsId]',
+                'name' => 'sales_items[salesItemId]',
                 'type' => 'Select',
                 'attributes' => array(
                     'class' => 'select2me form-control',
                     'tabindex' => '1',
-                    'id' => 'itemsId',
+                    'id' => 'salesItemId',
                 ),
                 'options' => array(
             // 						'value_options' => array(
@@ -345,7 +345,7 @@ class InvoiceForm extends Form
         ));
 
         $this->add(array(
-                'name' => 'discount[discountId]',
+                'name' => 'discounts[discountId]',
                 'type' => 'Select',
                 'attributes' => array(
                     'class' => 'select2me form-control',
@@ -360,7 +360,7 @@ class InvoiceForm extends Form
         ));
 
         $this->add(array(
-                'name' => 'freebie[freebieId]',
+                'name' => 'salesItems[freebie]',
                 'type' => 'Select',
                 'attributes' => array(
                     'class' => 'select2me form-control',
@@ -373,5 +373,8 @@ class InvoiceForm extends Form
             // 						),
                 )
         ));
+
+        $this->add(array( 'name' => 'totalSales', 'type' => 'Text', 'attributes'=> array( 'class' => 'form-control', 'id'=> 'totalSales') ));
+
     }
 }

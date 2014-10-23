@@ -45,6 +45,9 @@ class IndexController extends BaseController
 
         $productmodal = $this->_getOptions("Products","productId","productName");
         $form->get("products[productId]")->setOptions(array('value_options' => $productmodal));
+
+        $unit = $this->_getOptions("Uoms","uomId","uomName");
+        $form->get("uoms[uomId]")->setOptions(array('value_options' => $unit));
         
         $bundles = $this->_getContents("Bundles");
         $uoms = $this->_getContents("ProductUoms");

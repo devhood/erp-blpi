@@ -285,9 +285,14 @@ class OrderForm extends Form
 
 
 
+
+
+
+
+
         //Ordered Items Value for Modal
         $this->add(array(
-                'name' => 'items[itemsId]',
+                'name' => 'products[productId]',
                 'type' => 'Select',
                 'attributes' => array(
                     'class' => 'select2me form-control',
@@ -322,7 +327,7 @@ class OrderForm extends Form
         ));
 
         $this->add(array(
-                'name' => 'discount[discountId]',
+                'name' => 'discounts[discountId]',
                 'type' => 'Select',
                 'attributes' => array(
                     'class' => 'select2me form-control',
@@ -337,7 +342,7 @@ class OrderForm extends Form
         ));
 
         $this->add(array(
-                'name' => 'sales[freebieId]',
+                'name' => 'salesItems[freebie]',
                 'type' => 'Select',
                 'attributes' => array(
                     'class' => 'select2me form-control',
@@ -352,7 +357,7 @@ class OrderForm extends Form
         ));
 
         $this->add( array(
-                'name' => 'total',
+                'name' => 'totalSales',
                 'type' => 'Text',
                 'attributes' => array(
                     'class' => 'form-control',

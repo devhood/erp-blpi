@@ -64,7 +64,7 @@ var Product = function () {
                     priceTypeId : {
                         required: true
                     },
-                    desc : {
+                    productDescription : {
                         required: true
                     },
                 },
