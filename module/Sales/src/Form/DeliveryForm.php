@@ -56,7 +56,6 @@ class DeliveryForm extends Form
 //                      ),
                 )
         ));
-<<<<<<< HEAD
 
         $this->add(array(
                 'name' => 'inventorylocations[inventoryLocationId]',
@@ -196,7 +195,5 @@ class DeliveryForm extends Form
                     'rows' => '6'
                 )
         ));
-=======
->>>>>>> 0f753098b8d10b053e0dd3e681893b4e730b2726
     }
 }

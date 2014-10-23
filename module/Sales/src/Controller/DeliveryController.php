@@ -17,16 +17,11 @@ class DeliveryController extends BaseController
     public function addAction()
     {
 
-<<<<<<< HEAD
-   
-        return new ViewModel();
-=======
       $form = new \Sales\Form\DeliveryForm();
 
       $transaction = $this->_getOptions("TransactionTypes","transactionTypeId","transactionTypeName");
       $form->get("trasanctionTypes[transactionTypeId]")->setOptions(array('value_options' => $transaction));
 
-<<<<<<< HEAD
       $customer = $this->_getOptions("Customers","customerId","customerName");
       $form->get("customers[customerId]")->setOptions(array('value_options' => $customer));
 
@@ -115,13 +110,7 @@ class DeliveryController extends BaseController
       $form->get("paymentTerms[paymentTermId]")->setOptions(array('value_options' => $payment));
 
 
-=======
-      $customer = $this->_getOptions("Customers","transactionTypeId","transactionTypeName");
-      $form->get("customers[customerId]")->setOptions(array('value_options' => $customer));
-
->>>>>>> 0f753098b8d10b053e0dd3e681893b4e730b2726
       return new ViewModel(array('form' => $form));
->>>>>>> c2b68337cbc76f960ce1699d72d45f983c679e25
     }
 
 }
