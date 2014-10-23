@@ -3,7 +3,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-					<h4 class="modal-title">Ordered Items</h4>
+					<h4 class="modal-title">Invoice Items</h4>
 				</div>
 				<div class="modal-body">
 					<div class="scroller" style="height:450px" data-always-visible="1" data-rail-visible1="1">
@@ -12,7 +12,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-										<?php  echo $this->formRow($form->get('sales_item[sales_items_id]')); ?>
+										<?php  echo $this->formRow($form->get('sales_items[salesItemId]')); ?>
 										<span class="help-block">
 											Items
 										</span>
@@ -48,7 +48,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
-										<?php  echo $this->formRow($form->get('discount[discount_id]')); ?>
+										<?php  echo $this->formRow($form->get('discounts[discountId]')); ?>
 										<span class="help-block">
 											Discount
 										</span>
@@ -72,7 +72,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
-										<?php  echo $this->formRow($form->get('discount[discount_id]')); ?>
+										<?php  echo $this->formRow($form->get('discounts[discountId]')); ?>
 										<span class="help-block">
 											Discount
 										</span>
@@ -85,7 +85,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-										<?php  echo $this->formRow($form->get('sales_items[freebie]')); ?>
+										<?php  echo $this->formRow($form->get('salesItems[freebie]')); ?>
 										<span class="help-block">
 											Freebie
 										</span>
@@ -96,7 +96,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
-										<?php  echo $this->formRow($form->get('sales_items[total_items]')); ?>
+										<?php  echo $this->formRow($form->get('totalSales')); ?>
 										<span class="help-block">
 											Total
 										</span>

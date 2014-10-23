@@ -3,14 +3,45 @@ namespace Sales\Form;
 
 use Zend\Form\Form;
 
-class OrderForm extends Form
+class ReturnForm extends Form
 {
     public function __construct($name = null)
     {
         parent::__construct('sales');
 
         $this->add( array(
-                'name' => 'sono'    ,
+            'name' => 'rmrno',
+            'type' => 'Text',
+            'attributes' => array(
+                'class' => 'form-control',
+                'id' => 'rmrno',
+            )
+        ));
+        $this->add( array(
+            'name' => 'drno',
+            'type' => 'Text',
+            'attributes' => array(
+                'class' => 'form-control',
+                'id' => 'drno',
+            )
+        ));
+
+        $this->add(array(
+            'name' => 'sino',
+            'type' => 'Text',
+            'attributes' => array(
+                'class' => 'form-control',
+                'id' => 'sino',
+            ),
+            'options' => array(
+                // 						'value_options' => array(
+                // 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
+                // 						),
+            )
+        ));
+
+        $this->add( array(
+                'name' => 'sono',
                 'type' => 'Text',
                 'attributes' => array(
                     'class' => 'form-control',
@@ -18,7 +49,7 @@ class OrderForm extends Form
                 )
         ));
 
-    $this->add(array(
+        $this->add(array(
                 'name' => 'transactionTypes[transactionTypeId]',
                 'type' => 'Select',
                 'attributes' => array(
@@ -35,7 +66,7 @@ class OrderForm extends Form
 
 
         $this->add(array(
-                'name' => 'customers',
+                'name' => 'customers[customerId]',
                 'type' => 'Select',
                 'attributes' => array(
                     'class' => 'select2me form-control',
@@ -68,12 +99,12 @@ class OrderForm extends Form
 
 
         $this->add(array(
-                'name' => 'Address[shippingAddressId]',
+                'name' => 'shippingAddress[AddressId]',
                 'type' => 'Select',
                 'attributes' => array(
                     'class' => 'select2me form-control',
                     'tabindex' => '1',
-                    'id' => 'Inventory Location',
+                    'id' => 'shippingAddress[',
                 ),
                 'options' => array(
         // 						'value_options' => array(
@@ -85,7 +116,7 @@ class OrderForm extends Form
 
 
         $this->add(array(
-                'name' => 'Address[billingAddressId]',
+                'name' => 'billingAddress[AddressId]',
                 'type' => 'Select',
                 'attributes' => array(
                     'class' => 'select2me form-control',
@@ -110,7 +141,7 @@ class OrderForm extends Form
                 ),
                 'options' => array(
         // 						'value_options' => array(
-        // 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
+        // 								'value_options' f=> $this->getGatewayTable()['brandTable']->fetchSelectOption(),
         // 						),
              )
         ));
@@ -138,7 +169,7 @@ class OrderForm extends Form
                 'attributes' => array(
                     'class' => 'select2me form-control',
                     'tabindex' => '1',
-                    'id' => 'salesExecutiveId',
+                    'id' => 'userId',
                 ),
                 'options' => array(
         // 						'value_options' => array(
@@ -165,7 +196,7 @@ class OrderForm extends Form
 
 
         $this->add(array(
-                'name' => 'sales[deliveryDate]',
+                'name' => 'deliveryDates[deliveryDateId]',
                 'type' => 'Select',
                 'attributes' => array(
                     'class' => 'select2me form-control',
@@ -180,7 +211,7 @@ class OrderForm extends Form
         ));
 
         $this->add(array(
-                'name' => 'sales[orderedBy]',
+                'name' => 'orderedBy[orderedById]',
                 'type' => 'Select',
                 'attributes' => array(
                     'class' => 'select2me form-control',
@@ -195,7 +226,7 @@ class OrderForm extends Form
         ));
 
         $this->add(array(
-                'name' => 'priceTypes[priceTypeId]',
+                'name' => 'priceType[priceTypeId]',
                 'type' => 'Select',
                 'attributes' => array(
                     'class' => 'select2me form-control',
@@ -210,7 +241,7 @@ class OrderForm extends Form
         ));
 
         $this->add(array(
-                'name' => 'sales[promo]',
+                'name' => 'promo[promoId]',
                 'type' => 'Select',
                 'attributes' => array(
                     'class' => 'select2me form-control',
@@ -236,7 +267,7 @@ class OrderForm extends Form
         ));
 
         $this->add(array(
-                'name' => 'sales[percentageVat]',
+                'name' => 'vatPercentage[vatPercentageId]',
                 'type' => 'Select',
                 'attributes' => array(
                     'class' => 'select2me form-control',
@@ -266,38 +297,33 @@ class OrderForm extends Form
                 )
         ));
         $this->add( array(
-                'name' => 'totalVat',
+                'name' => 'vat',
                 'type' => 'Text',
                 'attributes' => array(
                     'class' => 'form-control',
-                      'id' => 'totalVat',
+                      'id' => 'vat',
                 )
         ));
         $this->add( array(
-                'name' => 'totalSales',
+                'name' => 'total',
                 'type' => 'Text',
                 'attributes' => array(
                     'class' => 'form-control',
-                    'id' => 'totalSales',
+                    'id' => 'vat',
                     'readonly' => 'readonly',
                 )
         ));
 
 
 
-
-
-
-
-
-        //Ordered Items Value for Modal
+        //Invoice Ordered Items Value
         $this->add(array(
-                'name' => 'products[productId]',
+                'name' => 'sales_items[salesItemId]',
                 'type' => 'Select',
                 'attributes' => array(
                     'class' => 'select2me form-control',
                     'tabindex' => '1',
-                    'id' => 'itemsId',
+                    'id' => 'salesItemId',
                 ),
                 'options' => array(
             // 						'value_options' => array(
@@ -356,16 +382,7 @@ class OrderForm extends Form
                 )
         ));
 
-        $this->add( array(
-                'name' => 'totalSales',
-                'type' => 'Text',
-                'attributes' => array(
-                    'class' => 'form-control',
-                    'id' => 'total',
-
-                )
-        ));
-
+        $this->add(array( 'name' => 'totalSales', 'type' => 'Text', 'attributes'=> array( 'class' => 'form-control', 'id'=> 'totalSales') ));
 
     }
 }

@@ -7,7 +7,7 @@ return array(
 			__DIR__ . '/../view',
 		),
 		'template_map' => array(
-			'sales/order'           =>   __DIR__ . '/../view/sales/partial/ordered.phtml',
+			'sales/order'           =>   __DIR__ . '/../view/sales/partial/order.phtml',
 			'sales/invoice'           =>   __DIR__ . '/../view/sales/partial/invoice.phtml',
 
 		),
@@ -46,7 +46,7 @@ return array(
 					),
 				),
 			),
-			__NAMESPACE__.'_Order_Add' => array(
+			__NAMESPACE__.'Order_Add' => array(
 				'type' => 'Literal',
 				'options' => array(
 					'route'    => '/sales/order/add',
@@ -66,6 +66,26 @@ return array(
 		            ),
 		        ),
 		    ),
+		    __NAMESPACE__.'Payment_Add' => array(
+		        'type' => 'Literal',
+		        'options' => array(
+		            'route'    => '/payment/add',
+		            'defaults' => array(
+		                'controller' => __NAMESPACE__ . '\Invoice',
+		                'action'     => 'add',
+		            ),
+		        ),
+		    ),
+		    __NAMESPACE__.'Receipt_Add' => array(
+		        'type' => 'Literal',
+		        'options' => array(
+		            'route'    => '/receipt/add',
+		            'defaults' => array(
+		                'controller' => __NAMESPACE__ . '\Invoice',
+		                'action'     => 'add',
+		            ),
+		        ),
+		    ),
 		),
 	),
 	'controllers' => array(
@@ -73,6 +93,8 @@ return array(
 			__NAMESPACE__ . '\Delivery' => __NAMESPACE__ . '\Controller\DeliveryController',
 			__NAMESPACE__ . '\Invoice' => __NAMESPACE__ . '\Controller\InvoiceController',
 			__NAMESPACE__ . '\Order' => __NAMESPACE__ . '\Controller\OrderController',
+			__NAMESPACE__ . '\Payment' => __NAMESPACE__ . '\Controller\PaymentController',
+			__NAMESPACE__ . '\Receipt' => __NAMESPACE__ . '\Controller\ReceiptController',
 		),
 	),
 );
