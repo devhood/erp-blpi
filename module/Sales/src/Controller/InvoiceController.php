@@ -33,10 +33,10 @@ class InvoiceController extends BaseController
       $form->get("inventoryLocations[inventoryLocationId]")->setOptions(array('value_options' => $inventory));
 
       $shipping = $this->_getOptions("Address","addressId","addressType");
-      $form->get("shippingAddress[AddressId]")->setOptions(array('value_options' => $shipping));
+      $form->get("shippingAddress[addressId]")->setOptions(array('value_options' => $shipping));
 
       $billing = $this->_getOptions("Address","addressId","addressType");
-      $form->get("billingAddress[AddressId]")->setOptions(array('value_options' => $billing));
+      $form->get("billingAddress[addressId]")->setOptions(array('value_options' => $billing));
 
       $ordersource = $this->_getOptions("OrderSource","orderSourceId","orderSourceName");
       $form->get("orderSource[orderSourceId]")->setOptions(array('value_options' => $ordersource));

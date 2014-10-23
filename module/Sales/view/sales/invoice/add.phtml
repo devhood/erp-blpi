@@ -110,7 +110,7 @@ $this->headLink()
             <div class="form-group">
               <div class="col-md-2 col-lg-2 "></div>
               <div class="col-md-8 col-xs-12 col-sm-12 col-lg-8 ">
-                <?php  echo $this->formRow($form->get('shippingAddress[AddressId]')); ?>
+                <?php  echo $this->formRow($form->get('shippingAddress[addressId]')); ?>
                 <span class="help-block">
                   Shipping Address
                 </span>
@@ -125,7 +125,7 @@ $this->headLink()
             <div class="form-group">
               <div class="col-md-2 col-lg-2 "></div>
               <div class="col-md-8 col-xs-12 col-sm-12 col-lg-8 ">
-                <?php  echo $this->formRow($form->get('billingAddress[AddressId]')); ?>
+                <?php  echo $this->formRow($form->get('billingAddress[addressId]')); ?>
                 <span class="help-block">
                   Billing Address
                 </span>
@@ -357,28 +357,6 @@ $this->headLink()
                 <?php  echo $this->formRow($form->get('sales')); ?>
                 <span class="help-block">
                   Sales
-                </span>
-              </div>
-            </div>
-          </div>
-          <!--/span-->
-        </div>
-
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-
-              </div>
-            </div>
-          </div>
-          <!--/span-->
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                <?php  echo $this->formRow($form->get('vat')); ?>
-                <span class="help-block">
-                  VAT
                 </span>
               </div>
             </div>

@@ -108,7 +108,7 @@ class InvoiceForm extends Form
 
 
         $this->add(array(
-                'name' => 'billingAddress[AddressId]',
+                'name' => 'billingAddress[addressId]',
                 'type' => 'Select',
                 'attributes' => array(
                     'class' => 'select2me form-control',
@@ -373,6 +373,16 @@ class InvoiceForm extends Form
             // 						),
                 )
         ));
+        
+          $this->add( array(
+                'name' => 'total',
+                'type' => 'Text',
+                'attributes' => array(
+                    'class' => 'form-control',
+                    'id' => 'total',
+
+                )
+        ));
 
     
         $this->add( array(
@@ -384,5 +394,6 @@ class InvoiceForm extends Form
 
                 )
         ));
+    
     }
 }
