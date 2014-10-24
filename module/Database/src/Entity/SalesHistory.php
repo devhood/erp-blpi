@@ -15,7 +15,7 @@ class SalesHistory
     /**
      * @var integer
      *
-     * @ORM\Column(name="sh_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="sh_id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,40 +24,41 @@ class SalesHistory
     /**
      * @var integer
      *
-     * @ORM\Column(name="transaction_status_id", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="transaction_status_id", type="integer", nullable=true)
      */
     private $transactionStatusId;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="sales_notes", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="sales_notes", type="string", length=45, nullable=true)
      */
     private $salesNotes;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="user_id", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="user_id", type="integer", nullable=true)
      */
     private $userId;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="transaction_date", type="datetime", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="transaction_date", type="datetime", nullable=true)
      */
-    private $transactionDate;
+    private $transactionDate = 'CURRENT_TIMESTAMP';
 
     /**
      * @var \Database\Entity\Sales
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Sales")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="sales_id", referencedColumnName="sales_id", nullable=true)
+     *   @ORM\JoinColumn(name="sales_id", referencedColumnName="sales_id")
      * })
      */
     private $sales;
+
 
 
     /**

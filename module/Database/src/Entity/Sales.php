@@ -15,7 +15,7 @@ class Sales
     /**
      * @var integer
      *
-     * @ORM\Column(name="sales_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="sales_id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,161 +24,161 @@ class Sales
     /**
      * @var string
      *
-     * @ORM\Column(name="sono", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="sono", type="string", length=45, nullable=true)
      */
     private $sono;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="drno", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="drno", type="string", length=45, nullable=true)
      */
     private $drno;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="sino", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="sino", type="string", length=45, nullable=true)
      */
     private $sino;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="rmrno", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="rmrno", type="string", length=45, nullable=true)
      */
     private $rmrno;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="cmno", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="cmno", type="string", length=45, nullable=true)
      */
     private $cmno;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="pmno", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="pmno", type="string", length=45, nullable=true)
      */
     private $pmno;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="shipping_mode_id", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="shipping_mode_id", type="integer", nullable=true)
      */
     private $shippingModeId;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="sales_executive_id", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="sales_executive_id", type="integer", nullable=true)
      */
     private $salesExecutiveId;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="delivery_date", type="date", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="delivery_date", type="date", nullable=true)
      */
     private $deliveryDate;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="ordered_by", type="string", length=100, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="ordered_by", type="string", length=100, nullable=true)
      */
     private $orderedBy;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="promo_id", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="promo_id", type="integer", nullable=true)
      */
     private $promoId;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="percent_vat", type="float", precision=10, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="percent_vat", type="float", precision=10, scale=0, nullable=true)
      */
     private $percentVat;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="total_items", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="total_items", type="integer", nullable=true)
      */
     private $totalItems;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="total_vat", type="float", precision=10, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="total_vat", type="float", precision=10, scale=0, nullable=true)
      */
     private $totalVat;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="total_sales", type="float", precision=10, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="total_sales", type="float", precision=10, scale=0, nullable=true)
      */
     private $totalSales;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="total_items_return", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="total_items_return", type="integer", nullable=true)
      */
     private $totalItemsReturn;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="total_vat_return", type="float", precision=10, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="total_vat_return", type="float", precision=10, scale=0, nullable=true)
      */
     private $totalVatReturn;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="total_sales_return", type="float", precision=10, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="total_sales_return", type="float", precision=10, scale=0, nullable=true)
      */
     private $totalSalesReturn;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="grand_total", type="float", precision=10, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="grand_total", type="float", precision=10, scale=0, nullable=true)
      */
     private $grandTotal;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="orno", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="orno", type="string", length=45, nullable=true)
      */
     private $orno;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="prno", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="prno", type="string", length=45, nullable=true)
      */
     private $prno;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="payment_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="payment_status", type="string", length=45, nullable=true)
      */
     private $paymentStatus;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="sales_notes", type="text", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="sales_notes", type="text", nullable=true)
      */
     private $salesNotes;
 
@@ -187,7 +187,7 @@ class Sales
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Address")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="shipping_address_id", referencedColumnName="address_id", nullable=true)
+     *   @ORM\JoinColumn(name="shipping_address_id", referencedColumnName="address_id")
      * })
      */
     private $shippingAddress;
@@ -197,7 +197,7 @@ class Sales
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Address")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="billing_address_id", referencedColumnName="address_id", nullable=true)
+     *   @ORM\JoinColumn(name="billing_address_id", referencedColumnName="address_id")
      * })
      */
     private $billingAddress;
@@ -207,7 +207,7 @@ class Sales
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Customers")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="customer_id", referencedColumnName="customer_id", nullable=true)
+     *   @ORM\JoinColumn(name="customer_id", referencedColumnName="customer_id")
      * })
      */
     private $customer;
@@ -217,7 +217,7 @@ class Sales
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\InventoryLocations")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="inventory_location_id", referencedColumnName="location_id", nullable=true)
+     *   @ORM\JoinColumn(name="inventory_location_id", referencedColumnName="location_id")
      * })
      */
     private $inventoryLocation;
@@ -227,7 +227,7 @@ class Sales
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\OrderSource")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="order_source_id", referencedColumnName="order_source_id", nullable=true)
+     *   @ORM\JoinColumn(name="order_source_id", referencedColumnName="order_source_id")
      * })
      */
     private $orderSource;
@@ -237,7 +237,7 @@ class Sales
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\PaymentTerms")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="payment_term_id", referencedColumnName="payment_term_id", nullable=true)
+     *   @ORM\JoinColumn(name="payment_term_id", referencedColumnName="payment_term_id")
      * })
      */
     private $paymentTerm;
@@ -247,7 +247,7 @@ class Sales
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\PriceTypes")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="price_type_id", referencedColumnName="price_type_id", nullable=true)
+     *   @ORM\JoinColumn(name="price_type_id", referencedColumnName="price_type_id")
      * })
      */
     private $priceType;
@@ -257,7 +257,7 @@ class Sales
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\TransactionStatus")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="transaction_status_id", referencedColumnName="transaction_status_id", nullable=true)
+     *   @ORM\JoinColumn(name="transaction_status_id", referencedColumnName="transaction_status_id")
      * })
      */
     private $transactionStatus;
@@ -267,10 +267,11 @@ class Sales
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\TransactionTypes")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="transaction_type_id", referencedColumnName="transaction_type_id", nullable=true)
+     *   @ORM\JoinColumn(name="transaction_type_id", referencedColumnName="transaction_type_id")
      * })
      */
     private $transactionType;
+
 
 
     /**

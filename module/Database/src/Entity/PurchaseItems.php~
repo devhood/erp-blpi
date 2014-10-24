@@ -1,0 +1,69 @@
+<?php
+
+namespace Database\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * PurchaseItems
+ *
+ * @ORM\Table(name="Purchase_Items", indexes={@ORM\Index(name="fk_Purchase_Items_Purchases1_idx", columns={"purchase_id"}), @ORM\Index(name="fk_Purchase_Items_Products1_idx", columns={"product_id"}), @ORM\Index(name="fk_Purchase_Items_Currencies1_idx", columns={"currency_id"})})
+ * @ORM\Entity
+ */
+class PurchaseItems
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="purchase_item_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $purchaseItemId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="quantity", type="integer", nullable=true)
+     */
+    private $quantity;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="cost", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $cost;
+
+    /**
+     * @var \Database\Entity\Currencies
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Currencies")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="currency_id", referencedColumnName="currency_id")
+     * })
+     */
+    private $currency;
+
+    /**
+     * @var \Database\Entity\Products
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Products")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="product_id", referencedColumnName="product_id")
+     * })
+     */
+    private $product;
+
+    /**
+     * @var \Database\Entity\Purchases
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Purchases")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="purchase_id", referencedColumnName="purchase_id")
+     * })
+     */
+    private $purchase;
+
+
+}

@@ -15,7 +15,7 @@ class SalesItems
     /**
      * @var integer
      *
-     * @ORM\Column(name="sales_item_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="sales_item_id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,77 +24,77 @@ class SalesItems
     /**
      * @var integer
      *
-     * @ORM\Column(name="product_id", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="product_id", type="integer", nullable=true)
      */
     private $productId;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="quantity", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="quantity", type="integer", nullable=true)
      */
     private $quantity;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="quantity_return", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="quantity_return", type="integer", nullable=true)
      */
     private $quantityReturn;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="price", type="float", precision=10, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="price", type="float", precision=10, scale=0, nullable=true)
      */
     private $price;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="discount", type="float", precision=10, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="discount", type="float", precision=10, scale=0, nullable=true)
      */
     private $discount;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="freebie", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="freebie", type="string", length=45, nullable=true)
      */
     private $freebie;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="vat", type="float", precision=10, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="vat", type="float", precision=10, scale=0, nullable=true)
      */
     private $vat;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="sales", type="float", precision=10, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="sales", type="float", precision=10, scale=0, nullable=true)
      */
     private $sales;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="vat_return", type="float", precision=10, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="vat_return", type="float", precision=10, scale=0, nullable=true)
      */
     private $vatReturn;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="sales_return", type="float", precision=10, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="sales_return", type="float", precision=10, scale=0, nullable=true)
      */
     private $salesReturn;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="return_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="return_status", type="string", length=45, nullable=true)
      */
     private $returnStatus;
 
@@ -103,10 +103,11 @@ class SalesItems
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Sales")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="sales_id", referencedColumnName="sales_id", nullable=true)
+     *   @ORM\JoinColumn(name="sales_id", referencedColumnName="sales_id")
      * })
      */
     private $sales2;
+
 
 
     /**

@@ -1,0 +1,87 @@
+<?php
+
+namespace Database\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ProductMovementHistory
+ *
+ * @ORM\Table(name="Product_Movement_History", indexes={@ORM\Index(name="fk_Product_Movement_History_Product_Inventories1_idx", columns={"inventory_id"}), @ORM\Index(name="fk_Product_Movement_History_Sales1_idx", columns={"sales_id"})})
+ * @ORM\Entity
+ */
+class ProductMovementHistory
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="pmh_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $pmhId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="stock", type="integer", nullable=true)
+     */
+    private $stock;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="delta", type="integer", nullable=true)
+     */
+    private $delta;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="balance", type="integer", nullable=true)
+     */
+    private $balance;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="shipment_id", type="integer", nullable=true)
+     */
+    private $shipmentId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="adjustment_id", type="integer", nullable=true)
+     */
+    private $adjustmentId;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="transaction_time", type="datetime", nullable=true)
+     */
+    private $transactionTime = 'CURRENT_TIMESTAMP';
+
+    /**
+     * @var \Database\Entity\ProductInventories
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\ProductInventories")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="inventory_id", referencedColumnName="inventory_id")
+     * })
+     */
+    private $inventory;
+
+    /**
+     * @var \Database\Entity\Sales
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Sales")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="sales_id", referencedColumnName="sales_id")
+     * })
+     */
+    private $sales;
+
+
+}

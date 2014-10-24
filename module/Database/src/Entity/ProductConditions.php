@@ -15,7 +15,7 @@ class ProductConditions
     /**
      * @var integer
      *
-     * @ORM\Column(name="condition_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="condition_id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,16 +24,17 @@ class ProductConditions
     /**
      * @var string
      *
-     * @ORM\Column(name="condition_name", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="condition_name", type="string", length=45, nullable=true)
      */
     private $conditionName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="record_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="record_status", type="string", length=45, nullable=true)
      */
-    private $recordStatus;
+    private $recordStatus = 'Active';
+
 
 
     /**

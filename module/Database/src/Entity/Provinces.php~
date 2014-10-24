@@ -1,0 +1,46 @@
+<?php
+
+namespace Database\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Provinces
+ *
+ * @ORM\Table(name="provinces")
+ * @ORM\Entity
+ */
+class Provinces
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="province_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $provinceId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="province_name", type="string", length=45, nullable=true)
+     */
+    private $provinceName;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="country_id", type="integer", nullable=true)
+     */
+    private $countryId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="record_status", type="string", length=45, nullable=true)
+     */
+    private $recordStatus = 'Active';
+
+
+}

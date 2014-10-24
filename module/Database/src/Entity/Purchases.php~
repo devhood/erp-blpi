@@ -1,0 +1,70 @@
+<?php
+
+namespace Database\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Purchases
+ *
+ * @ORM\Table(name="Purchases", indexes={@ORM\Index(name="fk_Purchases_Suppliers1_idx", columns={"supplier_id"})})
+ * @ORM\Entity
+ */
+class Purchases
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="purchase_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $purchaseId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reference_no", type="string", length=45, nullable=true)
+     */
+    private $referenceNo;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="purchase_date", type="date", nullable=true)
+     */
+    private $purchaseDate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="expected_arrival_date", type="date", nullable=true)
+     */
+    private $expectedArrivalDate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="purchase_status", type="string", length=45, nullable=true)
+     */
+    private $purchaseStatus;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="purchase_notes", type="text", nullable=true)
+     */
+    private $purchaseNotes;
+
+    /**
+     * @var \Database\Entity\Suppliers
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Suppliers")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="supplier_id", referencedColumnName="supplier_id")
+     * })
+     */
+    private $supplier;
+
+
+}

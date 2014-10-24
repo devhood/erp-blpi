@@ -1,0 +1,60 @@
+<?php
+
+namespace Database\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Counters
+ *
+ * @ORM\Table(name="Counters")
+ * @ORM\Entity
+ */
+class Counters
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="counter_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $counterId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="counter_type", type="string", length=45, nullable=true)
+     */
+    private $counterType;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prefix", type="string", length=45, nullable=true)
+     */
+    private $prefix;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="suffix", type="string", length=45, nullable=true)
+     */
+    private $suffix;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="count", type="integer", nullable=true)
+     */
+    private $count;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="record_status", type="string", length=45, nullable=true)
+     */
+    private $recordStatus;
+
+
+}

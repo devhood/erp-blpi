@@ -15,7 +15,7 @@ class ProductPrice
     /**
      * @var integer
      *
-     * @ORM\Column(name="pp_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="pp_id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,23 +24,23 @@ class ProductPrice
     /**
      * @var float
      *
-     * @ORM\Column(name="price", type="float", precision=10, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="price", type="float", precision=10, scale=0, nullable=true)
      */
     private $price;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="record_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="record_status", type="string", length=45, nullable=true)
      */
-    private $recordStatus;
+    private $recordStatus = 'Active';
 
     /**
      * @var \Database\Entity\Currencies
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Currencies")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="currency_id", referencedColumnName="currency_id", nullable=true)
+     *   @ORM\JoinColumn(name="currency_id", referencedColumnName="currency_id")
      * })
      */
     private $currency;
@@ -50,7 +50,7 @@ class ProductPrice
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\PriceTypes")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="price_type_id", referencedColumnName="price_type_id", nullable=true)
+     *   @ORM\JoinColumn(name="price_type_id", referencedColumnName="price_type_id")
      * })
      */
     private $priceType;
@@ -60,10 +60,11 @@ class ProductPrice
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Products")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="product_id", referencedColumnName="product_id", nullable=true)
+     *   @ORM\JoinColumn(name="product_id", referencedColumnName="product_id")
      * })
      */
     private $product;
+
 
 
     /**

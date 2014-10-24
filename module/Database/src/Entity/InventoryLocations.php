@@ -15,7 +15,7 @@ class InventoryLocations
     /**
      * @var integer
      *
-     * @ORM\Column(name="location_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="location_id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,26 +24,27 @@ class InventoryLocations
     /**
      * @var string
      *
-     * @ORM\Column(name="location_name", type="string", length=100, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="location_name", type="string", length=100, nullable=true)
      */
     private $locationName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="record_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="record_status", type="string", length=45, nullable=true)
      */
-    private $recordStatus;
+    private $recordStatus = 'Active';
 
     /**
      * @var \Database\Entity\Address
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Address")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="address_id", referencedColumnName="address_id", nullable=true)
+     *   @ORM\JoinColumn(name="address_id", referencedColumnName="address_id")
      * })
      */
     private $address;
+
 
 
     /**

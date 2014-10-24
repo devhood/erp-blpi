@@ -15,7 +15,7 @@ class ProductInventories
     /**
      * @var integer
      *
-     * @ORM\Column(name="inventory_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="inventory_id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,56 +24,56 @@ class ProductInventories
     /**
      * @var integer
      *
-     * @ORM\Column(name="stock", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="stock", type="integer", nullable=true)
      */
     private $stock;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="max_stock_limit", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="max_stock_limit", type="integer", nullable=true)
      */
     private $maxStockLimit;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="min_stock_limit", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="min_stock_limit", type="integer", nullable=true)
      */
     private $minStockLimit;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="reorder_limit", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="reorder_limit", type="integer", nullable=true)
      */
     private $reorderLimit;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="cycle_count", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="cycle_count", type="integer", nullable=true)
      */
     private $cycleCount;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="last_cycle_count", type="date", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="last_cycle_count", type="date", nullable=true)
      */
     private $lastCycleCount;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="variance", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="variance", type="integer", nullable=true)
      */
     private $variance;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="cycle_count_by", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="cycle_count_by", type="integer", nullable=true)
      */
     private $cycleCountBy;
 
@@ -82,7 +82,7 @@ class ProductInventories
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\InventoryLocations")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="location_id", referencedColumnName="location_id", nullable=true)
+     *   @ORM\JoinColumn(name="location_id", referencedColumnName="location_id")
      * })
      */
     private $location;
@@ -92,7 +92,7 @@ class ProductInventories
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\ProductConditions")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="condition_id", referencedColumnName="condition_id", nullable=true)
+     *   @ORM\JoinColumn(name="condition_id", referencedColumnName="condition_id")
      * })
      */
     private $condition;
@@ -102,10 +102,11 @@ class ProductInventories
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Products")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="product_id", referencedColumnName="product_id", nullable=true)
+     *   @ORM\JoinColumn(name="product_id", referencedColumnName="product_id")
      * })
      */
     private $product;
+
 
 
     /**

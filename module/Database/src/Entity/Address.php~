@@ -1,0 +1,93 @@
+<?php
+
+namespace Database\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Address
+ *
+ * @ORM\Table(name="Address", indexes={@ORM\Index(name="fk_Address_provinces1_idx", columns={"province_id"}), @ORM\Index(name="fk_Address_cities1_idx", columns={"city_id"}), @ORM\Index(name="fk_Address_Countries1_idx", columns={"country_id"}), @ORM\Index(name="fk_Address_Customers1_idx", columns={"customer_id"})})
+ * @ORM\Entity
+ */
+class Address
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="address_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $addressId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="address_type", type="string", length=45, nullable=true)
+     */
+    private $addressType;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="street_landmark", type="string", length=45, nullable=true)
+     */
+    private $streetLandmark;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="zipcode", type="string", length=45, nullable=true)
+     */
+    private $zipcode;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="record_status", type="string", length=45, nullable=true)
+     */
+    private $recordStatus = 'Active';
+
+    /**
+     * @var \Database\Entity\Countries
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Countries")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="country_id", referencedColumnName="country_id")
+     * })
+     */
+    private $country;
+
+    /**
+     * @var \Database\Entity\Customers
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Customers")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="customer_id", referencedColumnName="customer_id")
+     * })
+     */
+    private $customer;
+
+    /**
+     * @var \Database\Entity\Cities
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Cities")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="city_id", referencedColumnName="city_id")
+     * })
+     */
+    private $city;
+
+    /**
+     * @var \Database\Entity\Provinces
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Provinces")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="province_id", referencedColumnName="province_id")
+     * })
+     */
+    private $province;
+
+
+}

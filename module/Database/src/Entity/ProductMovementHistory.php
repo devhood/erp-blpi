@@ -15,7 +15,7 @@ class ProductMovementHistory
     /**
      * @var integer
      *
-     * @ORM\Column(name="pmh_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="pmh_id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,51 +24,51 @@ class ProductMovementHistory
     /**
      * @var integer
      *
-     * @ORM\Column(name="stock", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="stock", type="integer", nullable=true)
      */
     private $stock;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="delta", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="delta", type="integer", nullable=true)
      */
     private $delta;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="balance", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="balance", type="integer", nullable=true)
      */
     private $balance;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="shipment_id", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="shipment_id", type="integer", nullable=true)
      */
     private $shipmentId;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="adjustment_id", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="adjustment_id", type="integer", nullable=true)
      */
     private $adjustmentId;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="transaction_time", type="datetime", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="transaction_time", type="datetime", nullable=true)
      */
-    private $transactionTime;
+    private $transactionTime = 'CURRENT_TIMESTAMP';
 
     /**
      * @var \Database\Entity\ProductInventories
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\ProductInventories")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="inventory_id", referencedColumnName="inventory_id", nullable=true)
+     *   @ORM\JoinColumn(name="inventory_id", referencedColumnName="inventory_id")
      * })
      */
     private $inventory;
@@ -78,10 +78,11 @@ class ProductMovementHistory
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Sales")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="sales_id", referencedColumnName="sales_id", nullable=true)
+     *   @ORM\JoinColumn(name="sales_id", referencedColumnName="sales_id")
      * })
      */
     private $sales;
+
 
 
     /**

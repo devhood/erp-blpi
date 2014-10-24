@@ -15,7 +15,7 @@ class Shipments
     /**
      * @var integer
      *
-     * @ORM\Column(name="shipment_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="shipment_id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,42 +24,42 @@ class Shipments
     /**
      * @var string
      *
-     * @ORM\Column(name="reference_no", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="reference_no", type="string", length=45, nullable=true)
      */
     private $referenceNo;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="arrival_date", type="date", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="arrival_date", type="date", nullable=true)
      */
     private $arrivalDate;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="confirmed_by", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="confirmed_by", type="integer", nullable=true)
      */
     private $confirmedBy;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="approved_by", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="approved_by", type="integer", nullable=true)
      */
     private $approvedBy;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="shipment_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="shipment_status", type="string", length=45, nullable=true)
      */
     private $shipmentStatus;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="shipment_notes", type="text", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="shipment_notes", type="text", nullable=true)
      */
     private $shipmentNotes;
 
@@ -68,10 +68,11 @@ class Shipments
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Suppliers")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="supplier_id", referencedColumnName="supplier_id", nullable=true)
+     *   @ORM\JoinColumn(name="supplier_id", referencedColumnName="supplier_id")
      * })
      */
     private $supplier;
+
 
 
     /**

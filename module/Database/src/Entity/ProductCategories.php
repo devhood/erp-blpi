@@ -15,7 +15,7 @@ class ProductCategories
     /**
      * @var integer
      *
-     * @ORM\Column(name="pc_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="pc_id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,16 +24,16 @@ class ProductCategories
     /**
      * @var string
      *
-     * @ORM\Column(name="record_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="record_status", type="string", length=45, nullable=true)
      */
-    private $recordStatus;
+    private $recordStatus = 'Active';
 
     /**
      * @var \Database\Entity\Categories
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Categories")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="category_id", referencedColumnName="category_id", nullable=true)
+     *   @ORM\JoinColumn(name="category_id", referencedColumnName="category_id")
      * })
      */
     private $category;
@@ -43,10 +43,11 @@ class ProductCategories
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Products")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="product_id", referencedColumnName="product_id", nullable=true)
+     *   @ORM\JoinColumn(name="product_id", referencedColumnName="product_id")
      * })
      */
     private $product;
+
 
 
     /**

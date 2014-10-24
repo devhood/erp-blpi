@@ -15,7 +15,7 @@ class ShipmentItems
     /**
      * @var integer
      *
-     * @ORM\Column(name="shipment_item_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="shipment_item_id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,21 +24,21 @@ class ShipmentItems
     /**
      * @var integer
      *
-     * @ORM\Column(name="quantity", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="quantity", type="integer", nullable=true)
      */
     private $quantity;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="cost", type="float", precision=10, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="cost", type="float", precision=10, scale=0, nullable=true)
      */
     private $cost;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="expiry_date", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="expiry_date", type="string", length=45, nullable=true)
      */
     private $expiryDate;
 
@@ -47,7 +47,7 @@ class ShipmentItems
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Currencies")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="currency_id", referencedColumnName="currency_id", nullable=true)
+     *   @ORM\JoinColumn(name="currency_id", referencedColumnName="currency_id")
      * })
      */
     private $currency;
@@ -57,7 +57,7 @@ class ShipmentItems
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\ProductConditions")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="condition_id", referencedColumnName="condition_id", nullable=true)
+     *   @ORM\JoinColumn(name="condition_id", referencedColumnName="condition_id")
      * })
      */
     private $condition;
@@ -67,7 +67,7 @@ class ShipmentItems
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Products")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="product_id", referencedColumnName="product_id", nullable=true)
+     *   @ORM\JoinColumn(name="product_id", referencedColumnName="product_id")
      * })
      */
     private $product;
@@ -77,10 +77,11 @@ class ShipmentItems
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Shipments")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="shipment_id", referencedColumnName="shipment_id", nullable=true)
+     *   @ORM\JoinColumn(name="shipment_id", referencedColumnName="shipment_id")
      * })
      */
     private $shipment;
+
 
 
     /**

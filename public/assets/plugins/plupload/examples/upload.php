@@ -81,7 +81,6 @@ if ($cleanupTargetDir) {
 		if ($tmpfilePath == "{$filePath}.part") {
 			continue;
 		}
-
 		// Remove temp file if it is older than the max age and is not the current file
 		if (preg_match('/\.part$/', $file) && (filemtime($tmpfilePath) < time() - $maxFileAge)) {
 			@unlink($tmpfilePath);

@@ -15,7 +15,7 @@ class Users
     /**
      * @var integer
      *
-     * @ORM\Column(name="user_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="user_id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,42 +24,42 @@ class Users
     /**
      * @var string
      *
-     * @ORM\Column(name="user_name", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="user_name", type="string", length=45, nullable=true)
      */
     private $userName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="password", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="password", type="string", length=45, nullable=true)
      */
     private $password;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="full_name", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="full_name", type="string", length=45, nullable=true)
      */
     private $fullName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="email", type="string", length=45, nullable=true)
      */
     private $email;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="mobile", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="mobile", type="string", length=45, nullable=true)
      */
     private $mobile;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="user_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="user_status", type="string", length=45, nullable=true)
      */
     private $userStatus;
 
@@ -68,10 +68,11 @@ class Users
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Designations")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="designation_id", referencedColumnName="designation_id", nullable=true)
+     *   @ORM\JoinColumn(name="designation_id", referencedColumnName="designation_id")
      * })
      */
     private $designation;
+
 
 
     /**

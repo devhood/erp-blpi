@@ -1,0 +1,77 @@
+<?php
+
+namespace Database\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Shipments
+ *
+ * @ORM\Table(name="Shipments", indexes={@ORM\Index(name="fk_Shipments_Suppliers1_idx", columns={"supplier_id"})})
+ * @ORM\Entity
+ */
+class Shipments
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="shipment_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $shipmentId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reference_no", type="string", length=45, nullable=true)
+     */
+    private $referenceNo;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="arrival_date", type="date", nullable=true)
+     */
+    private $arrivalDate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="confirmed_by", type="integer", nullable=true)
+     */
+    private $confirmedBy;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="approved_by", type="integer", nullable=true)
+     */
+    private $approvedBy;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="shipment_status", type="string", length=45, nullable=true)
+     */
+    private $shipmentStatus;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="shipment_notes", type="text", nullable=true)
+     */
+    private $shipmentNotes;
+
+    /**
+     * @var \Database\Entity\Suppliers
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Suppliers")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="supplier_id", referencedColumnName="supplier_id")
+     * })
+     */
+    private $supplier;
+
+
+}

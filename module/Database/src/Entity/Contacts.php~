@@ -1,0 +1,77 @@
+<?php
+
+namespace Database\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Contacts
+ *
+ * @ORM\Table(name="Contacts", indexes={@ORM\Index(name="fk_Contacts_Customers1_idx", columns={"customer_id"})})
+ * @ORM\Entity
+ */
+class Contacts
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="contact_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $contactId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="position", type="string", length=45, nullable=true)
+     */
+    private $position;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="primary", type="string", length=45, nullable=true)
+     */
+    private $primary;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="full_name", type="string", length=45, nullable=true)
+     */
+    private $fullName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=45, nullable=true)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="phone", type="string", length=45, nullable=true)
+     */
+    private $phone;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="record_status", type="string", length=45, nullable=true)
+     */
+    private $recordStatus = 'Active';
+
+    /**
+     * @var \Database\Entity\Customers
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Customers")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="customer_id", referencedColumnName="customer_id")
+     * })
+     */
+    private $customer;
+
+
+}
