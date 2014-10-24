@@ -83,16 +83,17 @@ return array(
 								),
 							),
 						),
-		    __NAMESPACE__.'Invoice_Add' => array(
-		        'type' => 'Literal',
-		        'options' => array(
-		            'route'    => '/sales/invoice/add',
-		            'defaults' => array(
-		                'controller' => __NAMESPACE__ . '\Invoice',
-		                'action'     => 'add',
-		            ),
-		        ),
-		    ),
+
+		    // __NAMESPACE__.'Invoice_Add' => array(
+		    //     'type' => 'Literal',
+		    //     'options' => array(
+		    //         'route'    => '/sales/invoice/add',
+		    //         'defaults' => array(
+		    //             'controller' => __NAMESPACE__ . '\Invoice',
+		    //             'action'     => 'add',
+		    //         ),
+		    //     ),
+		    // ),
 
 		    __NAMESPACE__.'Invoice_Approve' => array(
 		        'type' => 'Literal',
@@ -126,24 +127,24 @@ return array(
 		        ),
 		    ),
 
-		__NAMESPACE__.'Creatermr_Add' => array(
+		__NAMESPACE__.'Return_Add' => array(
         'type' => 'Literal',
         'options' => array(
-            'route'    => '/sales/creatermr/add',
+            'route'    => '/sales/return/create',
             'defaults' => array(
-                'controller' => __NAMESPACE__ . '\Creatermr',
-                'action'     => 'add',
+                'controller' => __NAMESPACE__ . '\Return',
+                'action'     => 'create',
             ),
         ),
     ),
 
-    __NAMESPACE__.'Approvermr_Add' => array(
+    __NAMESPACE__.'Return_Approve' => array(
         'type' => 'Literal',
         'options' => array(
-            'route'    => '/sales/approvermr/add',
+            'route'    => '/sales/return/approve',
             'defaults' => array(
-                'controller' => __NAMESPACE__ . '\Approvermr',
-                'action'     => 'add',
+                'controller' => __NAMESPACE__ . '\Return',
+                'action'     => 'approve',
             ),
         ),
     ),

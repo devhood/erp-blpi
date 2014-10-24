@@ -373,7 +373,7 @@ class InvoiceForm extends Form
             // 						),
                 )
         ));
-        
+
           $this->add( array(
                 'name' => 'total',
                 'type' => 'Text',
@@ -384,7 +384,7 @@ class InvoiceForm extends Form
                 )
         ));
 
-    
+
         $this->add( array(
                 'name' => 'totalSales',
                 'type' => 'Text',
@@ -394,6 +394,6 @@ class InvoiceForm extends Form
 
                 )
         ));
-    
+
     }
 }
