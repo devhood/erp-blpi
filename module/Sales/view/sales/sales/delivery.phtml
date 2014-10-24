@@ -25,7 +25,15 @@ $this->headLink()
     <!-- BEGIN FORM-->
     <form action="#" class="form-horizontal">
       <div class="form-body">
-        <h4 class="form-section">Delivery </h4>
+        <div class="alert alert-danger display-hide">
+          <button class="close" data-close="alert"></button>
+            You have some form errors. Please check below.
+        </div>
+        <div class="alert alert-success display-hide">
+          <button class="close" data-close="alert"></button>
+            Your form validation is successful!
+        </div>
+        <h4 class="form-section">Sales Delivery </h4>
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
@@ -39,361 +47,336 @@ $this->headLink()
           </div>
           <!--/span-->
           <div class="col-md-6">
-          </div>
-          <!--/span-->
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-                <?php  echo $this->formRow($formSales->get('sono')); ?>
-                <span class="help-block">
-                  SO Number
-                </span>
-              </div>
-            </div>
-          </div>
-          <!--/span-->
-          <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                <?php  echo $this->formRow($formSales->get('transactionTypes[transactionTypeId]')); ?>
+                <?php  echo $this->formRow($formSales->get('sino')); ?>
                 <span class="help-block">
-                  Transaction Type
+                  SI Number
                 </span>
               </div>
             </div>
           </div>
           <!--/span-->
-        </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+                  <?php  echo $this->formRow($formSales->get('sono')); ?>
+                  <span class="help-block">
+                    SO Number
+                  </span>
+                </div>
+              </div>
+            </div>
+            <!--/span-->
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+                  <?php  echo $this->formRow($formSales->get('transactionTypes[transactionTypeId]')); ?>
+                  <span class="help-block">
+                    Transaction Type
+                  </span>
+                </div>
+              </div>
+            </div>
+            <!--/span-->
+          </div>
 
 
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-                <?php  echo $this->formRow($formSales->get('customers[customerId]')); ?>
-                <span class="help-block">
-                  Customer
-                </span>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+                  <?php  echo $this->formRow($formSales->get('customers[customerId]')); ?>
+                  <span class="help-block">
+                    Customer
+                  </span>
+                </div>
+              </div>
+            </div>
+            <!--/span-->
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+                  <?php  echo $this->formRow($formSales->get('inventoryLocations[inventoryLocationId]')); ?>
+                  <span class="help-block">
+                    Inventory Location
+                  </span>
+                </div>
+              </div>
+            </div>
+            <!--/span-->
+          </div>
+
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <div class="col-md-2 col-lg-2 "></div>
+                <div class="col-md-8 col-xs-12 col-sm-12 col-lg-8 ">
+                  <?php  echo $this->formRow($formSales->get('shippingAddress[addressId]')); ?>
+                  <span class="help-block">
+                    Shipping Address
+                  </span>
+                </div>
+                <div class="col-md-2 col-lg-2 "></div>
               </div>
             </div>
           </div>
-          <!--/span-->
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                <?php  echo $this->formRow($formSales->get('inventoryLocations[inventoryLocationId]')); ?>
-                <span class="help-block">
-                  Inventory Location
-                </span>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <div class="col-md-2 col-lg-2 "></div>
+                <div class="col-md-8 col-xs-12 col-sm-12 col-lg-8 ">
+                  <?php  echo $this->formRow($formSales->get('billingAddress[addressId]')); ?>
+                  <span class="help-block">
+                    Billing Address
+                  </span>
+                </div>
+                <div class="col-md-2 col-lg-2 "></div>
               </div>
             </div>
           </div>
-          <!--/span-->
-        </div>
 
 
-        <div class="row">
-          <div class="col-md-12">
-            <div class="form-group">
-              <div class="col-md-2 col-lg-2 "></div>
-              <div class="col-md-8 col-xs-12 col-sm-12 col-lg-8 ">
-                <?php  echo $this->formRow($formSales->get('shippingAddress[addressId]')); ?>
-                <span class="help-block">
-                  Shipping Address
-                </span>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+                  <?php  echo $this->formRow($formSales->get('orderSource[orderSourceId]')); ?>
+                  <span class="help-block">
+                    Order Source
+                  </span>
+                </div>
               </div>
-              <div class="col-md-2 col-lg-2 "></div>
             </div>
+            <!--/span-->
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+                  <?php  echo $this->formRow($formSales->get('shippingModes[shippingModeId]')); ?>
+                  <span class="help-block">
+                    Shipping Mode
+                  </span>
+                </div>
+              </div>
+            </div>
+            <!--/span-->
           </div>
-        </div>
 
-        <div class="row">
-          <div class="col-md-12">
-            <div class="form-group">
-              <div class="col-md-2 col-lg-2 "></div>
-              <div class="col-md-8 col-xs-12 col-sm-12 col-lg-8 ">
-                <?php  echo $this->formRow($formSales->get('billingAddress[addressId]')); ?>
-                <span class="help-block">
-                  Billing Address
-                </span>
-              </div>
-              <div class="col-md-2 col-lg-2 "></div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-                <?php  echo $this->formRow($formSales->get('orderSource[orderSourceId]')); ?>
-                <span class="help-block">
-                  Order Source
-                </span>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+                  <?php  echo $this->formRow($formSales->get('users[userId]')); ?>
+                  <span class="help-block">
+                    Sales Executive
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-          <!--/span-->
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                <?php  echo $this->formRow($formSales->get('shippingModes[shippingModeId]')); ?>
-                <span class="help-block">
-                  Shipping Mode
-                </span>
+            <!--/span-->
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+                  <?php  echo $this->formRow($formSales->get('paymentTerms[paymentTermId]')); ?>
+                  <span class="help-block">
+                    Payment Terms
+                  </span>
+                </div>
               </div>
             </div>
+            <!--/span-->
           </div>
-          <!--/span-->
-        </div>
-
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-                <?php  echo $this->formRow($formSales->get('users[userId]')); ?>
-                <span class="help-block">
-                  Sales Executive
-                </span>
-              </div>
-            </div>
-          </div>
-          <!--/span-->
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                <?php  echo $this->formRow($formSales->get('paymentTerms[paymentTermId]')); ?>
-                <span class="help-block">
-                  Payment Terms
-                </span>
-              </div>
-            </div>
-          </div>
-          <!--/span-->
-        </div>
 
 
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-                <?php  echo $this->formRow($formSales->get('deliveryDate')); ?>
-                <span class="help-block">
-                  Delivery Date
-                </span>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+                  <?php  echo $this->formRow($formSales->get('deliveryDate')); ?>
+                  <span class="help-block">
+                    Delivery Date
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-          <!--/span-->
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                <?php  echo $this->formRow($formSales->get('orderedBy')); ?>
-                <span class="help-block">
-                  Ordered By
-                </span>
+            <!--/span-->
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+                  <?php  echo $this->formRow($formSales->get('orderedBy')); ?>
+                  <span class="help-block">
+                    Ordered By
+                  </span>
+                </div>
               </div>
             </div>
+            <!--/span-->
           </div>
-          <!--/span-->
-        </div>
 
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-                <?php  echo $this->formRow($formSales->get('priceTypes[priceTypeId]')); ?>
-                <span class="help-block">
-                  Price Type
-                </span>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+                  <?php  echo $this->formRow($formSales->get('priceTypes[priceTypeId]')); ?>
+                  <span class="help-block">
+                    Price Type
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-          <!--/span-->
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                <?php  echo $this->formRow($formSales->get('percentVat')); ?>
-                <span class="help-block">
-                  VAT Percentage
-                </span>
+            <!--/span-->
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+                  <?php  echo $this->formRow($formSales->get('percentVat')); ?>
+                  <span class="help-block">
+                    VAT Percentage
+                  </span>
+                </div>
               </div>
-            </div>
 
+            </div>
+            <!--/span-->
           </div>
-          <!--/span-->
-        </div>
 
-        <div class="row">
-          <div class="col-md-12">
-            <div class="form-group">
-              <div class="col-md-2 col-lg-2 "></div>
-              <div class="col-md-8 col-xs-12 col-sm-12 col-lg-8 ">
-                <?php echo $this->formRow($formSales->get('notes')); ?>
-                <span class="help-block">
-                  Notes
-                </span>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <div class="col-md-2 col-lg-2 "></div>
+                <div class="col-md-8 col-xs-12 col-sm-12 col-lg-8 ">
+                  <?php echo $this->formRow($formSales->get('notes')); ?>
+                  <span class="help-block">
+                    Notes
+                  </span>
+                </div>
+                <div class="col-md-2 col-lg-2 "></div>
               </div>
-              <div class="col-md-2 col-lg-2 "></div>
             </div>
           </div>
-        </div>
 
 
 
 
           <div class="row">
-						<div class="col-md-2"></div>
-						<div class="col-md-8">
-							<hr/>
-							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-left: 0px;">
-								<h4 class="">Ordered Items</h4>
-							</div>
-							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-right: 0px;">
-								<button type="button" data-toggle="modal" href="#orderModal" class="btn-sm green custom-right">
-							Add New
-								<i class="fa fa-plus"></i>
-							</button>
-							</div>
-						</div>
-						<div class="col-md-2"></div>
-					</div>
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+              <hr/>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-left: 0px;">
+                <h4 class="">Ordered Items</h4>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-right: 0px;">
+                <button type="button" data-toggle="modal" href="#orderModal" class="btn-sm green custom-right">
+                  Add New
+                  <i class="fa fa-plus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="col-md-2"></div>
+          </div>
 
 
 
 
-        <div class="form-group">
-          <div class="col-md-2"></div>
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md-12">
-                <!-- BEGIN SAMPLE TABLE PORTLET-->
-                <div class="portlet-body flip-scroll">
-                  <table class="table table-bordered table-condensed flip-content">
-                    <thead class="flip-content bg-grey">
-                      <tr>
-                        <th width="20%">
-                          Items
-                        </th>
-                        <th>
-                          Quantity
-                        </th>
-                        <th>
-                          Price
-                        </th>
-                        <th>
-                          Discount
-                        </th>
-                        <th>
-                          Freebie
-                        </th>
-                        <th>
-                          Total
-                        </th>
+          <div class="form-group">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+              <div class="row">
+                <div class="col-md-12">
+                  <!-- BEGIN SAMPLE TABLE PORTLET-->
+                  <div class="portlet-body flip-scroll">
+                    <table class="table table-bordered table-condensed flip-content">
+                      <thead class="flip-content bg-grey">
+                        <tr>
+                          <th width="20%">
+                            Items
+                          </th>
+                          <th>
+                            Quantity
+                          </th>
+                          <th>
+                            Price
+                          </th>
+                          <th>
+                            Discount
+                          </th>
+                          <th>
+                            Freebie
+                          </th>
+                          <th>
+                            Total
+                          </th>
 
-                      </tr>
-                    </thead>
-                    <tbody>
+                        </tr>
+                      </thead>
+                      <tbody>
 
-                    </tbody>
-                  </table>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- END SAMPLE TABLE PORTLET-->
                 </div>
-                <!-- END SAMPLE TABLE PORTLET-->
               </div>
+              <hr>
             </div>
+            <div class="col-md-2"></div>
           </div>
-          <div class="col-md-2"></div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
 
-              </div>
-            </div>
-          </div>
-          <!--/span-->
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                <?php  echo $this->formRow($formSales->get('items')); ?>
-                <span class="help-block">
-                  Items
-                </span>
-              </div>
-            </div>
-          </div>
-          <!--/span-->
-        </div>
 
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
 
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+                  <?php  echo $this->formRow($formSales->get('sales')); ?>
+                  <span class="help-block">
+                    Sales
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-          <!--/span-->
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                <?php  echo $this->formRow($formSales->get('sales')); ?>
-                <span class="help-block">
-                  Sales
-                </span>
-              </div>
-            </div>
-          </div>
-          <!--/span-->
-        </div>
+            <!--/span-->
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
 
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+                  <?php  echo $this->formRow($formSales->get('items')); ?>
+                  <span class="help-block">
+                    Items
+                  </span>
 
+                </div>
               </div>
             </div>
+            <!--/span-->
           </div>
-          <!--/span-->
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                <?php  echo $this->formRow($formSales->get('totalVat')); ?>
-                <span class="help-block">
-                  VAT
-                </span>
-              </div>
-            </div>
-          </div>
-          <!--/span-->
-        </div>
 
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+                  <?php  echo $this->formRow($formSales->get('totalVat')); ?>
+                  <span class="help-block">
+                    VAT
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-          <!--/span-->
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                <?php  echo $this->formRow($formSales->get('totalSales')); ?>
-                <span class="help-block">
-                  Total
-                </span>
+            <!--/span-->
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+                  <?php  echo $this->formRow($formSales->get('totalSales')); ?>
+                  <span class="help-block">
+                    Total
+                  </span>
+                </div>
               </div>
             </div>
+            <!--/span-->
           </div>
-          <!--/span-->
-        </div>
 
 
           <!-- BEGIN PAGE CONTENT-->
@@ -430,7 +413,7 @@ $this->headLink()
   <?php $this->inlineScript()->captureStart() ?>
   jQuery(document).ready(function() {
     App.init();
-   // Order.init();
+    // Order.init();
     ComponentsEditors.init();
     $('.tags').tagsInput({
       width: '100%',

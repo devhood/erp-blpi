@@ -8,7 +8,7 @@ $this->headLink()
 <div class="portlet box grey">
   <div class="portlet-title">
     <div class="caption">
-      <i class="fa fa-reorder"></i>Sales Profile
+      <i class="fa fa-reorder"></i>Sales
     </div>
     <div class="tools">
       <a href="javascript:;" class="collapse">
@@ -25,8 +25,16 @@ $this->headLink()
     <!-- BEGIN FORM-->
     <form action="#" class="form-horizontal">
       <div class="form-body">
-        <h4 class="form-section">General Info  </h4>
+        <h4 class="form-section">Sales Order </h4>
         <div class="row">
+          <div class="alert alert-danger display-hide">
+            <button class="close" data-close="alert"></button>
+              You have some form errors. Please check below.
+          </div>
+          <div class="alert alert-success display-hide">
+            <button class="close" data-close="alert"></button>
+              Your form validation is successful!
+          </div>
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
@@ -229,22 +237,22 @@ $this->headLink()
 
 
 
-          <div class="row">
-						<div class="col-md-2"></div>
-						<div class="col-md-8">
-							<hr/>
-							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-left: 0px;">
-								<h4 class="">Ordered Items</h4>
-							</div>
-							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-right: 0px;">
-								<button type="button" data-toggle="modal" href="#orderModal" class="btn-sm green custom-right">
-							Add New
-								<i class="fa fa-plus"></i>
-							</button>
-							</div>
-						</div>
-						<div class="col-md-2"></div>
-					</div>
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            <hr/>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-left: 0px;">
+              <h4 class="">Ordered Items</h4>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-right: 0px;">
+              <button type="button" data-toggle="modal" href="#orderModal" class="btn-sm green custom-right">
+                Add New
+                <i class="fa fa-plus"></i>
+              </button>
+            </div>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
 
 
 
@@ -286,45 +294,18 @@ $this->headLink()
                   </table>
                 </div>
                 <!-- END SAMPLE TABLE PORTLET-->
+                <hr/>
               </div>
             </div>
           </div>
           <div class="col-md-2"></div>
         </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
 
-              </div>
-            </div>
-          </div>
-          <!--/span-->
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                <?php  echo $this->formRow($formSales->get('items')); ?>
-                <span class="help-block">
-                  Items
-                </span>
-              </div>
-            </div>
-          </div>
-          <!--/span-->
-        </div>
 
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-
-              </div>
-            </div>
-          </div>
-          <!--/span-->
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
                 <?php  echo $this->formRow($formSales->get('sales')); ?>
                 <span class="help-block">
                   Sales
@@ -333,35 +314,29 @@ $this->headLink()
             </div>
           </div>
           <!--/span-->
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+
+                <?php  echo $this->formRow($formSales->get('items')); ?>
+                <span class="help-block">
+                  Items
+                </span>
+
+              </div>
+            </div>
+          </div>
+          <!--/span-->
         </div>
 
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-
-              </div>
-            </div>
-          </div>
-          <!--/span-->
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
                 <?php  echo $this->formRow($formSales->get('totalVat')); ?>
                 <span class="help-block">
                   VAT
                 </span>
-              </div>
-            </div>
-          </div>
-          <!--/span-->
-        </div>
-
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-
               </div>
             </div>
           </div>
@@ -380,44 +355,45 @@ $this->headLink()
         </div>
 
 
-          <!-- BEGIN PAGE CONTENT-->
 
-        </div>      <!--/FORM BODY  -->
+        <!-- BEGIN PAGE CONTENT-->
 
-        <div class="form-actions fluid">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="col-md-offset-3 col-md-9">
-                <button type="button" class="btn green">Save & Send</button>
-                <button type="button" class="btn default">Cancel</button>
-              </div>
-            </div>
-            <div class="col-md-6">
+      </div>      <!--/FORM BODY  -->
+
+      <div class="form-actions fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="col-md-offset-3 col-md-9">
+              <button type="button" class="btn green">Save & Send</button>
+              <button type="button" class="btn default">Cancel</button>
             </div>
           </div>
+          <div class="col-md-6">
+          </div>
         </div>
-      </form>
-      <!-- END FORM-->
-    </div>
+      </div>
+    </form>
+    <!-- END FORM-->
   </div>
+</div>
 
-  <?php echo $this->render('sales/order') ?>
+<?php echo $this->render('sales/order') ?>
 
 
-  <!-- BEGIN PAGE LEVEL PLUGINS -->
-  <!-- END PAGE LEVEL PLUGINS -->
-  <!-- BEGIN PAGE LEVEL SCRIPTS -->
-  <?php
-  $this->inlineScript()
-  ->appendFile($this->basePath('/assets/scripts/product.js'))
-  ?>
-  <?php $this->inlineScript()->captureStart() ?>
-  jQuery(document).ready(function() {
-    App.init();
-   // Order.init();
-    ComponentsEditors.init();
-    $('.tags').tagsInput({
-      width: '100%',
-    });
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<?php
+$this->inlineScript()
+->appendFile($this->basePath('/assets/scripts/sales/order.js'))
+?>
+<?php $this->inlineScript()->captureStart() ?>
+jQuery(document).ready(function() {
+  App.init();
+  // Order.init();
+  ComponentsEditors.init();
+  $('.tags').tagsInput({
+    width: '100%',
   });
-  <?php $this->inlineScript()->captureEnd() ?>
+});
+<?php $this->inlineScript()->captureEnd() ?>

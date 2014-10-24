@@ -124,7 +124,7 @@ class SalesForm extends Form
       'options' => array(
         'object_manager'  => $em,
         'target_class'    => 'Database\Entity\InventoryLocations',
-        'property'           => 'LocationName',
+        'property'           => 'locationName',
         'display_empty_item' => true,
         'empty_item_label'   => '---'
       ),
@@ -138,12 +138,12 @@ class SalesForm extends Form
 
 
     $this->add(array(
-      'name' => 'shippingAddress[addressId]',
-  'type' => 'DoctrineModule\Form\Element\ObjectSelect',
-  'options' => array(
+    'name' => 'shippingAddress[addressId]',
+    'type' => 'DoctrineModule\Form\Element\ObjectSelect',
+    'options' => array(
     'object_manager'  => $em,
     'target_class'    => 'Database\Entity\Address',
-    'property'           => 'AddressId',
+//  'property'           => 'aaasdddressId',
     'display_empty_item' => true,
     'empty_item_label'   => '---',
     'label_generator' => function($row) {
