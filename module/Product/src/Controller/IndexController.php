@@ -77,7 +77,7 @@ class IndexController extends BaseController
     }
     public function viewAction()
     {
-    	$form = new \Product\Form\ProductForm();
+    	  $form = new \Product\Form\ProductForm();
         $form->get("productCode")->setAttribute("readonly", true);
         $form->get("productName")->setAttribute("readonly", true);
         $form->get("paymentTerms[paymentTermId]")->setAttribute("disabled", true);
@@ -86,13 +86,13 @@ class IndexController extends BaseController
         $form->get("printedCode")->setAttribute("readonly", true);
         $form->get("size")->setAttribute("readonly", true);
         $form->get("weight")->setAttribute("readonly", true);
-    	$form->get("brands[brandId]")->setAttribute("disabled", true);
+    	  $form->get("brands[brandId]")->setAttribute("disabled", true);
         $form->get("classifications[classificationId]")->setAttribute("disabled", true);
         $form->get("supplier[supplierId]")->setAttribute("disabled", true);
         $form->get("productStatus")->setAttribute("disabled", true);
         $form->get("desc")->setAttribute("disabled", true);
 
-    	$payment = $this->_getOptions("PaymentTerms","paymentTermId","paymentTermName");
+    	  $payment = $this->_getOptions("PaymentTerms","paymentTermId","paymentTermName");
         $form->get("paymentTerms[paymentTermId]")->setOptions(array('value_options' => $payment));
 
         $brand = $this->_getOptions("Brands","brandId","brandName");

@@ -15,14 +15,16 @@ class SalesForm extends Form
       'attributes' => array(
         'class' => 'form-control',
         'id' => 'paymentNo',
+         'readonly' => 'readonly'
       )
     ));
     $this->add( array(
-      'name' => 'performaInvoiceNo',
+      'name' => 'prono',
       'type' => 'Text',
       'attributes' => array(
         'class' => 'form-control',
-        'id' => 'performaInvoiceNo',
+        'id' => 'prono',
+        'readonly' => 'readonly'
       )
     ));
     //credit memo
@@ -32,6 +34,7 @@ class SalesForm extends Form
       'attributes' => array(
         'class' => 'form-control',
         'id' => 'cmno',
+        'readonly' => 'readonly'
       )
     ));
 
@@ -51,6 +54,7 @@ class SalesForm extends Form
       'attributes' => array(
         'class' => 'form-control',
         'id' => 'drno',
+        'readonly' => 'readonly'
       )
     ));
 
@@ -71,6 +75,7 @@ class SalesForm extends Form
       'attributes' => array(
         'class' => 'form-control',
         'id' => 'sono',
+        'readonly' => 'readonly'
       )
     ));
 

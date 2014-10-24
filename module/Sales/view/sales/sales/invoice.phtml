@@ -30,6 +30,30 @@ $this->headLink()
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+                <?php  echo $this->formRow($formSales->get('drno')); ?>
+                <span class="help-block">
+                  DR Number
+                </span>
+              </div>
+            </div>
+          </div>
+          <!--/span-->
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+                <?php  echo $this->formRow($formSales->get('sino')); ?>
+                <span class="help-block">
+                  Transaction Type
+                </span>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>   <!--/row-->
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
                 <?php  echo $this->formRow($formSales->get('sono')); ?>
                 <span class="help-block">
                   SO Number
@@ -206,7 +230,7 @@ $this->headLink()
                 </span>
               </div>
             </div>
-           
+
           </div>
           <!--/span-->
         </div>
@@ -227,19 +251,28 @@ $this->headLink()
         </div>
 
 
-        <div class="row form-section">
-          <div class="col-md-12">
-            <div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
-              <h4 class="">Ordered Items</h4>
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
-              <button id="" type="button" data-toggle="modal" href="#orderModal" class="btn-sm green custom-right">
-                Add New
-                <i class="fa fa-plus"></i>
-              </button>
-            </div>
-          </div>
-        </div>
+
+
+          <div class="row">
+						<div class="col-md-2"></div>
+						<div class="col-md-8">
+							<hr/>
+							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-left: 0px;">
+								<h4 class="">Ordered Items</h4>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-right: 0px;">
+								<button type="button" data-toggle="modal" href="#orderModal" class="btn-sm green custom-right">
+							Add New
+								<i class="fa fa-plus"></i>
+							</button>
+							</div>
+						</div>
+						<div class="col-md-2"></div>
+					</div>
+
+
+
+
         <div class="form-group">
           <div class="col-md-2"></div>
           <div class="col-md-8">

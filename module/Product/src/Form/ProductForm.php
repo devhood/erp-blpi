@@ -63,7 +63,12 @@ class ProductForm extends Form
 
 	$this->add(array(
 		'name' => 'supplier[supplierId]',
-		'type' => 'Select',
+		'type' => 'DoctrineModule\Form\Element\ObjectSelect',
+		'options' => array(
+			'object_manager' => $om,
+			'target_class'   => 'Database\Entity\Suppliers',
+			'property'       => 'supplierName',
+		),
 		'attributes' => array(
 			'class' => 'select2me form-control',
 			'tabindex' => '1',
@@ -109,11 +114,16 @@ class ProductForm extends Form
 
 	$this->add(array(
 		'name' => 'paymentTerms[paymentTermId]',
-		'type' => 'Select',
+		'type' => 'DoctrineModule\Form\Element\ObjectSelect',
+		'options' => array(
+			'object_manager' => $om,
+			'target_class'   => 'Database\Entity\PaymentTerms',
+			'property'       => 'paymentTermName',
+		),
 		'attributes' => array(
 			'class' => 'select2me form-control',
 			'tabindex' => '1',
-			'id' => 'paymenttermId',
+			'id' => 'paymentTermId',
 		),
 	));
 
