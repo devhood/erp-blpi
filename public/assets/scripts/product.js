@@ -68,6 +68,14 @@ var Product = function () {
                         required: true
                     },
                 },
+                messages: { // custom messages for radio buttons and checkboxes
+                	productCode: {
+                        required: "Product Code is Required"
+                    },
+                    productName: {
+                        required: "Product Name is required"
+                    }
+                },
                 invalidHandler: function (event, validator) { //display error alert on form submit              
                 success.hide();
                 error.show();
