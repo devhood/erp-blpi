@@ -9,7 +9,7 @@ class ProductForm extends Form
 	public function __construct($om = null)
 	{
 		parent::__construct('product');
-		
+
 		$this->add( array(
 				'name' => 'productCode',
 				'type' => 'Text',
@@ -204,8 +204,8 @@ class ProductForm extends Form
 						'class' => 'form-control',
 						'id' => 'bundleQuantity',
 				)
-		));	
-		
+		));
+
 		$this->add( array(
 				'name' => 'desc',
 				'type' => 'Textarea',

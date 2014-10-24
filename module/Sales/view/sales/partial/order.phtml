@@ -12,7 +12,7 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-									<?php  echo $this->formRow($form->get('products[productId]')); ?>
+									<?php  echo $this->formRow($formSalesItem->get('products[productId]')); ?>
 									<span class="help-block">
 										Items
 									</span>
@@ -23,7 +23,7 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
-									<?php  echo $this->formRow($form->get('quantity')); ?>
+									<?php  echo $this->formRow($formSalesItem->get('quantity')); ?>
 									<span class="help-block">
 										Quantity
 									</span>
@@ -36,7 +36,7 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-									<?php  echo $this->formRow($form->get('price')); ?>
+									<?php  echo $this->formRow($formSalesItem->get('price')); ?>
 									<span class="help-block">
 										Price
 									</span>
@@ -48,7 +48,7 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
-									<?php  echo $this->formRow($form->get('discounts[discountId]')); ?>
+									<?php  echo $this->formRow($formSalesItem->get('discount')); ?>
 									<span class="help-block">
 										Discount
 									</span>
@@ -61,7 +61,7 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-									<?php  echo $this->formRow($form->get('price')); ?>
+									<?php  echo $this->formRow($formSalesItem->get('freebie')); ?>
 									<span class="help-block">
 										Price
 									</span>
@@ -72,7 +72,7 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
-									<?php  echo $this->formRow($form->get('discounts[discountId]')); ?>
+									<?php  echo $this->formRow($formSalesItem->get('sales')); ?>
 									<span class="help-block">
 										Discount
 									</span>
@@ -80,34 +80,6 @@
 							</div>
 						</div>
 					</div><!--/row  -->
-
-					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group">
-								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-									<?php  echo $this->formRow($form->get('salesItems[freebie]')); ?>
-									<span class="help-block">
-										Freebie
-									</span>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-md-6">
-							<div class="form-group">
-								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
-									<?php  echo $this->formRow($form->get('totalSales')); ?>
-									<span class="help-block">
-										Total
-									</span>
-								</div>
-							</div>
-						</div>
-					</div><!--/row  -->
-
-
-
-
 
 				<div class="modal-footer">
 					<button type="button" data-dismiss="modal" class="btn default">Close</button>
