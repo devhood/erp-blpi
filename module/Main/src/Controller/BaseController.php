@@ -45,7 +45,8 @@ class BaseController extends AbstractActionController
 		return $content;
 	}
 	
-	protected function _getContents($table){
+	protected function _getContents($table)
+	{
 		
 		$queryBuilder = $this->_getEntityManager()->createQueryBuilder();
 		$queryBuilder->select('t')
@@ -53,5 +54,29 @@ class BaseController extends AbstractActionController
 		$results = $queryBuilder->getQuery()
 			->getResult();
 		return $results;
+	}
+	
+	protected function _saveRecord($table, $record, $id=null)
+	{
+		try{
+			$table = ucwords($table);
+			$request = (array)$record;
+			$table = self::DBNS.$table;
+			if($id){
+				$object = $this->getEntityManager()
+				->find($table, $id);
+			}
+			else{
+				$object = new $table();
+			}
+			$hydrator = new DoctrineHydrator($this->getEntityManager());
+			$object = $hydrator->hydrate($request, $object);
+			$this->getEntityManager()->persist($object);
+			$this->getEntityManager()->flush();
+			return true;
+		}catch(\Exception $e){
+			return false;
+		}
+			
 	}
 }
