@@ -15,7 +15,7 @@ class Products
     /**
      * @var integer
      *
-     * @ORM\Column(name="product_id", type="integer", nullable=false)
+     * @ORM\Column(name="product_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,63 +24,63 @@ class Products
     /**
      * @var string
      *
-     * @ORM\Column(name="product_code", type="string", length=100, nullable=false)
+     * @ORM\Column(name="product_code", type="string", length=100, precision=0, scale=0, nullable=false, unique=false)
      */
     private $productCode;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="product_name", type="string", length=100, nullable=false)
+     * @ORM\Column(name="product_name", type="string", length=100, precision=0, scale=0, nullable=false, unique=false)
      */
     private $productName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="product_description", type="string", length=500, nullable=true)
+     * @ORM\Column(name="product_description", type="string", length=500, precision=0, scale=0, nullable=true, unique=false)
      */
     private $productDescription;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="size", type="string", length=45, nullable=true)
+     * @ORM\Column(name="size", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $size;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="weight", type="string", length=45, nullable=true)
+     * @ORM\Column(name="weight", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $weight;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="product_status", type="string", length=45, nullable=true)
+     * @ORM\Column(name="product_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
-    private $productStatus = 'Active';
+    private $productStatus;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="part_number", type="string", length=45, nullable=true)
+     * @ORM\Column(name="part_number", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $partNumber;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="bl_code", type="string", length=45, nullable=true)
+     * @ORM\Column(name="bl_code", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $blCode;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="printed_code", type="string", length=45, nullable=true)
+     * @ORM\Column(name="printed_code", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $printedCode;
 
@@ -89,7 +89,7 @@ class Products
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Brands")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="brand_id", referencedColumnName="brand_id")
+     *   @ORM\JoinColumn(name="brand_id", referencedColumnName="brand_id", nullable=true)
      * })
      */
     private $brand;
@@ -99,7 +99,7 @@ class Products
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Classifications")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="classification_id", referencedColumnName="classification_id")
+     *   @ORM\JoinColumn(name="classification_id", referencedColumnName="classification_id", nullable=true)
      * })
      */
     private $classification;
@@ -109,7 +109,7 @@ class Products
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\PaymentTerms")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="payment_term_id", referencedColumnName="payment_term_id")
+     *   @ORM\JoinColumn(name="payment_term_id", referencedColumnName="payment_term_id", nullable=true)
      * })
      */
     private $paymentTerm;
@@ -119,11 +119,10 @@ class Products
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Suppliers")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="supplier_id", referencedColumnName="supplier_id")
+     *   @ORM\JoinColumn(name="supplier_id", referencedColumnName="supplier_id", nullable=true)
      * })
      */
     private $supplier;
-
 
 
     /**

@@ -15,7 +15,7 @@ class Counters
     /**
      * @var integer
      *
-     * @ORM\Column(name="counter_id", type="integer", nullable=false)
+     * @ORM\Column(name="counter_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,38 +24,37 @@ class Counters
     /**
      * @var string
      *
-     * @ORM\Column(name="counter_type", type="string", length=45, nullable=true)
+     * @ORM\Column(name="counter_type", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $counterType;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="prefix", type="string", length=45, nullable=true)
+     * @ORM\Column(name="prefix", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $prefix;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="suffix", type="string", length=45, nullable=true)
+     * @ORM\Column(name="suffix", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $suffix;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="count", type="integer", nullable=true)
+     * @ORM\Column(name="count", type="integer", precision=0, scale=0, nullable=true, unique=false)
      */
     private $count;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="record_status", type="string", length=45, nullable=true)
+     * @ORM\Column(name="record_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $recordStatus;
-
 
 
     /**

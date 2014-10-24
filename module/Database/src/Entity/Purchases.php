@@ -15,7 +15,7 @@ class Purchases
     /**
      * @var integer
      *
-     * @ORM\Column(name="purchase_id", type="integer", nullable=false)
+     * @ORM\Column(name="purchase_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,35 +24,35 @@ class Purchases
     /**
      * @var string
      *
-     * @ORM\Column(name="reference_no", type="string", length=45, nullable=true)
+     * @ORM\Column(name="reference_no", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $referenceNo;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="purchase_date", type="date", nullable=true)
+     * @ORM\Column(name="purchase_date", type="date", precision=0, scale=0, nullable=true, unique=false)
      */
     private $purchaseDate;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="expected_arrival_date", type="date", nullable=true)
+     * @ORM\Column(name="expected_arrival_date", type="date", precision=0, scale=0, nullable=true, unique=false)
      */
     private $expectedArrivalDate;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="purchase_status", type="string", length=45, nullable=true)
+     * @ORM\Column(name="purchase_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $purchaseStatus;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="purchase_notes", type="text", nullable=true)
+     * @ORM\Column(name="purchase_notes", type="text", precision=0, scale=0, nullable=true, unique=false)
      */
     private $purchaseNotes;
 
@@ -61,11 +61,10 @@ class Purchases
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Suppliers")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="supplier_id", referencedColumnName="supplier_id")
+     *   @ORM\JoinColumn(name="supplier_id", referencedColumnName="supplier_id", nullable=true)
      * })
      */
     private $supplier;
-
 
 
     /**

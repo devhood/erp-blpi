@@ -15,7 +15,7 @@ class Countries
     /**
      * @var integer
      *
-     * @ORM\Column(name="country_id", type="integer", nullable=false)
+     * @ORM\Column(name="country_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,17 +24,16 @@ class Countries
     /**
      * @var string
      *
-     * @ORM\Column(name="country_name", type="string", length=45, nullable=true)
+     * @ORM\Column(name="country_name", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $countryName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="record_status", type="string", length=45, nullable=true)
+     * @ORM\Column(name="record_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
-    private $recordStatus = 'Active';
-
+    private $recordStatus;
 
 
     /**

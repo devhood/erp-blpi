@@ -15,7 +15,7 @@ class Cities
     /**
      * @var integer
      *
-     * @ORM\Column(name="city_id", type="integer", nullable=false)
+     * @ORM\Column(name="city_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,24 +24,23 @@ class Cities
     /**
      * @var string
      *
-     * @ORM\Column(name="city_name", type="string", length=45, nullable=true)
+     * @ORM\Column(name="city_name", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $cityName;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="province_id", type="integer", nullable=true)
+     * @ORM\Column(name="province_id", type="integer", precision=0, scale=0, nullable=true, unique=false)
      */
     private $provinceId;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="record_status", type="string", length=45, nullable=true)
+     * @ORM\Column(name="record_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
-    private $recordStatus = 'Active';
-
+    private $recordStatus;
 
 
     /**

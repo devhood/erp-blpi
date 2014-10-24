@@ -15,7 +15,7 @@ class Categories
     /**
      * @var integer
      *
-     * @ORM\Column(name="category_id", type="integer", nullable=false)
+     * @ORM\Column(name="category_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,24 +24,23 @@ class Categories
     /**
      * @var string
      *
-     * @ORM\Column(name="category_type", type="string", length=45, nullable=false)
+     * @ORM\Column(name="category_type", type="string", length=45, precision=0, scale=0, nullable=false, unique=false)
      */
     private $categoryType;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="category_name", type="string", length=45, nullable=false)
+     * @ORM\Column(name="category_name", type="string", length=45, precision=0, scale=0, nullable=false, unique=false)
      */
     private $categoryName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="record_status", type="string", length=45, nullable=false)
+     * @ORM\Column(name="record_status", type="string", length=45, precision=0, scale=0, nullable=false, unique=false)
      */
-    private $recordStatus = 'Active';
-
+    private $recordStatus;
 
 
     /**

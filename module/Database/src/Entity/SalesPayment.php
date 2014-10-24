@@ -15,7 +15,7 @@ class SalesPayment
     /**
      * @var integer
      *
-     * @ORM\Column(name="sp_id", type="integer", nullable=false)
+     * @ORM\Column(name="sp_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,56 +24,56 @@ class SalesPayment
     /**
      * @var integer
      *
-     * @ORM\Column(name="payment_type_id", type="integer", nullable=true)
+     * @ORM\Column(name="payment_type_id", type="integer", precision=0, scale=0, nullable=true, unique=false)
      */
     private $paymentTypeId;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="payment_date", type="date", nullable=true)
+     * @ORM\Column(name="payment_date", type="date", precision=0, scale=0, nullable=true, unique=false)
      */
     private $paymentDate;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="check_no", type="string", length=45, nullable=true)
+     * @ORM\Column(name="check_no", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $checkNo;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="check_date", type="date", nullable=true)
+     * @ORM\Column(name="check_date", type="date", precision=0, scale=0, nullable=true, unique=false)
      */
     private $checkDate;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="bank", type="string", length=100, nullable=true)
+     * @ORM\Column(name="bank", type="string", length=100, precision=0, scale=0, nullable=true, unique=false)
      */
     private $bank;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="branch", type="string", length=45, nullable=true)
+     * @ORM\Column(name="branch", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $branch;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="amount", type="float", precision=10, scale=0, nullable=true)
+     * @ORM\Column(name="amount", type="float", precision=10, scale=0, nullable=true, unique=false)
      */
     private $amount;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="deposit_date", type="date", nullable=true)
+     * @ORM\Column(name="deposit_date", type="date", precision=0, scale=0, nullable=true, unique=false)
      */
     private $depositDate;
 
@@ -82,11 +82,10 @@ class SalesPayment
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Sales")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="sales_id", referencedColumnName="sales_id")
+     *   @ORM\JoinColumn(name="sales_id", referencedColumnName="sales_id", nullable=true)
      * })
      */
     private $sales;
-
 
 
     /**

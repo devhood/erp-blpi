@@ -15,7 +15,7 @@ class Address
     /**
      * @var integer
      *
-     * @ORM\Column(name="address_id", type="integer", nullable=false)
+     * @ORM\Column(name="address_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,37 +24,37 @@ class Address
     /**
      * @var string
      *
-     * @ORM\Column(name="address_type", type="string", length=45, nullable=true)
+     * @ORM\Column(name="address_type", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $addressType;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="street_landmark", type="string", length=45, nullable=true)
+     * @ORM\Column(name="street_landmark", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $streetLandmark;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="zipcode", type="string", length=45, nullable=true)
+     * @ORM\Column(name="zipcode", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $zipcode;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="record_status", type="string", length=45, nullable=true)
+     * @ORM\Column(name="record_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
-    private $recordStatus = 'Active';
+    private $recordStatus;
 
     /**
      * @var \Database\Entity\Countries
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Countries")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="country_id", referencedColumnName="country_id")
+     *   @ORM\JoinColumn(name="country_id", referencedColumnName="country_id", nullable=true)
      * })
      */
     private $country;
@@ -64,7 +64,7 @@ class Address
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Customers")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="customer_id", referencedColumnName="customer_id")
+     *   @ORM\JoinColumn(name="customer_id", referencedColumnName="customer_id", nullable=true)
      * })
      */
     private $customer;
@@ -74,7 +74,7 @@ class Address
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Cities")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="city_id", referencedColumnName="city_id")
+     *   @ORM\JoinColumn(name="city_id", referencedColumnName="city_id", nullable=true)
      * })
      */
     private $city;
@@ -84,11 +84,10 @@ class Address
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Provinces")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="province_id", referencedColumnName="province_id")
+     *   @ORM\JoinColumn(name="province_id", referencedColumnName="province_id", nullable=true)
      * })
      */
     private $province;
-
 
 
     /**

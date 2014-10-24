@@ -15,7 +15,7 @@ class Contacts
     /**
      * @var integer
      *
-     * @ORM\Column(name="contact_id", type="integer", nullable=false)
+     * @ORM\Column(name="contact_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,55 +24,54 @@ class Contacts
     /**
      * @var string
      *
-     * @ORM\Column(name="position", type="string", length=45, nullable=true)
+     * @ORM\Column(name="position", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $position;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="primary", type="string", length=45, nullable=true)
+     * @ORM\Column(name="primary", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $primary;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="full_name", type="string", length=45, nullable=true)
+     * @ORM\Column(name="full_name", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $fullName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=45, nullable=true)
+     * @ORM\Column(name="email", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $email;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="phone", type="string", length=45, nullable=true)
+     * @ORM\Column(name="phone", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $phone;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="record_status", type="string", length=45, nullable=true)
+     * @ORM\Column(name="record_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
-    private $recordStatus = 'Active';
+    private $recordStatus;
 
     /**
      * @var \Database\Entity\Customers
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Customers")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="customer_id", referencedColumnName="customer_id")
+     *   @ORM\JoinColumn(name="customer_id", referencedColumnName="customer_id", nullable=true)
      * })
      */
     private $customer;
-
 
 
     /**

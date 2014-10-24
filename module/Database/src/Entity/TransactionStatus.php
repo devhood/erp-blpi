@@ -15,7 +15,7 @@ class TransactionStatus
     /**
      * @var integer
      *
-     * @ORM\Column(name="transaction_status_id", type="integer", nullable=false)
+     * @ORM\Column(name="transaction_status_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,17 +24,16 @@ class TransactionStatus
     /**
      * @var string
      *
-     * @ORM\Column(name="transaction_status_name", type="string", length=45, nullable=true)
+     * @ORM\Column(name="transaction_status_name", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $transactionStatusName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="recod_status", type="string", length=45, nullable=true)
+     * @ORM\Column(name="recod_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
-    private $recodStatus = 'Active';
-
+    private $recodStatus;
 
 
     /**

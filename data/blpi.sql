@@ -868,6 +868,7 @@ CREATE TABLE IF NOT EXISTS `blpi`.`Purchases` (
   `purchase_date` DATE NULL,
   `expected_arrival_date` DATE NULL,
   `purchase_status` VARCHAR(45) NULL,
+  `purchase_notes` TEXT NULL,
   PRIMARY KEY (`purchase_id`),
   INDEX `fk_Purchases_Suppliers1_idx` (`supplier_id` ASC),
   CONSTRAINT `fk_Purchases_Suppliers1`
@@ -891,6 +892,7 @@ CREATE TABLE IF NOT EXISTS `blpi`.`Shipments` (
   `confirmed_by` INT NULL,
   `approved_by` INT NULL,
   `shipment_status` VARCHAR(45) NULL,
+  `shipment_notes` TEXT NULL,
   PRIMARY KEY (`shipment_id`),
   INDEX `fk_Shipments_Suppliers1_idx` (`supplier_id` ASC),
   CONSTRAINT `fk_Shipments_Suppliers1`
@@ -972,6 +974,61 @@ CREATE TABLE IF NOT EXISTS `blpi`.`Purchase_Items` (
   CONSTRAINT `fk_Purchase_Items_Currencies1`
     FOREIGN KEY (`currency_id`)
     REFERENCES `blpi`.`Currencies` (`currency_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `blpi`.`DocumentTypes`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `blpi`.`DocumentTypes` ;
+
+CREATE TABLE IF NOT EXISTS `blpi`.`DocumentTypes` (
+  `document_type_id` INT NOT NULL AUTO_INCREMENT,
+  `document_type_name` VARCHAR(250) NULL,
+  `record_status` VARCHAR(45) NULL,
+  PRIMARY KEY (`document_type_id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `blpi`.`Documents`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `blpi`.`Documents` ;
+
+CREATE TABLE IF NOT EXISTS `blpi`.`Documents` (
+  `document_id` INT NOT NULL AUTO_INCREMENT,
+  `document_name` VARCHAR(250) NULL,
+  `document_type_id` INT NULL,
+  `document_link` VARCHAR(250) NULL,
+  `product_id` INT NULL,
+  `cutomer_id` INT NULL,
+  `sales_id` INT NULL,
+  `record_status` VARCHAR(45) NULL,
+  PRIMARY KEY (`document_id`),
+  INDEX `fk_Documents_Products1_idx` (`product_id` ASC),
+  INDEX `fk_Documents_Customers1_idx` (`cutomer_id` ASC),
+  INDEX `fk_Documents_Sales1_idx` (`sales_id` ASC),
+  INDEX `fk_Documents_DocumentTypes1_idx` (`document_type_id` ASC),
+  CONSTRAINT `fk_Documents_Products1`
+    FOREIGN KEY (`product_id`)
+    REFERENCES `blpi`.`Products` (`product_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Documents_Customers1`
+    FOREIGN KEY (`cutomer_id`)
+    REFERENCES `blpi`.`Customers` (`customer_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Documents_Sales1`
+    FOREIGN KEY (`sales_id`)
+    REFERENCES `blpi`.`Sales` (`sales_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Documents_DocumentTypes1`
+    FOREIGN KEY (`document_type_id`)
+    REFERENCES `blpi`.`DocumentTypes` (`document_type_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -1075,6 +1132,18 @@ COMMIT;
 START TRANSACTION;
 USE `blpi`;
 INSERT INTO `blpi`.`Users` (`user_id`, `user_name`, `password`, `full_name`, `designation_id`, `email`, `mobile`, `user_status`) VALUES (1, 'chito', 'chito', 'chito cascante', 1, 'chito@yahoo.com', '9297700514', 'Active');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `blpi`.`DocumentTypes`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `blpi`;
+INSERT INTO `blpi`.`DocumentTypes` (`document_type_id`, `document_type_name`, `record_status`) VALUES (1, 'product_photo', 'Active');
+INSERT INTO `blpi`.`DocumentTypes` (`document_type_id`, `document_type_name`, `record_status`) VALUES (2, 'sales_invoice', 'Active');
+INSERT INTO `blpi`.`DocumentTypes` (`document_type_id`, `document_type_name`, `record_status`) VALUES (3, 'delivery_receipt', 'Active');
 
 COMMIT;
 

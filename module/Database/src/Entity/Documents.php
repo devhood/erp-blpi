@@ -15,7 +15,7 @@ class Documents
     /**
      * @var integer
      *
-     * @ORM\Column(name="document_id", type="integer", nullable=false)
+     * @ORM\Column(name="document_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,21 +24,21 @@ class Documents
     /**
      * @var string
      *
-     * @ORM\Column(name="document_name", type="string", length=250, nullable=true)
+     * @ORM\Column(name="document_name", type="string", length=250, precision=0, scale=0, nullable=true, unique=false)
      */
     private $documentName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="document_link", type="string", length=250, nullable=true)
+     * @ORM\Column(name="document_link", type="string", length=250, precision=0, scale=0, nullable=true, unique=false)
      */
     private $documentLink;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="record_status", type="string", length=45, nullable=true)
+     * @ORM\Column(name="record_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $recordStatus;
 
@@ -47,7 +47,7 @@ class Documents
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Customers")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cutomer_id", referencedColumnName="customer_id")
+     *   @ORM\JoinColumn(name="cutomer_id", referencedColumnName="customer_id", nullable=true)
      * })
      */
     private $cutomer;
@@ -57,7 +57,7 @@ class Documents
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Documenttypes")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="document_type_id", referencedColumnName="document_type_id")
+     *   @ORM\JoinColumn(name="document_type_id", referencedColumnName="document_type_id", nullable=true)
      * })
      */
     private $documentType;
@@ -67,7 +67,7 @@ class Documents
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Products")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="product_id", referencedColumnName="product_id")
+     *   @ORM\JoinColumn(name="product_id", referencedColumnName="product_id", nullable=true)
      * })
      */
     private $product;
@@ -77,11 +77,10 @@ class Documents
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Sales")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="sales_id", referencedColumnName="sales_id")
+     *   @ORM\JoinColumn(name="sales_id", referencedColumnName="sales_id", nullable=true)
      * })
      */
     private $sales;
-
 
 
     /**

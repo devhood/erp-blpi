@@ -15,7 +15,7 @@ class Customers
     /**
      * @var integer
      *
-     * @ORM\Column(name="customer_id", type="integer", nullable=false)
+     * @ORM\Column(name="customer_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,98 +24,98 @@ class Customers
     /**
      * @var string
      *
-     * @ORM\Column(name="company_name", type="string", length=250, nullable=true)
+     * @ORM\Column(name="company_name", type="string", length=250, precision=0, scale=0, nullable=true, unique=false)
      */
     private $companyName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="branch", type="string", length=250, nullable=true)
+     * @ORM\Column(name="branch", type="string", length=250, precision=0, scale=0, nullable=true, unique=false)
      */
     private $branch;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="trade_name", type="string", length=45, nullable=true)
+     * @ORM\Column(name="trade_name", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $tradeName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="tin", type="string", length=45, nullable=true)
+     * @ORM\Column(name="tin", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $tin;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="phone", type="string", length=45, nullable=true)
+     * @ORM\Column(name="phone", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $phone;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=45, nullable=true)
+     * @ORM\Column(name="email", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $email;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="website", type="string", length=45, nullable=true)
+     * @ORM\Column(name="website", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $website;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="sec_no", type="string", length=45, nullable=true)
+     * @ORM\Column(name="sec_no", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $secNo;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="consignee", type="string", length=45, nullable=true)
+     * @ORM\Column(name="consignee", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $consignee;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="franchisee", type="string", length=45, nullable=true)
+     * @ORM\Column(name="franchisee", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $franchisee;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="credit_limit", type="float", precision=10, scale=0, nullable=true)
+     * @ORM\Column(name="credit_limit", type="float", precision=10, scale=0, nullable=true, unique=false)
      */
     private $creditLimit;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="transaction_limit", type="float", precision=10, scale=0, nullable=true)
+     * @ORM\Column(name="transaction_limit", type="float", precision=10, scale=0, nullable=true, unique=false)
      */
     private $transactionLimit;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="percent_commision", type="string", length=45, nullable=true)
+     * @ORM\Column(name="percent_commision", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $percentCommision;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="customer_status", type="string", length=45, nullable=true)
+     * @ORM\Column(name="customer_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $customerStatus;
 
@@ -124,7 +124,7 @@ class Customers
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Categories")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="category_id", referencedColumnName="category_id")
+     *   @ORM\JoinColumn(name="category_id", referencedColumnName="category_id", nullable=true)
      * })
      */
     private $category;
@@ -134,7 +134,7 @@ class Customers
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\CustomerTypes")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="customer_type_id", referencedColumnName="customer_type_id")
+     *   @ORM\JoinColumn(name="customer_type_id", referencedColumnName="customer_type_id", nullable=true)
      * })
      */
     private $customerType;
@@ -144,7 +144,7 @@ class Customers
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\PaymentTerms")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="payment_term_id", referencedColumnName="payment_term_id")
+     *   @ORM\JoinColumn(name="payment_term_id", referencedColumnName="payment_term_id", nullable=true)
      * })
      */
     private $paymentTerm;
@@ -154,7 +154,7 @@ class Customers
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\PriceTypes")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="price_type_id", referencedColumnName="price_type_id")
+     *   @ORM\JoinColumn(name="price_type_id", referencedColumnName="price_type_id", nullable=true)
      * })
      */
     private $priceType;
@@ -164,7 +164,7 @@ class Customers
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Users")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="sales_executive", referencedColumnName="user_id")
+     *   @ORM\JoinColumn(name="sales_executive", referencedColumnName="user_id", nullable=true)
      * })
      */
     private $salesExecutive;
@@ -174,11 +174,10 @@ class Customers
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\ShippingModes")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="shipping_mode_id", referencedColumnName="shipping_mode_id")
+     *   @ORM\JoinColumn(name="shipping_mode_id", referencedColumnName="shipping_mode_id", nullable=true)
      * })
      */
     private $shippingMode;
-
 
 
     /**

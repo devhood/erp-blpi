@@ -15,7 +15,7 @@ class Bundles
     /**
      * @var integer
      *
-     * @ORM\Column(name="bundle_id", type="integer", nullable=false)
+     * @ORM\Column(name="bundle_id", type="integer", precision=0, scale=0, nullable=false, unique=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,23 +24,23 @@ class Bundles
     /**
      * @var integer
      *
-     * @ORM\Column(name="bundle_quantity", type="integer", nullable=false)
+     * @ORM\Column(name="bundle_quantity", type="integer", precision=0, scale=0, nullable=false, unique=false)
      */
     private $bundleQuantity;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="record_status", type="string", length=45, nullable=true)
+     * @ORM\Column(name="record_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
-    private $recordStatus = 'Active';
+    private $recordStatus;
 
     /**
      * @var \Database\Entity\Products
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Products")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="parent_product_id", referencedColumnName="product_id")
+     *   @ORM\JoinColumn(name="parent_product_id", referencedColumnName="product_id", nullable=true)
      * })
      */
     private $parentProduct;
@@ -50,11 +50,10 @@ class Bundles
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Products")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="child_product_id", referencedColumnName="product_id")
+     *   @ORM\JoinColumn(name="child_product_id", referencedColumnName="product_id", nullable=true)
      * })
      */
     private $childProduct;
-
 
 
     /**
