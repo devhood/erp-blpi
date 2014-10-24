@@ -33,6 +33,16 @@ return array(
 	                ),
 	            ),
 	        ),
+	        __NAMESPACE__.'_Sales_Invoice' => array(
+	            'type' => 'Literal',
+	            'options' => array(
+	                'route'    => '/sales/invoice',
+	                'defaults' => array(
+	                    'controller' => __NAMESPACE__ . '\Sales',
+	                    'action'     => 'invoice',
+	                ),
+	            ),
+	        ),
 	    ),
 	),
 	'controllers' => array(

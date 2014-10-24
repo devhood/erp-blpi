@@ -1,5 +1,5 @@
 <!-- BEGIN PAGE LEVEL STYLES -->
-<?php 
+<?php
 $this->headLink()
 		->appendStylesheet($this->basePath('/assets/plugins/select2/select2.css'))
 		->appendStylesheet($this->basePath('/assets/plugins/select2/select2-metronic.css'))
@@ -58,7 +58,7 @@ $this->headLink()
 						</div>
 						<!--/span-->
 					</div>
-					
+
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-group">
@@ -96,7 +96,7 @@ $this->headLink()
 							</div>
 						</div>
 						<!--/span-->
-					</div>		
+					</div>
 
 					<div class="row">
 						<div class="col-md-6">
@@ -172,7 +172,7 @@ $this->headLink()
 						</div>
 						<!--/span-->
 					</div>
-										
+
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
@@ -211,7 +211,7 @@ $this->headLink()
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="row">
 						<div class="col-md-2"></div>
 						<div class="col-md-8">
@@ -224,7 +224,7 @@ $this->headLink()
 							Add New
 								<i class="fa fa-plus"></i>
 							</button>
-							</div>		
+							</div>
 						</div>
 						<div class="col-md-2"></div>
 					</div>
@@ -251,9 +251,9 @@ $this->headLink()
 						</div>
 						<div class="col-md-2"></div>
 					</div>
-					
+
 					<div class="row">
-					
+
 						<div class="col-md-2"></div>
 						<div class="col-md-8" >
 							<hr/>
@@ -264,7 +264,7 @@ $this->headLink()
 								<button type="button" data-toggle="modal" href="#unitModal" class="btn-sm green custom-right">Add New
 								<i class="fa fa-plus"></i>
 							</button>
-							</div>		
+							</div>
 						</div>
 						<div class="col-md-2"></div>
 					</div>
@@ -302,7 +302,7 @@ $this->headLink()
 								<button type="button" data-toggle="modal" href="#priceModal" class="btn-sm green custom-right">Add New
 								<i class="fa fa-plus"></i>
 							</button>
-							</div>		
+							</div>
 						</div>
 						<div class="col-md-2"></div>
 					</div>
@@ -331,7 +331,50 @@ $this->headLink()
 						</div>
 						<div class="col-md-2"></div>
 					</div>
-					
+
+
+					<div class="row">
+						<div class="col-md-2"></div>
+						<div class="col-md-8" >
+							<hr/>
+							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-left: 0px;">
+								<h4 class="">Documents</h4>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-right: 0px;">
+								<button type="button" data-toggle="modal" href="#documentModal" class="btn-sm green custom-right">Add New
+								<i class="fa fa-plus"></i>
+							</button>
+							</div>
+						</div>
+						<div class="col-md-2"></div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-2"></div>
+						<div class="col-md-8">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="portlet-body flip-scroll">
+										<table class="table table-bordered table-condensed flip-content">
+											<thead class="flip-content bg-grey">
+											<tr>
+												<th width="20%">Type</th>
+												<th>File</th>
+												<th>Product</th>
+												<th width="10%">Remove</th>
+											</tr>
+											</thead>
+											<tbody>
+											</tbody>
+										</table>
+										</div>
+								</div>
+							</div>
+							<hr/>
+						</div>
+						<div class="col-md-2"></div>
+					</div>
+
+
 			<!-- BEGIN PAGE CONTENT-->
 
 				</div>
@@ -351,14 +394,27 @@ $this->headLink()
 			<!-- END FORM-->
 		</div>
 	</div>
+	<div id="partialFiller">
 	<?php echo $this->render('product/units') ?>
+	</div>
+
+	<div id="partialFiller">
 	<?php echo $this->render('product/price') ?>
+	</div>
+
+	<div id="partialFiller">
 	<?php echo $this->render('product/bundle') ?>
-							
+	</div>
+
+	<div id="partialFiller">
+		<?php echo $this->render('product/document') ?>
+	</div>
+
+
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
-<?php 
+<?php
 	$this->inlineScript()
 		->appendFile($this->basePath('/assets/scripts/product.js'))
 		->appendFile($this->basePath('/assets/scripts/bundle.js'))
@@ -366,7 +422,7 @@ $this->headLink()
 		->appendFile($this->basePath('/assets/scripts/units.js'))
 ?>
 <?php $this->inlineScript()->captureStart() ?>
-	jQuery(document).ready(function() {	
+	jQuery(document).ready(function() {
 		App.init();
 		Product.init();
 		Bundle.init();
@@ -382,4 +438,3 @@ $this->headLink()
         });
 	});
 <?php $this->inlineScript()->captureEnd() ?>
-							

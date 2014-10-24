@@ -21,12 +21,14 @@ class IndexController extends BaseController
     	$formProductUom = new \Product\Form\ProductUomForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
     	$formProductBundle = new \Product\Form\ProductBundleForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
     	$formProductPrice = new \Product\Form\ProductPriceForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+    	$formProductDocument = new \Product\Form\ProductDocumentForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
 
         return new ViewModel(array(
     		'formProduct' => $formProduct,
             'formProductUom' => $formProductUom,
             'formProductBundle' => $formProductBundle,
             'formProductPrice' => $formProductPrice,
+            'formProductDocument' => $formProductDocument,
        ));
     }
     public function editAction()

@@ -65,6 +65,7 @@ class SalesForm extends Form
       'attributes' => array(
         'class' => 'form-control',
         'id' => 'sino',
+        'readonly' => 'readonly'
       ),
     ));
 
