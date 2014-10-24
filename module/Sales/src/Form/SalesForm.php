@@ -66,7 +66,7 @@ class SalesForm extends Form
 
     //sales order
     $this->add( array(
-      'name' => 'sono'    ,
+      'name' => 'sono',
       'type' => 'Text',
       'attributes' => array(
         'class' => 'form-control',
@@ -141,10 +141,10 @@ class SalesForm extends Form
     'display_empty_item' => true,
     'empty_item_label'   => '---',
     'label_generator' => function($row) {
-        return $row->getStreetLandmark() . ', ' 
-            . $row->getCity()->getCityName() . ', ' 
-            . $row->getProvince()->getProvinceName() . ', ' 
-            . $row->getCountry()->getCountryName() . ', ' 
+        return $row->getStreetLandmark() . ', '
+            . $row->getCity()->getCityName() . ', '
+            . $row->getProvince()->getProvinceName() . ', '
+            . $row->getCountry()->getCountryName() . ', '
             . $row->getZipcode();
     },
   ),
@@ -167,10 +167,10 @@ class SalesForm extends Form
     'display_empty_item' => true,
     'empty_item_label'   => '---',
     'label_generator' => function($row) {
-        return $row->getStreetLandmark() . ', ' 
-            . $row->getCity()->getCityName() . ', ' 
-            . $row->getProvince()->getProvinceName() . ', ' 
-            . $row->getCountry()->getCountryName() . ', ' 
+        return $row->getStreetLandmark() . ', '
+            . $row->getCity()->getCityName() . ', '
+            . $row->getProvince()->getProvinceName() . ', '
+            . $row->getCountry()->getCountryName() . ', '
             . $row->getZipcode();
     },
   ),
@@ -205,7 +205,7 @@ class SalesForm extends Form
       'name' => 'shippingModes[shippingModeId]',
       'type' => 'DoctrineModule\Form\Element\ObjectSelect',
       'options' => array(
-      'object_manager' => $em, 
+      'object_manager' => $em,
       'target_class' => 'Database\Entity\ShippingModes',
       'property'           => 'shippingModeName',
       'display_empty_item' => true,
@@ -222,7 +222,7 @@ class SalesForm extends Form
       'type' => 'DoctrineModule\Form\Element\ObjectSelect',
       'name' => 'users[userId]',
       'options' => array(
-      'object_manager' => $em, 
+      'object_manager' => $em,
       'target_class' => 'Database\Entity\Users',
       'property'           => 'userName',
       'display_empty_item' => true,
@@ -240,7 +240,7 @@ class SalesForm extends Form
       'type' => 'DoctrineModule\Form\Element\ObjectSelect',
       'name' => 'paymentTerms[paymentTermId]',
       'options' => array(
-      'object_manager' => $em, 
+      'object_manager' => $em,
       'target_class' => 'Database\Entity\PaymentTerms',
       'property'           => 'paymentTermName',
       'display_empty_item' => true,
@@ -252,7 +252,7 @@ class SalesForm extends Form
             'id' => 'paymentTermId',
         ),
     ));
-     
+
 
 
 
@@ -272,14 +272,14 @@ class SalesForm extends Form
             'id' => 'orderedBy',
         ),
     ));
-    
-   
+
+
 
     $this->add(array(
       'name' => 'priceTypes[priceTypeId]',
         'type' => 'DoctrineModule\Form\Element\ObjectSelect',
      'options' => array(
-      'object_manager' => $em, 
+      'object_manager' => $em,
       'target_class' => 'Database\Entity\PriceTypes',
       'property'           => 'priceTypeName',
       'display_empty_item' => true,
@@ -291,7 +291,7 @@ class SalesForm extends Form
             'id' => 'priceTypeId',
         ),
     ));
-     
+
 
 
 
@@ -305,7 +305,7 @@ class SalesForm extends Form
       )
     ));
 
-    
+
     $this->add(array(
       'name' => 'percentVat',
       'type' => 'Select',
@@ -316,7 +316,7 @@ class SalesForm extends Form
         'readonly' => 'readonly',
       ),
     ));
-    
+
     $this->add( array(
       'name' => 'items',
       'type' => 'Text',

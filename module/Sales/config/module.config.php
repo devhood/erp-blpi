@@ -12,22 +12,34 @@ return array(
 
 	),
 	'router' => array(
-		'routes' => array(
-			__NAMESPACE__.'_Order_Add' => array(
-				'type' => 'Literal',
-				'options' => array(
-					'route'    => '/sales/order/add',
-					'defaults' => array(
-						'controller' => __NAMESPACE__ . '\Order',
-						'action'     => 'add',
-					),
-				),
-			),
-		),
+	    'routes' => array(
+	        __NAMESPACE__.'_Sales_Delivery' => array(
+	            'type' => 'Literal',
+	            'options' => array(
+	                'route'    => '/sales/delivery',
+	                'defaults' => array(
+	                    'controller' => __NAMESPACE__ . '\Sales',
+	                    'action'     => 'delivery',
+	                ),
+	            ),
+	        ),
+	    ),
+	    'routes' => array(
+	        __NAMESPACE__.'_Sales_Order' => array(
+	            'type' => 'Literal',
+	            'options' => array(
+	                'route'    => '/sales/order',
+	                'defaults' => array(
+	                    'controller' => __NAMESPACE__ . '\Sales',
+	                    'action'     => 'order',
+	                ),
+	            ),
+	        ),
+	    ),
 	),
 	'controllers' => array(
 		'invokables' => array(
-			__NAMESPACE__ . '\Order' => __NAMESPACE__ . '\Controller\OrderController',
+			__NAMESPACE__ . '\Sales' => __NAMESPACE__ . '\Controller\SalesController',
 		),
 	),
 );
