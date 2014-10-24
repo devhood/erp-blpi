@@ -23,8 +23,6 @@ return array(
 	                ),
 	            ),
 	        ),
-	    ),
-	    'routes' => array(
 	        __NAMESPACE__.'_Sales_Order' => array(
 	            'type' => 'Literal',
 	            'options' => array(
