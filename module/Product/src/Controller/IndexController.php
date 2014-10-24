@@ -16,16 +16,13 @@ class IndexController extends BaseController
     
     public function addAction()
     {
-    	$form = new \Product\Form\ProductForm();
+
+    	$form = new \Product\Form\ProductForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
 
         $payment = $this->_getOptions("PaymentTerms","paymentTermId","paymentTermName");
         $form->get("paymentTerms[paymentTermId]")->setOptions(array('value_options' => $payment));
 
-    	$brand = $this->_getOptions("Brands","brandId","brandName");
-    	$form->get("brands[brandId]")->setOptions(array('value_options' => $brand));
 
-        $classification = $this->_getOptions("Classifications","classificationId","classificationName");
-        $form->get("classifications[classificationId]")->setOptions(array('value_options' => $classification));
 
         $supplier = $this->_getOptions("Suppliers","supplierId","supplierName");
         $form->get("supplier[supplierId]")->setOptions(array('value_options' => $supplier));

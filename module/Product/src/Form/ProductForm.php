@@ -5,7 +5,8 @@ use Zend\Form\Form;
 
 class ProductForm extends Form
 {
-	public function __construct($name = null)
+
+	public function __construct($om = null)
 	{
 		parent::__construct('product');
 		
@@ -27,34 +28,36 @@ class ProductForm extends Form
 				)
 		));
 
-		$this->add(array(
-				'name' => 'classifications[classificationId]',
-				'type' => 'Select',
-				'attributes' => array(
-						'class' => 'select2me form-control',
-						'tabindex' => '1',
-						'id' => 'classificationId',
-				),
-				'options' => array(
-// 						'value_options' => array(
-// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-// 						),
+		$this->add(
+				array(
+						'name' => 'classifications[classificationId]',
+						'type' => 'DoctrineModule\Form\Element\ObjectSelect',
+						'options' => array(
+								'object_manager' => $om,
+								'target_class'   => 'Database\Entity\Classifications',
+								'property'       => 'classificationName',
+						),
+						'attributes' => array(
+								'class' => 'select2me form-control',
+								'tabindex' => '1',
+								'id' => 'classificationId',
+						),
 				)
-		));
+		);
 
 		$this->add(array(
 				'name' => 'brands[brandId]',
-				'type' => 'Select',
+				'type' => 'DoctrineModule\Form\Element\ObjectSelect',
+				'options' => array(
+					'object_manager' => $om,
+					'target_class'   => 'Database\Entity\Brands',
+					'property'       => 'brandName',
+				),
 				'attributes' => array(
 						'class' => 'select2me form-control',
 						'tabindex' => '1',
 						'id' => 'brandId',
 				),
-				'options' => array(
-// 						'value_options' => array(
-// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-// 						),
-				)
 		));
 
 		$this->add(array(
@@ -65,11 +68,6 @@ class ProductForm extends Form
 						'tabindex' => '1',
 						'id' => 'supplierId',
 				),
-				'options' => array(
-// 						'value_options' => array(
-// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-// 						),
-				)
 		));
 
 		$this->add( array(
@@ -98,11 +96,6 @@ class ProductForm extends Form
 						'tabindex' => '1',
 						'id' => 'productStatus',
 				),
-				'options' => array(
-// 						'value_options' => array(
-// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-// 						),
-				)
 		));
 
 		$this->add(array(
@@ -113,11 +106,6 @@ class ProductForm extends Form
 						'tabindex' => '1',
 						'id' => 'paymenttermId',
 				),
-				'options' => array(
-// 						'value_options' => array(
-// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-// 						),
-				)
 		));
 
 		$this->add( array(
@@ -147,7 +135,6 @@ class ProductForm extends Form
 				)
 		));
 
-		// Price Modal
 		$this->add(array(
 				'name' => 'priceTypes[priceTypeId]',
 				'type' => 'Select',
@@ -156,11 +143,6 @@ class ProductForm extends Form
 						'tabindex' => '1',
 						'id' => 'priceTypeId',
 				),
-				'options' => array(
-// 						'value_options' => array(
-// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-// 						),
-				)
 		));
 
 		$this->add( array(
@@ -180,11 +162,6 @@ class ProductForm extends Form
 						'tabindex' => '1',
 						'id' => 'currencyId',
 				),
-				'options' => array(
-// 						'value_options' => array(
-// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-// 						),
-				)
 		));
 
 		// Unit Modal
@@ -197,11 +174,6 @@ class ProductForm extends Form
 						'tabindex' => '1',
 						'id' => 'uomId',
 				),
-				'options' => array(
-// 						'value_options' => array(
-// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-// 						),
-				)
 		));
 
 		$this->add( array(
@@ -223,11 +195,6 @@ class ProductForm extends Form
 						'tabindex' => '1',
 						'id' => 'productId',
 				),
-				'options' => array(
-// 						'value_options' => array(
-// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-// 						),
-				)
 		));
 
 		$this->add( array(

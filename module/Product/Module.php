@@ -3,6 +3,7 @@ namespace Product;
 
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
+use DoctrineModule\Persistence\ObjectManagerAwareInterface;
 
 class Module
 {
