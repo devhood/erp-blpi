@@ -10,22 +10,6 @@ class ProductPriceForm extends Form
         parent::__construct('productPrice');
 
 
-  $this->add(array(
-      'name' => 'priceTypes[priceTypeId]',
-      'type' => 'DoctrineModule\Form\Element\ObjectSelect',
-      'options' => array(
-      'object_manager' => $om,
-      'target_class'   => 'Database\Entity\PriceTypes',
-      'property'       => 'priceTypeName',
-      ),
-      'attributes' => array(
-      'class' => 'select2me form-control',
-      'tabindex' => '1',
-      'id' => 'priceTypeId',
-        ),
-
-      ));
-
   $this->add( array(
       'name' => 'priceAmount',
       'type' => 'Text',
