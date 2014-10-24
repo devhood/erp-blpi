@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Documents
  *
- * @ORM\Table(name="Documents", indexes={@ORM\Index(name="fk_Documents_Products1_idx", columns={"product_id"}), @ORM\Index(name="fk_Documents_Customers1_idx", columns={"cutomer_id"}), @ORM\Index(name="fk_Documents_Sales1_idx", columns={"sales_id"}), @ORM\Index(name="fk_Documents_DocumentTypes1_idx", columns={"document_type_id"})})
+ * @ORM\Table(name="Documents", indexes={@ORM\Index(name="fk_Documents_Products1_idx", columns={"product_id"}), @ORM\Index(name="fk_Documents_Customers1_idx", columns={"customer_id"}), @ORM\Index(name="fk_Documents_Sales1_idx", columns={"sales_id"}), @ORM\Index(name="fk_Documents_DocumentTypes1_idx", columns={"document_type_id"})})
  * @ORM\Entity
  */
 class Documents
@@ -47,10 +47,10 @@ class Documents
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Customers")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cutomer_id", referencedColumnName="customer_id", nullable=true)
+     *   @ORM\JoinColumn(name="customer_id", referencedColumnName="customer_id", nullable=true)
      * })
      */
-    private $cutomer;
+    private $customer;
 
     /**
      * @var \Database\Entity\Documenttypes
@@ -163,26 +163,26 @@ class Documents
     }
 
     /**
-     * Set cutomer
+     * Set customer
      *
-     * @param \Database\Entity\Customers $cutomer
+     * @param \Database\Entity\Customers $customer
      * @return Documents
      */
-    public function setCutomer(\Database\Entity\Customers $cutomer = null)
+    public function setCustomer(\Database\Entity\Customers $customer = null)
     {
-        $this->cutomer = $cutomer;
+        $this->customer = $customer;
 
         return $this;
     }
 
     /**
-     * Get cutomer
+     * Get customer
      *
      * @return \Database\Entity\Customers 
      */
-    public function getCutomer()
+    public function getCustomer()
     {
-        return $this->cutomer;
+        return $this->customer;
     }
 
     /**
