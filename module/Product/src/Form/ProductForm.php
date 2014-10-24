@@ -2,6 +2,7 @@
 namespace Product\Form;
 
 use Zend\Form\Form;
+use Zend\Form\Annotation\Options;
 
 class ProductForm extends Form
 {
@@ -96,6 +97,14 @@ class ProductForm extends Form
 						'tabindex' => '1',
 						'id' => 'productStatus',
 				),
+				'options' => array(
+					'value_options' => array(
+						'0'=>'Active',
+						'1'=>'Inactive',
+						'2'=>'Discontinued',
+						'3'=>'Cancelled'
+					),
+				)
 		));
 
 		$this->add(array(

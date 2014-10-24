@@ -27,12 +27,6 @@ class IndexController extends BaseController
         $supplier = $this->_getOptions("Suppliers","supplierId","supplierName");
         $form->get("supplier[supplierId]")->setOptions(array('value_options' => $supplier));
 
-        $form->get("productStatus")->setOptions(array('value_options' => array(
-            '0'=>'Active',
-            '1'=>'Inactive',
-            '2'=>'Discontinued',
-            '3'=>'Cancelled',)));
-
         $pricemodal = $this->_getOptions("PriceTypes","priceTypeId","priceTypeName");
         $form->get("priceTypes[priceTypeId]")->setOptions(array('value_options' => $pricemodal));
 
