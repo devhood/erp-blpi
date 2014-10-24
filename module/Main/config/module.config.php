@@ -41,4 +41,5 @@ return array(
 			__NAMESPACE__ . '\Index' => __NAMESPACE__ . '\Controller\IndexController',
 		),
 	),
+		
 );

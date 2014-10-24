@@ -8,6 +8,7 @@ use Main\Controller\BaseController;
 
 class IndexController extends BaseController
 {
+	
     public function indexAction()
     {
         return new ViewModel();
