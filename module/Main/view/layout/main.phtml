@@ -26,6 +26,8 @@ License: You must have a valid license purchased only from themeforest(the above
 <meta content="" name="author"/>
 <?php 
    $this->headLink()
+        ->prependStylesheet($this->basePath('/assets/plugins/bootstrap/css/bootstrap.min.css'))
+
         ->prependStylesheet($this->basePath('/assets/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css'))
         ->prependStylesheet($this->basePath('/assets/css/custom.css'))
         ->prependStylesheet($this->basePath('/assets/plugins/jquery-tags-input/jquery.tagsinput.css'))
@@ -40,9 +42,9 @@ License: You must have a valid license purchased only from themeforest(the above
         ->prependStylesheet($this->basePath('/assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css'))
         ->prependStylesheet($this->basePath('/assets/plugins/bootstrap-datetimepicker/css/datetimepicker.css'))
         ->prependStylesheet($this->basePath('/assets/plugins/uniform/css/uniform.default.css'))
-        ->prependStylesheet($this->basePath('/assets/plugins/bootstrap/css/bootstrap.min.css'))
         ->prependStylesheet($this->basePath('assets/plugins/font-awesome/css/font-awesome.min.css'))
         ->prependStylesheet('http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all')
+
 ?>
 <?php echo $this->headLink() ?>
 <link rel="shortcut icon" href="/assets/img/favicon.ico"/>

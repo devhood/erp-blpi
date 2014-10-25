@@ -20,7 +20,7 @@ class SalesController extends BaseController
           ));
     }
 
-    public function DeliveryApproveAction()
+    public function ApproveDeliveryAction()
     {
 
         $formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
