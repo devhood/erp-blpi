@@ -14,9 +14,12 @@ class UserController extends BaseController
 
       $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
       $formUser = new \User\Form\UserForm($em);
+      $formUserAccessList = new \User\Form\UserAccessListForm($em);
 
       return new ViewModel(array(
         'formUser' => $formUser,
+        'formUserAccessList' => $formUserAccessList,
+
        ));
 
     }
