@@ -88,7 +88,6 @@ class SalesForm extends Form
         'target_class'    => 'Database\Entity\TransactionTypes',
         'property'           => 'transactionTypeName',
         'display_empty_item' => true,
-        'empty_item_label'   => '---'
       ),
       'attributes' => array(
         'class' => 'select2me form-control',
@@ -106,7 +105,7 @@ class SalesForm extends Form
         'target_class'    => 'Database\Entity\Customers',
         'property'           => 'companyName',
         'display_empty_item' => true,
-        'empty_item_label'   => '---'
+
       ),
       'attributes' => array(
         'class' => 'select2me form-control',
@@ -126,7 +125,7 @@ class SalesForm extends Form
         'target_class'    => 'Database\Entity\InventoryLocations',
         'property'           => 'locationName',
         'display_empty_item' => true,
-        'empty_item_label'   => '---'
+
       ),
       'attributes' => array(
         'class' => 'select2me form-control',
@@ -145,7 +144,7 @@ class SalesForm extends Form
     'target_class'    => 'Database\Entity\Address',
 //  'property'           => 'aaasdddressId',
     'display_empty_item' => true,
-    'empty_item_label'   => '---',
+
     'label_generator' => function($row) {
         return $row->getStreetLandmark() . ', '
             . $row->getCity()->getCityName() . ', '
@@ -171,7 +170,7 @@ class SalesForm extends Form
     'target_class'    => 'Database\Entity\Address',
     'property'           => 'AddressId',
     'display_empty_item' => true,
-    'empty_item_label'   => '---',
+
     'label_generator' => function($row) {
         return $row->getStreetLandmark() . ', '
             . $row->getCity()->getCityName() . ', '
@@ -196,7 +195,7 @@ class SalesForm extends Form
     'target_class'    => 'Database\Entity\OrderSource',
     'property'           => 'orderSourceName',
     'display_empty_item' => true,
-    'empty_item_label'   => '---',
+
   ),
   'attributes' => array(
     'class' => 'select2me form-control',
@@ -215,7 +214,7 @@ class SalesForm extends Form
       'target_class' => 'Database\Entity\ShippingModes',
       'property'           => 'shippingModeName',
       'display_empty_item' => true,
-      'empty_item_label'   => '---',
+
       ),
        'attributes' => array(
             'class' => 'select2me form-control',
@@ -232,7 +231,7 @@ class SalesForm extends Form
       'target_class' => 'Database\Entity\Users',
       'property'           => 'userName',
       'display_empty_item' => true,
-      'empty_item_label'   => '---',
+
       ),
        'attributes' => array(
             'class' => 'select2me form-control',
@@ -250,7 +249,7 @@ class SalesForm extends Form
       'target_class' => 'Database\Entity\PaymentTerms',
       'property'           => 'paymentTermName',
       'display_empty_item' => true,
-      'empty_item_label'   => '---',
+
       ),
        'attributes' => array(
             'class' => 'select2me form-control',
@@ -283,16 +282,16 @@ class SalesForm extends Form
 
     $this->add(array(
       'name' => 'priceTypes[priceTypeId]',
-        'type' => 'DoctrineModule\Form\Element\ObjectSelect',
-     'options' => array(
+      'type' => 'DoctrineModule\Form\Element\ObjectSelect',
+      'options' => array(
       'object_manager' => $em,
       'target_class' => 'Database\Entity\PriceTypes',
       'property'           => 'priceTypeName',
       'display_empty_item' => true,
-      'empty_item_label'   => '---',
+      'empty_item_label'   => ''
       ),
        'attributes' => array(
-            'class' => 'select2me form-control',
+            'class' => 'form-control select2me',
             'tabindex' => '1',
             'id' => 'priceTypeId',
         ),
@@ -314,12 +313,10 @@ class SalesForm extends Form
 
     $this->add(array(
       'name' => 'percentVat',
-      'type' => 'Select',
+      'type' => 'Text ',
       'attributes' => array(
-        'class' => 'select2me form-control',
-        'tabindex' => '1',
+        'class' => 'form-control',
         'id' => 'percentVat',
-        'readonly' => 'readonly',
       ),
     ));
 
@@ -332,6 +329,7 @@ class SalesForm extends Form
         'readonly' => 'readonly',
       )
     ));
+
     $this->add( array(
       'name' => 'sales',
       'type' => 'Text',

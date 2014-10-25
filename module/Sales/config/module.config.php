@@ -7,29 +7,40 @@ return array(
 			__DIR__ . '/../view',
 		),
 		'template_map' => array(
-			'sales/order'           =>   __DIR__ . '/../view/sales/partial/order.phtml',
+			'sales/items'           =>   __DIR__ . '/../view/sales/partial/items.phtml',
 		),
 
 	),
 	'router' => array(
 	    'routes' => array(
-	        __NAMESPACE__.'_Sales_Delivery' => array(
+	        __NAMESPACE__.'_Sales_Delivery_Approve' => array(
 	            'type' => 'Literal',
 	            'options' => array(
-	                'route'    => '/sales/delivery',
+	                'route'    => '/sales/deliveryapprove',
 	                'defaults' => array(
 	                    'controller' => __NAMESPACE__ . '\Sales',
-	                    'action'     => 'delivery',
+	                    'action'     => 'deliveryapprove',
+	                ),
+	            ),
+	        ),
+
+	        __NAMESPACE__.'_Sales_Delivery_Print' => array(
+	            'type' => 'Literal',
+	            'options' => array(
+	                'route'    => '/sales/deliveryprint',
+	                'defaults' => array(
+	                    'controller' => __NAMESPACE__ . '\Sales',
+	                    'action'     => 'deliveryprint',
 	                ),
 	            ),
 	        ),
 	        __NAMESPACE__.'_Sales_Order' => array(
 	            'type' => 'Literal',
 	            'options' => array(
-	                'route'    => '/sales/order',
+	                'route'    => '/sales/orderadd',
 	                'defaults' => array(
 	                    'controller' => __NAMESPACE__ . '\Sales',
-	                    'action'     => 'order',
+	                    'action'     => 'orderadd',
 	                ),
 	            ),
 	        ),
