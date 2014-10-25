@@ -147,7 +147,7 @@ $this->headLink()
                 <h4 class="">Access List</h4>
               </div>
               <div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-right: 0px;">
-                <button type="button" data-toggle="modal" href="#accessListModal" class="btn-sm green custom-right">
+                <button type="button" data-toggle="modal" href="#accesslist" class="btn-sm green custom-right">
               Add New
                 <i class="fa fa-plus"></i>
               </button>
@@ -199,8 +199,11 @@ $this->headLink()
       <!-- END FORM-->
     </div>
   </div>
+  <div id="name">
+asdasd
+  </div>
   <div id="partialFiller">
-  <?php // echo $this->render('user/') ?>
+  <?php echo $this->render('user/accesslist') ?>
   </div>
 
 
@@ -212,10 +215,13 @@ $this->headLink()
 <?php
   $this->inlineScript()
     ->appendFile($this->basePath('/assets/scripts/users/userinfo.js'))
+    ->appendFile($this->basePath('/assets/scripts/users/accesslist.js'))
 ?>
 <?php $this->inlineScript()->captureStart() ?>
   jQuery(document).ready(function() {
     UserInfo.init();
+    AccessList.init();
+
 
   });
 <?php $this->inlineScript()->captureEnd() ?>
