@@ -239,6 +239,20 @@ License: You must have a valid license purchased only from themeforest(the above
         ->prependFile($this->basePath('/assets/plugins/excanvas.min.js'),'text/javascript',array('conditional' => 'lt IE 9'))
         ->prependFile($this->basePath('/assets/plugins/respond.min.js'),'text/javascript',array('conditional' => 'lt IE 9'))  
 ?>
+<?php $this->inlineScript()->captureStart() ?>
+	jQuery(document).ready(function() {
+		App.init();
+		ComponentsEditors.init();
+		$('.tags').tagsInput({
+            width: '100%',
+        });
+        $('.date-picker').datepicker({
+                rtl: App.isRTL(),
+                autoclose: true
+        });
+        $('table.display').dataTable();
+	});
+<?php $this->inlineScript()->captureEnd() ?>
 <?php
     echo $this->inlineScript();
     

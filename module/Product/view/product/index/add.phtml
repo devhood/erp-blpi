@@ -423,18 +423,9 @@ $this->headLink()
 ?>
 <?php $this->inlineScript()->captureStart() ?>
 	jQuery(document).ready(function() {
-		App.init();
 		Product.init();
 		Bundle.init();
 		Price.init();
 		Units.init();
-		ComponentsEditors.init();
-		$('.tags').tagsInput({
-            width: '100%',
-        });
-        $('.date-picker').datepicker({
-                rtl: App.isRTL(),
-                autoclose: true
-        });
 	});
 <?php $this->inlineScript()->captureEnd() ?>
