@@ -44,7 +44,7 @@ class SalesController extends BaseController
           ));
     }
 
-    public function AddInvoiceAction()
+    public function ApproveInvoiceAction()
     {
 
         $formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));

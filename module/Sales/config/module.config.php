@@ -23,23 +23,23 @@ return array(
 	                ),
 	            ),
 	        ),
-	        __NAMESPACE__.'_Sales_Order' => array(
+	        __NAMESPACE__.'_Sales_Order_Add' => array(
 	            'type' => 'Literal',
 	            'options' => array(
-	                'route'    => '/sales/orderadd',
+	                'route'    => '/sales/order/add',
 	                'defaults' => array(
 	                    'controller' => __NAMESPACE__ . '\Sales',
-	                    'action'     => 'orderadd',
+	                    'action'     => 'AddOrder',
 	                ),
 	            ),
 	        ),
-	        __NAMESPACE__.'_Sales_Invoice' => array(
+	        __NAMESPACE__.'_Sales_Invoice_Approve' => array(
 	            'type' => 'Literal',
 	            'options' => array(
-	                'route'    => '/sales/invoice',
+	                'route'    => '/sales/invoice/approve',
 	                'defaults' => array(
 	                    'controller' => __NAMESPACE__ . '\Sales',
-	                    'action'     => 'invoice',
+	                    'action'     => 'ApproveInvoice',
 	                ),
 	            ),
 	        ),
