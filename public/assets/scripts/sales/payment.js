@@ -1,11 +1,11 @@
 
-var Order = function () {
+var Payment = function () {
 
 	return {
 
 		init: function () {
 
-			var form = $('#sales_order');
+			var form = $('#sales_payment');
 			var error = $('.alert-danger', form);
 			var success = $('.alert-success', form);
 			form.validate({
@@ -15,6 +15,34 @@ var Order = function () {
 				ignore: "",
 				rules: {
 
+					// paymentNo : {
+					// 	minlength: 2,
+					// 	required: true
+					// },
+					// proformaInvoiceNo : {
+					// 	minlength: 2,
+					// 	required: true
+					// },
+					// cmNo : {
+					// 	required: true
+					// },
+					// rmrNo : {
+					// 	required: true
+					// },
+					// drNo : {
+					// 	minlength: 1,
+					// 	required: true
+					// },
+					// drNo : {
+					// 	minlength: 1,
+					// 	required: true
+					// },
+					// siNo : {
+					// 	required: true
+					// },
+					// soNo : {
+					// 	required: true
+					// },
 					transactionTypeId : {
 						minlength: 2,
 						required: true
@@ -23,101 +51,73 @@ var Order = function () {
 						minlength: 2,
 						required: true
 					},
-					inventoryLocationId : {
-						required: true
-					},
-					addressId : {
-						required: true
-					},
-					orderSourceId : {
-						minlength: 1,
-						required: true
-					},
-					shippingModeId : {
-						minlength: 1,
-						required: true
-					},
-					userId : {
-						required: true
-					},
-					paymentTermId : {
-						required: true
-					},
-					deliveryDate : {
+					deliveryDateId : {
 						minlength: 2,
 						required: true
 					},
-					orderedBy : {
-						minlength: 2,
+
+					vatPercentageId : {
 						required: true
 					},
-					printedCode : {
-						minlength: 2,
+					items : {
 						required: true
 					},
-				
-					productDescription : {
-						required: true
-					},
-					percentVat : {
-						required: true
-					},
-					notes : {
+					sales : {
 						required: false
 					},
+					transactionTypeId : {
+						required: false
+					},
+
 				},
 
 					messages: { // custom messages for radio buttons and checkboxes
-						transactionTypeId: {
+						// paymentNo: {
+						// 	required: "Payment Number is Required"
+						// },
+						// proformaInvoiceNo : {
+						// 	required: "Proforma Invoice Number is Required"
+						// },
+						// cmNo : {
+						// 	required: "cmNo is Required"
+						// },
+						// rmrNo : {
+						// 	required: "rmrNo is Required"
+						// },
+						// drNo : {
+						// 	required: "drNo is Required"
+						// },
+						// drNo : {
+						// 	required: "drNo is Required"
+						// },
+						// siNo : {
+						// 	required: "siNo is Required"
+						// },
+						// soNo : {
+						// 	required: "soNo is Required"
+						// },
+						transactionTypeId : {
 							required: "Transaction Type is Required"
 						},
-						customerId: {
+						customerId : {
 							required: "Customer is Required"
 						},
-						inventoryLocationId : {
-							required: "Inventory Location is Required"
+						deliveryDateId : {
+							required: "Delivery Dateis Required"
 						},
-						addressId : {
-							required: "Address is Required"
+						vatPercentageId : {
+							required: "Vat Percentage is Required"
 						},
-						orderSourceId : {
-							minlength: 1,
-							required: "Order Source is Required"
+						items : {
+							required: "Items is Required"
 						},
-						shippingModeId : {
-							minlength: 1,
-							required: "Shipping Mode is Required"
+						sales : {
+							required: "Sales is Required"
 						},
-						userId : {
-							required: "User is Required"
+						transactionTypeId : {
+							required: "Transaction Type is Required"
 						},
-						paymentTermId : {
-							required: "Payment Term is Required"
-						},
-						deliveryDate : {
-							minlength: 2,
-							required: "Delivery Date is Required"
-						},
-						orderedBy : {
-							minlength: 2,
-							required: "Ordered By is Required"
-						},
-						printedCode : {
-							minlength: 2,
-							required: "Printed Code is Required"
-						},
-						priceTypeId : {
-							required: "Please select  at least 1 types of Service",
-						},
-						productDescription : {
-							required: "Product Description is Required"
-						},
-						percentVat : {
-							required: "Percent Vat is Required"
-						},
-						notes : {
-							required: "Note is Required"
-						},
+
 					},
 					invalidHandler: function (event, validator) { //display error alert on form submit
 						success.hide();
@@ -146,7 +146,7 @@ var Order = function () {
 					}
 				});
 
-				
+
 
 			}
 		};
