@@ -8,7 +8,7 @@ use Main\Controller\BaseController;
 
 class SalesController extends BaseController
 {
-    public function OrderAddAction()
+    public function AddOrderAction()
     {
 
         $formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
@@ -44,7 +44,7 @@ class SalesController extends BaseController
           ));
     }
 
-    public function invoiceAction()
+    public function AddInvoiceAction()
     {
 
         $formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
