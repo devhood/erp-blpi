@@ -4,6 +4,9 @@
 span.help-block {
     text-align: center;
 }
+span.col-md-12.control-label {
+    text-align:center;
+}
 .custom-left {
 	float:left;
 }

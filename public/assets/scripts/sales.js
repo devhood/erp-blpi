@@ -1,11 +1,11 @@
 
-var Product = function () {
+var Order = function () {
 
 	return {
 
 		init: function () {
 			
-			var form = $('#product_add');
+			var form = $('#sales_order');
             var error = $('.alert-danger', form);
             var success = $('.alert-success', form);
 			form.validate({

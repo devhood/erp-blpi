@@ -8,7 +8,7 @@ use Main\Controller\BaseController;
 
 class SalesController extends BaseController
 {
-    public function orderAction()
+    public function OrderAddAction()
     {
 
         $formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
@@ -20,8 +20,19 @@ class SalesController extends BaseController
           ));
     }
 
+    public function DeliveryApproveAction()
+    {
 
-    public function deliveryAction()
+        $formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+        $formSalesItem = new \Sales\Form\SalesItemForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+
+        return new ViewModel(array(
+          'formSales' => $formSales,
+          'formSalesItem' => $formSalesItem
+          ));
+    }
+
+    public function DeliveryPrintAction()
     {
 
         $formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
@@ -34,6 +45,30 @@ class SalesController extends BaseController
     }
 
     public function invoiceAction()
+    {
+
+        $formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+        $formSalesItem = new \Sales\Form\SalesItemForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+
+        return new ViewModel(array(
+          'formSales' => $formSales,
+          'formSalesItem' => $formSalesItem
+          ));
+    }
+
+     public function printDeliveryAction()
+    {
+
+        $formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+        $formSalesItem = new \Sales\Form\SalesItemForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+
+        return new ViewModel(array(
+          'formSales' => $formSales,
+          'formSalesItem' => $formSalesItem
+          ));
+    }
+
+    public function printInvoiceAction()
     {
 
         $formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));

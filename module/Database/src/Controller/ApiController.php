@@ -31,11 +31,10 @@ class ApiController extends AbstractRestfulController
 		$queryBuilder = $this->getEntityManager()->createQueryBuilder();
 		$queryBuilder->select('t')
 			->from(self::DBNS.$table, 't');
+		
 		$results = $queryBuilder->getQuery()
 			->getResult(\Doctrine\ORM\AbstractQuery::HYDRATE_ARRAY);
-		return new JsonModel(array(
-				'data' => $results,
-		));
+		return new JsonModel($results);
 	}
 	public function addAction()
 	{
@@ -81,4 +80,5 @@ class ApiController extends AbstractRestfulController
 		}
 		return new JsonModel($content);
 	}
+	
 }
