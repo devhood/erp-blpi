@@ -8,6 +8,8 @@ $this->headLink()
 ?>
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
 
+<link href="../../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
 			<!-- BEGIN PAGE CONTENT-->
 			<div class="invoice">
 				<div class="row invoice-logo">
@@ -25,72 +27,25 @@ $this->headLink()
 				</div>
 				<hr/>
 				<div class="row">
-					<div class="col-xs-4">
-						<h4>Client:</h4>
+					<div class="col-xs-6">
+						<h4>Client Name:</h4>
 						<ul class="list-unstyled">
 							<li>
 								 John Doe
 							</li>
 							<li>
-								 Mr Nilson Otto
-							</li>
-							<li>
-								 FoodMaster Ltd
-							</li>
-							<li>
-								 Madrid
-							</li>
-							<li>
-								 Spain
-							</li>
-							<li>
-								 1982 OOP
+								Billing Address
 							</li>
 						</ul>
 					</div>
-					<div class="col-xs-4">
-						<h4>About:</h4>
+					<div class="col-xs-6 invoice-payment">
+						<h4>Shipping Name:</h4>
 						<ul class="list-unstyled">
 							<li>
-								 Drem psum dolor sit amet
+								 Lester Mercado
 							</li>
 							<li>
-								 Laoreet dolore magna
-							</li>
-							<li>
-								 Consectetuer adipiscing elit
-							</li>
-							<li>
-								 Magna aliquam tincidunt erat volutpat
-							</li>
-							<li>
-								 Olor sit amet adipiscing eli
-							</li>
-							<li>
-								 Laoreet dolore magna
-							</li>
-						</ul>
-					</div>
-					<div class="col-xs-4 invoice-payment">
-						<h4>Payment Details:</h4>
-						<ul class="list-unstyled">
-							<li>
-								<strong>V.A.T Reg #:</strong> 542554(DEMO)78
-							</li>
-							<li>
-								<strong>Account Name:</strong> FoodMaster Ltd
-							</li>
-							<li>
-								<strong>SWIFT code:</strong> 45454DEMO545DEMO
-							</li>
-							<li>
-								<strong>V.A.T Reg #:</strong> 542554(DEMO)78
-							</li>
-							<li>
-								<strong>Account Name:</strong> FoodMaster Ltd
-							</li>
-							<li>
-								<strong>SWIFT code:</strong> 45454DEMO545DEMO
+								 Shipping Address
 							</li>
 						</ul>
 					</div>
@@ -104,19 +59,22 @@ $this->headLink()
 								 #
 							</th>
 							<th>
-								 Item
+								 Code
+							</th>
+							<th class="hidden-480">
+								 Product
+							</th>
+							<th class="hidden-480">
+								 Brand
 							</th>
 							<th class="hidden-480">
 								 Description
 							</th>
-							<th class="hidden-480">
-								 Quantity
-							</th>
-							<th class="hidden-480">
-								 Unit Cost
+							<th>
+								 UOM
 							</th>
 							<th>
-								 Total
+								 Quantity
 							</th>
 						</tr>
 						</thead>
@@ -136,6 +94,9 @@ $this->headLink()
 							</td>
 							<td class="hidden-480">
 								 $75
+							</td>
+							<td>
+								 $2152
 							</td>
 							<td>
 								 $2152
@@ -160,6 +121,9 @@ $this->headLink()
 							<td>
 								 $4169
 							</td>
+							<td>
+								 $2152
+							</td>
 						</tr>
 						<tr>
 							<td>
@@ -179,6 +143,9 @@ $this->headLink()
 							</td>
 							<td>
 								 $1260
+							</td>
+							<td>
+								 $2152
 							</td>
 						</tr>
 						<tr>
@@ -200,6 +167,9 @@ $this->headLink()
 							<td>
 								 $866
 							</td>
+							<td>
+								 $2152
+							</td>
 						</tr>
 						</tbody>
 						</table>
@@ -207,35 +177,8 @@ $this->headLink()
 				</div>
 				<div class="row">
 					<div class="col-xs-4">
-						<div class="well">
-							<address>
-							<strong>Loop, Inc.</strong><br/>
-							795 Park Ave, Suite 120<br/>
-							San Francisco, CA 94107<br/>
-							<abbr title="Phone">P:</abbr> (234) 145-1810 </address>
-							<address>
-							<strong>Full Name</strong><br/>
-							<a href="mailto:#">
-								 first.last@email.com
-							</a>
-							</address>
-						</div>
 					</div>
 					<div class="col-xs-8 invoice-block">
-						<ul class="list-unstyled amounts">
-							<li>
-								<strong>Sub - Total amount:</strong> $9265
-							</li>
-							<li>
-								<strong>Discount:</strong> 12.9%
-							</li>
-							<li>
-								<strong>VAT:</strong> -----
-							</li>
-							<li>
-								<strong>Grand Total:</strong> $12489
-							</li>
-						</ul>
 						<br/>
 						<a class="btn btn-lg blue hidden-print" onclick="javascript:window.print();">
 							 Print <i class="fa fa-print"></i>
