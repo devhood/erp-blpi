@@ -17,11 +17,12 @@ class IndexController extends BaseController
     public function addAction()
     {
 
-    	$formProduct = new \Product\Form\ProductForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
-    	$formProductUom = new \Product\Form\ProductUomForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
-    	$formProductBundle = new \Product\Form\ProductBundleForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
-    	$formProductPrice = new \Product\Form\ProductPriceForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
-    	$formProductDocument = new \Product\Form\ProductDocumentForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+    	$em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+    	$formProduct = new \Product\Form\ProductForm();
+    	$formProductUom = new \Product\Form\ProductUomForm($em);
+    	$formProductBundle = new \Product\Form\ProductBundleForm($em);
+    	$formProductPrice = new \Product\Form\ProductPriceForm($em);
+    	$formProductDocument = new \Product\Form\ProductDocumentForm($em);
 
         return new ViewModel(array(
     		'formProduct' => $formProduct,
