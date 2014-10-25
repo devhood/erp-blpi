@@ -9,6 +9,7 @@ return array(
         'Database',
         'Customer',
         'Sales',
+        'User',
     ),
     'module_listener_options' => array(
         'module_paths' => array(

@@ -1,11 +1,11 @@
 
-var Order = function () {
+var Invoice = function () {
 
 	return {
 
 		init: function () {
 
-			var form = $('#sales_order');
+			var form = $('#sales_invoice');
 			var error = $('.alert-danger', form);
 			var success = $('.alert-success', form);
 			form.validate({
@@ -55,7 +55,7 @@ var Order = function () {
 						minlength: 2,
 						required: true
 					},
-				
+
 					productDescription : {
 						required: true
 					},
@@ -146,7 +146,7 @@ var Order = function () {
 					}
 				});
 
-				
+
 
 			}
 		};

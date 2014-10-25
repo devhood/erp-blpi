@@ -60,7 +60,7 @@ return array(
 	),
 	'controllers' => array(
 		'invokables' => array(
-			__NAMESPACE__ . '\Index' => __NAMESPACE__ . '\Controller\IndexController',
+			__NAMESPACE__ . '\Index' => __NAMESPACE__ . '\Controller\UserController',
 		),
 	),
 );
