@@ -23,17 +23,6 @@ return array(
 	                ),
 	            ),
 	        ),
-
-	        __NAMESPACE__.'_Sales_Delivery_Print' => array(
-	            'type' => 'Literal',
-	            'options' => array(
-	                'route'    => '/sales/deliveryprint',
-	                'defaults' => array(
-	                    'controller' => __NAMESPACE__ . '\Sales',
-	                    'action'     => 'deliveryprint',
-	                ),
-	            ),
-	        ),
 	        __NAMESPACE__.'_Sales_Order' => array(
 	            'type' => 'Literal',
 	            'options' => array(
@@ -51,6 +40,26 @@ return array(
 	                'defaults' => array(
 	                    'controller' => __NAMESPACE__ . '\Sales',
 	                    'action'     => 'invoice',
+	                ),
+	            ),
+	        ),
+	         __NAMESPACE__.'_Sales_Print_Delivery' => array(
+	            'type' => 'Literal',
+	            'options' => array(
+	                'route'    => '/sales/delivery/print',
+	                'defaults' => array(
+	                    'controller' => __NAMESPACE__ . '\Sales',
+	                    'action'     => 'printDelivery',
+	                ),
+	            ),
+	        ),
+	         __NAMESPACE__.'_Sales_Print_Invoice' => array(
+	            'type' => 'Literal',
+	            'options' => array(
+	                'route'    => '/sales/invoice/print',
+	                'defaults' => array(
+	                    'controller' => __NAMESPACE__ . '\Sales',
+	                    'action'     => 'printInvoice',
 	                ),
 	            ),
 	        ),
