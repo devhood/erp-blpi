@@ -1,0 +1,11 @@
+application: beautylane-phil
+version: 1
+runtime: php
+api_version: 1
+
+handlers:
+- url: /assets
+  static_dir: public/assets
+  
+- url: .*
+  script: public/index.php
