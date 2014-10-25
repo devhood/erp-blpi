@@ -1,5 +1,5 @@
 
-var Delivery = function () {
+var UserInfo = function () {
 
 	return {
 
@@ -15,7 +15,7 @@ var Delivery = function () {
 				ignore: "",
 				rules: {
 
-					transactionTypeId : {
+					userName : {
 						minlength: 2,
 						required: true
 					},

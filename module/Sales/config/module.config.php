@@ -16,10 +16,10 @@ return array(
 	        __NAMESPACE__.'_Sales_Delivery_Approve' => array(
 	            'type' => 'Literal',
 	            'options' => array(
-	                'route'    => '/sales/deliveryapprove',
+	                'route'    => '/sales/delivery/approve',
 	                'defaults' => array(
 	                    'controller' => __NAMESPACE__ . '\Sales',
-	                    'action'     => 'deliveryapprove',
+	                    'action'     => 'ApproveDelivery',
 	                ),
 	            ),
 	        ),

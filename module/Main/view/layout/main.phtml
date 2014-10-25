@@ -40,9 +40,10 @@ License: You must have a valid license purchased only from themeforest(the above
         ->prependStylesheet($this->basePath('/assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css'))
         ->prependStylesheet($this->basePath('/assets/plugins/bootstrap-datetimepicker/css/datetimepicker.css'))
         ->prependStylesheet($this->basePath('/assets/plugins/uniform/css/uniform.default.css'))
-        ->prependStylesheet($this->basePath('/assets/plugins/bootstrap/css/bootstrap.min.css'))
         ->prependStylesheet($this->basePath('assets/plugins/font-awesome/css/font-awesome.min.css'))
         ->prependStylesheet('http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all')
+        ->prependStylesheet($this->basePath('/assets/plugins/bootstrap/css/bootstrap.min.css'));
+
 ?>
 <?php echo $this->headLink() ?>
 <link rel="shortcut icon" href="/assets/img/favicon.ico"/>

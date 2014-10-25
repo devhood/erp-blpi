@@ -1003,12 +1003,12 @@ CREATE TABLE IF NOT EXISTS `blpi`.`Documents` (
   `document_type_id` INT NULL,
   `document_link` VARCHAR(250) NULL,
   `product_id` INT NULL,
-  `customer_id` INT NULL,
+  `cutomer_id` INT NULL,
   `sales_id` INT NULL,
   `record_status` VARCHAR(45) NULL,
   PRIMARY KEY (`document_id`),
   INDEX `fk_Documents_Products1_idx` (`product_id` ASC),
-  INDEX `fk_Documents_Customers1_idx` (`customer_id` ASC),
+  INDEX `fk_Documents_Customers1_idx` (`cutomer_id` ASC),
   INDEX `fk_Documents_Sales1_idx` (`sales_id` ASC),
   INDEX `fk_Documents_DocumentTypes1_idx` (`document_type_id` ASC),
   CONSTRAINT `fk_Documents_Products1`
@@ -1017,7 +1017,7 @@ CREATE TABLE IF NOT EXISTS `blpi`.`Documents` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Documents_Customers1`
-    FOREIGN KEY (`customer_id`)
+    FOREIGN KEY (`cutomer_id`)
     REFERENCES `blpi`.`Customers` (`customer_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
@@ -1029,6 +1029,45 @@ CREATE TABLE IF NOT EXISTS `blpi`.`Documents` (
   CONSTRAINT `fk_Documents_DocumentTypes1`
     FOREIGN KEY (`document_type_id`)
     REFERENCES `blpi`.`DocumentTypes` (`document_type_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `blpi`.`Permissions`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `blpi`.`Permissions` ;
+
+CREATE TABLE IF NOT EXISTS `blpi`.`Permissions` (
+  `permission_id` INT NOT NULL AUTO_INCREMENT,
+  `permission_name` VARCHAR(100) NULL,
+  `permission_link` VARCHAR(100) NULL,
+  `record_status` VARCHAR(45) NULL,
+  PRIMARY KEY (`permission_id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `blpi`.`Designation_Permissions`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `blpi`.`Designation_Permissions` ;
+
+CREATE TABLE IF NOT EXISTS `blpi`.`Designation_Permissions` (
+  `dp_id` INT NOT NULL AUTO_INCREMENT,
+  `designation_id` INT NULL,
+  `permission_id` INT NULL,
+  PRIMARY KEY (`dp_id`),
+  INDEX `fk_Designation_Permissions_Permissions1_idx` (`permission_id` ASC),
+  INDEX `fk_Designation_Permissions_Designations1_idx` (`designation_id` ASC),
+  CONSTRAINT `fk_Designation_Permissions_Permissions1`
+    FOREIGN KEY (`permission_id`)
+    REFERENCES `blpi`.`Permissions` (`permission_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Designation_Permissions_Designations1`
+    FOREIGN KEY (`designation_id`)
+    REFERENCES `blpi`.`Designations` (`designation_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -1132,23 +1171,6 @@ COMMIT;
 START TRANSACTION;
 USE `blpi`;
 INSERT INTO `blpi`.`Users` (`user_id`, `user_name`, `password`, `full_name`, `designation_id`, `email`, `mobile`, `user_status`) VALUES (1, 'chito', 'chito', 'chito cascante', 1, 'chito@yahoo.com', '9297700514', 'Active');
-
-COMMIT;
-
-
--- -----------------------------------------------------
--- Data for table `blpi`.`Counters`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `blpi`;
-INSERT INTO `blpi`.`Counters` (`counter_id`, `counter_type`, `prefix`, `suffix`, `count`, `record_status`) VALUES (1, 'product', 'ITEM', NULL, 00001, 'Active');
-INSERT INTO `blpi`.`Counters` (`counter_id`, `counter_type`, `prefix`, `suffix`, `count`, `record_status`) VALUES (2, 'customer', 'CLIENT', NULL, 00001, 'Active');
-INSERT INTO `blpi`.`Counters` (`counter_id`, `counter_type`, `prefix`, `suffix`, `count`, `record_status`) VALUES (3, 'sales order', 'SO', NULL, 00001, 'Active');
-INSERT INTO `blpi`.`Counters` (`counter_id`, `counter_type`, `prefix`, `suffix`, `count`, `record_status`) VALUES (4, 'delivery receipt', 'DR', NULL, 00001, 'Active');
-INSERT INTO `blpi`.`Counters` (`counter_id`, `counter_type`, `prefix`, `suffix`, `count`, `record_status`) VALUES (5, 'sales invoice', 'SI', NULL, 00001, NULL);
-INSERT INTO `blpi`.`Counters` (`counter_id`, `counter_type`, `prefix`, `suffix`, `count`, `record_status`) VALUES (6, 'return merchandise', 'RMR', NULL, 00001, NULL);
-INSERT INTO `blpi`.`Counters` (`counter_id`, `counter_type`, `prefix`, `suffix`, `count`, `record_status`) VALUES (7, 'credti memo', 'CR', NULL, 00001, NULL);
-INSERT INTO `blpi`.`Counters` (`counter_id`, `counter_type`, `prefix`, `suffix`, `count`, `record_status`) VALUES (8, 'payment', 'P', NULL, 00001, NULL);
 
 COMMIT;
 

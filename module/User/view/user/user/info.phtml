@@ -203,7 +203,7 @@ $this->headLink()
     </div>
   </div>
   <div id="partialFiller">
-  <?php // echo $this->render('user/units') ?>
+  <?php // echo $this->render('user/') ?>
   </div>
 
 
@@ -218,6 +218,7 @@ $this->headLink()
 ?>
 <?php $this->inlineScript()->captureStart() ?>
   jQuery(document).ready(function() {
-    User.init();
+    UserInfo.init();
+
   });
 <?php $this->inlineScript()->captureEnd() ?>
