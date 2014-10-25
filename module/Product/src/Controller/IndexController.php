@@ -18,7 +18,7 @@ class IndexController extends BaseController
     {
 
     	$em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
-    	$formProduct = new \Product\Form\ProductForm();
+    	$formProduct = new \Product\Form\ProductForm($em);
     	$formProductUom = new \Product\Form\ProductUomForm($em);
     	$formProductBundle = new \Product\Form\ProductBundleForm($em);
     	$formProductPrice = new \Product\Form\ProductPriceForm($em);
