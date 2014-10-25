@@ -23,7 +23,7 @@ $this->headLink()
     </div>
     <div class="portlet-body form">
       <!-- BEGIN FORM-->
-      <form action="#" class="form-horizontal" id="product_add">
+      <form action="#" class="form-horizontal" id="userinfo">
         <div class="form-body">
           <div class="alert alert-danger display-hide">
             <button class="close" data-close="alert"></button>
@@ -75,7 +75,7 @@ $this->headLink()
             <div class="col-md-6">
               <div class="form-group">
                 <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                  <?php  echo $this->formRow($formUser->get('password')); ?>
+                  <input type="text" name="retypepassword" class="form-control" id="retypepassword" value="">
                   <span class="col-md-12 control-label">
                     Retype Password
                   </span>
@@ -180,9 +180,6 @@ $this->headLink()
           </div><!-- form-group -->
 
 
-
-
-
       <!-- BEGIN PAGE CONTENT-->
 
         </div>
@@ -213,8 +210,8 @@ $this->headLink()
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <?php
-  // $this->inlineScript()
-  //   ->appendFile($this->basePath('/assets/scripts/user.js'))
+  $this->inlineScript()
+    ->appendFile($this->basePath('/assets/scripts/users/userinfo.js'))
 ?>
 <?php $this->inlineScript()->captureStart() ?>
   jQuery(document).ready(function() {

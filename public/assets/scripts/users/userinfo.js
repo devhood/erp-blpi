@@ -5,7 +5,7 @@ var UserInfo = function () {
 
 		init: function () {
 
-			var form = $('#sales_delivery');
+			var form = $('#userinfo');
 			var error = $('.alert-danger', form);
 			var success = $('.alert-success', form);
 			form.validate({
@@ -16,108 +16,68 @@ var UserInfo = function () {
 				rules: {
 
 					userName : {
-						minlength: 2,
+						minlength: 3,
 						required: true
 					},
-					customerId : {
-						minlength: 2,
+					fullName : {
+						minlength: 5,
 						required: true
 					},
-					inventoryLocationId : {
+					designationId : {
 						required: true
 					},
-					addressId : {
-						required: true
-					},
-					orderSourceId : {
-						minlength: 1,
-						required: true
-					},
-					shippingModeId : {
-						minlength: 1,
-						required: true
-					},
-					userId : {
-						required: true
-					},
-					paymentTermId : {
-						required: true
-					},
-					deliveryDate : {
-						minlength: 2,
-						required: true
-					},
-					orderedBy : {
-						minlength: 2,
-						required: true
-					},
-					printedCode : {
-						minlength: 2,
+					password : {
+						minlength: 5,
 						required: true
 					},
 
-					productDescription : {
+					userStatus : {
+						minlength: 3,
 						required: true
 					},
-					percentVat : {
+					email : {
+						minlength: 5,
 						required: true
 					},
-					notes : {
-						required: false
+					mobile : {
+						minlength: 5,
+						required: true
 					},
+
 				},
 
 					messages: { // custom messages for radio buttons and checkboxes
-						transactionTypeId: {
-							required: "Transaction Type is Required"
+
+						userName : {
+							minlength: "Minimum of 3 Characters",
+							required:  "Username is Required"
 						},
-						customerId: {
-							required: "Customer is Required"
+						fullName : {
+							minlength: "Minimum of 5 Characters",
+							required: "Fullname is Required"
 						},
-						inventoryLocationId : {
-							required: "Inventory Location is Required"
+						designationId : {
+							required: "Designation Id Required"
 						},
-						addressId : {
-							required: "Address is Required"
+						password : {
+							minlength: "Minimum of 5 Characters",
+							required: "Password is Required"
 						},
-						orderSourceId : {
-							minlength: 1,
-							required: "Order Source is Required"
+
+						userStatus : {
+							minlength: "Minimum of 3 Characters",
+							required: "User Status is Required"
 						},
-						shippingModeId : {
-							minlength: 1,
-							required: "Shipping Mode is Required"
+						email : {
+							minlength: "Minimum of 5 Characters",
+							required: "Email is Required"
 						},
-						userId : {
-							required: "User is Required"
+						mobile : {
+							minlength: "Minimum of 5 Characters",
+							required: "Mobile is Required"
 						},
-						paymentTermId : {
-							required: "Payment Term is Required"
-						},
-						deliveryDate : {
-							minlength: 2,
-							required: "Delivery Date is Required"
-						},
-						orderedBy : {
-							minlength: 2,
-							required: "Ordered By is Required"
-						},
-						printedCode : {
-							minlength: 2,
-							required: "Printed Code is Required"
-						},
-						priceTypeId : {
-							required: "Please select  at least 1 types of Service",
-						},
-						productDescription : {
-							required: "Product Description is Required"
-						},
-						percentVat : {
-							required: "Percent Vat is Required"
-						},
-						notes : {
-							required: "Note is Required"
-						},
+
+
 					},
 					invalidHandler: function (event, validator) { //display error alert on form submit
 						success.hide();
