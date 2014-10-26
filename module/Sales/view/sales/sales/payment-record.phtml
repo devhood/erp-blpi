@@ -249,11 +249,10 @@ $this->headLink()
   <!-- BEGIN PAGE LEVEL SCRIPTS -->
   <?php
   $this->inlineScript()
-  ->appendFile($this->basePath('/assets/scripts/product.js'))
+  ->appendFile($this->basePath('/assets/scripts/payment.js'))
   ?>
   <?php $this->inlineScript()->captureStart() ?>
   jQuery(document).ready(function() {
-    App.init();
     PaymentRecord.init();
     ComponentsEditors.init();
     $('.tags').tagsInput({

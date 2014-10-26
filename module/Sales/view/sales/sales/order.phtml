@@ -10,7 +10,7 @@
 					<div class="portlet box grey">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-edit"></i>Product List
+								<i class="fa fa-edit"></i>Order List
 							</div>
 							<div class="tools">
 								<a href="javascript:;" class="collapse">
@@ -26,7 +26,7 @@
 						<div class="portlet-body">
 							<div class="table-toolbar">
 								<div class="btn-group">
-									<a id="sample_editable_1_new" class="btn green" href="/product/add">
+									<a id="sample_editable_1_new" class="btn green" href="/sales/order/add">
 									Add New <i class="fa fa-plus"></i>
 									</a>
 								</div>
@@ -55,23 +55,41 @@
 							<table class="table table-striped table-hover table-bordered" id="sample_editable_1">
 							<thead>
 							<tr>
-							    <th>Code</th>
-								<th>Name</th>
-								<th>Description</th>
-								<th>Classification</th>
-								<th>Category</th>
-								<th>Brand</th>
-								<th>Supplier</th>
-								<th>Size</th>
-								<th>Weight</th>
-								<th>Status</th>
-								<th>Action</th>
+							    <th>SO Number</th>
+								<th>Transaction Type</th>
+								<th>Customer</th>
+								<th>Inventory Location</th>
+								<th>Shipping Address</th>
+								<th>Billing Address</th>
+								<th>Order Source</th>
+								<th>Shipping Mode</th>
+								<th>Sales Executive</th>
+								<th>Payment Terms</th>
+								<th>Delivery Date</th>
+								<th>Ordered By</th>
+								<th>Price Type</th>
+								<th>VAT Percentage</th>
+								<th>Ordered Items</th>
+								<th>Sales</th>
+								<th>Items</th>
+								<th>Vat</th>
+								<th>Total</th>
+								<th></th>
 							</tr>
 							</thead>
 							<tbody>
               
-							<!-- <?php foreach ($records as $record) : ?> -->
+						<?php // foreach ($records as $record) : ?> 
                             	 <tr>
+                                	 <td></td>
+                                	 <td></td>
+                                	 <td></td>
+                                	 <td></td>
+                                	 <td></td>
+                                	 <td></td>
+                                	 <td></td>
+                                	 <td></td>
+                                	 <td></td>
                                 	 <td></td>
                                 	 <td></td>
                                 	 <td></td>
@@ -84,7 +102,7 @@
                                 	 <td></td>
                                 	 <td><a class="edit" href="javascript:;">Edit</a></td>
                             	 </tr>
-                            <!-- <?php endforeach; ?> -->
+                             <?php // endforeach; ?>
 							</tbody>
 							</table>
 						</div>

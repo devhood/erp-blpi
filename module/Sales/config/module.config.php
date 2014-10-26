@@ -45,6 +45,17 @@ return array(
 	    				),
 	    		),
 	    		
+	    		__NAMESPACE__.'_Delivery_List' => array(
+	    				'type' => 'Literal',
+	    				'options' => array(
+	    						'route'    => '/sales/delivery',
+	    						'defaults' => array(
+	    								'controller' => __NAMESPACE__ . '\Sales',
+	    								'action'     => 'Delivery',
+	    						),
+	    				),
+	    		),
+	    		
 	        __NAMESPACE__.'_Order_Add' => array(
 	            'type' => 'Literal',
 	            'options' => array(
@@ -55,13 +66,13 @@ return array(
 	                ),
 	            ),
 	        ),
-	    		__NAMESPACE__.'_Order_List' => array(
+	    		__NAMESPACE__.'_Order' => array(
 	    				'type' => 'Literal',
 	    				'options' => array(
 	    						'route'    => '/sales/order',
 	    						'defaults' => array(
 	    								'controller' => __NAMESPACE__ . '\Sales',
-	    								'action'     => 'OrderList',
+	    								'action'     => 'Order',
 	    						),
 	    				),
 	    		),
@@ -87,7 +98,17 @@ return array(
 	                ),
 	            ),
 	        ),
-	    		
+
+	    		__NAMESPACE__.'_Invoice' => array(
+	    				'type' => 'Literal',
+	    				'options' => array(
+	    						'route'    => '/sales/invoice',
+	    						'defaults' => array(
+	    								'controller' => __NAMESPACE__ . '\Sales',
+	    								'action'     => 'Invoice',
+	    						),
+	    				),
+	    		),
 	    		__NAMESPACE__.'_Payment_Record' => array(
 	    				'type' => 'Literal',
 	    				'options' => array(
