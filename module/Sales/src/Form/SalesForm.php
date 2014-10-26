@@ -9,6 +9,99 @@ class SalesForm extends Form
   {
     parent::__construct('sales');
 
+    
+    $this->add( array(
+    		'name' => 'orno',
+    		'type' => 'Text',
+    		'attributes' => array(
+    				'class' => 'form-control',
+    				'id' => 'orno',
+    				'readonly' => 'readonly'
+    		)
+    ));
+    $this->add( array(
+    		'name' => 'prno',
+    		'type' => 'Text',
+    		'attributes' => array(
+    				'class' => 'form-control',
+    				'id' => 'prno',
+    				'readonly' => 'readonly'
+    		)
+    ));
+    $this->add( array(
+    		'name' => 'proformaInvoiceNo',
+    		'type' => 'Text',
+    		'attributes' => array(
+    				'class' => 'form-control',
+    				'id' => 'proformaInvoiceNo',
+    				'readonly' => 'readonly'
+    		)
+    ));
+    $this->add( array(
+    		'name' => 'totalItemsReturn',
+    		'type' => 'Text',
+    		'attributes' => array(
+    				'class' => 'form-control',
+    				'id' => 'totalItemsReturn',
+    				'readonly' => 'readonly'
+    		)
+    ));
+    $this->add( array(
+    		'name' => 'totalItems',
+    		'type' => 'Text',
+    		'attributes' => array(
+    				'class' => 'form-control',
+    				'id' => 'totalItems',
+    				'readonly' => 'readonly'
+    		)
+    ));
+    $this->add( array(
+    		'name' => 'totalVatReturn',
+    		'type' => 'Text',
+    		'attributes' => array(
+    				'class' => 'form-control',
+    				'id' => 'totalVatReturn',
+    				'readonly' => 'readonly'
+    		)
+    ));
+    $this->add( array(
+    		'name' => 'totalVat',
+    		'type' => 'Text',
+    		'attributes' => array(
+    				'class' => 'form-control',
+    				'id' => 'totalVat',
+    				'readonly' => 'readonly'
+    		)
+    ));
+    $this->add( array(
+    		'name' => 'totalSalesReturn',
+    		'type' => 'Text',
+    		'attributes' => array(
+    				'class' => 'form-control',
+    				'id' => 'totalSalesReturn',
+    				'readonly' => 'readonly'
+    		)
+    ));
+    $this->add( array(
+    		'name' => 'totalSales',
+    		'type' => 'Text',
+    		'attributes' => array(
+    				'class' => 'form-control',
+    				'id' => 'totalSales',
+    				'readonly' => 'readonly'
+    		)
+    ));
+    $this->add( array(
+    		'name' => 'grandTotal',
+    		'type' => 'Text',
+    		'attributes' => array(
+    				'class' => 'form-control',
+    				'id' => 'grandTotal',
+    				'readonly' => 'readonly'
+    		)
+    ));
+    
+    
     $this->add( array(
       'name' => 'paymentNo',
       'type' => 'Text',

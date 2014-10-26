@@ -8,18 +8,20 @@ return array(
 		),
 		'template_map' => array(
 			'sales/items'           =>   __DIR__ . '/../view/sales/partial/items.phtml',
+			'sales/document'           =>   __DIR__ . '/../view/sales/partial/document.phtml',
+				
 		),
 
 	),
 	'router' => array(
 	    'routes' => array(
-    		__NAMESPACE__.'_CreditMemo_Approve' => array(
+    		__NAMESPACE__.'_Creditmemo' => array(
     				'type' => 'Literal',
     				'options' => array(
-    						'route'    => '/sales/delivery/approve',
+    						'route'    => '/sales/creditmemo',
     						'defaults' => array(
     								'controller' => __NAMESPACE__ . '\Sales',
-    								'action'     => 'DeliveryApprove',
+    								'action'     => 'creditmemo',
     						),
     				),
     		),

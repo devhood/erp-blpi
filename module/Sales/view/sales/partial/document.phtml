@@ -1,0 +1,89 @@
+	<div id="documentModal" class="modal fade" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+					<h4 class="modal-title">Add Document</h4>
+				</div>
+				<form action="#" class="form-horizontal" id="product_document">
+					<div class="form-body">
+						<div class="alert alert-danger display-hide">
+							<button class="close" data-close="alert"></button>
+							You have some form errors. Please check below.
+						</div>
+						<div class="alert alert-success display-hide">
+							<button class="close" data-close="alert"></button>
+							Your form validation is successful!
+						</div>
+
+					<div class="modal-body">
+						<div class="scroller" style="height:250px" data-always-visible="1" data-rail-visible1="1">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
+											<?php  echo $this->formRow($formProductDocument->get('documentName')); ?>
+											<span class="col-md-12 control-label">
+												Product
+											</span>
+										</div>
+									</div>
+								</div>
+								<!--/span-->
+								<div class="col-md-6">
+									<div class="form-group">
+										<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
+											<?php  echo $this->formRow($formProductDocument->get('documentLink')); ?>
+											<span class="col-md-12 control-label">
+												Link
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
+											<?php  echo $this->formRow($formProductDocument->get('documentTypes[documentTypeId]')); ?>
+											<span class="col-md-12 control-label">
+												File Type
+											</span>
+										</div>
+									</div>
+								</div>
+								<!--/span-->
+								<div class="col-md-6">
+									<div class="form-group">
+										<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
+											<?php // echo $this->formRow($formProductDocument->get('documentLink')); ?>
+											<button type="button" class="btn blue">Upload File</button>
+											<span class="help-block">
+
+											</span>
+										</div>
+									</div>
+								</div>
+							</div> <!--/row-->
+
+							<div class="modal-footer">
+								<button type="button" data-dismiss="modal" class="btn default">Close</button>
+								<button type="submit" class="btn green">Save</button>
+							</div>
+						</div><!--/form-body  -->
+						</form>
+					</div>
+				</div><!--/modal-body  -->
+			</div><!--/modal-content  -->
+			<?php
+			// $this->inlineScript()
+			// 	->appendFile($this->basePath('/assets/scripts/bundle.js'))
+			?>
+			<?php //$this->inlineScript()->captureStart() ?>
+			<!-- jQuery(document).ready(function() {
+			App.init();
+			Bundle.init();
+		}); -->
+		<?php //$this->inlineScript()->captureEnd() ?>

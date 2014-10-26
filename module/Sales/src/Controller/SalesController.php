@@ -8,11 +8,13 @@ use Main\Controller\BaseController;
 
 class SalesController extends BaseController
 {
-	public function CreditMemoApproveAction()
+	public function CreditmemoAction()
 	{
 		$formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
 		$formSalesItem = new \Sales\Form\SalesItemForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
 	
+		$this->DisableForms($formSales);
+		
 		return new ViewModel(array(
 				'formSales' => $formSales,
 				'formSalesItem' => $formSalesItem
@@ -147,6 +149,8 @@ class SalesController extends BaseController
     	$formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
     	$formSalesItem = new \Sales\Form\SalesItemForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
     
+    	$this->DisableForms($formSales);
+    	
     	return new ViewModel(array(
     			'formSales' => $formSales,
     			'formSalesItem' => $formSalesItem

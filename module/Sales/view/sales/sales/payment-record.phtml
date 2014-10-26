@@ -8,7 +8,7 @@ $this->headLink()
 <div class="portlet box grey">
   <div class="portlet-title">
     <div class="caption">
-      <i class="fa fa-reorder"></i>Payment Records
+      <i class="fa fa-reorder"></i>Sales
     </div>
     <div class="tools">
       <a href="javascript:;" class="collapse">
@@ -21,9 +21,10 @@ $this->headLink()
       </a>
     </div>
   </div>
+
   <div class="portlet-body form">
     <!-- BEGIN FORM-->
-    <form action="#" class="form-horizontal">
+    <form action="#" class="form-horizontal" id="sales">
       <div class="form-body">
           <div class="alert alert-danger display-hide">
             <button class="close" data-close="alert"></button>
@@ -33,49 +34,12 @@ $this->headLink()
             <button class="close" data-close="alert"></button>
               Your form validation is successful!
           </div>
-        <h4 class="form-section">Records  </h4>
-        <div class="row">
+          <h4 class="form-section">Record Payment </h4>
+          <div class="row">
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-                <?php  echo $this->formRow($formSales->get('paymentNo')); ?>
-                <span class="col-md-12 control-label">
-                  Payment Number
-                </span>
-              </div>
-            </div>
-          </div>
-          <!--/span-->
-
-            <div class="col-md-6">
-              <div class="form-group">
-                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                  <?php  echo $this->formRow($formSales->get('proformaInvoiceNo')); ?>
-                  <span class="col-md-12 control-label">
-                    Performa Invoice Number
-                  </span>
-                </div>
-              </div>
-            </div>
-          <!--/span-->
-        </div>
-
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-                <?php  echo $this->formRow($formSales>get('cmNo')); ?>
-                <span class="col-md-12 control-label">
-                  CM Number
-                </span>
-              </div>
-            </div>
-          </div>
-          <!--/span-->
-          <div class="col-md-6">
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                <?php  echo $this->formRow($formSales->get('rmrNo')); ?>
+                <?php  echo $this->formRow($formSales->get('rmrno')); ?>
                 <span class="col-md-12 control-label">
                   RMR Number
                 </span>
@@ -83,16 +47,24 @@ $this->headLink()
             </div>
           </div>
           <!--/span-->
-        </div>
-
-
-        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+                    <?php  echo $this->formRow($formSales->get('cmno')); ?>
+                <span class="col-md-12 control-label">
+                  CM Number
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>   <!--/row-->
+          <div class="row">
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-                <?php  echo $this->formRow($formSales->get('drNo')); ?>
+                <?php  echo $this->formRow($formSales->get('drno')); ?>
                 <span class="col-md-12 control-label">
-                DR Number
+                  DR Number
                 </span>
               </div>
             </div>
@@ -101,22 +73,21 @@ $this->headLink()
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                <?php  echo $this->formRow($formSales->get('siNo')); ?>
+                <?php  echo $this->formRow($formSales->get('sino')); ?>
                 <span class="col-md-12 control-label">
-                SI Number
+                  SI Number
                 </span>
               </div>
             </div>
           </div>
-          <!--/span-->
-        </div>
-        <div class="row">
+        </div>   <!--/row-->
+          <div class="row">
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-                <?php  echo $this->formRow($formSales->get('soNo')); ?>
+                <?php  echo $this->formRow($formSales->get('sono')); ?>
                 <span class="col-md-12 control-label">
-                SO Number testing
+                  SO Number
                 </span>
               </div>
             </div>
@@ -127,7 +98,7 @@ $this->headLink()
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
                 <?php  echo $this->formRow($formSales->get('transactionTypes[transactionTypeId]')); ?>
                 <span class="col-md-12 control-label">
-              Transaction Types
+                  Transaction Type
                 </span>
               </div>
             </div>
@@ -142,7 +113,7 @@ $this->headLink()
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
                 <?php  echo $this->formRow($formSales->get('customers[customerId]')); ?>
                 <span class="col-md-12 control-label">
-                Customer
+                  Customer
                 </span>
               </div>
             </div>
@@ -151,9 +122,66 @@ $this->headLink()
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                <?php  echo $this->formRow($formSales->get('deliveryDates[deliveryDateId]')); ?>
+                <?php  echo $this->formRow($formSales->get('inventoryLocations[inventoryLocationId]')); ?>
                 <span class="col-md-12 control-label">
-              Delivery Date
+                  Inventory Location
+                </span>
+              </div>
+            </div>
+          </div>
+          <!--/span-->
+        </div>
+
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <div class="col-md-2 col-lg-2 "></div>
+              <div class="col-md-8 col-xs-12 col-sm-12 col-lg-8 ">
+                <?php  echo $this->formRow($formSales->get('shippingAddress[addressId]')); ?>
+                <span class="col-md-12 control-label">
+                  Shipping Address
+                </span>
+              </div>
+              <div class="col-md-2 col-lg-2 "></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <div class="col-md-2 col-lg-2 "></div>
+              <div class="col-md-8 col-xs-12 col-sm-12 col-lg-8 ">
+                <?php  echo $this->formRow($formSales->get('billingAddress[addressId]')); ?>
+                <span class="col-md-12 control-label">
+                  Billing Address
+                </span>
+              </div>
+              <div class="col-md-2 col-lg-2 "></div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+                <?php  echo $this->formRow($formSales->get('orderSource[orderSourceId]')); ?>
+                <span class="col-md-12 control-label">
+                  Order Source
+                </span>
+              </div>
+            </div>
+          </div>
+          <!--/span-->
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+                <?php  echo $this->formRow($formSales->get('shippingModes[shippingModeId]')); ?>
+                <span class="col-md-12 control-label">
+                  Shipping Mode
                 </span>
               </div>
             </div>
@@ -165,9 +193,9 @@ $this->headLink()
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-                <?php  echo $this->formRow($formSales->get('vatPercentage[vatPercentageId]')); ?>
+                <?php  echo $this->formRow($formSales->get('users[userId]')); ?>
                 <span class="col-md-12 control-label">
-                Vat Percentage
+                  Sales Executive
                 </span>
               </div>
             </div>
@@ -176,22 +204,24 @@ $this->headLink()
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                <?php  echo $this->formRow($formSales->get('items')); ?>
+                <?php  echo $this->formRow($formSales->get('paymentTerms[paymentTermId]')); ?>
                 <span class="col-md-12 control-label">
-                Items
+                  Payment Terms
                 </span>
               </div>
             </div>
           </div>
           <!--/span-->
         </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-                  <?php  echo $this->formRow($formSales->get('sales')); ?>
-                  <span class="col-md-12 control-label">
-                  Sales
+
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+                <?php  echo $this->formRow($formSales->get('deliveryDate')); ?>
+                <span class="col-md-12 control-label">
+                  Delivery Date
                 </span>
               </div>
             </div>
@@ -200,9 +230,9 @@ $this->headLink()
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                <?php  echo $this->formRow($formSales->get('vat')); ?>
+                <?php  echo $this->formRow($formSales->get('orderedBy')); ?>
                 <span class="col-md-12 control-label">
-                VAT
+                  Ordered By
                 </span>
               </div>
             </div>
@@ -214,7 +244,217 @@ $this->headLink()
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-                <?php  echo $this->formRow($formSales->get('transactionTypes[transactionTypeId]')); ?>
+                <?php  echo $this->formRow($formSales->get('priceTypes[priceTypeId]')); ?>
+                <span class="col-md-12 control-label">
+                  Price Type
+                </span>
+              </div>
+            </div>
+          </div>
+          <!--/span-->
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+                <?php  echo $this->formRow($formSales->get('percentVat')); ?>
+                <span class="col-md-12 control-label">
+                  VAT Percentage
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <!--/span-->
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <div class="col-md-2 col-lg-2 "></div>
+              <div class="col-md-8 col-xs-12 col-sm-12 col-lg-8 ">
+                <?php echo $this->formRow($formSales->get('notes')); ?>
+                <span class="col-md-12 control-label">
+                  Notes
+                </span>
+              </div>
+              <div class="col-md-2 col-lg-2 "></div>
+            </div>
+          </div>
+        </div>
+       </div>
+
+
+
+<!-- 
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            <hr/>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-left: 0px;">
+              <h4 class="">Ordered Items</h4>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-right: 0px;">
+              <button type="button" data-toggle="modal" href="#itemsModal" class="btn-sm green custom-right">
+                Add New
+                <i class="fa fa-plus"></i>
+              </button>
+            </div>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+ -->
+ 
+         <div class="row">
+          <div class="col-md-2"></div>
+         	 <div class="col-md-8">
+            <hr/>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-left: 0px;">
+              <h4 class="">Ordered Items</h4>
+            </div>
+            </div>
+          </div>
+
+
+
+        <div class="form-group">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-12">
+                <!-- BEGIN SAMPLE TABLE PORTLET-->
+                <div class="portlet-body flip-scroll">
+                  <table class="table table-bordered table-condensed flip-content">
+                    <thead class="flip-content bg-grey">
+                      <tr>
+                        <th width="20%">
+                          Items
+                        </th>
+                        <th>
+                          Quantity
+                        </th>
+                        <th>
+                          Price
+                        </th>
+                        <th>
+                          Discount
+                        </th>
+                        <th>
+                          Freebie
+                        </th>
+                        <th>
+                          Total
+                        </th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <td> </td>
+					<td> </td>
+					<td> </td>
+					<td> </td>
+					<td> </td>
+					<td> </td>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- END SAMPLE TABLE PORTLET-->
+                <hr/>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+                <?php  echo $this->formRow($formSales->get('totalItemsReturn')); ?>
+                <span class="col-md-12 control-label">
+                 Return Items
+                </span>
+              </div>
+            </div>
+          </div>
+          <!--/span-->
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+                <?php  echo $this->formRow($formSales->get('totalItems')); ?>
+                <span class="col-md-12 control-label">
+                  Items
+                </span>
+
+              </div>
+            </div>
+          </div>
+          <!--/span-->
+        </div>
+        <!--/row-->
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+                <?php  echo $this->formRow($formSales->get('totalSalesReturn')); ?>
+                <span class="col-md-12 control-label">
+                  Return Sales
+                </span>
+              </div>
+            </div>
+          </div>
+          <!--/span-->
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+                <?php  echo $this->formRow($formSales->get('totalSales')); ?>
+                <span class="col-md-12 control-label">
+                 Sales
+                </span>
+              </div>
+            </div>
+          </div>
+          <!--/span-->
+        </div>
+        
+         <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+                <?php  echo $this->formRow($formSales->get('totalVatReturn')); ?>
+                <span class="col-md-12 control-label">
+                  Return VAT
+                </span>
+              </div>
+            </div>
+          </div>
+          <!--/span-->
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+                <?php  echo $this->formRow($formSales->get('totalVat')); ?>
+                <span class="col-md-12 control-label">
+                  VAT
+                </span>
+              </div>
+            </div>
+          </div>
+          <!--/span-->
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+           
+              </div>
+            </div>
+          </div>
+          <!--/span-->
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+                <?php  echo $this->formRow($formSales->get('grandTotal')); ?>
                 <span class="col-md-12 control-label">
                   Total
                 </span>
@@ -223,39 +463,179 @@ $this->headLink()
           </div>
           <!--/span-->
         </div>
-          <!-- BEGIN PAGE CONTENT-->
 
-        </div>      <!--/FORM BODY  -->
+        
+        
+        	<div class="row">
+						<div class="col-md-2"></div>
+						<div class="col-md-8" >
+							<hr/>
+							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-left: 0px;">
+								<h4 class="">Documents</h4>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-right: 0px;">
+								<button type="button" data-toggle="modal" href="#documentModal" class="btn-sm green custom-right">Add New
+								<i class="fa fa-plus"></i>
+							</button>
+							</div>
+						</div>
+						<div class="col-md-2"></div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-2"></div>
+						<div class="col-md-8">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="portlet-body flip-scroll">
+										<table id="documentTable" class="table table-bordered table-condensed flip-content">
+											<thead class="flip-content bg-grey">
+											<tr>
+												<th width="20%">Type</th>
+												<th>File</th>
+												<th>Product</th>
+												<th width="10%">Remove</th>
+											</tr>
+											</thead>
+											<tbody>
+											<td> </td>
+											<td> </td>
+											<td> </td>
+											<td> </td>
+											</tbody>
+										</table>
+										</div>
+								</div>
+							</div>
+							<hr/>
+						</div>
+						<div class="col-md-2"></div>
+					</div><!-- /row -->
+			
+					<div class="row">
+						<div class="col-md-2"></div>
+						<div class="col-md-8" >
+							<hr/>
+							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-left: 0px;">
+								<h4 class="">Payment Detail</h4>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-right: 0px;">
+								<button type="button" data-toggle="modal" href="#paymentModal" class="btn-sm green custom-right">Add New
+								<i class="fa fa-plus"></i>
+							</button>
+							</div>
+						</div>
+						<div class="col-md-2"></div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-2"></div>
+						<div class="col-md-8">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="portlet-body flip-scroll">
+										<table id="paymentTable" class="table table-bordered table-condensed flip-content">
+											<thead class="flip-content bg-grey">
+											<tr>
+												<th>Items</th>
+												<th>File</th>
+												<th>Product</th>
+												<th>Date</th>
+												<th>Check No.</th>
+												<th>Check Date</th>
+												<th>Bank</th>
+												<th>Amount</th>
+												<th>Deposit Date</th>
+											</tr>
+											</thead>
+											<tbody>
+											<td> </td>
+											<td> </td>
+											<td> </td>
+											<td> </td>
+											<td> </td>
+											<td> </td>
+											<td> </td>
+											<td> </td>
+											<td> </td>
 
-        <div class="form-actions fluid">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="col-md-offset-3 col-md-9">
-                <button type="button" class="btn green">Save and Send</button>
-                <button type="button" class="btn default">Cancel</button>
+											</tbody>
+										</table>
+										</div>
+								</div>
+							</div>
+							<hr/>
+						</div>
+						<div class="col-md-2"></div>
+					</div><!-- /row -->		
+					
+					
+					
+					
+					
+					
+		<div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+                <?php  echo $this->formRow($formSales->get('orno')); ?>
+                <span class="col-md-12 control-label">
+                  OR Number
+                </span>
               </div>
             </div>
-            <div class="col-md-6">
+          </div>
+          <!--/span-->
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+                <?php  echo $this->formRow($formSales->get('prno')); ?>
+                <span class="col-md-12 control-label">
+                  PR Number
+                </span>
+              </div>
             </div>
           </div>
+          <!--/span-->
         </div>
-      </form><!-- end form -->
-    </div><!-- end portlet body-->
-</div><!-- portlet box grey -->
+        
+        
+        
+      <div class="form-actions fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="col-md-offset-3 col-md-9">
+              <button type="submit" class="btn green">Record Payment</button>
+              <button type="button" class="btn default">Cancel</button>
+            </div>
+          </div>
+          <div class="col-md-6">
+          </div>
+        </div>
+      </div>
+      
+  </form> <!-- end form -->
+  </div><!-- portlet body form-->
+</div> <!-- end form body -->
+ 
+
+<div>
+<?php echo $this->render('sales/items') ?>
+</div>
+<div>
+<?php //echo $this->render('sales/document') ?>
+</div>
 
 
-  <!-- BEGIN PAGE LEVEL PLUGINS -->
-  <!-- END PAGE LEVEL PLUGINS -->
-  <!-- BEGIN PAGE LEVEL SCRIPTS -->
-  <?php
-  $this->inlineScript()
-  ->appendFile($this->basePath('/assets/scripts/payment.js'))
-  ?>
-  <?php $this->inlineScript()->captureStart() ?>
-  jQuery(document).ready(function() {
-
-    $('.tags').tagsInput({
-      width: '100%',
-    });
-  });
-  <?php $this->inlineScript()->captureEnd() ?>
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<?php
+$this->inlineScript()
+->appendFile($this->basePath('/assets/scripts/sales/sales.js'))
+->appendFile($this->basePath('/assets/scripts/document.js'))
+?>
+<?php $this->inlineScript()->captureStart() ?>
+jQuery(document).ready(function() {
+ // Sales.init();
+ // Document.init();
+});
+<?php $this->inlineScript()->captureEnd() ?>
