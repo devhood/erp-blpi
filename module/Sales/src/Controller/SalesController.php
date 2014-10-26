@@ -19,8 +19,9 @@ class SalesController extends BaseController
 		));
 	}
 	
-	
-	public function DeliveryApproveAction()
+
+		
+	public function DeliveryAction()
 	{
 		$formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
 		$formSalesItem = new \Sales\Form\SalesItemForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
@@ -66,7 +67,8 @@ class SalesController extends BaseController
 		));
 	}
 
-    public function ApproveDeliveryAction()
+	
+    public function DeliveryApproveAction()
     {
         $formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
         $formSalesItem = new \Sales\Form\SalesItemForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
@@ -76,7 +78,18 @@ class SalesController extends BaseController
           'formSalesItem' => $formSalesItem
           ));
     }
-
+    
+    public function InvoiceAction()
+    {
+    	$formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+    	$formSalesItem = new \Sales\Form\SalesItemForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+    
+    	return new ViewModel(array(
+    			'formSales' => $formSales,
+    			'formSalesItem' => $formSalesItem
+    	));
+    }
+    
     public function InvoiceApproveAction()
     {
         $formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
