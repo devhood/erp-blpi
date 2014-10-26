@@ -13,56 +13,129 @@ return array(
 	),
 	'router' => array(
 	    'routes' => array(
-	        __NAMESPACE__.'_Sales_Delivery_Approve' => array(
+    		__NAMESPACE__.'_CreditMemo_Approve' => array(
+    				'type' => 'Literal',
+    				'options' => array(
+    						'route'    => '/sales/delivery/approve',
+    						'defaults' => array(
+    								'controller' => __NAMESPACE__ . '\Sales',
+    								'action'     => 'DeliveryApprove',
+    						),
+    				),
+    		),
+	    		
+	        __NAMESPACE__.'_Delivery_Approve' => array(
 	            'type' => 'Literal',
 	            'options' => array(
 	                'route'    => '/sales/delivery/approve',
 	                'defaults' => array(
 	                    'controller' => __NAMESPACE__ . '\Sales',
-	                    'action'     => 'ApproveDelivery',
+	                    'action'     => 'DeliveryApprove',
 	                ),
 	            ),
 	        ),
-	        __NAMESPACE__.'_Sales_Order_Add' => array(
+	    	__NAMESPACE__.'_Delivery_Print' => array(
+	    				'type' => 'Literal',
+	    				'options' => array(
+	    						'route'    => '/sales/delivery/print',
+	    						'defaults' => array(
+	    								'controller' => __NAMESPACE__ . '\Sales',
+	    								'action'     => 'DeliveryPrint',
+	    						),
+	    				),
+	    		),
+	    		
+	    		__NAMESPACE__.'_Delivery_List' => array(
+	    				'type' => 'Literal',
+	    				'options' => array(
+	    						'route'    => '/sales/delivery',
+	    						'defaults' => array(
+	    								'controller' => __NAMESPACE__ . '\Sales',
+	    								'action'     => 'Delivery',
+	    						),
+	    				),
+	    		),
+	    		
+	        __NAMESPACE__.'_Order_Add' => array(
 	            'type' => 'Literal',
 	            'options' => array(
 	                'route'    => '/sales/order/add',
 	                'defaults' => array(
 	                    'controller' => __NAMESPACE__ . '\Sales',
-	                    'action'     => 'orderAdd',
+	                    'action'     => 'OrderAdd',
 	                ),
 	            ),
 	        ),
-	        __NAMESPACE__.'_Sales_Invoice_Approve' => array(
+	    		__NAMESPACE__.'_Order' => array(
+	    				'type' => 'Literal',
+	    				'options' => array(
+	    						'route'    => '/sales/order',
+	    						'defaults' => array(
+	    								'controller' => __NAMESPACE__ . '\Sales',
+	    								'action'     => 'Order',
+	    						),
+	    				),
+	    		),
+	    		
+	        __NAMESPACE__.'_Invoice_Approve' => array(
 	            'type' => 'Literal',
 	            'options' => array(
 	                'route'    => '/sales/invoice/approve',
 	                'defaults' => array(
 	                    'controller' => __NAMESPACE__ . '\Sales',
-	                    'action'     => 'ApproveInvoice',
+	                    'action'     => 'InvoiceApprove',
 	                ),
 	            ),
 	        ),
-	         __NAMESPACE__.'_Sales_Print_Delivery' => array(
-	            'type' => 'Literal',
-	            'options' => array(
-	                'route'    => '/sales/delivery/print',
-	                'defaults' => array(
-	                    'controller' => __NAMESPACE__ . '\Sales',
-	                    'action'     => 'printDelivery',
-	                ),
-	            ),
-	        ),
-	         __NAMESPACE__.'_Sales_Print_Invoice' => array(
+	         
+	         __NAMESPACE__.'_Invoice_Print' => array(
 	            'type' => 'Literal',
 	            'options' => array(
 	                'route'    => '/sales/invoice/print',
 	                'defaults' => array(
 	                    'controller' => __NAMESPACE__ . '\Sales',
-	                    'action'     => 'printInvoice',
+	                    'action'     => 'InvoicePrint ',
 	                ),
 	            ),
 	        ),
+
+	    		__NAMESPACE__.'_Invoice' => array(
+	    				'type' => 'Literal',
+	    				'options' => array(
+	    						'route'    => '/sales/invoice',
+	    						'defaults' => array(
+	    								'controller' => __NAMESPACE__ . '\Sales',
+	    								'action'     => 'Invoice',
+	    						),
+	    				),
+	    		),
+	    		__NAMESPACE__.'_Payment_Record' => array(
+	    				'type' => 'Literal',
+	    				'options' => array(
+	    						'route'    => '/sales/payment/record',
+	    						'defaults' => array(
+	    								'controller' => __NAMESPACE__ . '\Sales',
+	    								'action'     => 'PaymentRecord',
+	    						),
+	    				),
+	    		),
+	    		
+	    		__NAMESPACE__.'_Return_Add' => array(
+	    				'type' => 'Literal',
+	    				'options' => array(
+	    						'route'    => '/sales/return/add',
+	    						'defaults' => array(
+	    								'controller' => __NAMESPACE__ . '\Sales',
+	    								'action'     => 'ReturnAdd',
+	    						),
+	    				),
+	    		),
+	    		
+	
+	    		
+	    		
+	    		
+	    		
 	    ),
 	),
 	'controllers' => array(

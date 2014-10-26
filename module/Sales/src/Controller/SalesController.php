@@ -8,9 +8,90 @@ use Main\Controller\BaseController;
 
 class SalesController extends BaseController
 {
-    public function OrderAddAction()
-    {
+	public function CreditMemoApproveAction()
+	{
+		$formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+		$formSalesItem = new \Sales\Form\SalesItemForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+	
+		return new ViewModel(array(
+				'formSales' => $formSales,
+				'formSalesItem' => $formSalesItem
+		));
+	}
+	
 
+		
+	public function DeliveryAction()
+	{
+		$formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+		$formSalesItem = new \Sales\Form\SalesItemForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+	
+		return new ViewModel(array(
+				'formSales' => $formSales,
+				'formSalesItem' => $formSalesItem
+		));
+	}
+	
+	public function DeliveryPrintAction()
+	{
+		$formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+		$formSalesItem = new \Sales\Form\SalesItemForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+	
+		return new ViewModel(array(
+				'formSales' => $formSales,
+				'formSalesItem' => $formSalesItem
+		));
+	}
+	
+	
+	public function OrderAddAction()
+	{
+	
+		$formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+		$formSalesItem = new \Sales\Form\SalesItemForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+	
+		return new ViewModel(array(
+				'formSales' => $formSales,
+				'formSalesItem' => $formSalesItem
+		));
+	}
+	
+	public function OrderAction()
+	{
+		$formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+		$formSalesItem = new \Sales\Form\SalesItemForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+	
+		return new ViewModel(array(
+				'formSales' => $formSales,
+				'formSalesItem' => $formSalesItem
+		));
+	}
+
+	
+    public function DeliveryApproveAction()
+    {
+        $formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+        $formSalesItem = new \Sales\Form\SalesItemForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+
+        return new ViewModel(array(
+          'formSales' => $formSales,
+          'formSalesItem' => $formSalesItem
+          ));
+    }
+    
+    public function InvoiceAction()
+    {
+    	$formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+    	$formSalesItem = new \Sales\Form\SalesItemForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+    
+    	return new ViewModel(array(
+    			'formSales' => $formSales,
+    			'formSalesItem' => $formSalesItem
+    	));
+    }
+    
+    public function InvoiceApproveAction()
+    {
         $formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
         $formSalesItem = new \Sales\Form\SalesItemForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
 
@@ -20,9 +101,10 @@ class SalesController extends BaseController
           ));
     }
 
-    public function ApproveDeliveryAction()
-    {
 
+
+    public function InvoicePrintAction()
+    {
         $formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
         $formSalesItem = new \Sales\Form\SalesItemForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
 
@@ -31,53 +113,29 @@ class SalesController extends BaseController
           'formSalesItem' => $formSalesItem
           ));
     }
-
-    public function DeliveryPrintAction()
+    
+    public function PaymentRecordAction()
     {
-
-        $formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
-        $formSalesItem = new \Sales\Form\SalesItemForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
-
-        return new ViewModel(array(
-          'formSales' => $formSales,
-          'formSalesItem' => $formSalesItem
-          ));
+    	$formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+    	$formSalesItem = new \Sales\Form\SalesItemForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+    
+    	return new ViewModel(array(
+    			'formSales' => $formSales,
+    			'formSalesItem' => $formSalesItem
+    	));
     }
-
-    public function ApproveInvoiceAction()
+    
+    public function ReturnAddAction()
     {
-
-        $formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
-        $formSalesItem = new \Sales\Form\SalesItemForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
-
-        return new ViewModel(array(
-          'formSales' => $formSales,
-          'formSalesItem' => $formSalesItem
-          ));
+    	$formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+    	$formSalesItem = new \Sales\Form\SalesItemForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+    
+    	return new ViewModel(array(
+    			'formSales' => $formSales,
+    			'formSalesItem' => $formSalesItem
+    	));
     }
-
-     public function printDeliveryAction()
-    {
-
-        $formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
-        $formSalesItem = new \Sales\Form\SalesItemForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
-
-        return new ViewModel(array(
-          'formSales' => $formSales,
-          'formSalesItem' => $formSalesItem
-          ));
-    }
-
-    public function printInvoiceAction()
-    {
-
-        $formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
-        $formSalesItem = new \Sales\Form\SalesItemForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
-
-        return new ViewModel(array(
-          'formSales' => $formSales,
-          'formSalesItem' => $formSalesItem
-          ));
-    }
+    
+    
 
 }
