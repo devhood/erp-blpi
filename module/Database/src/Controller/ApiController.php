@@ -33,7 +33,7 @@ class ApiController extends AbstractRestfulController
 			->from(self::DBNS.$table, 't');
 		
 		$results = $queryBuilder->getQuery()
-			->getResult(\Doctrine\ORM\AbstractQuery::HYDRATE_RECORD);
+			->getResult(\Doctrine\ORM\AbstractQuery::HYDRATE_ARRAY);
 		return new JsonModel($results);
 	}
 	public function addAction()
