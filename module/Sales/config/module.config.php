@@ -55,13 +55,13 @@ return array(
 	                ),
 	            ),
 	        ),
-	    		__NAMESPACE__.'_Order_List' => array(
+	    		__NAMESPACE__.'_Order' => array(
 	    				'type' => 'Literal',
 	    				'options' => array(
 	    						'route'    => '/sales/order',
 	    						'defaults' => array(
 	    								'controller' => __NAMESPACE__ . '\Sales',
-	    								'action'     => 'OrderList',
+	    								'action'     => 'Order',
 	    						),
 	    				),
 	    		),
