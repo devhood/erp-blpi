@@ -8,6 +8,19 @@ use Main\Controller\BaseController;
 
 class SalesController extends BaseController
 {
+	
+	public function OrderListAction()
+	{
+	
+		$formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+		$formSalesItem = new \Sales\Form\SalesItemForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+	
+		return new ViewModel(array(
+				'formSales' => $formSales,
+				'formSalesItem' => $formSalesItem
+		));
+	}
+	
     public function OrderAddAction()
     {
 
@@ -19,6 +32,18 @@ class SalesController extends BaseController
           'formSalesItem' => $formSalesItem
           ));
     }
+    public function OrderAddAction()
+    {
+    
+    	$formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+    	$formSalesItem = new \Sales\Form\SalesItemForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+    
+    	return new ViewModel(array(
+    			'formSales' => $formSales,
+    			'formSalesItem' => $formSalesItem
+    	));
+    }
+    
 
     public function ApproveDeliveryAction()
     {
