@@ -47,8 +47,38 @@ var Bundle = function () {
             submitHandler: function (form) {
                 success.show();
                 error.hide();
+                manageBundles.add();
             }
 			});
+			
+			var bundles = [];
+			var bundlesTable = $('#bundlesTable').dataTable();
+			var manageBundles = {
+				
+				add : function(){
+					bundles.push(1);
+					bundlesTable.fnAddData([
+							$('#productId option:selected').text() ,
+							$("#bundleQuantity").val(), 
+							"<a href='#' class='bundles_delete_row"+bundles.length+"'>Delete</a>"]);
+					
+					$(".bundles_delete_row"+bundles.length).live('click', function (e) {
+						manageBundles.remove($(this));
+					});
+					$('#bundleModal').modal('toggle');
+					
+				},
+			
+				remove : function(elem){
+					if (confirm("Are you sure to delete this row ?") == false) {
+						 return;
+					}
+					var nRow = elem.parents('tr')[0];
+					bundlesTable.fnDeleteRow(nRow);
+				}
+				
+			}
+			
 		}
 	};
 

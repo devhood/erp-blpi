@@ -56,15 +56,17 @@ var Units = function () {
 			var manageUnits = {
 				
 				add : function(){
-					
-					
-					
+
 					if(!uoms[$('#uomId option:selected').val()]){
 						uoms[$('#uomId option:selected').val()] = $("#unitQuantity").val();
 						uomsTable.fnAddData([
 							$('#uomId option:selected').text() ,
 							$("#unitQuantity").val(), 
-							"<a href='#' class='delete_row'>Delete</a>"]);
+							"<a href='#' class='units_delete_row"+uoms.length+"'>Delete</a>"]);
+					
+						$(".units_delete_row"+uoms.length).live('click', function (e) {
+							manageUnits.remove($(this));
+						});
 					}
 					else{
 						alert("Units already added, please remove first");
@@ -89,9 +91,7 @@ var Units = function () {
 				}
 				
 			}
-			$('.delete_row').live('click', function (e) {
-				manageUnits.remove($(this));
-			});
+			
 		}
 	};
 

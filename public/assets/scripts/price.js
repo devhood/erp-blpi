@@ -51,8 +51,39 @@ var Price = function () {
             submitHandler: function (form) {
                 success.show();
                 error.hide();
+                managePrices.add();
             }
 			});
+			
+			var prices = [];
+			var priceTable = $('#priceTable').dataTable();
+			var managePrices = {
+				
+				add : function(){
+					prices.push(1);
+					priceTable.fnAddData([
+							$('#priceTypeId option:selected').text() ,
+							$('#currencyId option:selected').text() ,
+							$("#priceQuantity").val(), 
+							"<a href='#' class='price_delete_row"+prices.length+"'>Delete</a>"]);
+					
+					$(".price_delete_row"+prices.length).live('click', function (e) {
+						managePrices.remove($(this));
+					});
+					$('#priceModal').modal('toggle');
+					
+				},
+			
+				remove : function(elem){
+					if (confirm("Are you sure to delete this row ?") == false) {
+						 return;
+					}
+					var nRow = elem.parents('tr')[0];
+					priceTable.fnDeleteRow(nRow);
+				}
+				
+			}
+			
 		}
 	};
 
