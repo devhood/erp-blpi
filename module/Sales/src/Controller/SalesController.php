@@ -8,7 +8,7 @@ use Main\Controller\BaseController;
 
 class SalesController extends BaseController
 {
-    public function AddOrderAction()
+    public function OrderAddAction()
     {
 
         $formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));

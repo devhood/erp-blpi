@@ -29,7 +29,7 @@ return array(
 	                'route'    => '/sales/order/add',
 	                'defaults' => array(
 	                    'controller' => __NAMESPACE__ . '\Sales',
-	                    'action'     => 'AddOrder',
+	                    'action'     => 'orderAdd',
 	                ),
 	            ),
 	        ),
