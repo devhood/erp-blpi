@@ -38,7 +38,7 @@ $this->headLink()
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-                <?php  echo $this->formRow($form->get('paymentNo')); ?>
+                <?php  echo $this->formRow($formSales->get('paymentNo')); ?>
                 <span class="col-md-12 control-label">
                   Payment Number
                 </span>
@@ -50,7 +50,7 @@ $this->headLink()
             <div class="col-md-6">
               <div class="form-group">
                 <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                  <?php  echo $this->formRow($form->get('proformaInvoiceNo')); ?>
+                  <?php  echo $this->formRow($formSales->get('proformaInvoiceNo')); ?>
                   <span class="col-md-12 control-label">
                     Performa Invoice Number
                   </span>
@@ -64,7 +64,7 @@ $this->headLink()
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-                <?php  echo $this->formRow($form->get('cmNo')); ?>
+                <?php  echo $this->formRow($formSales>get('cmNo')); ?>
                 <span class="col-md-12 control-label">
                   CM Number
                 </span>
@@ -75,7 +75,7 @@ $this->headLink()
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                <?php  echo $this->formRow($form->get('rmrNo')); ?>
+                <?php  echo $this->formRow($formSales->get('rmrNo')); ?>
                 <span class="col-md-12 control-label">
                   RMR Number
                 </span>
@@ -90,7 +90,7 @@ $this->headLink()
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-                <?php  echo $this->formRow($form->get('drNo')); ?>
+                <?php  echo $this->formRow($formSales->get('drNo')); ?>
                 <span class="col-md-12 control-label">
                 DR Number
                 </span>
@@ -101,7 +101,7 @@ $this->headLink()
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                <?php  echo $this->formRow($form->get('siNo')); ?>
+                <?php  echo $this->formRow($formSales->get('siNo')); ?>
                 <span class="col-md-12 control-label">
                 SI Number
                 </span>
@@ -114,7 +114,7 @@ $this->headLink()
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-                <?php  echo $this->formRow($form->get('soNo')); ?>
+                <?php  echo $this->formRow($formSales->get('soNo')); ?>
                 <span class="col-md-12 control-label">
                 SO Number testing
                 </span>
@@ -125,7 +125,7 @@ $this->headLink()
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                <?php  echo $this->formRow($form->get('transactionTypes[transactionTypeId]')); ?>
+                <?php  echo $this->formRow($formSales->get('transactionTypes[transactionTypeId]')); ?>
                 <span class="col-md-12 control-label">
               Transaction Types
                 </span>
@@ -140,7 +140,7 @@ $this->headLink()
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-                <?php  echo $this->formRow($form->get('customers[customerId]')); ?>
+                <?php  echo $this->formRow($formSales->get('customers[customerId]')); ?>
                 <span class="col-md-12 control-label">
                 Customer
                 </span>
@@ -151,7 +151,7 @@ $this->headLink()
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                <?php  echo $this->formRow($form->get('deliveryDates[deliveryDateId]')); ?>
+                <?php  echo $this->formRow($formSales->get('deliveryDates[deliveryDateId]')); ?>
                 <span class="col-md-12 control-label">
               Delivery Date
                 </span>
@@ -165,7 +165,7 @@ $this->headLink()
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-                <?php  echo $this->formRow($form->get('vatPercentage[vatPercentageId]')); ?>
+                <?php  echo $this->formRow($formSales->get('vatPercentage[vatPercentageId]')); ?>
                 <span class="col-md-12 control-label">
                 Vat Percentage
                 </span>
@@ -176,7 +176,7 @@ $this->headLink()
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                <?php  echo $this->formRow($form->get('items')); ?>
+                <?php  echo $this->formRow($formSales->get('items')); ?>
                 <span class="col-md-12 control-label">
                 Items
                 </span>
@@ -189,7 +189,7 @@ $this->headLink()
             <div class="col-md-6">
               <div class="form-group">
                 <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-                  <?php  echo $this->formRow($form->get('sales')); ?>
+                  <?php  echo $this->formRow($formSales->get('sales')); ?>
                   <span class="col-md-12 control-label">
                   Sales
                 </span>
@@ -200,7 +200,7 @@ $this->headLink()
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                <?php  echo $this->formRow($form->get('vat')); ?>
+                <?php  echo $this->formRow($formSales->get('vat')); ?>
                 <span class="col-md-12 control-label">
                 VAT
                 </span>
@@ -214,7 +214,7 @@ $this->headLink()
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-                <?php  echo $this->formRow($form->get('transactionTypes[transactionTypeId]')); ?>
+                <?php  echo $this->formRow($formSales->get('transactionTypes[transactionTypeId]')); ?>
                 <span class="col-md-12 control-label">
                   Total
                 </span>
@@ -253,8 +253,7 @@ $this->headLink()
   ?>
   <?php $this->inlineScript()->captureStart() ?>
   jQuery(document).ready(function() {
-    PaymentRecord.init();
-    ComponentsEditors.init();
+
     $('.tags').tagsInput({
       width: '100%',
     });

@@ -21,26 +21,27 @@ $this->headLink()
       </a>
     </div>
   </div>
+
   <div class="portlet-body form">
     <!-- BEGIN FORM-->
-    <form action="#" class="form-horizontal">
+    <form action="#" class="form-horizontal" id="sales">
       <div class="form-body">
-        <div class="alert alert-danger display-hide">
-          <button class="close" data-close="alert"></button>
-            You have some form errors. Please check below.
-        </div>
-        <div class="alert alert-success display-hide">
-          <button class="close" data-close="alert"></button>
-            Your form validation is successful!
-        </div>
-        <h4 class="form-section">Sales Invoice  </h4>
-        <div class="row">
+          <div class="alert alert-danger display-hide">
+            <button class="close" data-close="alert"></button>
+              You have some form errors. Please check below.
+          </div>
+          <div class="alert alert-success display-hide">
+            <button class="close" data-close="alert"></button>
+              Your form validation is successful!
+          </div>
+          <h4 class="form-section">Invoice</h4>
+          <div class="row">
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-                <?php  echo $this->formRow($formSales->get('drno')); ?>
+                  <?php  echo $this->formRow($formSales->get('sino')); ?>
                 <span class="col-md-12 control-label">
-                  DR Number
+                  SI Number
                 </span>
               </div>
             </div>
@@ -49,15 +50,12 @@ $this->headLink()
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                <?php  echo $this->formRow($formSales->get('sino')); ?>
-                <span class="col-md-12 control-label">
-                  SI Number
-                </span>
+         
               </div>
             </div>
           </div>
         </div>   <!--/row-->
-        <div class="row">
+          <div class="row">
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
@@ -256,10 +254,11 @@ $this->headLink()
             </div>
           </div>
         </div>
+       </div>
 
 
 
-
+<!-- 
         <div class="row">
           <div class="col-md-2"></div>
           <div class="col-md-8">
@@ -276,8 +275,17 @@ $this->headLink()
           </div>
           <div class="col-md-2"></div>
         </div>
+-->
 
-
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            <hr/>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-left: 0px;">
+              <h4 class="">Ordered Items</h4>
+            </div>
+          </div>
+        </div>
 
 
         <div class="form-group">
@@ -317,12 +325,13 @@ $this->headLink()
                   </table>
                 </div>
                 <!-- END SAMPLE TABLE PORTLET-->
+                <hr/>
               </div>
             </div>
-            <hr/>
           </div>
           <div class="col-md-2"></div>
         </div>
+
 
         <div class="row">
           <div class="col-md-6">
@@ -350,6 +359,7 @@ $this->headLink()
           </div>
           <!--/span-->
         </div>
+        <!--/row-->
 
         <div class="row">
           <div class="col-md-6">
@@ -376,17 +386,11 @@ $this->headLink()
           <!--/span-->
         </div>
 
-
-
-        <!-- BEGIN PAGE CONTENT-->
-
-      </div><!--/FORM BODY  -->
-
       <div class="form-actions fluid">
         <div class="row">
           <div class="col-md-6">
             <div class="col-md-offset-3 col-md-9">
-              <button type="button" class="btn green">Save & Send</button>
+              <button type="submit" class="btn green">Save & Send</button>
               <button type="button" class="btn default">Cancel</button>
             </div>
           </div>
@@ -394,9 +398,12 @@ $this->headLink()
           </div>
         </div>
       </div>
-      </form><!-- end form -->
-    </div><!-- end portlet body-->
-</div><!-- portlet box grey -->
+      
+  </form> <!-- end form -->
+  </div><!-- portlet body form-->
+</div> <!-- end form body -->
+ 
+
 
 <?php echo $this->render('sales/items') ?>
 
@@ -406,15 +413,10 @@ $this->headLink()
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <?php
 $this->inlineScript()
-->appendFile($this->basePath('/assets/scripts/product.js'))
+->appendFile($this->basePath('/assets/scripts/sales/sales.js'))
 ?>
 <?php $this->inlineScript()->captureStart() ?>
 jQuery(document).ready(function() {
-  App.init();
-  Invoice.init();
-  ComponentsEditors.init();
-  $('.tags').tagsInput({
-    width: '100%',
-  });
+  Sales.init();
 });
 <?php $this->inlineScript()->captureEnd() ?>

@@ -1,5 +1,5 @@
 
-var Order = function () {
+var Sales = function () {
 
 	return {
 

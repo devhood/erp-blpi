@@ -66,7 +66,18 @@ return array(
 	                ),
 	            ),
 	        ),
-	    		__NAMESPACE__.'_Order' => array(
+	        __NAMESPACE__.'_Order_Approve' => array(
+	    				'type' => 'Literal',
+	    				'options' => array(
+	    						'route'    => '/sales/order/approve',
+	    						'defaults' => array(
+	    								'controller' => __NAMESPACE__ . '\Sales',
+	    								'action'     => 'OrderApprove',
+	    						),
+	    				),
+	    		),
+	    		
+	    	 __NAMESPACE__.'_Order' => array(
 	    				'type' => 'Literal',
 	    				'options' => array(
 	    						'route'    => '/sales/order',
@@ -109,6 +120,17 @@ return array(
 	    						),
 	    				),
 	    		),
+	    		__NAMESPACE__.'_Payment' => array(
+	    				'type' => 'Literal',
+	    				'options' => array(
+	    						'route'    => '/sales/payment',
+	    						'defaults' => array(
+	    								'controller' => __NAMESPACE__ . '\Sales',
+	    								'action'     => 'Payment',
+	    						),
+	    				),
+	    		),
+	    		
 	    		__NAMESPACE__.'_Payment_Record' => array(
 	    				'type' => 'Literal',
 	    				'options' => array(
@@ -127,6 +149,26 @@ return array(
 	    						'defaults' => array(
 	    								'controller' => __NAMESPACE__ . '\Sales',
 	    								'action'     => 'ReturnAdd',
+	    						),
+	    				),
+	    		),
+	    		__NAMESPACE__.'_Return_Approve' => array(
+	    				'type' => 'Literal',
+	    				'options' => array(
+	    						'route'    => '/sales/return/approve',
+	    						'defaults' => array(
+	    								'controller' => __NAMESPACE__ . '\Sales',
+	    								'action'     => 'ReturnApprove',
+	    						),
+	    				),
+	    		),
+	    		__NAMESPACE__.'_Return' => array(
+	    				'type' => 'Literal',
+	    				'options' => array(
+	    						'route'    => '/sales/return',
+	    						'defaults' => array(
+	    								'controller' => __NAMESPACE__ . '\Sales',
+	    								'action'     => 'Return',
 	    						),
 	    				),
 	    		),

@@ -369,6 +369,7 @@ $this->headLink()
           </div>
         </div>
       </div>
+      
   </form> <!-- end form -->
   </div><!-- portlet body form-->
 </div> <!-- end form body -->
@@ -383,15 +384,10 @@ $this->headLink()
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <?php
 $this->inlineScript()
-->appendFile($this->basePath('/assets/scripts/sales/order.js'))
+->appendFile($this->basePath('/assets/scripts/sales/sales.js'))
 ?>
 <?php $this->inlineScript()->captureStart() ?>
 jQuery(document).ready(function() {
-  App.init();
   Sales.init();
-  ComponentsEditors.init();
-  $('.tags').tagsInput({
-    width: '100%',
-  });
 });
 <?php $this->inlineScript()->captureEnd() ?>

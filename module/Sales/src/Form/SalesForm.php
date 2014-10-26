@@ -43,8 +43,9 @@ class SalesForm extends Form
       'name' => 'rmrno',
       'type' => 'Text',
       'attributes' => array(
-        'class' => 'form-control',
-        'id' => 'rmrno',
+       'class' => 'form-control',
+      'id' => 'rmrno',
+      'readonly' => 'readonly'
       )
     ));
     //delivery
@@ -87,7 +88,7 @@ class SalesForm extends Form
         'object_manager'  => $em,
         'target_class'    => 'Database\Entity\TransactionTypes',
         'property'           => 'transactionTypeName',
-        'display_empty_item' => true,
+       // 'display_empty_item' => true,
       ),
       'attributes' => array(
         'class' => 'select2me form-control',
@@ -142,7 +143,7 @@ class SalesForm extends Form
     'options' => array(
     'object_manager'  => $em,
     'target_class'    => 'Database\Entity\Address',
-//  'property'           => 'aaasdddressId',
+  'property'           => 'addressName',
     'display_empty_item' => true,
 
     'label_generator' => function($row) {
@@ -163,12 +164,12 @@ class SalesForm extends Form
 
 
     $this->add(array(
-      'name' => 'billingAddress[addressId]',
-      'type' => 'DoctrineModule\Form\Element\ObjectSelect',
-  'options' => array(
+    'name' => 'billingAddress[addressId]',
+    'type' => 'DoctrineModule\Form\Element\ObjectSelect',
+ 	'options' => array(
     'object_manager'  => $em,
     'target_class'    => 'Database\Entity\Address',
-    'property'           => 'AddressId',
+    'property'           => 'addressName',
     'display_empty_item' => true,
 
     'label_generator' => function($row) {
