@@ -30,7 +30,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-								<?php  echo $this->formRow($form->get('categories[categoryId]')); ?>
+								<?php  echo $this->formRow($customerForm->get('categories[categoryId]')); ?>
 								<span class="col-md-12 control-label">
 									Category
 								</span>
@@ -41,7 +41,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-								<?php  echo $this->formRow($form->get('customerTypes[customerTypeId]')); ?>
+								<?php  echo $this->formRow($customerForm->get('customerTypes[customerTypeId]')); ?>
 								<span class="col-md-12 control-label">
 									Type
 								</span>
@@ -55,7 +55,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-								<?php  echo $this->formRow($form->get('companyName')); ?>
+								<?php  echo $this->formRow($customerForm->get('companyName')); ?>
 								<span class="col-md-12 control-label">
 									Company Name
 								</span>
@@ -66,7 +66,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-								<?php  echo $this->formRow($form->get('branch')); ?>
+								<?php  echo $this->formRow($customerForm->get('branch')); ?>
 								<span class="col-md-12 control-label">
 									Branch
 								</span>
@@ -80,7 +80,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-								<?php  echo $this->formRow($form->get('tradeName')); ?>
+								<?php  echo $this->formRow($customerForm->get('tradeName')); ?>
 								<span class="col-md-12 control-label">
 									Trade Name
 								</span>
@@ -91,7 +91,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-								<?php  echo $this->formRow($form->get('tinNumber')); ?>
+								<?php  echo $this->formRow($customerForm->get('tinNumber')); ?>
 								<span class="col-md-12 control-label">
 									TIN
 								</span>
@@ -105,7 +105,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-								<?php  echo $this->formRow($form->get('phone')); ?>
+								<?php  echo $this->formRow($customerForm->get('phone')); ?>
 								<span class="col-md-12 control-label">
 									Phone
 								</span>
@@ -116,7 +116,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-								<?php  echo $this->formRow($form->get('email')); ?>
+								<?php  echo $this->formRow($customerForm->get('email')); ?>
 								<span class="col-md-12 control-label">
 									Email
 								</span>
@@ -130,7 +130,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-								<?php  echo $this->formRow($form->get('website')); ?>
+								<?php  echo $this->formRow($customerForm->get('website')); ?>
 								<span class="col-md-12 control-label">
 									Website
 								</span>
@@ -141,7 +141,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-								<?php  echo $this->formRow($form->get('secNumber')); ?>
+								<?php  echo $this->formRow($customerForm->get('secNumber')); ?>
 								<span class="col-md-12 control-label">
 									Sec. Number
 								</span>
@@ -151,8 +151,6 @@ $this->headLink()
 					<!--/span-->
 				</div>
 
-<div class="row">
-
 
 <div class="row">
 	<div class="col-md-6">
@@ -160,7 +158,7 @@ $this->headLink()
 			<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
 				<label class="checkbox">
 				<!-- <input type="checkbox" name="consignee" value=""> -->
-				<?php  echo $this->formRow($form->get('consignee')); ?>
+				<?php  echo $this->formRow($customerForm->get('consignee')); ?>
 				Consignee</label>
 			</div>
 </div>
@@ -172,7 +170,7 @@ $this->headLink()
 			<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
 				<label class="checkbox">
 				<!-- <input type="checkbox" name="consignee" value=""> -->
-				<?php  echo $this->formRow($form->get('franchise')); ?>
+				<?php  echo $this->formRow($customerForm->get('franchise')); ?>
 				Franchise</label>
 			</div>
 		</div>
@@ -186,7 +184,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-								<?php  echo $this->formRow($form->get('creditLimit')); ?>
+								<?php  echo $this->formRow($customerForm->get('creditLimit')); ?>
 								<span class="col-md-12 control-label">
 									Credit Limit
 								</span>
@@ -197,7 +195,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left select">
-								<?php  echo $this->formRow($form->get('unpaidTransactionLimit')); ?>
+								<?php  echo $this->formRow($customerForm->get('unpaidTransactionLimit')); ?>
 								<span class="col-md-12 control-label">
 									Unpaid Transaction Limit
 								</span>
@@ -212,7 +210,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-								<?php  echo $this->formRow($form->get('paymentTerms[paymentTermId]')); ?>
+								<?php  echo $this->formRow($customerForm->get('paymentTerms[paymentTermId]')); ?>
 								<span class="col-md-12 control-label">
 									Payment Terms
 								</span>
@@ -223,7 +221,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left select">
-								<?php  echo $this->formRow($form->get('percentCommission')); ?>
+								<?php  echo $this->formRow($customerForm->get('percentCommission')); ?>
 								<span class="col-md-12 control-label">
 									%Commission
 								</span>
@@ -238,7 +236,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-								<?php  echo $this->formRow($form->get('shippingModes[shippingModeId]')); ?>
+								<?php  echo $this->formRow($customerForm->get('shippingModes[shippingModeId]')); ?>
 								<span class="col-md-12 control-label">
 									Shipping Mode
 								</span>
@@ -249,7 +247,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left select">
-								<?php  echo $this->formRow($form->get('users')); ?>
+								<?php  echo $this->formRow($customerForm->get('users[userId]')); ?>
 								<span class="col-md-12 control-label">
 									Sales Executive
 								</span>
@@ -263,7 +261,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-								<?php  echo $this->formRow($form->get('priceTypes[priceTypeId]')); ?>
+								<?php  echo $this->formRow($customerForm->get('priceTypes[priceTypeId]')); ?>
 								<span class="col-md-12 control-label">
 									Price Type
 								</span>
@@ -274,7 +272,7 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left select">
-								<?php  echo $this->formRow($form->get('customerStatus')); ?>
+								<?php  echo $this->formRow($customerForm->get('customerStatus')); ?>
 								<span class="col-md-12 control-label">
 									Customer Status
 								</span>
@@ -287,115 +285,97 @@ $this->headLink()
 
 
 
-				<div class="row form-section">
-					<div class="col-md-12">
-						<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
-							<h4 class="">Address</h4>
-						</div>
-						<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
-							<button id="" type="button"  data-toggle="modal" href="#addressModal" class="btn-sm green custom-right">
-								Add New
+					<div class="row">
+						<div class="col-md-2"></div>
+						<div class="col-md-8">
+							<hr/>
+							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-left: 0px;">
+								<h4 class="">Address</h4>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-right: 0px;">
+								<button type="button" data-toggle="modal" href="#addressModal" class="btn-sm green custom-right">
+							Add New
 								<i class="fa fa-plus"></i>
 							</button>
+							</div>
 						</div>
+						<div class="col-md-2"></div>
 					</div>
-				</div>
 
 				<div class="form-group">
-					<div class="col-md-2"></div>
-					<div class="col-md-8">
-						<div class="row">
-							<div class="col-md-12">
-								<!-- BEGIN SAMPLE TABLE PORTLET-->
-								<div class="portlet-body flip-scroll">
-									<table class="table table-bordered table-condensed flip-content">
-										<thead class="flip-content bg-grey">
+						<div class="col-md-2"></div>
+						<div class="col-md-8">
+							<div class="row">
+								<div class="col-md-12">
+										<div class="portlet-body flip-scroll">
+											<table class="table table-bordered table-condensed flip-content">
+											<thead class="flip-content bg-grey">
 											<tr>
-												<th width="20%">
-												Address Type
-												</th>
-												<th>
-												Street/Landmark
-												</th>
-												<th>
-												City
-												</th>
-												<th>
-												Province
-												</th>
-												<th>
-												Country
-												</th>
-												<th>
-												Zipcode
-												</th>
+												<th width="20%">Address Type</th>
+												<th>Stree/Landmark</th>
+												<th>City</th>
+												<th>Province</th>
+												<th>Country</th>
+												<th>Zipcode</th>
+												<th width="12%">Delete</th>
 											</tr>
-										</thead>
-										<tbody>
-
-										<tbody>
-									</table>
+											</thead>
+											<tbody>
+											</tbody>
+											</table>
+										</div>
 								</div>
-								<!-- END SAMPLE TABLE PORTLET-->
 							</div>
 						</div>
+						<div class="col-md-2"></div>
 					</div>
-					<div class="col-md-2"></div>
-				</div>
 
 
 
-				<div class="row form-section">
-					<div class="col-md-12">
-						<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
-							<h4 class="">Contact</h4>
-						</div>
-						<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
-							<button href="#contactModal" type="button"  data-toggle="modal" class="btn-sm green custom-right">
-								Add New
+				<div class="row">
+						<div class="col-md-2"></div>
+						<div class="col-md-8">
+							<hr/>
+							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-left: 0px;">
+								<h4 class="">Contact</h4>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-right: 0px;">
+								<button type="button" data-toggle="modal" href="#contactModal" class="btn-sm green custom-right">
+							Add New
 								<i class="fa fa-plus"></i>
 							</button>
-						</div>
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-md-2"></div>
-					<div class="col-md-8">
-						<div class="row">
-							<div class="col-md-12">
-								<!-- BEGIN SAMPLE TABLE PORTLET-->
-								<div class="portlet-body flip-scroll">
-									<table class="table table-bordered table-condensed flip-content">
-										<thead class="flip-content bg-grey">
-											<tr>
-												<th width="20%">
-												Position
-												</th>
-												<th>
-												Primary
-												</th>
-												<th>
-												Full Name
-												</th>
-												<th>
-												Email
-												</th>
-												<th>
-												Phone
-												</th>
-											<tr>
-										</thead>
-										<tbody>
-										</tbody>
-									</table>
-
-								</div>
-								<!-- END SAMPLE TABLE PORTLET-->
 							</div>
 						</div>
+						<div class="col-md-2"></div>
 					</div>
-					<div class="col-md-2"></div>
-				</div>
+
+				<div class="form-group">
+						<div class="col-md-2"></div>
+						<div class="col-md-8">
+							<div class="row">
+								<div class="col-md-12">
+										<div class="portlet-body flip-scroll">
+											<table class="table table-bordered table-condensed flip-content">
+											<thead class="flip-content bg-grey">
+											<tr>
+												<th width="20%">Position</th>
+												<th>Primary</th>
+												<th>Full Name</th>
+												<th>Email</th>
+												<th>Phone</th>
+												<th width="12%">Delete</th>
+											</tr>
+											</thead>
+											<tbody>
+											</tbody>
+											</table>
+										</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-2"></div>
+					</div>
+					
 
 
 
@@ -418,6 +398,7 @@ $this->headLink()
 		<!-- END FORM-->
 	</div>
 </div>
+
 <div>
 <?php echo $this->render('customer/address') ?>
 </div>

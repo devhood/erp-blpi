@@ -11,7 +11,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-										<?php  echo $this->formRow($form->get('addressType[addressTypeId]')); ?>
+										<?php  echo $this->formRow($addressForm->get('addressType')); ?>
 										<span class="help-block">
 											Address Type
 										</span>
@@ -22,7 +22,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
-										<?php  echo $this->formRow($form->get('streetLandmark')); ?>
+										<?php  echo $this->formRow($addressForm->get('streetLandmark')); ?>
 										<span class="help-block">
 											Street/Landmark
 										</span>
@@ -35,7 +35,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-										<?php  echo $this->formRow($form->get('city[cityId]')); ?>
+										<?php  echo $this->formRow($addressForm->get('cities[cityId]')); ?>
 										<span class="help-block">
 											City
 										</span>
@@ -46,7 +46,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
-										<?php  echo $this->formRow($form->get('province[provinceId]')); ?>
+										<?php  echo $this->formRow($addressForm->get('provinces[provinceId]')); ?>
 										<span class="help-block">
 											Province
 										</span>
@@ -59,7 +59,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-										<?php  echo $this->formRow($form->get('country[countryId]')); ?>
+										<?php  echo $this->formRow($addressForm->get('countries[countryId]')); ?>
 										<span class="help-block">
 											Country
 										</span>
@@ -70,7 +70,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
-										<?php  echo $this->formRow($form->get('zipcode')); ?>
+										<?php  echo $this->formRow($addressForm->get('zipcode')); ?>
 										<span class="help-block">
 											Zipcode
 										</span>

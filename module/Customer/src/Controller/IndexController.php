@@ -41,34 +41,16 @@ class IndexController extends BaseController
 		//calling customer/add page
     public function addAction()
     {
-    	$form = new \Customer\Form\CustomerForm();
+    	$em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+    	$customerForm = new \Customer\Form\CustomerForm($em);
+    	$contactForm = new \Customer\Form\ContactForm($em);
+    	$addressForm = new \Customer\Form\AddressForm($em);
 
-    		$type = $this->_getOptions("CustomerTypes","customerTypeId","customerTypeName");
-        $form->get("customerTypes[customerTypeId]")->setOptions(array('value_options' => $type));
-
-        $category = $this->_getOptions("Categories","categoryId","categoryName","categoryType","customer");
-        $form->get("categories[categoryId]")->setOptions(array('value_options' => $category));
-
-        $payment = $this->_getOptions("PaymentTerms","paymentTermId","paymentTermName");
-        $form->get("paymentTerms[paymentTermId]")->setOptions(array('value_options' => $payment));
-
-        $price = $this->_getOptions("priceTypes","priceTypeId","priceTypeName");
-        $form->get("priceTypes[priceTypeId]")->setOptions(array('value_options' => $price));
-
-        $shipping = $this->_getOptions("shippingModes","shippingModeId","shippingModeName");
-        $form->get("shippingModes[shippingModeId]")->setOptions(array('value_options' => $shipping));
-
-       	$users = $this->_getOptions("users","userId","fullName","designation","2");
-        $form->get("users")->setOptions(array('value_options' => $users));
-
-        $form->get("customerStatus")->setOptions(array('value_options' => array(
-            '0'=>'Active',
-            '1'=>'Inactive',
-            '2'=>'Suspended',
-            '3'=>'Block',)));
 
     	return new ViewModel(array(
-				'form' => $form,
+				'customerForm' => $customerForm,
+    			'contactForm' => $contactForm,
+    			'addressForm' => $addressForm,
 			));
     }
 
@@ -76,30 +58,6 @@ class IndexController extends BaseController
 public function editAction()
     {
     	$form = new \Customer\Form\CustomerForm();
-
-    	$type = $this->_getOptions("CustomerTypes","customerTypeId","customerTypeName");
-        $form->get("customerTypes[customerTypeId]")->setOptions(array('value_options' => $type));
-
-        $category = $this->_getOptions("Categories","categoryId","categoryName","categoryType","customer");
-        $form->get("categories[categoryId]")->setOptions(array('value_options' => $category));
-
-        $payment = $this->_getOptions("PaymentTerms","paymentTermId","paymentTermName");
-        $form->get("paymentTerms[paymentTermId]")->setOptions(array('value_options' => $payment));
-
-        $price = $this->_getOptions("priceTypes","priceTypeId","priceTypeName");
-        $form->get("priceTypes[priceTypeId]")->setOptions(array('value_options' => $price));
-
-        $shipping = $this->_getOptions("shippingModes","shippingModeId","shippingModeName");
-        $form->get("shippingModes[shippingModeId]")->setOptions(array('value_options' => $shipping));
-
-       	$users = $this->_getOptions("users","userId","fullName","designation","2");
-        $form->get("users")->setOptions(array('value_options' => $users));
-
-        $form->get("customerStatus")->setOptions(array('value_options' => array(
-            '0'=>'Active',
-            '1'=>'Inactive',
-            '2'=>'Suspended',
-            '3'=>'Block',)));
 
  		$addresses = $this->_getContents("Address");
        	$contacts = $this->_getContents("Contacts");

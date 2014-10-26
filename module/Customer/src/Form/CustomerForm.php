@@ -5,41 +5,40 @@ use Zend\Form\Form;
 
 class CustomerForm extends Form
 {
-	public function __construct($name = null)
+	public function __construct($om)
 	{
 		parent::__construct('customer');
 
 
-		$this->add(array(
+		$this->add(
+		array(
 			'name' => 'categories[categoryId]',
-			'type' => 'Select',
+			'type' => 'DoctrineModule\Form\Element\ObjectSelect',
+			'options' => array(
+				'object_manager' => $om,
+				'target_class'   => 'Database\Entity\Categories',
+				'property'       => 'categoryName',
+			),
 			'attributes' => array(
 				'class' => 'select2me form-control',
-				'data-placeholder' => 'Choose Category',
 				'tabindex' => '1',
 				'id' => 'categoryId',
 			),
-			'options' => array(
-				// 						'value_options' => array(
-				// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-				// 						),
-			)
 		));
 
 		$this->add(array(
 			'name' => 'customerTypes[customerTypeId]',
-			'type' => 'Select',
+			'type' => 'DoctrineModule\Form\Element\ObjectSelect',
+			'options' => array(
+				'object_manager' => $om,
+				'target_class'   => 'Database\Entity\CustomerTypes',
+				'property'       => 'customerTypeName',
+			),
 			'attributes' => array(
 				'class' => 'select2me form-control',
-				'data-placeholder' => 'Choose a Type',
 				'tabindex' => '1',
 				'id' => 'customerTypeId',
 			),
-			'options' => array(
-				// 						'value_options' => array(
-				// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-				// 						),
-			)
 		));
 
 
@@ -152,15 +151,15 @@ class CustomerForm extends Form
 		));
 
 
-$this->add( array(
-	'name' => 'creditLimit',
-	'type' => 'Text',
-	'attributes' => array(
-		'class' => 'form-control',
-		'placeholder' => 'Enter Credit Limit',
-		'id' => 'unpaidTransactionLimit',
-	)
-));
+		$this->add( array(
+			'name' => 'creditLimit',
+			'type' => 'Text',
+			'attributes' => array(
+				'class' => 'form-control',
+				'placeholder' => 'Enter Credit Limit',
+				'id' => 'unpaidTransactionLimit',
+			)
+		));
 
 		$this->add( array(
 			'name' => 'unpaidTransactionLimit',
@@ -173,21 +172,20 @@ $this->add( array(
 		));
 
 
-$this->add(array(
-	'name' => 'paymentTerms[paymentTermId]',
-	'type' => 'Select',
-	'attributes' => array(
-		'class' => 'select2me form-control',
-		'data-placeholder' => 'Choose Payment Terms',
-		'tabindex' => '1',
-		'id' => 'paymentTermId',
-	),
-	'options' => array(
-		// 						'value_options' => array(
-		// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-		// 						),
-	)
-));
+		$this->add(array(
+			'name' => 'paymentTerms[paymentTermId]',
+					'type' => 'DoctrineModule\Form\Element\ObjectSelect',
+					'options' => array(
+						'object_manager' => $om,
+						'target_class'   => 'Database\Entity\PaymentTerms',
+						'property'       => 'paymentTermName',
+					),
+					'attributes' => array(
+						'class' => 'select2me form-control',
+						'tabindex' => '1',
+						'id' => 'paymentTermId',
+					),
+		));
 
 		$this->add( array(
 			'name' => 'percentCommission',
@@ -201,51 +199,59 @@ $this->add(array(
 
 		$this->add(array(
 			'name' => 'shippingModes[shippingModeId]',
-			'type' => 'Select',
-			'attributes' => array(
-				'class' => 'select2me form-control',
-				'data-placeholder' => 'Choose Shipping Mode',
-				'tabindex' => '1',
-				'id' => 'shippingModeId',
-			),
-			'options' => array(
-				// 						'value_options' => array(
-				// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-				// 						),
-			)
+			'type' => 'DoctrineModule\Form\Element\ObjectSelect',
+					'options' => array(
+						'object_manager' => $om,
+						'target_class'   => 'Database\Entity\ShippingModes',
+						'property'       => 'shippingModeName',
+					),
+					'attributes' => array(
+						'class' => 'select2me form-control',
+						'tabindex' => '1',
+						'id' => 'shippingModeId',
+					),
 		));
 
 		$this->add(array(
-			'name' => 'users',
-			'type' => 'Select',
-			'attributes' => array(
-				'class' => 'select2me form-control',
-				'data-placeholder' => 'Choose Sales Executive',
-				'tabindex' => '1',
-				'id' => 'users',
-			),
-			'options' => array(
-				// 						'value_options' => array(
-				// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-				// 						),
-			)
+			'name' => 'users[userId]',
+			'type' => 'DoctrineModule\Form\Element\ObjectSelect',
+					'options' => array(
+						'object_manager' => $om,
+						'target_class'   => 'Database\Entity\Users',
+							'label_generator' => function($row) {
+								return $row->getFullName();	
+							},
+							'is_method'      => true,
+							'find_method'    => array(
+									'name'   => 'findBy',
+									'params' => array(
+											'criteria' => array('designation' => 2),
+
+									),
+							),
+	
+					),
+					'attributes' => array(
+						'class' => 'select2me form-control',
+						'tabindex' => '1',
+						'id' => 'userId',
+					),
 		));
 
-$this->add(array(
-	'name' => 'priceTypes[priceTypeId]',
-	'type' => 'Select',
-	'attributes' => array(
-		'class' => 'select2me form-control',
-		'data-placeholder' => 'Choose Price Type',
-		'tabindex' => '1',
-		'id' => 'priceTypeId',
-	),
-	'options' => array(
-		// 						'value_options' => array(
-		// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-		// 						),
-	)
-));
+		$this->add(array(
+			'name' => 'priceTypes[priceTypeId]',
+			'type' => 'DoctrineModule\Form\Element\ObjectSelect',
+					'options' => array(
+						'object_manager' => $om,
+						'target_class'   => 'Database\Entity\PriceTypes',
+						'property'       => 'priceTypeName',
+					),
+					'attributes' => array(
+						'class' => 'select2me form-control',
+						'tabindex' => '1',
+						'id' => 'priceTypeId',
+					),
+		));
 
 
 		$this->add(array(
@@ -253,153 +259,28 @@ $this->add(array(
 			'type' => 'Select',
 			'attributes' => array(
 				'class' => 'select2me form-control',
-				'data-placeholder' => 'Choose Customer Status',
 				'tabindex' => '1',
 				'id' => 'customerStatus',
 			),
 			'options' => array(
-				// 						'value_options' => array(
-				// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-				// 						),
+				'value_options' => array(
+					'0'=>'Active',
+					'1'=>'Inactive',
+					'2'=>'Suspended',
+					'3'=>'Block'
+				),
 			)
 		));
 
 
-		$this->add(array(
-			'name' => 'addressType[addressTypeId]',
-			'type' => 'Select',
-			'attributes' => array(
-				'class' => 'select2me form-control',
-				'data-placeholder' => 'Choose Address Type',
-				'tabindex' => '1',
-				'id' => 'addressTypeId',
-			),
-			'options' => array(
-				// 						'value_options' => array(
-				// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-				// 						),
-			)
-		));
+		
 
 
 		//Modal Properties (ADDRESS)
-		$this->add(array(
-			'name' => 'streetLandmark',
-			'type' => 'Text',
-			'attributes' => array(
-		'class' => 'form-control',
-		'placeholder' => 'Enter Street Landmark',
-		'id' => 'streetLandmark',
-	)
-));
+		
 
-$this->add(array(
-	'name' => 'city[cityId]',
-	'type' => 'Select',
-	'attributes' => array(
-		'class' => 'select2me form-control',
-		'data-placeholder' => 'Choose City',
-		'tabindex' => '1',
-		'id' => 'cityId',
-	),
-	'options' => array(
-		// 						'value_options' => array(
-		// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-		// 						),
-	)
-));
-
-$this->add(array(
-	'name' => 'province[provinceId]',
-	'type' => 'Select',
-	'attributes' => array(
-		'class' => 'select2me form-control',
-		'data-placeholder' => 'Choose Province',
-		'tabindex' => '1',
-		'id' => 'provinceId',
-	),
-	'options' => array(
-		// 						'value_options' => array(
-		// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-		// 						),
-	)
-));
-
-$this->add(array(
-	'name' => 'country[countryId]',
-	'type' => 'Select',
-	'attributes' => array(
-		'class' => 'select2me form-control',
-		'data-placeholder' => 'Choose Country',
-		'tabindex' => '1',
-		'id' => 'countryId',
-	),
-	'options' => array(
-		// 						'value_options' => array(
-		// 								'value_options' => $this->getGatewayTable()['brandTable']->fetchSelectOption(),
-		// 						),
-	)
-));
-
-$this->add( array(
-	'name' => 'zipcode',
-	'type' => 'Text',
-	'attributes' => array(
-		'class' => 'form-control',
-		'placeholder' => 'Enter Zipcode',
-		'id' => 'zipcode',
-	)
-));
-
-
-//Modal Properties (CONTACT)
-$this->add( array(
-	'name' => 'position',
-	'type' => 'Text',
-	'attributes' => array(
-		'class' => 'form-control',
-		'placeholder' => 'Enter Position',
-		'id' => 'position',
-	)
-));
-$this->add( array(
-	'name' => 'primary',
-	'type' => 'Text',
-	'attributes' => array(
-		'class' => 'form-control',
-		'placeholder' => 'Enter Primary',
-		'id' => 'primary',
-	)
-));
-
-$this->add( array(
-	'name' => 'fullname',
-	'type' => 'Text',
-	'attributes' => array(
-		'class' => 'form-control',
-		'placeholder' => 'Enter Fullname',
-		'id' => 'fullname',
-	)
-));
-
-$this->add( array(
-	'name' => 'email',
-	'type' => 'email',
-	'attributes' => array(
-		'class' => 'form-control',
-		'placeholder' => 'Enter Email',
-		'id' => 'email',
-	)
-));
-$this->add( array(
-	'name' => 'phone',
-	'type' => 'Text',
-	'attributes' => array(
-		'class' => 'form-control',
-		'placeholder' => 'Enter Phone Number',
-		'id' => 'phone',
-	)
-));
+		//Modal Properties (CONTACT)
+		
 
 	}
 }
