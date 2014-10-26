@@ -5,7 +5,7 @@ var Customer = function () {
 
 		init: function () {
 			
-			var form = $('#product_add');
+			var form = $('#customer_add');
             var error = $('.alert-danger', form);
             var success = $('.alert-success', form);
 			form.validate({
@@ -14,77 +14,98 @@ var Customer = function () {
                 focusInvalid: false, 
                 ignore: "",
                 rules: {
+                	categoryId : {
+                        required: true
+                    },
+                    
+                    customerTypeId : {
+                        required: true
+                    },
+                    
                 	companyName : {
                         minlength: 2,
                         required: true
                     },
+                    
                     branch : {
                         minlength: 2,
                         required: true
                     },
-                    productCode : {
-                        minlength: 2,
-                        required: true
-                    },
-                    categoryId : {
-                        required: true
-                    },
-                    customerTypeId : {
-                        required: true
-                    },
+                    
                     tradeName : {
                         minlength: 2,
                         required: true
                     },
+                    
                     tinNumber : {
                         minlength: 2,
                         required: true
                     },
+                    
                     phone : {
                         minlength: 2,
                         required: true
                     },
+                    
                     email : {
                         minlength: 2,
                         required: true,
                         email: true
                     },
+                    
                     website : {
                         minlength: 2,
                         required: true
                     },
+                    
                     secNumber : {
                         minlength: 2,
                         required: true
                     },
+                    
                     consignee: {
                         required: true
                     },
+                    
                     franchise: {
                         required: true
                     },
+                    
                     creditLimit: {
-                        minlength: 2,
+                        minlength: 1,
                         required: true
                     }, 
+                    
                     unpaidTransactionLimit: {
-                        minlength: 2,
+                        minlength: 1,
                         required: true
                     },
+                    
                     paymentTermId: {
                        required: true
                     },
-                    percentCommission: {
-                        minlength: 2,
-                       required: true
-                    },
-                    shippingModeId: {
-                        minlength: 2,
-                       required: true
-                    },
-
-
                     
+                    percentCommission: {
+                        minlength: 1,
+                       required: true
+                    },
+                    
+                    shippingModeId: {
+                       required: true
+                    },
+                    
+                    userId: {
+                        required: true
+                    },
+                     
+                    priceTypeId: {
+                         required: true
+                    },
+                      
+                    customerStatus: {
+                        required: true
+                     },
+  
                 },
                 invalidHandler: function (event, validator) { //display error alert on form submit              
                 success.hide();

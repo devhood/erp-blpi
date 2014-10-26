@@ -5,14 +5,24 @@
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
 				<h4 class="modal-title">Contact</h4>
 			</div>
+			<form action="#" class="form-horizontal" id="customer_contact">
+			<div class="alert alert-danger display-hide">
+						<button class="close" data-close="alert"></button>
+							You have some form errors. Please check below.
+					</div>
+					<div class="alert alert-success display-hide">
+						<button class="close" data-close="alert"></button>
+							Your form validation is successful!
+					</div>
 			<div class="modal-body">
-				<div class="scroller" style="height:250px;" data-always-visible="1" data-rail-visible1="1">
+				
+				<div class="scroller" style="height:310px;" data-always-visible="1" data-rail-visible1="1">
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
 									<?php  echo $this->formRow($contactForm->get('position')); ?>
-									<span class="help-block">
+									<span class="col-md-12 control-label">
 										Position
 									</span>
 								</div>
@@ -23,7 +33,7 @@
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
 									<?php  echo $this->formRow($contactForm->get('primary')); ?>
-									<span class="help-block">
+									<span class="col-md-12 control-label">
 										Primary
 									</span>
 								</div>
@@ -39,7 +49,7 @@
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
 									<?php  echo $this->formRow($contactForm->get('fullname')); ?>
-									<span class="help-block">
+									<span class="col-md-12 control-label">
 										Full Name
 									</span>
 								</div>
@@ -50,7 +60,7 @@
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
 									<?php  echo $this->formRow($contactForm->get('email')); ?>
-									<span class="help-block">
+									<span class="col-md-12 control-label">
 										Email Address
 									</span>
 								</div>
@@ -66,7 +76,7 @@
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
 									<?php  echo $this->formRow($contactForm->get('phone')); ?>
-									<span class="help-block">
+									<span class="col-md-12 control-label">
 										Phone
 									</span>
 								</div>
@@ -80,8 +90,9 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" data-dismiss="modal" class="btn default">Close</button>
-				<button type="button" class="btn green">Save changes</button>
+				<button type="submit" class="btn green">Save changes</button>
 			</div>
+			</form>
 		</div>
 	</div>
 </div>
