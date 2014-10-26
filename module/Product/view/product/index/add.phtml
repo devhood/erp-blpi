@@ -234,7 +234,7 @@ $this->headLink()
 							<div class="row">
 								<div class="col-md-12">
 										<div class="portlet-body flip-scroll">
-											<table class="table table-bordered table-condensed flip-content">
+											<table id="bundlesTable" class="table table-bordered table-condensed flip-content">
 											<thead class="flip-content bg-grey">
 											<tr>
 												<th width="20%">Items Included</th>
@@ -274,7 +274,7 @@ $this->headLink()
 							<div class="row">
 								<div class="col-md-12">
 									<div class="portlet-body flip-scroll">
-										<table class="table table-bordered table-condensed flip-content">
+										<table id="uomsTable" class="table table-bordered table-condensed flip-content">
 											<thead class="flip-content bg-grey">
 												<tr>
 													<th width="20%">Unit of Measurement</th>
@@ -312,7 +312,7 @@ $this->headLink()
 							<div class="row">
 								<div class="col-md-12">
 									<div class="portlet-body flip-scroll">
-										<table class="table table-bordered table-condensed flip-content">
+										<table id="priceTable" class="table table-bordered table-condensed flip-content">
 											<thead class="flip-content bg-grey">
 											<tr>
 												<th width="20%">Price Type</th>
@@ -354,7 +354,7 @@ $this->headLink()
 							<div class="row">
 								<div class="col-md-12">
 									<div class="portlet-body flip-scroll">
-										<table class="table table-bordered table-condensed flip-content">
+										<table id="documentTable" class="table table-bordered table-condensed flip-content">
 											<thead class="flip-content bg-grey">
 											<tr>
 												<th width="20%">Type</th>
@@ -420,6 +420,8 @@ $this->headLink()
 		->appendFile($this->basePath('/assets/scripts/bundle.js'))
 		->appendFile($this->basePath('/assets/scripts/price.js'))
 		->appendFile($this->basePath('/assets/scripts/units.js'))
+		->appendFile($this->basePath('/assets/scripts/document.js'))
+		
 ?>
 <?php $this->inlineScript()->captureStart() ?>
 	jQuery(document).ready(function() {
@@ -427,5 +429,6 @@ $this->headLink()
 		Bundle.init();
 		Price.init();
 		Units.init();
+		Document.init();
 	});
 <?php $this->inlineScript()->captureEnd() ?>

@@ -116,8 +116,6 @@ var Product = function () {
 						required: "Product Description is required"
 					},
 
-
-
 				},
 				invalidHandler: function (event, validator) { //display error alert on form submit
 					success.hide();
@@ -149,6 +147,7 @@ var Product = function () {
 			$('.select2me', form).change(function () {
 					form.validate().element($(this)); //revalidate the chosen dropdown value and show error or success message for the input
 			});
+			
 		}
 	};
 

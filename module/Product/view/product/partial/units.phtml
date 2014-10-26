@@ -24,7 +24,7 @@
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
 									<?php   echo $this->formRow($formProductUom->get('uoms[uomId]')); ?>
-									<span class="help-block">
+									<span class="col-md-12 control-label">
 										 Unit of Measurement
 									</span>
 								</div>
@@ -35,7 +35,7 @@
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
 									<?php  echo $this->formRow($formProductUom->get('unitQuantity')); ?>
-									<span class="help-block">
+									<span class="col-md-12 control-label">
 										 Quantity
 									</span>
 								</div>
@@ -55,12 +55,3 @@
 			</div>
 		</div>
 	</div>
-<?php
-// $this->inlineScript()
-	// ->appendFile($this->basePath('/assets/scripts/units.js'))
-?>
- <?php //$this->inlineScript()->captureStart() ?>
-<!-- 	jQuery(document).ready(function() {
-		Units.init();
-	}); -->
-<?php //$this->inlineScript()->captureEnd() ?>

@@ -5,14 +5,24 @@
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
 					<h4 class="modal-title">Address</h4>
 				</div>
+				<form action="#" class="form-horizontal" id="customer_address">
+					<div class="alert alert-danger display-hide">
+						<button class="close" data-close="alert"></button>
+							You have some form errors. Please check below.
+					</div>
+					<div class="alert alert-success display-hide">
+						<button class="close" data-close="alert"></button>
+							Your form validation is successful!
+					</div>
 				<div class="modal-body">
-					<div class="scroller" style="height:250px" data-always-visible="1" data-rail-visible1="1">
+				
+					<div class="scroller" style="height:300px" data-always-visible="1" data-rail-visible1="1">
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
 										<?php  echo $this->formRow($addressForm->get('addressType')); ?>
-										<span class="help-block">
+										<span class="col-md-12 control-label">
 											Address Type
 										</span>
 									</div>
@@ -23,7 +33,7 @@
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
 										<?php  echo $this->formRow($addressForm->get('streetLandmark')); ?>
-										<span class="help-block">
+										<span class="col-md-12 control-label">
 											Street/Landmark
 										</span>
 									</div>
@@ -36,7 +46,7 @@
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
 										<?php  echo $this->formRow($addressForm->get('cities[cityId]')); ?>
-										<span class="help-block">
+										<span class="col-md-12 control-label">
 											City
 										</span>
 									</div>
@@ -47,7 +57,7 @@
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
 										<?php  echo $this->formRow($addressForm->get('provinces[provinceId]')); ?>
-										<span class="help-block">
+										<span class="col-md-12 control-label">
 											Province
 										</span>
 									</div>
@@ -60,7 +70,7 @@
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
 										<?php  echo $this->formRow($addressForm->get('countries[countryId]')); ?>
-										<span class="help-block">
+										<span class="col-md-12 control-label">
 											Country
 										</span>
 									</div>
@@ -71,7 +81,7 @@
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
 										<?php  echo $this->formRow($addressForm->get('zipcode')); ?>
-										<span class="help-block">
+										<span class="col-md-12 control-label">
 											Zipcode
 										</span>
 									</div>
@@ -82,8 +92,9 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" data-dismiss="modal" class="btn default">Close</button>
-						<button type="button" class="btn green">Save changes</button>
+						<button type="submit" class="btn green">Save changes</button>
 					</div>
+					</form>
 				</div>
 			</div>
 		</div>
