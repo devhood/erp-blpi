@@ -22,16 +22,6 @@ class DesignationPermissions
     private $dpId;
 
     /**
-     * @var \Database\Entity\Designations
-     *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\Designations")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="designation_id", referencedColumnName="designation_id", nullable=true)
-     * })
-     */
-    private $designation;
-
-    /**
      * @var \Database\Entity\Permissions
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Permissions")
@@ -40,6 +30,16 @@ class DesignationPermissions
      * })
      */
     private $permission;
+
+    /**
+     * @var \Database\Entity\Designations
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Designations")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="designation_id", referencedColumnName="designation_id", nullable=true)
+     * })
+     */
+    private $designation;
 
 
     /**
@@ -50,29 +50,6 @@ class DesignationPermissions
     public function getDpId()
     {
         return $this->dpId;
-    }
-
-    /**
-     * Set designation
-     *
-     * @param \Database\Entity\Designations $designation
-     * @return DesignationPermissions
-     */
-    public function setDesignation(\Database\Entity\Designations $designation = null)
-    {
-        $this->designation = $designation;
-
-        return $this;
-    }
-
-    /**
-     * Get designation
-     *
-     * @return \Database\Entity\Designations 
-     */
-    public function getDesignation()
-    {
-        return $this->designation;
     }
 
     /**
@@ -96,5 +73,28 @@ class DesignationPermissions
     public function getPermission()
     {
         return $this->permission;
+    }
+
+    /**
+     * Set designation
+     *
+     * @param \Database\Entity\Designations $designation
+     * @return DesignationPermissions
+     */
+    public function setDesignation(\Database\Entity\Designations $designation = null)
+    {
+        $this->designation = $designation;
+
+        return $this;
+    }
+
+    /**
+     * Get designation
+     *
+     * @return \Database\Entity\Designations 
+     */
+    public function getDesignation()
+    {
+        return $this->designation;
     }
 }

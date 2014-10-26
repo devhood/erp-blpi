@@ -43,6 +43,26 @@ class ShipmentItems
     private $expiryDate;
 
     /**
+     * @var \Database\Entity\Shipments
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Shipments")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="shipment_id", referencedColumnName="shipment_id", nullable=true)
+     * })
+     */
+    private $shipment;
+
+    /**
+     * @var \Database\Entity\Products
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Products")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="product_id", referencedColumnName="product_id", nullable=true)
+     * })
+     */
+    private $product;
+
+    /**
      * @var \Database\Entity\Currencies
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Currencies")
@@ -61,26 +81,6 @@ class ShipmentItems
      * })
      */
     private $condition;
-
-    /**
-     * @var \Database\Entity\Products
-     *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\Products")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="product_id", referencedColumnName="product_id", nullable=true)
-     * })
-     */
-    private $product;
-
-    /**
-     * @var \Database\Entity\Shipments
-     *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\Shipments")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="shipment_id", referencedColumnName="shipment_id", nullable=true)
-     * })
-     */
-    private $shipment;
 
 
     /**
@@ -163,6 +163,52 @@ class ShipmentItems
     }
 
     /**
+     * Set shipment
+     *
+     * @param \Database\Entity\Shipments $shipment
+     * @return ShipmentItems
+     */
+    public function setShipment(\Database\Entity\Shipments $shipment = null)
+    {
+        $this->shipment = $shipment;
+
+        return $this;
+    }
+
+    /**
+     * Get shipment
+     *
+     * @return \Database\Entity\Shipments 
+     */
+    public function getShipment()
+    {
+        return $this->shipment;
+    }
+
+    /**
+     * Set product
+     *
+     * @param \Database\Entity\Products $product
+     * @return ShipmentItems
+     */
+    public function setProduct(\Database\Entity\Products $product = null)
+    {
+        $this->product = $product;
+
+        return $this;
+    }
+
+    /**
+     * Get product
+     *
+     * @return \Database\Entity\Products 
+     */
+    public function getProduct()
+    {
+        return $this->product;
+    }
+
+    /**
      * Set currency
      *
      * @param \Database\Entity\Currencies $currency
@@ -206,51 +252,5 @@ class ShipmentItems
     public function getCondition()
     {
         return $this->condition;
-    }
-
-    /**
-     * Set product
-     *
-     * @param \Database\Entity\Products $product
-     * @return ShipmentItems
-     */
-    public function setProduct(\Database\Entity\Products $product = null)
-    {
-        $this->product = $product;
-
-        return $this;
-    }
-
-    /**
-     * Get product
-     *
-     * @return \Database\Entity\Products 
-     */
-    public function getProduct()
-    {
-        return $this->product;
-    }
-
-    /**
-     * Set shipment
-     *
-     * @param \Database\Entity\Shipments $shipment
-     * @return ShipmentItems
-     */
-    public function setShipment(\Database\Entity\Shipments $shipment = null)
-    {
-        $this->shipment = $shipment;
-
-        return $this;
-    }
-
-    /**
-     * Get shipment
-     *
-     * @return \Database\Entity\Shipments 
-     */
-    public function getShipment()
-    {
-        return $this->shipment;
     }
 }

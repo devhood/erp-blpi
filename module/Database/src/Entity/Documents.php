@@ -43,26 +43,6 @@ class Documents
     private $recordStatus;
 
     /**
-     * @var \Database\Entity\Customers
-     *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\Customers")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="cutomer_id", referencedColumnName="customer_id", nullable=true)
-     * })
-     */
-    private $cutomer;
-
-    /**
-     * @var \Database\Entity\Documenttypes
-     *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\Documenttypes")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="document_type_id", referencedColumnName="document_type_id", nullable=true)
-     * })
-     */
-    private $documentType;
-
-    /**
      * @var \Database\Entity\Products
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Products")
@@ -73,6 +53,16 @@ class Documents
     private $product;
 
     /**
+     * @var \Database\Entity\Customers
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Customers")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cutomer_id", referencedColumnName="customer_id", nullable=true)
+     * })
+     */
+    private $cutomer;
+
+    /**
      * @var \Database\Entity\Sales
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Sales")
@@ -81,6 +71,16 @@ class Documents
      * })
      */
     private $sales;
+
+    /**
+     * @var \Database\Entity\DocumentTypes
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\DocumentTypes")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="document_type_id", referencedColumnName="document_type_id", nullable=true)
+     * })
+     */
+    private $documentType;
 
 
     /**
@@ -163,52 +163,6 @@ class Documents
     }
 
     /**
-     * Set cutomer
-     *
-     * @param \Database\Entity\Customers $cutomer
-     * @return Documents
-     */
-    public function setCutomer(\Database\Entity\Customers $cutomer = null)
-    {
-        $this->cutomer = $cutomer;
-
-        return $this;
-    }
-
-    /**
-     * Get cutomer
-     *
-     * @return \Database\Entity\Customers 
-     */
-    public function getCutomer()
-    {
-        return $this->cutomer;
-    }
-
-    /**
-     * Set documentType
-     *
-     * @param \Database\Entity\Documenttypes $documentType
-     * @return Documents
-     */
-    public function setDocumentType(\Database\Entity\Documenttypes $documentType = null)
-    {
-        $this->documentType = $documentType;
-
-        return $this;
-    }
-
-    /**
-     * Get documentType
-     *
-     * @return \Database\Entity\Documenttypes 
-     */
-    public function getDocumentType()
-    {
-        return $this->documentType;
-    }
-
-    /**
      * Set product
      *
      * @param \Database\Entity\Products $product
@@ -232,6 +186,29 @@ class Documents
     }
 
     /**
+     * Set cutomer
+     *
+     * @param \Database\Entity\Customers $cutomer
+     * @return Documents
+     */
+    public function setCutomer(\Database\Entity\Customers $cutomer = null)
+    {
+        $this->cutomer = $cutomer;
+
+        return $this;
+    }
+
+    /**
+     * Get cutomer
+     *
+     * @return \Database\Entity\Customers 
+     */
+    public function getCutomer()
+    {
+        return $this->cutomer;
+    }
+
+    /**
      * Set sales
      *
      * @param \Database\Entity\Sales $sales
@@ -252,5 +229,28 @@ class Documents
     public function getSales()
     {
         return $this->sales;
+    }
+
+    /**
+     * Set documentType
+     *
+     * @param \Database\Entity\DocumentTypes $documentType
+     * @return Documents
+     */
+    public function setDocumentType(\Database\Entity\DocumentTypes $documentType = null)
+    {
+        $this->documentType = $documentType;
+
+        return $this;
+    }
+
+    /**
+     * Get documentType
+     *
+     * @return \Database\Entity\DocumentTypes 
+     */
+    public function getDocumentType()
+    {
+        return $this->documentType;
     }
 }

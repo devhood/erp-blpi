@@ -29,16 +29,6 @@ class ProductCategories
     private $recordStatus;
 
     /**
-     * @var \Database\Entity\Categories
-     *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\Categories")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="category_id", referencedColumnName="category_id", nullable=true)
-     * })
-     */
-    private $category;
-
-    /**
      * @var \Database\Entity\Products
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Products")
@@ -47,6 +37,16 @@ class ProductCategories
      * })
      */
     private $product;
+
+    /**
+     * @var \Database\Entity\Categories
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Categories")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="category_id", referencedColumnName="category_id", nullable=true)
+     * })
+     */
+    private $category;
 
 
     /**
@@ -83,29 +83,6 @@ class ProductCategories
     }
 
     /**
-     * Set category
-     *
-     * @param \Database\Entity\Categories $category
-     * @return ProductCategories
-     */
-    public function setCategory(\Database\Entity\Categories $category = null)
-    {
-        $this->category = $category;
-
-        return $this;
-    }
-
-    /**
-     * Get category
-     *
-     * @return \Database\Entity\Categories 
-     */
-    public function getCategory()
-    {
-        return $this->category;
-    }
-
-    /**
      * Set product
      *
      * @param \Database\Entity\Products $product
@@ -126,5 +103,28 @@ class ProductCategories
     public function getProduct()
     {
         return $this->product;
+    }
+
+    /**
+     * Set category
+     *
+     * @param \Database\Entity\Categories $category
+     * @return ProductCategories
+     */
+    public function setCategory(\Database\Entity\Categories $category = null)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return \Database\Entity\Categories 
+     */
+    public function getCategory()
+    {
+        return $this->category;
     }
 }

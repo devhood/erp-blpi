@@ -50,6 +50,26 @@ class Address
     private $recordStatus;
 
     /**
+     * @var \Database\Entity\Provinces
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Provinces")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="province_id", referencedColumnName="province_id", nullable=true)
+     * })
+     */
+    private $province;
+
+    /**
+     * @var \Database\Entity\Cities
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Cities")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="city_id", referencedColumnName="city_id", nullable=true)
+     * })
+     */
+    private $city;
+
+    /**
      * @var \Database\Entity\Countries
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Countries")
@@ -68,26 +88,6 @@ class Address
      * })
      */
     private $customer;
-
-    /**
-     * @var \Database\Entity\Cities
-     *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\Cities")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="city_id", referencedColumnName="city_id", nullable=true)
-     * })
-     */
-    private $city;
-
-    /**
-     * @var \Database\Entity\Provinces
-     *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\Provinces")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="province_id", referencedColumnName="province_id", nullable=true)
-     * })
-     */
-    private $province;
 
 
     /**
@@ -193,6 +193,52 @@ class Address
     }
 
     /**
+     * Set province
+     *
+     * @param \Database\Entity\Provinces $province
+     * @return Address
+     */
+    public function setProvince(\Database\Entity\Provinces $province = null)
+    {
+        $this->province = $province;
+
+        return $this;
+    }
+
+    /**
+     * Get province
+     *
+     * @return \Database\Entity\Provinces 
+     */
+    public function getProvince()
+    {
+        return $this->province;
+    }
+
+    /**
+     * Set city
+     *
+     * @param \Database\Entity\Cities $city
+     * @return Address
+     */
+    public function setCity(\Database\Entity\Cities $city = null)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * Get city
+     *
+     * @return \Database\Entity\Cities 
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
      * Set country
      *
      * @param \Database\Entity\Countries $country
@@ -236,51 +282,5 @@ class Address
     public function getCustomer()
     {
         return $this->customer;
-    }
-
-    /**
-     * Set city
-     *
-     * @param \Database\Entity\Cities $city
-     * @return Address
-     */
-    public function setCity(\Database\Entity\Cities $city = null)
-    {
-        $this->city = $city;
-
-        return $this;
-    }
-
-    /**
-     * Get city
-     *
-     * @return \Database\Entity\Cities 
-     */
-    public function getCity()
-    {
-        return $this->city;
-    }
-
-    /**
-     * Set province
-     *
-     * @param \Database\Entity\Provinces $province
-     * @return Address
-     */
-    public function setProvince(\Database\Entity\Provinces $province = null)
-    {
-        $this->province = $province;
-
-        return $this;
-    }
-
-    /**
-     * Get province
-     *
-     * @return \Database\Entity\Provinces 
-     */
-    public function getProvince()
-    {
-        return $this->province;
     }
 }
