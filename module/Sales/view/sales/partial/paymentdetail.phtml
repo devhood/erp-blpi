@@ -1,9 +1,9 @@
-<div id="itemsModal" class="modal fade" tabindex="-1" aria-hidden="true">
+<div id="paymentdetailModal" class="modal fade" tabindex="-1" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-				<h4 class="modal-title">Add Order Items</h4>
+				<h4 class="modal-title">Payment Details</h4>
 			</div>
 			<div class="modal-body">
 				<div class="scroller" style="height:450px" data-always-visible="1" data-rail-visible1="1">
@@ -20,7 +20,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-										<?php  echo $this->formRow($formSalesItem->get('products[productId]')); ?>
+										<?php  echo $this->formRow($formPaymentDetail->get('dummyproducts')); ?>
 										<span class="help-block">
 											Items
 										</span>
@@ -31,9 +31,9 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
-										<?php  echo $this->formRow($formSalesItem->get('quantity')); ?>
+										<?php  echo $this->formRow($formPaymentDetail->get('dummyfile')); ?>
 										<span class="help-block">
-											Quantity
+											File
 										</span>
 									</div>
 								</div>
@@ -44,9 +44,9 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-										<?php  echo $this->formRow($formSalesItem->get('price')); ?>
+										<?php  echo $this->formRow($formPaymentDetail->get('dummyproduct')); ?>
 										<span class="help-block">
-											Price
+											Product
 										</span>
 									</div>
 								</div>
@@ -56,22 +56,22 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
-										<?php  echo $this->formRow($formSalesItem->get('discount')); ?>
+										<?php  echo $this->formRow($formPaymentDetail->get('dummydate')); ?>
 										<span class="help-block">
-											Discount
+											Date 
 										</span>
 									</div>
 								</div>
 							</div>
 						</div><!--/row  -->
-
+						<div class="modal-footer">
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-										<?php  echo $this->formRow($formSalesItem->get('freebie')); ?>
+										<?php  echo $this->formRow($formPaymentDetail->get('dummycheckno')); ?>
 										<span class="help-block">
-											Freebie
+											Check No.
 										</span>
 									</div>
 								</div>
@@ -80,7 +80,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
-										<?php  echo $this->formRow($formSalesItem->get('sales')); ?>
+										<?php  echo $this->formRow($formPaymentDetail->get('dummycheckdate')); ?>
 										<span class="help-block">
 											Total
 										</span>
@@ -88,7 +88,53 @@
 								</div>
 							</div>
 						</div><!--/row  -->
+						
+						</div><!--/row  -->
 						<div class="modal-footer">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
+										<?php  echo $this->formRow($formPaymentDetail->get('dummybank')); ?>
+										<span class="help-block">
+										Bank
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
+										<?php  echo $this->formRow($formPaymentDetail->get('dummyamount')); ?>
+										<span class="help-block">
+											Amount
+										</span>
+									</div>
+								</div>
+							</div>
+						</div><!--/row  -->
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
+										<?php  echo $this->formRow($formPaymentDetail->get('dummydepositdate')); ?>
+										<span class="help-block">
+										Deposit Date
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
+								
+									</div>
+								</div>
+							</div>
+						</div><!--/row  -->
+						
 							<button type="button" data-dismiss="modal" class="btn default">Close</button>
 							<button type="button" class="btn green">Save changes</button>
 						</div>

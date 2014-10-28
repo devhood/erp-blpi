@@ -8,7 +8,7 @@ $this->headLink()
 <div class="portlet box grey">
   <div class="portlet-title">
     <div class="caption">
-      <i class="fa fa-reorder"></i>Sales
+      <i class="fa fa-reorder"></i>Approve Credit Memo
     </div>
     <div class="tools">
       <a href="javascript:;" class="collapse">
@@ -26,6 +26,7 @@ $this->headLink()
     <!-- BEGIN FORM-->
     <form action="#" class="form-horizontal" id="sales">
       <div class="form-body">
+          <h5></h5>
           <div class="alert alert-danger display-hide">
             <button class="close" data-close="alert"></button>
               You have some form errors. Please check below.
@@ -34,14 +35,13 @@ $this->headLink()
             <button class="close" data-close="alert"></button>
               Your form validation is successful!
           </div>
-          <h4 class="form-section">Credit Memo Approve </h4>
           <div class="row">
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-                <?php  echo $this->formRow($formSales->get('rmrno')); ?>
+               <?php  echo $this->formRow($formSales->get('cmno')); ?>
                 <span class="col-md-12 control-label">
-                  RMR Number
+                  CM Number
                 </span>
               </div>
             </div>
@@ -50,9 +50,9 @@ $this->headLink()
           <div class="col-md-6">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-                    <?php  echo $this->formRow($formSales->get('cmno')); ?>
+               <?php  echo $this->formRow($formSales->get('rmrno')); ?>
                 <span class="col-md-12 control-label">
-                  CM Number
+                  RMR Number
                 </span>
               </div>
             </div>
@@ -325,29 +325,23 @@ $this->headLink()
                   <table class="table table-bordered table-condensed flip-content">
                     <thead class="flip-content bg-grey">
                       <tr>
-                        <th width="20%">
-                          Items
-                        </th>
-                        <th>
-                          Quantity
-                        </th>
-                        <th>
-                          Price
-                        </th>
-                        <th>
-                          Discount
-                        </th>
-                        <th>
-                          Freebie
-                        </th>
-                        <th>
-                          Total
-                        </th>
-
+                        <th width="20%">Items</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Discount</th>
+                        <th>Freebie</th>
+                        <th>Total</th>
                       </tr>
                     </thead>
                     <tbody>
-
+                    <tr>
+						<td>Sample Product</td>
+						<td>200</td>
+						<td>8000</td>
+						<td>0</td>
+						<td>20</td>
+						<td>220</td>
+                    </tr>
                     </tbody>
                   </table>
                 </div>
@@ -463,7 +457,7 @@ $this->headLink()
         <div class="row">
           <div class="col-md-6">
             <div class="col-md-offset-3 col-md-9">
-              <button type="submit" class="btn green">Approve CM</button>
+              <button type="submit" class="btn green">Approve & Send CM</button>
               <button type="button" class="btn default">Cancel</button>
             </div>
           </div>

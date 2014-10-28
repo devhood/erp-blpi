@@ -28,7 +28,7 @@ class SalesItemForm extends Form
           'target_class'    => 'Database\Entity\Products',
           'property'           => 'productName',
           'display_empty_item' => true,
-          'empty_item_label'   => '---'
+          'empty_item_label'   => ' '
         ),
         'attributes' => array(
           'class' => 'select2me form-control',

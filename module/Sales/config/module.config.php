@@ -9,6 +9,7 @@ return array(
 		'template_map' => array(
 			'sales/items'           =>   __DIR__ . '/../view/sales/partial/items.phtml',
 			'sales/document'           =>   __DIR__ . '/../view/sales/partial/document.phtml',
+			'sales/paymentdetail'           =>   __DIR__ . '/../view/sales/partial/paymentdetail.phtml',
 				
 		),
 
@@ -46,6 +47,7 @@ return array(
 	    						),
 	    				),
 	    		),
+
 	    		
 	    		__NAMESPACE__.'_Delivery_List' => array(
 	    				'type' => 'Literal',
@@ -57,6 +59,8 @@ return array(
 	    						),
 	    				),
 	    		),
+	    		
+	    	
 	    		
 	        __NAMESPACE__.'_Order_Add' => array(
 	            'type' => 'Literal',
@@ -89,6 +93,18 @@ return array(
 	    						),
 	    				),
 	    		),
+	    		__NAMESPACE__.'_Order_Print' => array(
+	    				'type' => 'Literal',
+	    				'options' => array(
+	    						'route'    => '/sales/order/print',
+	    						'defaults' => array(
+	    								'controller' => __NAMESPACE__ . '\Sales',
+	    								'action'     => 'OrderPrint',
+	    						),
+	    				),
+	    		),
+	    		 
+	    		
 	    		
 	        __NAMESPACE__.'_Invoice_Approve' => array(
 	            'type' => 'Literal',
@@ -107,7 +123,7 @@ return array(
 	                'route'    => '/sales/invoice/print',
 	                'defaults' => array(
 	                    'controller' => __NAMESPACE__ . '\Sales',
-	                    'action'     => 'InvoicePrint ',
+	                    'action'     => 'InvoicePrint',
 	                ),
 	            ),
 	        ),

@@ -240,8 +240,8 @@ class SalesForm extends Form
     'object_manager'  => $em,
     'target_class'    => 'Database\Entity\Address',
     'property'           => 'addressName',
-    'display_empty_item' => true,
-    'empty_item_label'   => ' ',
+    'display_empty_item' => false,
+   'empty_item_label'   => ' ',
 
     'label_generator' => function($row) {
         return $row->getStreetLandmark() . ', '
