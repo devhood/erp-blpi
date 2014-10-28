@@ -181,7 +181,8 @@ class SalesForm extends Form
         'object_manager'  => $em,
         'target_class'    => 'Database\Entity\TransactionTypes',
         'property'           => 'transactionTypeName',
-       // 'display_empty_item' => true,
+        'display_empty_item' => true,
+      	'empty_item_label'   => ' ',
       ),
       'attributes' => array(
         'class' => 'select2me form-control',
@@ -199,6 +200,7 @@ class SalesForm extends Form
         'target_class'    => 'Database\Entity\Customers',
         'property'           => 'companyName',
         'display_empty_item' => true,
+      	'empty_item_label'   => ' ',
 
       ),
       'attributes' => array(
@@ -218,7 +220,8 @@ class SalesForm extends Form
         'object_manager'  => $em,
         'target_class'    => 'Database\Entity\InventoryLocations',
         'property'           => 'locationName',
-        'display_empty_item' => true,
+        'display_empty_item' => false,
+         'empty_item_label'   => ' ',
 
       ),
       'attributes' => array(
@@ -236,8 +239,9 @@ class SalesForm extends Form
     'options' => array(
     'object_manager'  => $em,
     'target_class'    => 'Database\Entity\Address',
-  'property'           => 'addressName',
+    'property'           => 'addressName',
     'display_empty_item' => true,
+    'empty_item_label'   => ' ',
 
     'label_generator' => function($row) {
         return $row->getStreetLandmark() . ', '
@@ -264,7 +268,7 @@ class SalesForm extends Form
     'target_class'    => 'Database\Entity\Address',
     'property'           => 'addressName',
     'display_empty_item' => true,
-
+ 	'empty_item_label'   => ' ',
     'label_generator' => function($row) {
         return $row->getStreetLandmark() . ', '
             . $row->getCity()->getCityName() . ', '
@@ -289,6 +293,7 @@ class SalesForm extends Form
     'target_class'    => 'Database\Entity\OrderSource',
     'property'           => 'orderSourceName',
     'display_empty_item' => true,
+    'empty_item_label'   => ' ',
 
   ),
   'attributes' => array(
@@ -307,8 +312,8 @@ class SalesForm extends Form
       'object_manager' => $em,
       'target_class' => 'Database\Entity\ShippingModes',
       'property'           => 'shippingModeName',
+      'empty_item_label'   => ' ',
       'display_empty_item' => true,
-
       ),
        'attributes' => array(
             'class' => 'select2me form-control',
@@ -325,6 +330,7 @@ class SalesForm extends Form
       'target_class' => 'Database\Entity\Users',
       'property'           => 'userName',
       'display_empty_item' => true,
+      'empty_item_label'   => ' ',
 
       ),
        'attributes' => array(
@@ -343,6 +349,7 @@ class SalesForm extends Form
       'target_class' => 'Database\Entity\PaymentTerms',
       'property'           => 'paymentTermName',
       'display_empty_item' => true,
+      'empty_item_label'   => ' ',
 
       ),
        'attributes' => array(
@@ -382,7 +389,7 @@ class SalesForm extends Form
       'target_class' => 'Database\Entity\PriceTypes',
       'property'           => 'priceTypeName',
       'display_empty_item' => true,
-      'empty_item_label'   => ''
+      'empty_item_label'   => ' '
       ),
        'attributes' => array(
             'class' => 'form-control select2me',
@@ -398,7 +405,7 @@ class SalesForm extends Form
       'name' => 'notes',
       'type' => 'Textarea',
       'attributes' => array(
-        'class' => 'wysihtml5 form-control',
+        'class' => 'text-area form-control',
         'id' => 'notes',
         'rows' => '6'
       )
