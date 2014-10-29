@@ -25,7 +25,7 @@ class UserController extends BaseController
 		if($request->isPost()){
 			
 			$request = (array)($request->getPost());
-			
+		
 			$table = self::DBNS.'Users';
 			$object = new $table();
 			$hydrator = new DoctrineHydrator($em);
