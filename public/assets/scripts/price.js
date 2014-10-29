@@ -63,8 +63,8 @@ var Price = function () {
 					prices.push(1);
 					priceTable.fnAddData([
 							$('#priceTypeId option:selected').text() ,
-							$('#currencyId option:selected').text() ,
 							$("#priceQuantity").val(), 
+							$('#currencyId option:selected').text() ,
 							"<a href='#' class='price_delete_row"+prices.length+"'>Delete</a>"]);
 					
 					$(".price_delete_row"+prices.length).live('click', function (e) {

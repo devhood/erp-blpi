@@ -21,33 +21,6 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-									<?php  echo $this->formRow($contactForm->get('position')); ?>
-									<span class="col-md-12 control-label">
-										Position
-									</span>
-								</div>
-							</div>
-						</div>
-						<!--/span-->
-						<div class="col-md-6">
-							<div class="form-group">
-								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
-									<?php  echo $this->formRow($contactForm->get('primary')); ?>
-									<span class="col-md-12 control-label">
-										Primary
-									</span>
-								</div>
-							</div>
-						</div>
-
-						<!--/span-->
-					</div>
-					<!--/row-->
-
-					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group">
-								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
 									<?php  echo $this->formRow($contactForm->get('fullname')); ?>
 									<span class="col-md-12 control-label">
 										Full Name
@@ -59,9 +32,9 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
-									<?php  echo $this->formRow($contactForm->get('email')); ?>
+									<?php  echo $this->formRow($contactForm->get('position')); ?>
 									<span class="col-md-12 control-label">
-										Email Address
+										Position
 									</span>
 								</div>
 							</div>
@@ -83,8 +56,21 @@
 							</div>
 						</div>
 						<!--/span-->
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
+									<?php  echo $this->formRow($contactForm->get('email')); ?>
+									<span class="col-md-12 control-label">
+										Email Address
+									</span>
+								</div>
+							</div>
+						</div>
+
+						<!--/span-->
 					</div>
 					<!--/row-->
+
 				</div>
 				<!--/scroller-->
 			</div>

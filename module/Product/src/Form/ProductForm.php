@@ -169,24 +169,24 @@ class ProductForm extends Form
 	));
 
 	$this->add( array(
-		'name' => 'desc',
+		'name' => 'productDescription',
 		'type' => 'Textarea',
 		'attributes' => array(
-			'class' => 'wysihtml5 form-control',
-			'id' => 'desc',
+			'class' => 'form-control',
+			'id' => 'productDescription',
 			'rows' => '6'
 		)
 	));
 
 
-	$this->add( array(
-		'name' => 'categories',
-		'type' => 'text',
-		'attributes' => array(
-			'class' => 'form-control tags medium',
-			'id' => 'categories',
-		)
-	));
+// 	$this->add( array(
+// 		'name' => 'categories',
+// 		'type' => 'text',
+// 		'attributes' => array(
+// 			'class' => 'form-control tags medium',
+// 			'id' => 'categories',
+// 		)
+// 	));
 
 }
 }

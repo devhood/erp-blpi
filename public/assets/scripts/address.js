@@ -36,7 +36,8 @@ var Address = function () {
                     
                     zipcode : {
                         minlength: 2,
-                        required: true
+                        required: true,
+                        number: true
                     },
   
                 },
@@ -64,8 +65,41 @@ var Address = function () {
             submitHandler: function (form) {
                 success.show();
                 error.hide();
+                manageAddress.add();
             }
 			});
+			
+			var address = [];
+			var addressTable = $('#addressTable').dataTable();
+			var manageAddress = {
+				
+				add : function(){
+					address.push(1);
+					addressTable.fnAddData([
+							$('#addressType option:selected').text() ,
+							$("#streetLandmark").val(), 
+							$('#cityId option:selected').text() ,
+							$('#provinceId option:selected').text() ,
+							$('#countryId option:selected').text() ,
+							$("#zipcode").val(), 
+							"<a href='#' class='address_delete_row"+address.length+"'>Delete</a>"]);
+					
+					$(".address_delete_row"+address.length).live('click', function (e) {
+						manageAddress.remove($(this));
+					});
+					$('#addressModal').modal('toggle');
+					
+				},
+			
+				remove : function(elem){
+					if (confirm("Are you sure to delete this row ?") == false) {
+						 return;
+					}
+					var nRow = elem.parents('tr')[0];
+					addressTable.fnDeleteRow(nRow);
+				}
+				
+			}
 		}
 	};
 

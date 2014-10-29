@@ -141,19 +141,22 @@ class SalesController extends BaseController
         return new ViewModel(array(
           'formSales' => $formSales,
           'formSalesItem' => $formSalesItem
-          ));
+          ));	
+
     }
     
     public function PaymentRecordAction()
     {
     	$formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
     	$formSalesItem = new \Sales\Form\SalesItemForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
+    	$formPaymentDetail = new \Sales\Form\PaymentDetail($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));
     
     	$this->DisableForms($formSales);
     	
     	return new ViewModel(array(
     			'formSales' => $formSales,
-    			'formSalesItem' => $formSalesItem
+    			'formSalesItem' => $formSalesItem,
+    			'formPaymentDetail' => $formPaymentDetail
     	));
     }
     

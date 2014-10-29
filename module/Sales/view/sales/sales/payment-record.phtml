@@ -8,8 +8,8 @@ $this->headLink()
 <div class="portlet box grey">
   <div class="portlet-title">
     <div class="caption">
-      <i class="fa fa-reorder"></i>Sales
-    </div>
+      <i class="fa fa-reorder"></i>Record Payment
+          </div>
     <div class="tools">
       <a href="javascript:;" class="collapse">
       </a>
@@ -34,7 +34,7 @@ $this->headLink()
             <button class="close" data-close="alert"></button>
               Your form validation is successful!
           </div>
-          <h4 class="form-section">Record Payment </h4>
+          <h5></h5>
           <div class="row">
           <div class="col-md-6">
             <div class="form-group">
@@ -519,7 +519,7 @@ $this->headLink()
 								<h4 class="">Payment Detail</h4>
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-right: 0px;">
-								<button type="button" data-toggle="modal" href="#paymentModal" class="btn-sm green custom-right">Add New
+								<button type="button" data-toggle="modal" href="#paymentdetailModal" class="btn-sm green custom-right">Add New
 								<i class="fa fa-plus"></i>
 							</button>
 							</div>
@@ -547,6 +547,7 @@ $this->headLink()
 											</tr>
 											</thead>
 											<tbody>
+											<tr>
 											<td> </td>
 											<td> </td>
 											<td> </td>
@@ -556,7 +557,7 @@ $this->headLink()
 											<td> </td>
 											<td> </td>
 											<td> </td>
-
+											</tr>
 											</tbody>
 										</table>
 										</div>
@@ -618,10 +619,10 @@ $this->headLink()
  
 
 <div>
-<?php echo $this->render('sales/items') ?>
+<?php echo $this->render('sales/paymentdetail') ?>
 </div>
 <div>
-<?php //echo $this->render('sales/document') ?>
+<?php echo $this->render('sales/document') ?>
 </div>
 
 
@@ -632,10 +633,12 @@ $this->headLink()
 $this->inlineScript()
 ->appendFile($this->basePath('/assets/scripts/sales/sales.js'))
 ->appendFile($this->basePath('/assets/scripts/document.js'))
+//->appendFile($this->basePath('/assets/scripts/paymentdetail.js'))
 ?>
 <?php $this->inlineScript()->captureStart() ?>
 jQuery(document).ready(function() {
- // Sales.init();
- // Document.init();
+<!--   Sales.init(); -->
+<!--   Document.init(); -->
+<!--   PaymentDetail.init(); -->
 });
 <?php $this->inlineScript()->captureEnd() ?>

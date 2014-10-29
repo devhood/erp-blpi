@@ -13,3 +13,7 @@ span.col-md-12.control-label {
 .custom-right {
     float:right;
 }
+
+div.custom-center{
+	text-align:center;
+}

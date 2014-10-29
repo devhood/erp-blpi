@@ -18,6 +18,7 @@ class CustomerForm extends Form
 				'object_manager' => $om,
 				'target_class'   => 'Database\Entity\Categories',
 				'property'       => 'categoryName',
+				'empty_item_label' => null,
 			),
 			'attributes' => array(
 				'class' => 'select2me form-control',
@@ -33,6 +34,7 @@ class CustomerForm extends Form
 				'object_manager' => $om,
 				'target_class'   => 'Database\Entity\CustomerTypes',
 				'property'       => 'customerTypeName',
+				'empty_item_label' => ' ',
 			),
 			'attributes' => array(
 				'class' => 'select2me form-control',
@@ -47,7 +49,6 @@ class CustomerForm extends Form
 			'type' => 'Text',
 			'attributes' => array(
 				'class' => 'form-control',
-				'placeholder' => 'Enter Company Name',
 				'id' => 'companyName',
 			)
 		));
@@ -57,7 +58,6 @@ class CustomerForm extends Form
 			'type' => 'Text',
 			'attributes' => array(
 				'class' => 'form-control',
-				'placeholder' => 'Enter Branch',
 				'id' => 'branch',
 			)
 		));
@@ -67,7 +67,6 @@ class CustomerForm extends Form
 			'type' => 'Text',
 			'attributes' => array(
 				'class' => 'form-control',
-				'placeholder' => 'Enter Trade Name',
 				'id' => 'tradeName',
 			)
 		));
@@ -77,7 +76,6 @@ class CustomerForm extends Form
 			'type' => 'Text',
 			'attributes' => array(
 				'class' => 'form-control',
-				'placeholder' => 'Enter Tin Number',
 				'id' => 'tinNumber',
 			)
 		));
@@ -87,7 +85,6 @@ class CustomerForm extends Form
 			'type' => 'Text',
 			'attributes' => array(
 				'class' => 'form-control',
-				'placeholder' => 'Enter Tin Number',
 				'id' => 'phone',
 			)
 		));
@@ -97,7 +94,6 @@ class CustomerForm extends Form
 			'type' => 'Text',
 			'attributes' => array(
 				'class' => 'form-control',
-				'placeholder' => 'Enter Email Address',
 				'id' => 'email',
 			)
 		));
@@ -108,7 +104,6 @@ class CustomerForm extends Form
 			'type' => 'Text',
 			'attributes' => array(
 				'class' => 'form-control',
-				'placeholder' => 'Enter Website',
 				'id' => 'website',
 			)
 		));
@@ -118,7 +113,6 @@ class CustomerForm extends Form
 			'type' => 'Text',
 			'attributes' => array(
 				'class' => 'form-control',
-				'placeholder' => 'Enter Sec Number',
 				'id' => 'secNumber',
 			)
 		));
@@ -156,7 +150,6 @@ class CustomerForm extends Form
 			'type' => 'Text',
 			'attributes' => array(
 				'class' => 'form-control',
-				'placeholder' => 'Enter Credit Limit',
 				'id' => 'unpaidTransactionLimit',
 			)
 		));
@@ -166,7 +159,6 @@ class CustomerForm extends Form
 			'type' => 'Text',
 			'attributes' => array(
 				'class' => 'form-control',
-				'placeholder' => 'Enter Unpaid Transaction Limit',
 				'id' => 'unpaidTransactionLimit',
 			)
 		));
@@ -179,6 +171,7 @@ class CustomerForm extends Form
 						'object_manager' => $om,
 						'target_class'   => 'Database\Entity\PaymentTerms',
 						'property'       => 'paymentTermName',
+						'empty_item_label' => ' ',
 					),
 					'attributes' => array(
 						'class' => 'select2me form-control',
@@ -188,12 +181,11 @@ class CustomerForm extends Form
 		));
 
 		$this->add( array(
-			'name' => 'percentCommission',
+			'name' => 'permanentDiscount',
 			'type' => 'Text',
 			'attributes' => array(
 				'class' => 'form-control',
-				'placeholder' => 'Enter % Commission',
-				'id' => 'percentCommission',
+				'id' => 'permanentDiscount',
 			)
 		));
 
@@ -204,6 +196,7 @@ class CustomerForm extends Form
 						'object_manager' => $om,
 						'target_class'   => 'Database\Entity\ShippingModes',
 						'property'       => 'shippingModeName',
+						'empty_item_label' => ' ',
 					),
 					'attributes' => array(
 						'class' => 'select2me form-control',
@@ -218,6 +211,7 @@ class CustomerForm extends Form
 					'options' => array(
 						'object_manager' => $om,
 						'target_class'   => 'Database\Entity\Users',
+							'empty_item_label' => ' ',
 							'label_generator' => function($row) {
 								return $row->getFullName();	
 							},
@@ -245,6 +239,7 @@ class CustomerForm extends Form
 						'object_manager' => $om,
 						'target_class'   => 'Database\Entity\PriceTypes',
 						'property'       => 'priceTypeName',
+						'empty_item_label' => ' ',
 					),
 					'attributes' => array(
 						'class' => 'select2me form-control',
@@ -261,6 +256,7 @@ class CustomerForm extends Form
 				'class' => 'select2me form-control',
 				'tabindex' => '1',
 				'id' => 'customerStatus',
+				'empty_item_label' => ' ',
 			),
 			'options' => array(
 				'value_options' => array(
@@ -271,16 +267,6 @@ class CustomerForm extends Form
 				),
 			)
 		));
-
-
-		
-
-
-		//Modal Properties (ADDRESS)
-		
-
-		//Modal Properties (CONTACT)
-		
 
 	}
 }
