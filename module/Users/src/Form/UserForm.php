@@ -41,7 +41,7 @@ class UserForm extends Form
 		
 		$this->add( array(
 			'name' => 'password',
-			'type' => 'Text',
+			'type' => 'Password',
 			'required' => true,
 			'attributes' => array(
 				'class' => 'form-control',
@@ -50,7 +50,7 @@ class UserForm extends Form
 		));
 		
 		$this->add(array(
-			'name' => 'designations[designationId]',
+			'name' => 'designation[designationId]',
 			'type' => 'DoctrineModule\Form\Element\ObjectSelect',
 			'required' => true,
 			'options' => array(

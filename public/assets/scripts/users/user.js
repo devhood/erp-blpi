@@ -103,6 +103,7 @@ var User = function () {
 					submitHandler: function (form) {
 						success.show();
 						error.hide();
+						form.submit();
 					}
 				});
 

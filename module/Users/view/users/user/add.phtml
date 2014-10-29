@@ -12,7 +12,7 @@
 		</div>
 	</div>
 	<div class="portlet-body form">
-		<form action="#" class="form-horizontal" id="user_add">
+		<form action="/user/add" method="post" class="form-horizontal" id="user_add">
 			<div class="form-body">
 				<div class="alert alert-danger display-hide">
 					<button class="close" data-close="alert"></button>
@@ -62,7 +62,7 @@
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-								<?php  echo $this->formRow($userForm->get('designations[designationId]')); ?>
+								<?php  echo $this->formRow($userForm->get('designation[designationId]')); ?>
 								<span class="col-md-12 control-label">Position</span>
 							</div>
 						</div>
