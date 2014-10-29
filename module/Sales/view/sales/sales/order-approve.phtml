@@ -1,14 +1,8 @@
-<!-- BEGIN PAGE LEVEL STYLES -->
-<?php
-$this->headLink()
-->appendStylesheet($this->basePath('/assets/plugins/select2/select2.css'))
-->appendStylesheet($this->basePath('/assets/plugins/select2/select2-metronic.css'))
-->appendStylesheet($this->basePath('/assets/plugins/data-tables/DT_bootstrap.css'))
-?>
+
 <div class="portlet box grey">
   <div class="portlet-title">
     <div class="caption">
-      <i class="fa fa-reorder"></i>Sales
+      <i class="fa fa-reorder"></i>APPROVE SALES ORDER
     </div>
     <div class="tools">
       <a href="javascript:;" class="collapse">
@@ -34,7 +28,7 @@ $this->headLink()
             <button class="close" data-close="alert"></button>
               Your form validation is successful!
           </div>
-          <h4 class="form-section">Sales Approve </h4>
+     <h5></h5>
           <div class="row">
           <div class="col-md-6">
             <div class="form-group">
@@ -303,7 +297,14 @@ $this->headLink()
                       </tr>
                     </thead>
                     <tbody>
-
+                    <tr>
+					<td>Sample Product</td>
+						<td>200</td>
+						<td>8000</td>
+						<td>0</td>
+						<td>20</td>
+						<td>220</td>
+						</tr>
                     </tbody>
                   </table>
                 </div>
@@ -373,7 +374,7 @@ $this->headLink()
         <div class="row">
           <div class="col-md-6">
             <div class="col-md-offset-3 col-md-9">
-              <button type="submit" class="btn green">Approve & Send</button>
+              <button type="submit" class="btn green">Approve</button>
               <button type="button" class="btn default">Cancel</button>
             </div>
           </div>
@@ -386,14 +387,8 @@ $this->headLink()
   </div><!-- portlet body form-->
 </div> <!-- end form body -->
  
-
-
 <?php echo $this->render('sales/items') ?>
 
-
-<!-- BEGIN PAGE LEVEL PLUGINS -->
-<!-- END PAGE LEVEL PLUGINS -->
-<!-- BEGIN PAGE LEVEL SCRIPTS -->
 <?php
 $this->inlineScript()
 ->appendFile($this->basePath('/assets/scripts/sales/sales.js'))
