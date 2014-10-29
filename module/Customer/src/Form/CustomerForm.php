@@ -125,8 +125,8 @@ class CustomerForm extends Form
 				'class' => 'form-control',
 				'label' => 'Consignee',
 				'id' => 'consignee',
-				'checked_value' => '1',
-				'unchecked_value' => '0'
+				'checked_value' => 'Yes',
+				'unchecked_value' => 'No'
 			)
 		));
 
@@ -139,8 +139,8 @@ class CustomerForm extends Form
 				'class' => 'form-control',
 				'label' => 'Franchise',
 				'id' => 'franchise',
-				'checked_value' => '1',
-				'unchecked_value' => '0'
+				'checked_value' => 'Yes',
+				'unchecked_value' => 'No'
 			)
 		));
 
