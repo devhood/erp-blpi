@@ -26,6 +26,9 @@ License: You must have a valid license purchased only from themeforest(the above
 <meta content="" name="author"/>
 <?php 
    $this->headLink()
+        ->prependStylesheet($this->basePath('/assets/plugins/select2/select2.css'))
+        ->prependStylesheet($this->basePath('/assets/plugins/select2/select2-metronic.css'))
+        ->prependStylesheet($this->basePath('/assets/plugins/data-tables/DT_bootstrap.css'))
         ->prependStylesheet($this->basePath('/assets/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css'))
         ->prependStylesheet($this->basePath('/assets/css/custom.css'))
         ->prependStylesheet($this->basePath('/assets/plugins/jquery-tags-input/jquery.tagsinput.css'))
@@ -43,6 +46,7 @@ License: You must have a valid license purchased only from themeforest(the above
         ->prependStylesheet($this->basePath('assets/plugins/font-awesome/css/font-awesome.min.css'))
         ->prependStylesheet('http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all')
         ->prependStylesheet($this->basePath('/assets/plugins/bootstrap/css/bootstrap.min.css'));
+
 
 ?>
 <?php echo $this->headLink() ?>
@@ -212,6 +216,8 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN CORE PLUGINS -->
 <?php 
     $this->inlineScript()
+        ->prependFile($this->basePath('/assets/scripts/datatable/Table.js'))
+        ->prependFile($this->basePath('/assets/scripts/ajax/generic.js'))
         ->prependFile($this->basePath('/assets/plugins/data-tables/DT_bootstrap.js'))
         ->prependFile($this->basePath('/assets/plugins/data-tables/jquery.dataTables.js'))
         ->prependFile($this->basePath('/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js'))
@@ -239,10 +245,12 @@ License: You must have a valid license purchased only from themeforest(the above
         ->prependFile($this->basePath('/assets/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js'))
         ->prependFile($this->basePath('/assets/plugins/excanvas.min.js'),'text/javascript',array('conditional' => 'lt IE 9'))
         ->prependFile($this->basePath('/assets/plugins/respond.min.js'),'text/javascript',array('conditional' => 'lt IE 9'))  
+
 ?>
 <?php $this->inlineScript()->captureStart() ?>
 	jQuery(document).ready(function() {
 		App.init();
+		Table.init();
 		ComponentsEditors.init();
 		$('.tags').tagsInput({
             width: '100%',
@@ -251,7 +259,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 rtl: App.isRTL(),
                 autoclose: true
         });
-        //$('table.table-bordered.table-condensed.flip-content').dataTable();
+      
 	});
 <?php $this->inlineScript()->captureEnd() ?>
 <?php
