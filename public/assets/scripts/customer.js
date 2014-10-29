@@ -27,11 +27,6 @@ var Customer = function () {
                         required: true
                     },
                     
-                    branch : {
-                        minlength: 2,
-                        required: true
-                    },
-                    
                     tradeName : {
                         minlength: 2,
                         required: true
@@ -131,8 +126,12 @@ var Customer = function () {
             submitHandler: function (form) {
                 success.show();
                 error.hide();
+               
             }
 			});
+			
+			
+			
 		}
 	};
 

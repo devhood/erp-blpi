@@ -19,11 +19,6 @@ var Contact = function () {
                         minlength: 2
                     },
                     
-                    primary : {
-                        required: true,
-                        minlength: 2
-                    },
-                    
                 	fullname : {
                         minlength: 2,
                         required: true
@@ -65,8 +60,40 @@ var Contact = function () {
             submitHandler: function (form) {
                 success.show();
                 error.hide();
+                manageContacts.add();
             }
 			});
+			
+			var contacts = [];
+			var contactTable = $('#contactTable').dataTable();
+		
+			var manageContacts = {
+				
+				add : function(){
+					contacts.push(1);
+					contactTable.fnAddData([
+							$("#fullname").val(), 
+							$("#position").val(), 
+							$("#phone").val(), 
+							$("#email").val(),
+							"<a href='#' class='contact_delete_row"+contacts.length+"'>Delete</a>"]);
+					
+					$(".contact_delete_row"+contacts.length).live('click', function (e) {
+						manageContacts.remove($(this));
+					});
+					$('#contactModal').modal('toggle');
+					
+				},
+			
+				remove : function(elem){
+					if (confirm("Are you sure to delete this row ?") == false) {
+						 return;
+					}
+					var nRow = elem.parents('tr')[0];
+					contactTable.fnDeleteRow(nRow);
+				}
+				
+			}
 		}
 	};
 

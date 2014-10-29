@@ -11,22 +11,30 @@ class AddressForm extends Form
 	{
 		parent::__construct('address');
 		
-		$this->add(array(
-			'name' => 'addressType',
-			'type' => 'Select',
+		$this->add( array(
+			'name' => 'shipping',
+			'type' => 'checkbox',
 			'attributes' => array(
-				'class' => 'select2me form-control',
-				'tabindex' => '1',
-				'id' => 'addressType',
-			),
-			'options' => array(
-				'value_options' => array(
-					'0'=>'Shipping',
-					'1'=>'Billing',
-					'2'=>'Company'
-				),
+				'class' => 'form-control',
+				'label' => 'Shipping',
+				'id' => 'shipping',
+				'checked_value' => '1',
+				'unchecked_value' => '0'
 			)
 		));
+		
+		$this->add( array(
+			'name' => 'billing',
+			'type' => 'checkbox',
+			'attributes' => array(
+				'class' => 'form-control',
+				'label' => 'Billing',
+				'id' => 'billing',
+				'checked_value' => '1',
+				'unchecked_value' => '0'
+			)
+		));
+		
 		$this->add(array(
 				'name' => 'streetLandmark',
 				'type' => 'Text',

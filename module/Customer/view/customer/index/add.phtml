@@ -8,7 +8,7 @@ $this->headLink()
 <div class="portlet box grey">
 	<div class="portlet-title">
 		<div class="caption">
-			<i class="fa fa-reorder"></i>Customer Profile
+			<i class="fa fa-reorder"></i>CUSTOMER PROFILE
 		</div>
 		<div class="tools">
 			<a href="javascript:;" class="collapse">
@@ -33,8 +33,8 @@ $this->headLink()
 						<button class="close" data-close="alert"></button>
 							Your form validation is successful!
 					</div>
-				<h4 class="form-section">Add Customer</h4>
 				<div class="row">
+				<br />
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
@@ -76,7 +76,7 @@ $this->headLink()
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
 								<?php  echo $this->formRow($customerForm->get('branch')); ?>
 								<span class="col-md-12 control-label">
-									Branch
+									Branch Location
 								</span>
 							</div>
 						</div>
@@ -151,7 +151,7 @@ $this->headLink()
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
 								<?php  echo $this->formRow($customerForm->get('secNumber')); ?>
 								<span class="col-md-12 control-label">
-									Sec. Number
+									SEC Number
 								</span>
 							</div>
 						</div>
@@ -229,9 +229,9 @@ $this->headLink()
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left select">
-								<?php  echo $this->formRow($customerForm->get('percentCommission')); ?>
+								<?php  echo $this->formRow($customerForm->get('permanentDiscount')); ?>
 								<span class="col-md-12 control-label">
-									%Commission
+									Permanent Discount
 								</span>
 							</div>
 						</div>
@@ -290,87 +290,157 @@ $this->headLink()
 					<!--/span-->
 				</div><!--/row-->
 
-
-
-
-					<div class="row">
-						<div class="col-md-2"></div>
-						<div class="col-md-8">
-							<hr/>
-							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-left: 0px;">
-								<h4 class="">Address</h4>
-							</div>
-							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-right: 0px;">
-								<button type="button" data-toggle="modal" href="#addressModal" class="btn-sm green custom-right">
-							Add New
-								<i class="fa fa-plus"></i>
-							</button>
-							</div>
-						</div>
-						<div class="col-md-2"></div>
-					</div>
-
-				<div class="form-group">
-						<div class="col-md-2"></div>
-						<div class="col-md-8">
-							<div class="row">
-								<div class="col-md-12">
-										<div class="portlet-body flip-scroll">
-											<table class="table table-bordered table-condensed flip-content">
-											<thead class="flip-content bg-grey">
-											<tr>
-												<th width="20%">Address Type</th>
-												<th>Stree/Landmark</th>
-												<th>City</th>
-												<th>Province</th>
-												<th>Country</th>
-												<th>Zipcode</th>
-												<th width="12%">Delete</th>
-											</tr>
-											</thead>
-											<tbody>
-											</tbody>
-											</table>
-										</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-2"></div>
-					</div>
-
-
-
+<!-- 	BEGIN ADDRESS -->
+	<div class="portlet box grey">
+		<div class="portlet-title">
+			<div class="caption">
+				<i class="fa fa-reorder"></i>ADDRESS
+			</div>
+			<div class="tools">
+				<a href="javascript:;" class="collapse">
+				</a>
+				<a href="#portlet-config" data-toggle="modal" class="config">
+				</a>
+				<a href="javascript:;" class="reload">
+				</a>
+				<a href="javascript:;" class="remove">
+				</a>
+			</div>
+		</div>
+		<div class="portlet-body form">
+			<!-- BEGIN FORM-->
 				<div class="row">
+					<br />
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
+										<label class="checkbox custom-left">
+				<?php  echo $this->formRow($addressForm->get('shipping')); ?>
+				Shipping</label>
+				<label class="checkbox custom-right">
+				<?php  echo $this->formRow($addressForm->get('billing')); ?>
+				Billing</label>
+										<span class="col-md-12 control-label">
+											Address Type
+										</span>
+									</div>
+								</div>
+							</div>
+							<!--/span-->
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
+										<?php  echo $this->formRow($addressForm->get('streetLandmark')); ?>
+										<span class="col-md-12 control-label">
+											Street/Landmark
+										</span>
+									</div>
+								</div>
+							</div>
+						</div><!--end of row  -->
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
+										<?php  echo $this->formRow($addressForm->get('cities[cityId]')); ?>
+										<span class="col-md-12 control-label">
+											City
+										</span>
+									</div>
+								</div>
+							</div>
+							<!--/span-->
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
+										<?php  echo $this->formRow($addressForm->get('provinces[provinceId]')); ?>
+										<span class="col-md-12 control-label">
+											Province
+										</span>
+									</div>
+								</div>
+							</div>
+						</div><!--end of row  -->
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
+										<?php  echo $this->formRow($addressForm->get('countries[countryId]')); ?>
+										<span class="col-md-12 control-label">
+											Country
+										</span>
+									</div>
+								</div>
+							</div>
+							<!--/span-->
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
+										<?php  echo $this->formRow($addressForm->get('zipcode')); ?>
+										<span class="col-md-12 control-label">
+											Zipcode
+										</span>
+									</div>
+								</div>
+							</div>
+						</div><!--end of row  -->
+				
+			<!-- END FORM-->
+		</div>
+	</div>
+<!-- 	END ADDRESS -->
+	
+	<!-- 	BEGIN CONTACT -->
+	<div class="portlet box grey">
+		<div class="portlet-title">
+			<div class="caption">
+				<i class="fa fa-reorder"></i>CONTACT PERSON
+			</div>
+			<div class="tools">
+				<a href="javascript:;" class="collapse">
+				</a>
+				<a href="#portlet-config" data-toggle="modal" class="config">
+				</a>
+				<a href="javascript:;" class="reload">
+				</a>
+				<a href="javascript:;" class="remove">
+				</a>
+			</div>
+		</div>
+		<div class="portlet-body form">
+			<!-- BEGIN FORM-->
+				<div class="form-body">
+					<div class="row">
+					<br />
 						<div class="col-md-2"></div>
-						<div class="col-md-8">
-							<hr/>
+						<div class="col-md-8" >
 							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-left: 0px;">
-								<h4 class="">Contact</h4>
+								<button type="button" data-toggle="modal" href="#contactModal" class="btn-sm green custom-left">Add New
+									<i class="fa fa-plus"></i>
+								</button>
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-right: 0px;">
-								<button type="button" data-toggle="modal" href="#contactModal" class="btn-sm green custom-right">
-							Add New
-								<i class="fa fa-plus"></i>
-							</button>
+								
 							</div>
 						</div>
 						<div class="col-md-2"></div>
 					</div>
-
-				<div class="form-group">
+					<div class="form-group">
 						<div class="col-md-2"></div>
 						<div class="col-md-8">
 							<div class="row">
+								<br />
 								<div class="col-md-12">
-										<div class="portlet-body flip-scroll">
-											<table class="table table-bordered table-condensed flip-content">
+									<div class="portlet-body flip-scroll">
+										<table id="contactTable" class="table table-bordered table-condensed flip-content">
 											<thead class="flip-content bg-grey">
 											<tr>
-												<th width="20%">Position</th>
-												<th>Primary</th>
-												<th>Full Name</th>
+												<th width="20%">Name</th>
+												<th>Position</th>
+												<th>Mobile</th>
 												<th>Email</th>
-												<th>Phone</th>
 												<th width="12%">Delete</th>
 											</tr>
 											</thead>
@@ -383,9 +453,11 @@ $this->headLink()
 						</div>
 						<div class="col-md-2"></div>
 					</div>
-					
-
-
+				</div>
+			<!-- END FORM-->
+		</div>
+	</div>
+<!-- 	END CONTACT -->
 
 				<!-- BEGIN PAGE CONTENT-->
 

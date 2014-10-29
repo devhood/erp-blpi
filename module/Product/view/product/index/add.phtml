@@ -8,7 +8,7 @@ $this->headLink()
 	<div class="portlet box grey">
 		<div class="portlet-title">
 			<div class="caption">
-				<i class="fa fa-reorder"></i>Product Profile
+				<i class="fa fa-reorder"></i>PRODUCT PROFILE
 			</div>
 			<div class="tools">
 				<a href="javascript:;" class="collapse">
@@ -33,8 +33,9 @@ $this->headLink()
 						<button class="close" data-close="alert"></button>
 							Your form validation is successful!
 					</div>
-					<h4 class="form-section">General Info</h4>
+<!-- 					<h4 class="form-section">General Info</h4> -->
 					<div class="row">
+					<br />
 						<div class="col-md-6">
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
@@ -64,7 +65,7 @@ $this->headLink()
 							<div class="form-group">
 								<div class="col-md-2 col-lg-2 "></div>
 								<div class="col-md-8 col-xs-12 col-sm-12 col-lg-8 ">
-									<?php echo $this->formRow($formProduct->get('desc')); ?>
+									<?php echo $this->formRow($formProduct->get('productDescription')); ?>
 									<span class="col-md-12 control-label">
 										 Description
 									</span>
@@ -197,33 +198,39 @@ $this->headLink()
 						</div>
 						<!--/span-->
 					</div>
+										
+<!-- 	BEGIN PRODUCT PACKAGE -->
+	<div class="portlet box grey">
+		<div class="portlet-title">
+			<div class="caption">
+				<i class="fa fa-reorder"></i>PRODUCT PACKAGE
+			</div>
+			<div class="tools">
+				<a href="javascript:;" class="collapse">
+				</a>
+				<a href="#portlet-config" data-toggle="modal" class="config">
+				</a>
+				<a href="javascript:;" class="reload">
+				</a>
+				<a href="javascript:;" class="remove">
+				</a>
+			</div>
+		</div>
+		<div class="portlet-body form">
+			<!-- BEGIN FORM-->
+				<div class="form-body">
 					<div class="row">
-						<div class="col-md-12">
-							<div class="form-group">
-								<div class="col-md-2 col-lg-2 "></div>
-									<div class="col-md-8 col-xs-12 col-sm-12 col-lg-8 ">
-										<?php  echo $this->formRow($formProduct->get('categories')); ?>
-										<span class="col-md-12 control-label">
-											Categories
-										</span>
-									</div>
-								<div class="col-md-2 col-lg-2 "></div>
-							</div>
-						</div>
-					</div>
-
-					<div class="row">
+					<br />
 						<div class="col-md-2"></div>
 						<div class="col-md-8">
-							<hr/>
 							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-left: 0px;">
-								<h4 class="">Bundle of Items</h4>
-							</div>
-							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-right: 0px;">
-								<button type="button" data-toggle="modal" href="#bundleModal" class="btn-sm green custom-right">
+								<button type="button" data-toggle="modal" href="#bundleModal" class="btn-sm green custom-left">
 							Add New
 								<i class="fa fa-plus"></i>
 							</button>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-right: 0px;">
+								
 							</div>
 						</div>
 						<div class="col-md-2"></div>
@@ -232,6 +239,7 @@ $this->headLink()
 						<div class="col-md-2"></div>
 						<div class="col-md-8">
 							<div class="row">
+								<br />
 								<div class="col-md-12">
 										<div class="portlet-body flip-scroll">
 											<table id="bundlesTable" class="table table-bordered table-condensed flip-content">
@@ -251,27 +259,54 @@ $this->headLink()
 						</div>
 						<div class="col-md-2"></div>
 					</div>
+				</div>
+			<!-- END FORM-->
+		</div>
+	</div>
+<!-- 	END PRODUCT PACKAGE -->
 
+<!-- 	BEGIN UOM -->
+	<div class="portlet box grey">
+		<div class="portlet-title">
+			<div class="caption">
+				<i class="fa fa-reorder"></i>UNIT OF MEASUREMENT
+			</div>
+			<div class="tools">
+				<a href="javascript:;" class="collapse">
+				</a>
+				<a href="#portlet-config" data-toggle="modal" class="config">
+				</a>
+				<a href="javascript:;" class="reload">
+				</a>
+				<a href="javascript:;" class="remove">
+				</a>
+			</div>
+		</div>
+		<div class="portlet-body form">
+			<!-- BEGIN FORM-->
+				<div class="form-body">
 					<div class="row">
-
+					<br />
 						<div class="col-md-2"></div>
 						<div class="col-md-8" >
-							<hr/>
+							
 							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-left: 0px;">
-								<h4 class="">Unit of Measurement</h4>
-							</div>
+								<button type="button" data-toggle="modal" href="#unitModal" class="btn-sm green custom-left">Add New
+									<i class="fa fa-plus"></i>
+								</button>
+							</div>	
 							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-right: 0px;">
-								<button type="button" data-toggle="modal" href="#unitModal" class="btn-sm green custom-right">Add New
-								<i class="fa fa-plus"></i>
-							</button>
-							</div>
+							</div>	
 						</div>
 						<div class="col-md-2"></div>
 					</div>
+					
 					<div class="form-group">
 						<div class="col-md-2"></div>
 						<div class="col-md-8">
+						
 							<div class="row">
+							<br />
 								<div class="col-md-12">
 									<div class="portlet-body flip-scroll">
 										<table id="uomsTable" class="table table-bordered table-condensed flip-content">
@@ -291,17 +326,43 @@ $this->headLink()
 						</div>
 						<div class="col-md-2"></div>
 					</div>
+				</div>
+			<!-- END FORM-->
+		</div>
+	</div>
+<!-- 	END UOM -->
+	
+<!-- 	BEGIN PRICE -->
+	<div class="portlet box grey">
+		<div class="portlet-title">
+			<div class="caption">
+				<i class="fa fa-reorder"></i>PRICE
+			</div>
+			<div class="tools">
+				<a href="javascript:;" class="collapse">
+				</a>
+				<a href="#portlet-config" data-toggle="modal" class="config">
+				</a>
+				<a href="javascript:;" class="reload">
+				</a>
+				<a href="javascript:;" class="remove">
+				</a>
+			</div>
+		</div>
+		<div class="portlet-body form">
+			<!-- BEGIN FORM-->
+				<div class="form-body">
 					<div class="row">
+					<br />
 						<div class="col-md-2"></div>
 						<div class="col-md-8" >
-							<hr/>
 							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-left: 0px;">
-								<h4 class="">Price</h4>
+								<button type="button" data-toggle="modal" href="#priceModal" class="btn-sm green custom-left">Add New
+									<i class="fa fa-plus"></i>
+								</button>
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-right: 0px;">
-								<button type="button" data-toggle="modal" href="#priceModal" class="btn-sm green custom-right">Add New
-								<i class="fa fa-plus"></i>
-							</button>
+								
 							</div>
 						</div>
 						<div class="col-md-2"></div>
@@ -310,6 +371,7 @@ $this->headLink()
 						<div class="col-md-2"></div>
 						<div class="col-md-8">
 							<div class="row">
+								<br />
 								<div class="col-md-12">
 									<div class="portlet-body flip-scroll">
 										<table id="priceTable" class="table table-bordered table-condensed flip-content">
@@ -327,23 +389,45 @@ $this->headLink()
 										</div>
 								</div>
 							</div>
-							<hr/>
 						</div>
 						<div class="col-md-2"></div>
 					</div>
-
-
+				</div>
+			<!-- END FORM-->
+		</div>
+	</div>
+<!-- 	END PRICE -->
+	
+<!-- 	BEGIN DOCUMENT -->
+	<div class="portlet box grey">
+		<div class="portlet-title">
+			<div class="caption">
+				<i class="fa fa-reorder"></i>DOCUMENT
+			</div>
+			<div class="tools">
+				<a href="javascript:;" class="collapse">
+				</a>
+				<a href="#portlet-config" data-toggle="modal" class="config">
+				</a>
+				<a href="javascript:;" class="reload">
+				</a>
+				<a href="javascript:;" class="remove">
+				</a>
+			</div>
+		</div>
+		<div class="portlet-body form">
+				<div class="form-body">
 					<div class="row">
+					<br />
 						<div class="col-md-2"></div>
 						<div class="col-md-8" >
-							<hr/>
 							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-left: 0px;">
-								<h4 class="">Documents</h4>
+								<button type="button" data-toggle="modal" href="#documentModal" class="btn-sm green custom-left">Add New
+									<i class="fa fa-plus"></i>
+								</button>
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-right: 0px;">
-								<button type="button" data-toggle="modal" href="#documentModal" class="btn-sm green custom-right">Add New
-								<i class="fa fa-plus"></i>
-							</button>
+								
 							</div>
 						</div>
 						<div class="col-md-2"></div>
@@ -352,6 +436,7 @@ $this->headLink()
 						<div class="col-md-2"></div>
 						<div class="col-md-8">
 							<div class="row">
+								<br />
 								<div class="col-md-12">
 									<div class="portlet-body flip-scroll">
 										<table id="documentTable" class="table table-bordered table-condensed flip-content">
@@ -369,10 +454,15 @@ $this->headLink()
 										</div>
 								</div>
 							</div>
-							<hr/>
 						</div>
 						<div class="col-md-2"></div>
 					</div>
+				</div>
+
+			<!-- END FORM-->
+		</div>
+	</div>
+<!-- 	END DOCUMENT -->
 
 
 			<!-- BEGIN PAGE CONTENT-->
@@ -394,6 +484,7 @@ $this->headLink()
 			<!-- END FORM-->
 		</div>
 	</div>
+	
 	<div id="partialFiller">
 	<?php echo $this->render('product/units') ?>
 	</div>
