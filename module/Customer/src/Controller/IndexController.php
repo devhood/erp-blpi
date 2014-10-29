@@ -5,47 +5,42 @@ namespace Customer\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Main\Controller\BaseController;
+use DoctrineModule\Stdlib\Hydrator\DoctrineObject as DoctrineHydrator;
 
 class IndexController extends BaseController
 {
-	protected $em = null;
 
-
-	//ORM Entity
-	public function setEntityManager(\Doctrine\ORM\EntityManager $em)
-	{
-		$this->em = $em;
-	}
-	//ORM Entity
-	public function getEntityManager()
-	{
-		if (null === $this->em) {
-			$this->em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
-		}
-		return $this->em;
-	}
-
-
-		//calling customer/ page
     public function indexAction()
     {
-			//$records = $this->_getContents("records");
-
-			return new ViewModel();
-
-			//	'form' => $form,
-			//	'record' => $records,
-
+    	$records = $this->_getContents('Customers');
+//     	var_dump($records);
+//     	exit;
+    	return new ViewModel(array('records' => $records));
     }
 
-		//calling customer/add page
+
     public function addAction()
     {
-    	$em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+  		$em = $this->_getEntityManager();
     	$customerForm = new \Customer\Form\CustomerForm($em);
     	$contactForm = new \Customer\Form\ContactForm($em);
     	$addressForm = new \Customer\Form\AddressForm($em);
 
+    	
+    	$request = $this->getRequest();
+    	if($request->isPost()){
+    			
+    		$request = (array)($request->getPost());
+    			
+    		$table = self::DBNS.'Customers';
+    		$object = new $table();
+    		$hydrator = new DoctrineHydrator($em);
+    		$object = $hydrator->hydrate($request, $object);
+    		$em->persist($object);
+    		$em->flush();
+    		return $this->redirect()->toUrl('/customer');
+    	}
+    	
 
     	return new ViewModel(array(
 				'customerForm' => $customerForm,
@@ -57,16 +52,16 @@ class IndexController extends BaseController
 
 public function editAction()
     {
-    	$form = new \Customer\Form\CustomerForm();
+//     	$form = new \Customer\Form\CustomerForm();
 
- 		$addresses = $this->_getContents("Address");
-       	$contacts = $this->_getContents("Contacts");
+//  		$addresses = $this->_getContents("Address");
+//        	$contacts = $this->_getContents("Contacts");
 
-    	return new ViewModel(array(
-				'form' => $form,
-				'addresses' => $addresses,
-				'contacts' => $contacts,
-				));
+//     	return new ViewModel(array(
+// 				'form' => $form,
+// 				'addresses' => $addresses,
+// 				'contacts' => $contacts,
+// 				));
     }
 
 

@@ -1,55 +1,105 @@
-<?php
-$this->headLink()
-->appendStylesheet($this->basePath('/assets/plugins/select2/select2.css'))
-->appendStylesheet($this->basePath('/assets/plugins/select2/select2-metronic.css'))
-->appendStylesheet($this->basePath('/assets/plugins/data-tables/DT_bootstrap.css'))
-->appendStylesheet($this->basePath('/assets/css/pages/invoice.css'))
-
-?>
-<!-- BEGIN GLOBAL MANDATORY STYLES -->
-
-<link href="../../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 
 			<!-- BEGIN PAGE CONTENT-->
 			<div class="invoice">
 				<div class="row invoice-logo">
+				<div class="col-xs-12">
+				
 					<div class="col-xs-6 invoice-logo-space">
-						<img src="assets/img/invoice/walmart.png" alt=""/>
+						<img src="/assets/img/logo/beautylane.png " alt="logo" class="img-responsive" width="200px">
+							
+					<div>
+						
+						<h4>DELIVERY RECEIPT</h4>
+					
 					</div>
+					</div><!-- /col-md-6 -->
+						
 					<div class="col-xs-6">
-						<p>
-							 #5652256 / 28 Feb 2013
+							<div class="pull-right"> 10/F Address: Alabang Business Tower, Acacia Ave, Madrigal Business Park, Ayala Alabang, 
+							Muntinlupa City, 1780 Metro Manila
+								</div>
+								<div>Tel. No.(02) 771 0771</div>
+							<div>VAT Reg. TIN 006-335-651-000</div>	
+								
+							<div> <h4>No. 0501</h4> </div>
+							 
+							 </p>
+							  Date: 28 Feb 2013
 							<span class="muted">
-								 Consectetuer adipiscing elit
+								 
 							</span>
-						</p>
-					</div>
+						
+					</div><!-- /col-xs-6 -->
+				</div>
 				</div>
 				<hr/>
+				
+				
+						
+				<div class="row ">
+					<div class="col-xs-6 invoice-payment">				
+			     		<div class="col-xs-4 pull-left"><h4>Ship To:</h4></div>
+						<div class="col-xs-8 pull-right"> <h2>Landmark Makati</h2></div>
+					</div>
+					
+					<div class="col-xs-6 invoice-payment">				
+			     		<div class="col-xs-4 pull-left"><h4>Bill To:</h4></div>
+						<div class="col-xs-8 pull-right"> <h2> Juan Dela Cruz</h2></div>
+					</div>
+					</div>
+				
+						
+<!-- 				<div class="row"> -->
+<!-- 					<div class="col-xs-6 invoice-payment"> -->
+<!-- 						<h4>Ship To:</h4> -->
+<!-- 						<ul class="list-unstyled"> -->
+<!-- 							<li> -->
+<!-- 								 Lester Mercado -->
+<!-- 							</li> -->
+<!-- 							<li> -->
+<!-- 								 Billing Address -->
+<!-- 							</li> -->
+<!-- 						</ul> -->
+<!-- 					</div> -->
+<!-- 					<div class="col-xs-6 invoice-payment"> -->
+<!-- 						<h4>Shipping Name:</h4> -->
+<!-- 						<ul class="list-unstyled"> -->
+<!-- 							<li> -->
+<!-- 								 Lester Mercado -->
+<!-- 							</li> -->
+<!-- 							<li> -->
+<!-- 								 Shipping Address -->
+<!-- 							</li> -->
+<!-- 						</ul> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+						
 				<div class="row">
-					<div class="col-xs-6">
-						<h4>Client Name:</h4>
-						<ul class="list-unstyled">
-							<li>
-								 John Doe
-							</li>
-							<li>
-								Billing Address
-							</li>
-						</ul>
-					</div>
-					<div class="col-xs-6 invoice-payment">
-						<h4>Shipping Name:</h4>
-						<ul class="list-unstyled">
-							<li>
-								 Lester Mercado
-							</li>
-							<li>
-								 Shipping Address
-							</li>
-						</ul>
-					</div>
+				<table class="table" border="">
+						<tbody>
+						<tr>
+							<td>S.O. No.:</td>
+							<td>P.O. No.:</td>
+							<td>Reference No.:</td>
+							<td>Ordered by: </td>
+							
+						</tr>
+						<tr>
+							<td>Terms: </td>
+							<td>Delivery Date:</td>
+							<td>Delivery Via:</td>
+							<td>SE:</td>
+						
+						</tr>
+						<tr>
+							<td colspan="4" >Note:</td>
+							
+						</tr>
+						</tbody>
+				</table>
+<!-- 				<hr> -->
 				</div>
+				
 				<div class="row">
 					<div class="col-xs-12">
 						<table class="table table-striped table-hover">
@@ -84,10 +134,10 @@ $this->headLink()
 								 1
 							</td>
 							<td>
-								 Hardware
+								 LLL80
 							</td>
 							<td class="hidden-480">
-								 Server hardware purchase
+								 Lotion
 							</td>
 							<td class="hidden-480">
 								 32
@@ -107,10 +157,10 @@ $this->headLink()
 								 2
 							</td>
 							<td>
-								 Furniture
+								 SHA098
 							</td>
 							<td class="hidden-480">
-								 Office furniture purchase
+								 Shampoo
 							</td>
 							<td class="hidden-480">
 								 15
@@ -130,10 +180,10 @@ $this->headLink()
 								 3
 							</td>
 							<td>
-								 Foods
+								 HD67
 							</td>
 							<td class="hidden-480">
-								 Company Anual Dinner Catering
+								 Hair Dye
 							</td>
 							<td class="hidden-480">
 								 69
@@ -153,10 +203,10 @@ $this->headLink()
 								 3
 							</td>
 							<td>
-								 Software
+								 TAN201
 							</td>
 							<td class="hidden-480">
-								 Payment for Jan 2013
+								Tanning Lotion
 							</td>
 							<td class="hidden-480">
 								 149
@@ -171,10 +221,81 @@ $this->headLink()
 								 $2152
 							</td>
 						</tr>
+						<tr>
+							<td colspan="7">Total</td>
+						</tr>
+													
 						</tbody>
 						</table>
 					</div>
 				</div>
+				<hr>
+				
+				<div class="row">
+					<div class="col-md-8">
+					<h6>
+					The purchase agees that:
+					</h6>
+					<h6>-The value of the goods should be paid within the aforementioned terms. Interest of 24% will be
+					charged on all overdue accounts. In case of litigation, purchaser voluntarily submits to the jurisdiction of Muntinlupa City
+					and agrees to pay 25% of the amount claimed as attorney's fee and other court and legal expenses.
+					</h6>
+					<h6>-risk of the loss of the above goods shall be transferred to the buyer upon delivery.</h6>
+					</div>
+					<div class="col-md-4"></div>
+				</div>
+				
+				
+				<div class="row">
+				<div class="col-md-12">
+				<div></div> <div></div>
+				<div></div>	
+				<div></div>
+				</div>
+			
+  
+  		<table class="table table-bordered">
+            <thead>
+              <tr>
+                <th rowspan="2" width="10%">Checked by:</th>
+                <th rowspan="2" width="10%">Approve by:</th>
+             	<th rowspan="4">Received the above items in good order and conditions.</th>
+             	
+             	
+             	
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2"></td>
+                <td rowspan="2"></td>
+                <td rowspan="4">Driver (PrintedName, Signature and Date) Buyer(Printed Name, Signature and Date)</td>
+            	
+            	
+              </tr>
+            </tbody>
+        </table>
+        	<div class="col-sm-4">
+       		</div>
+        
+				</div><!-- /row -->
+				
+				
+				<div class="row">
+				<div class=col-md-8></div>
+				<div class="col-md-4">
+				<h6>**THIS DOCUMENT IS NOT VALID FOR CLAIMING INPUT TAXES</h6>
+				</div>
+				</div>
+				<h6 class="pull-right alert-danger">ACCOUNTING</h6>
+				
+				<div class="row">
+				<div class="col-md-4">
+				<h6>"THIS DELIVERY RECEIPT SHALL BE VALID FOR FIVE (5) YEARS FROM THE DATE OF ATP."</h6>
+				</div>
+				<div class=col-md-8></div>
+				</div>
+				
 				<div class="row">
 					<div class="col-xs-4">
 					</div>
@@ -183,9 +304,9 @@ $this->headLink()
 						<a class="btn btn-lg blue hidden-print" onclick="javascript:window.print();">
 							 Print <i class="fa fa-print"></i>
 						</a>
-						<a class="btn btn-lg green hidden-print">
-							 Submit Your Invoice <i class="fa fa-check"></i>
-						</a>
+<!-- 						<a class="btn btn-lg green hidden-print"> -->
+<!-- 							 Submit Your Invoice <i class="fa fa-check"></i> -->
+<!-- 						</a> -->
 					</div>
 				</div>
 			</div>
@@ -208,7 +329,7 @@ $this->headLink()
 <script src="../../assets/scripts/core/app.js"></script>
 <script>
 jQuery(document).ready(function() {    
-   App.init();
+ //  App.init();
 });
 </script>
 <!-- END JAVASCRIPTS -->

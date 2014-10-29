@@ -10,7 +10,6 @@ use DoctrineModule\Stdlib\Hydrator\DoctrineObject as DoctrineHydrator;
 class UserController extends BaseController
 {
 
-	
 	public function indexAction(){
 		$records = $this->_getContents('Users');
 		return new ViewModel(array('records' => $records));
