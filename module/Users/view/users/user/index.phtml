@@ -42,7 +42,7 @@
 									 <td><?php echo $record->getUserId() ?></td>
 									 <td><?php echo $record->getFullName() ?></td>
 									 <td><?php echo $record->getUserName() ?></td>
-									 <td><?php echo $record->getDesignation()->getDesignationName() ?></td>
+									 <td><?php echo $record->getDesignation() ? $record->getDesignation()->getDesignationName() : "" ?></td>
 									 <td><?php echo $record->getEmail() ?></td>
 									 <td><?php echo $record->getMobile() ?></td>
 									 <td><?php echo $record->getUserStatus() ?></td>
