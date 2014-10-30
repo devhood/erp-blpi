@@ -1,10 +1,4 @@
-<!-- BEGIN PAGE LEVEL STYLES -->
-<?php
-$this->headLink()
-->appendStylesheet($this->basePath('/assets/plugins/select2/select2.css'))
-->appendStylesheet($this->basePath('/assets/plugins/select2/select2-metronic.css'))
-->appendStylesheet($this->basePath('/assets/plugins/data-tables/DT_bootstrap.css'))
-?>
+
 <div class="portlet box grey">
 	<div class="portlet-title">
 		<div class="caption">
@@ -23,7 +17,7 @@ $this->headLink()
 	</div>
 	<div class="portlet-body form">
 		<!-- BEGIN FORM-->
-		<form action="#" class="form-horizontal" id="customer_add">
+		<form action="/customer/add" class="form-horizontal" id="customer_add">
 			<div class="form-body">
 			<div class="alert alert-danger display-hide">
 						<button class="close" data-close="alert"></button>
@@ -485,13 +479,12 @@ $this->headLink()
 <div>
 <?php echo $this->render('customer/contact') ?>
 </div>
-<!-- BEGIN PAGE LEVEL PLUGINS -->
-<script type="text/javascript" src="/assets/plugins/select2/select2.min.js"></script>
-<script type="text/javascript" src="/assets/plugins/data-tables/jquery.dataTables.js"></script>
-<script type="text/javascript" src="/assets/plugins/data-tables/DT_bootstrap.js"></script>
-<!-- END PAGE LEVEL PLUGINS -->
-<!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="/assets/scripts/core/app.js"></script>
+
+<!-- <script type="text/javascript" src="/assets/plugins/select2/select2.min.js"></script> -->
+<!-- <script type="text/javascript" src="/assets/plugins/data-tables/jquery.dataTables.js"></script> -->
+<!-- <script type="text/javascript" src="/assets/plugins/data-tables/DT_bootstrap.js"></script> -->
+<!-- <script src="/assets/scripts/core/app.js"></script> -->
+
 <?php
 $this->inlineScript()
 ->appendFile($this->basePath('/assets/scripts/ajax/generic.js'))
