@@ -46,10 +46,10 @@
 			</thead>
 			<tbody>
 	  
-	  <?php  foreach ($records as $record) :?>
+	  <?php // foreach ($records as $record) :?>
 		<tr>
-					<td><?php echo $record->getCustomerType() ? $record->getCustomerType()->getCustomerTypeName() : "" ?></td>
-					<td><?php  echo $record->getCompanyName() ?></td>
+					<td><?php // echo $record->getCustomerType() ? $record->getCustomerType()->getCustomerTypeName() : "" ?></td>
+					<td><?php  // echo $record->getCompanyName() ?></td>
 			
 					<td><a class="edit"
 						href=" <?php // echo  $this->basePath('/customer/edit'.$record->getCustomerId()) ?> ">Edit</a></td>

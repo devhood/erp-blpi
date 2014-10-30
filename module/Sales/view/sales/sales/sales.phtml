@@ -71,15 +71,15 @@
 					<td><?php  echo $dbSalesItem->getRmrno() ?></td>
 					<td><?php  echo $dbSalesItem->getCmno() ?></td>
 					<td><?php  echo $dbSalesItem->getPmno() ?></td>
-					<td><?php  echo $dbSalesItem->getTransactionType() ?></td>
-					<td><?php  echo $dbSalesItem->getCustomer() ?></td>
-					<td><?php  echo $dbSalesItem->getInventoryLocation() ?></td>
-					<td><?php  echo $dbSalesItem->getShippingAddress() ?></td>
+					<td><?php  echo $dbSalesItem->getTransactionType() ? $dbSalesItem->getTransactionType()->getTransactionTypeName() : ""?></td>
+					<td><?php // echo $dbSalesItem->getInventoryLocation() ? $dbSalesItem->getInventoryLocation()->getLocationName() : ""  ?></td>
+					<td><?php // echo $dbSalesItem->getCustomer() ? $dbSalesItem->getCustomer()->getCustomerName() : ""  ?></td>
+					<td><?php // echo $dbSalesItem->getShippingAddress() ? $dbSalesItem->getShippingAddress()->getAddress() : ""  ?></td>
 					<!-- 10 -->
 					<td><?php  echo $dbSalesItem->getBillingAdress() ?></td>
-					<td><?php  echo $dbSalesItem->getShippingModeId() ? $dbSalesItem->getShippingModeId()->getCustomerTypeName() : "" ?></td>
+					<td><?php // echo $dbSalesItem->getShippingModeId() ? $dbSalesItem->getShippingModeId()->getCustomerTypeName() : "" ?></td>
 					<td><?php  echo $dbSalesItem->getOrderSource() ?></td>
-					<td><?php  echo $dataCustomer->getSalesExecutive() ? $dataCustomer->getSalesExecutive()->getUserName() : "" ?></td>
+					<td><?php // echo $dataCustomer->getSalesExecutive() ? $dataCustomer->getSalesExecutive()->getUserName() : "" ?></td>
 					<td><?php  echo $dbSalesItem->getgetPaymentTerm() ?></td>
 					<td><?php  echo $dbSalesItem->getgetDeliveryDate() ?></td>
 					<td><?php  echo $dbSalesItem->getgetOrderedBy() ?></td>

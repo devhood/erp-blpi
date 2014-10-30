@@ -1,7 +1,6 @@
-<<<<<<< HEAD
+
 <!-- BEGIN EXAMPLE TABLE PORTLET-->
-=======
->>>>>>> bc9596ebf2837cbdd3f13b469d5a792837012b32
+
 <div class="portlet box grey">
   <div class="portlet-title">
 	<div class="caption">
@@ -45,33 +44,33 @@
 		<th></th>
 		<th></th>
 	  </tr>
-	</thead>
+	</thead> 
 	<tbody>
 	  
-	  <?php  foreach ($dataCustomers as $dataCustomer) :?>
+	  <?php  foreach ($dbCustomers as $dbCustomer) :?>
 		<tr> 
-		  <td><?php echo $dataCustomer->getCategory() ? $dataCustomer->getCategory()->getCategoryName() : "" ?></td>
-		  <td><?php echo $dataCustomer->getCustomerType() ? $dataCustomer->getCustomerType()->getCustomerTypeName() : "" ?></td>
-		  <td><?php  echo $dataCustomer->getCompanyName() ?></td>
-		  <td><?php  echo $dataCustomer->getTradeName() ?></td>
-		  <td><?php  echo $dataCustomer->getBranch() ?></td>
-		  <td><?php  echo $dataCustomer->getTin() ?></td>
-		  <td><?php  echo $dataCustomer->getPhone() ?></td>
-		  <td><?php  echo $dataCustomer->getEmail() ?></td>
-		  <td><?php  echo $dataCustomer->getWebsite() ?></td>
-		  <td><?php  echo $dataCustomer->getSecNo() ?></td>
-		  <td><?php  echo $dataCustomer->getCreditLimit() ?></td>
-		  <td><?php  echo $dataCustomer->getTransactionLimit() ?></td>
-		  <td><?php  echo $dataCustomer->getPaymentTerm() ? $dataCustomer->getPaymentTerm()->getPaymentTermName() : "" ?></td>
-		  <td><?php  echo $dataCustomer->getShippingMode() ? $dataCustomer->getShippingMode()->getShippingModeName() : "" ?></td>
-		  <td><?php  echo $dataCustomer->getPercentCommision() ?></td>
-		  <td><?php  echo $dataCustomer->getSalesExecutive() ? $dataCustomer->getSalesExecutive()->getUserName() : "" ?></td>
-		  <td><?php  echo $dataCustomer->getPriceType() ? $dataCustomer->getPriceType()->getPriceTypeName() : "" ?></td>
-		  <td><?php  echo $dataCustomer->getCustomerStatus() ?></td>
+		  <td><?php echo $dbCustomer->getCategory() ? $dbCustomer->getCategory()->getCategoryName() : "" ?></td>
+		  <td><?php echo $dbCustomer->getCustomerType() ? $dbCustomer->getCustomerType()->getCustomerTypeName() : "" ?></td>
+		  <td><?php  echo $dbCustomer->getCompanyName() ?></td>
+		  <td><?php  echo $dbCustomer->getTradeName() ?></td>
+		  <td><?php  echo $dbCustomer->getBranch() ?></td>
+		  <td><?php  echo $dbCustomer->getTin() ?></td>
+		  <td><?php  echo $dbCustomer->getPhone() ?></td>
+		  <td><?php  echo $dbCustomer->getEmail() ?></td>
+		  <td><?php  echo $dbCustomer->getWebsite() ?></td>
+		  <td><?php  echo $dbCustomer->getSecNo() ?></td>
+		  <td><?php  echo $dbCustomer->getCreditLimit() ?></td>
+		  <td><?php  echo $dbCustomer->getTransactionLimit() ?></td>
+		  <td><?php  echo $dbCustomer->getPaymentTerm() ? $dbCustomer->getPaymentTerm()->getPaymentTermName() : "" ?></td>
+		  <td><?php  echo $dbCustomer->getShippingMode() ? $dbCustomer->getShippingMode()->getShippingModeName() : "" ?></td>
+		  <td><?php  echo $dbCustomer->getPercentCommision() ?></td>
+		  <td><?php  echo $dbCustomer->getSalesExecutive() ? $dbCustomer->getSalesExecutive()->getUserName() : "" ?></td>
+		  <td><?php  echo $dbCustomer->getPriceType() ? $dbCustomer->getPriceType()->getPriceTypeName() : "" ?></td>
+		  <td><?php  echo $dbCustomer->getCustomerStatus() ?></td>
 		  <td><a class="edit"
-			href=" <?php // echo  $this->basePath('/customer/edit'.$dataCustomer->getCustomerId()) ?> ">Edit</a></td>
+			href=" <?php // echo  $this->basePath('/customer/edit'.$dbCustomer->getCustomerId()) ?> ">Edit</a></td>
 			<td><a class="delete"
-			  href=" <?php // echo $this->basePath('/customer'.$dataCustomer->getCustomerId()) ?> ">Delete</a></td>
+			  href=" <?php // echo $this->basePath('/customer'.$dbCustomer->getCustomerId()) ?> ">Delete</a></td>
 			</tr>
 		  <?php endforeach; ?>
 		</tbody>

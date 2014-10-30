@@ -8,9 +8,13 @@ use Main\Controller\BaseController;
 
 class SalesController extends BaseController
 {
-	public function Sales()
+	public function SalesAction()
 	{
 		$dbSales = $this->_getContents ( 'Sales' );
+	//	Zend_Debug::dump($dbSales);
+	//	exit;
+		    	var_dump($records);
+		    	exit;
 		return new ViewModel ( array (
 				'dbSales' => $dbSales
 		
