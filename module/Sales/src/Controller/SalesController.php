@@ -8,6 +8,17 @@ use Main\Controller\BaseController;
 
 class SalesController extends BaseController
 {
+	public function Sales()
+	{
+		$dbSales = $this->_getContents ( 'Sales' );
+		return new ViewModel ( array (
+				'dbSales' => $dbSales
+		
+		) );
+	}
+	
+	
+	
 	public function CreditmemoAction()
 	{
 		$formSales = new \Sales\Form\SalesForm($this->getServiceLocator()->get('Doctrine\ORM\EntityManager'));

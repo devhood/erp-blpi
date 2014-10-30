@@ -1,17 +1,11 @@
-//	 $.validator.addMethod("loginRegex", function(value, element) {
-//	        return this.optional(element) || /^[a-z0-9\-\s]+$/i.test(value);
-//	    }, "Username must contain only letters, numbers, or dashes.");
 
-
-
-
-var OrderAdd = function () {
+var Sales = function () {
 
 	return {
-		 
+
 		init: function () {
-		
-			var form = $('#order_add');
+
+			var form = $('#sales');
 			var error = $('.alert-danger', form);
 			var success = $('.alert-success', form);
 			form.validate({
@@ -24,7 +18,6 @@ var OrderAdd = function () {
 					transactionTypeId : {
 						minlength: 2,
 						required: true
-						
 					},
 					customerId : {
 						minlength: 2,
@@ -52,8 +45,7 @@ var OrderAdd = function () {
 					},
 					deliveryDate : {
 						minlength: 2,
-						required: true,
-					//	loginRegex: true
+						required: true
 					},
 					orderedBy : {
 						minlength: 2,
@@ -68,8 +60,7 @@ var OrderAdd = function () {
 						required: true
 					},
 					percentVat : {
-						required: true,
-						number: true
+						required: true
 					},
 					notes : {
 						required: false
@@ -152,7 +143,6 @@ var OrderAdd = function () {
 					submitHandler: function (form) {
 						success.show();
 						error.hide();
-					//	form.submit();
 					}
 				});
 

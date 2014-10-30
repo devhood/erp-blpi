@@ -10,9 +10,12 @@ use DoctrineModule\Stdlib\Hydrator\DoctrineObject as DoctrineHydrator;
 class IndexController extends BaseController {
 	
 	public function indexAction() {
-		$records = $this->_getContents ( 'Customers' );
+		$dataCustomers = $this->_getContents ( 'Customers' );
+		$dataAddress = $this->_getContents ( 'Address' );
 		return new ViewModel ( array (
-				'records' => $records 
+				'dataCustomers' => $dataCustomers ,
+				'dataAddress' => $dataAddress 
+				
 		) );
 	}
 	public function addAction() {
@@ -26,8 +29,10 @@ class IndexController extends BaseController {
 			
 			$request = ( array ) ($request->getPost ());
 			
-			var_dump ( $request );
-			exit ();
+//  			var_dump ( $request );
+//  			Zend_Debug::dump($request);
+//  			exit ();
+
 			$table = self::DBNS . 'Customers';
 			$object = new $table ();
 			$hydrator = new DoctrineHydrator ( $em );
@@ -45,10 +50,8 @@ class IndexController extends BaseController {
 	}
 	public function editAction() {
 		// $form = new \Customer\Form\CustomerForm();
-		
 		// $addresses = $this->_getContents("Address");
 		// $contacts = $this->_getContents("Contacts");
-		
 		// return new ViewModel(array(
 		// 'form' => $form,
 		// 'addresses' => $addresses,

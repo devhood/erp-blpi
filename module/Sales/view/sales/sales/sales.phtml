@@ -23,6 +23,11 @@
 			<thead>
 				<tr>
 					<th>SO Number</th>
+					<th>DR Number</th>
+					<th>SI Number</th>
+					<th>RMR Number</th>
+					<th>CM Number</th>
+					<th>PM Number</th>
 					<th>Transaction Type</th>
 					<th>Customer</th>
 					<th>Inventory Location</th>
@@ -34,13 +39,22 @@
 					<th>Payment Terms</th>
 					<th>Delivery Date</th>
 					<th>Ordered By</th>
+					<th>Promo</th>
 					<th>Price Type</th>
 					<th>VAT Percentage</th>
-					<th>Ordered Items</th>
-					<th>Sales</th>
-					<th>Items</th>
-					<th>Vat</th>
-					<th>Total</th>
+					<th>Total Items</th>
+					<th>Total VAT</th>
+					<th>Total Sales</th>
+					<th>Total Items Returned</th>
+					<th>Total VAT Returned</th>
+					<th>Total Sales Returned</th>
+					<th>Grand Total Sales</th>
+					<th>OR No.</th>
+					<th>PR No.</th>
+					<th>Payment Status.</th>
+					<th>Transaction Status.</th>
+					<th>Notes</th>		
+					<th></th>
 					<th></th>
 				</tr>
 			</thead>
@@ -50,6 +64,8 @@
 		<tr>
 					<td><?php echo $record->getCustomerType() ? $record->getCustomerType()->getCustomerTypeName() : "" ?></td>
 					<td><?php  echo $record->getCompanyName() ?></td>
+					<td></td>
+			
 			
 					<td><a class="edit"
 						href=" <?php // echo  $this->basePath('/customer/edit'.$record->getCustomerId()) ?> ">Edit</a></td>
