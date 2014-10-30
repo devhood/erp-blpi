@@ -7,52 +7,42 @@ return array(
 			__DIR__ . '/../view',
 		),
 		'template_map' => array(
-			'product/price'           =>   __DIR__ . '/../view/product/partial/price.phtml',
-			'product/bundle'           =>   __DIR__ . '/../view/product/partial/bundle.phtml',
-			'product/units'           =>   __DIR__ . '/../view/product/partial/units.phtml',
-			'product/document'           =>   __DIR__ . '/../view/product/partial/document.phtml',
+			'partial/price'           =>   __DIR__ . '/../view/product/partial/price.phtml',
+			'partial/bundle'           =>   __DIR__ . '/../view/product/partial/bundle.phtml',
+			'partial/units'           =>   __DIR__ . '/../view/product/partial/units.phtml',
+			'partial/document'           =>   __DIR__ . '/../view/product/partial/document.phtml',
 
 		),
 	),
 	'router' => array(
 		'routes' => array(
-			__NAMESPACE__.'_Index_Home' => array(
+			__NAMESPACE__.'_Product_Index' => array(
 				'type' => 'Literal',
 				'options' => array(
 					'route'    => '/product',
 					'defaults' => array(
-						'controller' => __NAMESPACE__ . '\Index',
+						'controller' => __NAMESPACE__ . '\Product',
 						'action'     => 'index',
 					),
 				),
 			),
-			__NAMESPACE__.'_Index_Add' => array(
+			__NAMESPACE__.'_Product_Add' => array(
 				'type' => 'Literal',
 				'options' => array(
 					'route'    => '/product/add',
 					'defaults' => array(
-						'controller' => __NAMESPACE__ . '\Index',
+						'controller' => __NAMESPACE__ . '\Product',
 						'action'     => 'add',
 					),
 				),
 			),
-			__NAMESPACE__.'_Index_Edit' => array(
+			__NAMESPACE__.'_Product_Edit' => array(
 				'type' => 'Literal',
 				'options' => array(
-					'route'    => '/product/edit',
+					'route'    => '/product/edit[/:id]',
 					'defaults' => array(
-						'controller' => __NAMESPACE__ . '\Index',
+						'controller' => __NAMESPACE__ . '\Product',
 						'action'     => 'edit',
-					),
-				),
-			),
-			__NAMESPACE__.'_Index_View' => array(
-				'type' => 'Literal',
-				'options' => array(
-					'route'    => '/product/view',
-					'defaults' => array(
-						'controller' => __NAMESPACE__ . '\Index',
-						'action'     => 'view',
 					),
 				),
 			),
@@ -60,7 +50,7 @@ return array(
 	),
 	'controllers' => array(
 		'invokables' => array(
-			__NAMESPACE__ . '\Index' => __NAMESPACE__ . '\Controller\IndexController',
+			__NAMESPACE__ . '\Product' => __NAMESPACE__ . '\Controller\ProductController',
 		),
 	),
 );

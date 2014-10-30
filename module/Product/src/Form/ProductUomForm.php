@@ -10,7 +10,7 @@ class ProductUomForm extends Form
         parent::__construct('productuom');
         
         $this->add(array(
-            'name' => 'uoms[uomId]',
+            'name' => 'uom[uomId]',
             'type' => 'DoctrineModule\Form\Element\ObjectSelect',
 						'options' => array(
 								'object_manager' => $om,

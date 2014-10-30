@@ -1,0 +1,515 @@
+
+<div class="portlet box grey">
+	<div class="portlet-title">
+		<div class="caption">
+			<i class="fa fa-reorder"></i>PRODUCT PROFILE
+		</div>
+		<div class="tools">
+			<a href="javascript:;" class="collapse"></a>
+			<a href="#portlet-config" data-toggle="modal" class="config"></a>
+			<a href="javascript:;" class="reload"></a>
+			<a href="javascript:;" class="remove"></a>
+			</div>
+		</div>
+		<div class="portlet-body form">
+			<!-- BEGIN FORM-->
+			<form action="/product/add" method="post" class="form-horizontal" id="product_add">
+				<div class="form-body">
+					<div class="alert alert-danger display-hide">
+						<button class="close" data-close="alert"></button>
+							You have some form errors. Please check below.
+					</div>
+					<div class="alert alert-success display-hide">
+						<button class="close" data-close="alert"></button>
+							Your form validation is successful!
+					</div>
+<!-- 					<h4 class="form-section">General Info</h4> -->
+					<div class="row">
+					<br />
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+									<?php  echo $this->formRow($formProduct->get('productCode')); ?>
+									<span class="col-md-12 control-label">
+										 Item Code
+									</span>
+								</div>
+							</div>
+						</div>
+							<!--/span-->
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+									<?php  echo $this->formRow($formProduct->get('productName')); ?>
+									<span class="col-md-12 control-label">
+										 Name
+									</span>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+					</div>
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<div class="col-md-2 col-lg-2 "></div>
+								<div class="col-md-8 col-xs-12 col-sm-12 col-lg-8 ">
+									<?php echo $this->formRow($formProduct->get('productDescription')); ?>
+									<span class="col-md-12 control-label">
+										 Description
+									</span>
+								</div>
+								<div class="col-md-2 col-lg-2 "></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+									<?php  echo $this->formRow($formProduct->get('paymentTerm[paymentTermId]')); ?>
+									<span class="col-md-12 control-label">
+										 Payment Terms
+									</span>
+								</div>
+							</div>
+						</div>
+							<!--/span-->
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+									<?php  echo $this->formRow($formProduct->get('partNumber')); ?>
+									<span class="col-md-12 control-label">
+										 Part Number
+									</span>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+					</div>
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+									<?php  echo $this->formRow($formProduct->get('blCode')); ?>
+									<span class="col-md-12 control-label">
+										 BL Code
+									</span>
+								</div>
+							</div>
+						</div>
+							<!--/span-->
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+									<?php  echo $this->formRow($formProduct->get('printedCode')); ?>
+									<span class="col-md-12 control-label">
+										 Printed Code
+									</span>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+					</div>
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+									<?php  echo $this->formRow($formProduct->get('classification[classificationId]')); ?>
+									<span class="col-md-12 control-label">
+										 Classification
+									</span>
+								</div>
+							</div>
+						</div>
+							<!--/span-->
+						<div class="col-md-6">
+							<div class="form-group">	
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+									<?php  echo $this->formRow($formProduct->get('brand[brandId]')); ?>
+									<span class="col-md-12 control-label">
+										 Brand
+									</span>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+					</div>
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+									<?php  echo $this->formRow($formProduct->get('supplier[supplierId]')); ?>
+									<span class="col-md-12 control-label">
+										 Supplier
+									</span>
+								</div>
+							</div>
+						</div>
+							<!--/span-->
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+									<?php  echo $this->formRow($formProduct->get('size')); ?>
+									<span class="col-md-12 control-label">
+										 Size
+									</span>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+					</div>
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+									<?php  echo $this->formRow($formProduct->get('weight')); ?>
+									<span class="col-md-12 control-label">
+										 Weight
+									</span>
+								</div>
+							</div>
+						</div>
+							<!--/span-->
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left select">
+									<?php  echo $this->formRow($formProduct->get('productStatus')); ?>
+									<span class="col-md-12 control-label">
+										 Product Status
+									</span>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+					</div>
+										
+<!-- 	BEGIN PRODUCT PACKAGE -->
+	<div class="portlet box grey">
+		<div class="portlet-title">
+			<div class="caption">
+				<i class="fa fa-reorder"></i>PRODUCT PACKAGE
+			</div>
+			<div class="tools">
+				<a href="javascript:;" class="collapse">
+				</a>
+				<a href="#portlet-config" data-toggle="modal" class="config">
+				</a>
+				<a href="javascript:;" class="reload">
+				</a>
+				<a href="javascript:;" class="remove">
+				</a>
+			</div>
+		</div>
+		<div class="portlet-body form">
+			<!-- BEGIN FORM-->
+				<div class="form-body">
+					<div class="row">
+					<br />
+						<div class="col-md-2"></div>
+						<div class="col-md-8">
+							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-left: 0px;">
+								<button type="button" data-toggle="modal" href="#bundleModal" class="btn-sm green custom-left">
+							Add New
+								<i class="fa fa-plus"></i>
+							</button>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-right: 0px;">
+								
+							</div>
+						</div>
+						<div class="col-md-2"></div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-2"></div>
+						<div class="col-md-8">
+							<div class="row">
+								<br />
+								<div class="col-md-12">
+										<div class="portlet-body flip-scroll">
+											<table id="bundlesTable" class="table table-bordered table-condensed flip-content">
+											<thead class="flip-content bg-grey">
+											<tr>
+												<th width="20%">Items Included</th>
+												<th>Quantity</th>
+												<th width="12%">Delete</th>
+											</tr>
+											</thead>
+											<tbody>
+											</tbody>
+											</table>
+										</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-2"></div>
+					</div>
+				</div>
+			<!-- END FORM-->
+		</div>
+	</div>
+<!-- 	END PRODUCT PACKAGE -->
+
+<!-- 	BEGIN UOM -->
+	<div class="portlet box grey">
+		<div class="portlet-title">
+			<div class="caption">
+				<i class="fa fa-reorder"></i>UNIT OF MEASUREMENT
+			</div>
+			<div class="tools">
+				<a href="javascript:;" class="collapse">
+				</a>
+				<a href="#portlet-config" data-toggle="modal" class="config">
+				</a>
+				<a href="javascript:;" class="reload">
+				</a>
+				<a href="javascript:;" class="remove">
+				</a>
+			</div>
+		</div>
+		<div class="portlet-body form">
+			<!-- BEGIN FORM-->
+				<div class="form-body">
+					<div class="row">
+					<br />
+						<div class="col-md-2"></div>
+						<div class="col-md-8" >
+							
+							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-left: 0px;">
+								<button type="button" data-toggle="modal" href="#unitModal" class="btn-sm green custom-left">Add New
+									<i class="fa fa-plus"></i>
+								</button>
+							</div>	
+							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-right: 0px;">
+							</div>	
+						</div>
+						<div class="col-md-2"></div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-md-2"></div>
+						<div class="col-md-8">
+						
+							<div class="row">
+							<br />
+								<div class="col-md-12">
+									<div class="portlet-body flip-scroll">
+										<table id="uomsTable" class="table table-bordered table-condensed flip-content">
+											<thead class="flip-content bg-grey">
+												<tr>
+													<th width="20%">Unit of Measurement</th>
+													<th>Quantity</th>
+													<th width="12%">Delete</th>
+												</tr>
+											</thead>
+										<tbody>
+										</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-2"></div>
+					</div>
+				</div>
+			<!-- END FORM-->
+		</div>
+	</div>
+<!-- 	END UOM -->
+	
+<!-- 	BEGIN PRICE -->
+	<div class="portlet box grey">
+		<div class="portlet-title">
+			<div class="caption">
+				<i class="fa fa-reorder"></i>PRICE
+			</div>
+			<div class="tools">
+				<a href="javascript:;" class="collapse">
+				</a>
+				<a href="#portlet-config" data-toggle="modal" class="config">
+				</a>
+				<a href="javascript:;" class="reload">
+				</a>
+				<a href="javascript:;" class="remove">
+				</a>
+			</div>
+		</div>
+		<div class="portlet-body form">
+			<!-- BEGIN FORM-->
+				<div class="form-body">
+					<div class="row">
+					<br />
+						<div class="col-md-2"></div>
+						<div class="col-md-8" >
+							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-left: 0px;">
+								<button type="button" data-toggle="modal" href="#priceModal" class="btn-sm green custom-left">Add New
+									<i class="fa fa-plus"></i>
+								</button>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-right: 0px;">
+								
+							</div>
+						</div>
+						<div class="col-md-2"></div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-2"></div>
+						<div class="col-md-8">
+							<div class="row">
+								<br />
+								<div class="col-md-12">
+									<div class="portlet-body flip-scroll">
+										<table id="priceTable" class="table table-bordered table-condensed flip-content">
+											<thead class="flip-content bg-grey">
+											<tr>
+												<th width="20%">Price Type</th>
+												<th>Amount</th>
+												<th>Currency</th>
+												<th width="12%">Delete</th>
+											</tr>
+											</thead>
+											<tbody>
+											</tbody>
+										</table>
+										</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-2"></div>
+					</div>
+				</div>
+			<!-- END FORM-->
+		</div>
+	</div>
+<!-- 	END PRICE -->
+	
+<!-- 	BEGIN DOCUMENT -->
+	<div class="portlet box grey">
+		<div class="portlet-title">
+			<div class="caption">
+				<i class="fa fa-reorder"></i>DOCUMENT
+			</div>
+			<div class="tools">
+				<a href="javascript:;" class="collapse">
+				</a>
+				<a href="#portlet-config" data-toggle="modal" class="config">
+				</a>
+				<a href="javascript:;" class="reload">
+				</a>
+				<a href="javascript:;" class="remove">
+				</a>
+			</div>
+		</div>
+		<div class="portlet-body form">
+				<div class="form-body">
+					<div class="row">
+					<br />
+						<div class="col-md-2"></div>
+						<div class="col-md-8" >
+							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-left: 0px;">
+								<button type="button" data-toggle="modal" href="#documentModal" class="btn-sm green custom-left">Add New
+									<i class="fa fa-plus"></i>
+								</button>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" style="padding-right: 0px;">
+								
+							</div>
+						</div>
+						<div class="col-md-2"></div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-2"></div>
+						<div class="col-md-8">
+							<div class="row">
+								<br />
+								<div class="col-md-12">
+									<div class="portlet-body flip-scroll">
+										<table id="documentTable" class="table table-bordered table-condensed flip-content">
+											<thead class="flip-content bg-grey">
+											<tr>
+												<th width="20%">Type</th>
+												<th>File</th>
+												<th>Product</th>
+												<th width="10%">Remove</th>
+											</tr>
+											</thead>
+											<tbody>
+											</tbody>
+										</table>
+										</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-2"></div>
+					</div>
+				</div>
+
+			<!-- END FORM-->
+		</div>
+	</div>
+<!-- 	END DOCUMENT -->
+
+
+			<!-- BEGIN PAGE CONTENT-->
+
+				</div>
+				<div class="form-actions fluid">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="col-md-offset-3 col-md-9">
+								<button type="submit" class="btn green">Submit</button>
+								<button type="button" class="btn default">Cancel</button>
+							</div>
+						</div>
+						<div class="col-md-6">
+						</div>
+					</div>
+				</div>
+			</form>
+			<!-- END FORM-->
+		</div>
+	</div>
+	
+<div id="partialFiller">
+	<?php echo $this->render('partial/units') ?>
+</div>
+
+<div id="partialFiller">
+	<?php echo $this->render('partial/price') ?>
+</div>
+
+<div id="partialFiller">
+	<?php echo $this->render('partial/bundle') ?>
+</div>
+
+	<div id="partialFiller">
+	<?php echo $this->render('partial/document') ?>
+</div>
+
+
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<?php
+	$this->inlineScript()
+		->appendFile($this->basePath('/assets/scripts/product.js'))
+		->appendFile($this->basePath('/assets/scripts/bundle.js'))
+		->appendFile($this->basePath('/assets/scripts/price.js'))
+		->appendFile($this->basePath('/assets/scripts/units.js'))
+		->appendFile($this->basePath('/assets/scripts/document.js'))
+		
+?>
+<?php $this->inlineScript()->captureStart() ?>
+	jQuery(document).ready(function() {
+		Product.init();
+		Bundle.init();
+		Price.init();
+		Units.init();
+		Document.init();
+	});
+<?php $this->inlineScript()->captureEnd() ?>
