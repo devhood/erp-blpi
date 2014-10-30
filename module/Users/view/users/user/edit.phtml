@@ -1,0 +1,168 @@
+
+<div class="portlet box grey">
+	<div class="portlet-title">
+		<div class="caption">
+			<i class="fa fa-reorder"></i>User
+		</div>
+		<div class="tools">
+			<a href="javascript:;" class="collapse"></a> <a
+				href="#portlet-config" data-toggle="modal" class="config"></a> <a
+				href="javascript:;" class="reload"></a> <a href="javascript:;"
+				class="remove"></a>
+		</div>
+	</div>
+	<div class="portlet-body form">
+		<form action="/user/add" method="post" class="form-horizontal" id="user_add">
+			<div class="form-body">
+				<div class="alert alert-danger display-hide">
+					<button class="close" data-close="alert"></button>
+					You have some form errors. Please check below.
+				</div>
+				<div class="alert alert-success display-hide">
+					<button class="close" data-close="alert"></button>
+					Your form validation is successful!
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+								<?php  echo $this->formRow($userForm->get('userId')); ?>
+								<span class="col-md-12 control-label">ID</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+								<?php  echo $this->formRow($userForm->get('fullName')); ?>
+								<span class="col-md-12 control-label">Full Name</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+								<?php  echo $this->formRow($userForm->get('userName')); ?>
+								<span class="col-md-12 control-label">Username</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+								<?php  echo $this->formRow($userForm->get('password')); ?>
+								<span class="col-md-12 control-label">Password</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+								<?php  echo $this->formRow($userForm->get('designation[designationId]')); ?>
+								<span class="col-md-12 control-label">Position</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+								<?php  echo $this->formRow($userForm->get('email')); ?>
+								<span class="col-md-12 control-label">Email</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+								<?php  echo $this->formRow($userForm->get('mobile')); ?>
+								<span class="col-md-12 control-label">Mobile</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+								<?php  echo $this->formRow($userForm->get('userStatus')); ?>
+								<span class="col-md-12 control-label">User Status</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-8">
+						<hr />
+						<div class="col-xs-6 col-sm-6 col-md-6 col-md-6"
+							style="padding-left: 0px;">
+							<h4 class="">Access List</h4>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-md-6"
+							style="padding-right: 0px;">
+							<button type="button" data-toggle="modal" href="#accessModal"
+								class="btn-sm green custom-right">
+								Add New <i class="fa fa-plus"></i>
+							</button>
+						</div>
+					</div>
+					<div class="col-md-2"></div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-2"></div>
+					<div class="col-md-8">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="portlet-body flip-scroll">
+									<table class="table table-bordered table-condensed flip-content" id="accessTable">
+										<thead class="flip-content bg-grey">
+											<tr>
+												<th>Permission</th>
+												<th>Action</th>
+											</tr>
+										</thead>
+										<tbody>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2"></div>
+				</div>
+			</div>
+			<div class="form-actions fluid">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="col-md-offset-3 col-md-9">
+							<button type="submit" class="btn green">Submit</button>
+							<button type="button" class="btn default">Cancel</button>
+						</div>
+					</div>
+					<div class="col-md-6"></div>
+				</div>
+			</div>
+		</form>
+		<!-- END FORM-->
+	</div>
+</div>
+<div id="partialFiller">
+<?php echo $this->render('partial/access') ?>
+</div>
+<?php
+$this->inlineScript ()
+	->appendFile ( $this->basePath ( '/assets/scripts/users/user.js' ) )
+	->appendFile ( $this->basePath ( '/assets/scripts/users/access.js' ) )
+?>
+<?php $this->inlineScript()->captureStart()?>
+  jQuery(document).ready(function() {
+	User.init();
+	Access.init();
+
+  });
+<?php $this->inlineScript()->captureEnd() ?>
