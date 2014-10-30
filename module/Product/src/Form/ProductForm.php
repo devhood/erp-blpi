@@ -7,13 +7,14 @@ use Zend\Form\Annotation\Options;
 class ProductForm extends Form
 {
 
-	public function __construct($om = null)
+	public function __construct($em = null)
 	{
 		parent::__construct('product');
 
 		$this->add( array(
 			'name' => 'productCode',
 			'type' => 'Text',
+			'required' => true,
 			'attributes' => array(
 				'class' => 'form-control',
 				'id' => 'productCode',
@@ -23,6 +24,7 @@ class ProductForm extends Form
 		$this->add( array(
 			'name' => 'productName',
 			'type' => 'Text',
+			'required' => true,
 			'attributes' => array(
 				'class' => 'form-control',
 				'id' => 'productName',
@@ -30,163 +32,158 @@ class ProductForm extends Form
 		));
 
 		$this->add(
-		array(
-			'name' => 'classifications[classificationId]',
+			array(
+				'name' => 'classification[classificationId]',
+				'type' => 'DoctrineModule\Form\Element\ObjectSelect',
+				'required' => true,
+				'options' => array(
+					'object_manager' => $em,
+					'target_class'   => 'Database\Entity\Classifications',
+					'property'       => 'classificationName',
+				),
+				'attributes' => array(
+					'class' => 'select2me form-control',
+					'tabindex' => '1',
+					'id' => 'classificationId',
+				),
+			)
+		);
+
+		$this->add(array(
+			'name' => 'brand[brandId]',
 			'type' => 'DoctrineModule\Form\Element\ObjectSelect',
+			'required' => true,
 			'options' => array(
-				'object_manager' => $om,
-				'target_class'   => 'Database\Entity\Classifications',
-				'property'       => 'classificationName',
+				'object_manager' => $em,
+				'target_class'   => 'Database\Entity\Brands',
+				'property'       => 'brandName',
 			),
 			'attributes' => array(
 				'class' => 'select2me form-control',
 				'tabindex' => '1',
-				'id' => 'classificationId',
+				'id' => 'brandId',
 			),
-		)
-	);
+		));
 
-	$this->add(array(
-		'name' => 'brands[brandId]',
-		'type' => 'DoctrineModule\Form\Element\ObjectSelect',
-		'options' => array(
-			'object_manager' => $om,
-			'target_class'   => 'Database\Entity\Brands',
-			'property'       => 'brandName',
-		),
-		'attributes' => array(
-			'class' => 'select2me form-control',
-			'tabindex' => '1',
-			'id' => 'brandId',
-		),
-	));
-
-	$this->add(array(
-		'name' => 'supplier[supplierId]',
-		'type' => 'DoctrineModule\Form\Element\ObjectSelect',
-		'options' => array(
-			'object_manager' => $om,
-			'target_class'   => 'Database\Entity\Suppliers',
-			'property'       => 'supplierName',
-		),
-		'attributes' => array(
-			'class' => 'select2me form-control',
-			'tabindex' => '1',
-			'id' => 'supplierId',
-		),
-	));
-
-	$this->add( array(
-		'name' => 'size',
-		'type' => 'Text',
-		'attributes' => array(
-			'class' => 'form-control',
-			'id' => 'size',
-		)
-	));
-
-	$this->add( array(
-		'name' => 'weight',
-		'type' => 'Text',
-		'attributes' => array(
-			'class' => 'form-control',
-			'id' => 'weight',
-		)
-	));
-
-	$this->add(array(
-		'name' => 'productStatus',
-		'type' => 'Select',
-		'attributes' => array(
-			'class' => 'select2me form-control',
-			'tabindex' => '1',
-			'id' => 'productStatus',
-		),
-		'options' => array(
-			'value_options' => array(
-				'0'=>'Active',
-				'1'=>'Inactive',
-				'2'=>'Discontinued',
-				'3'=>'Cancelled'
+		$this->add(array(
+			'name' => 'supplier[supplierId]',
+			'type' => 'DoctrineModule\Form\Element\ObjectSelect',
+			'required' => true,
+			'options' => array(
+				'object_manager' => $em,
+				'target_class'   => 'Database\Entity\Suppliers',
+				'property'       => 'supplierName',
 			),
-		)
-	));
+			'attributes' => array(
+				'class' => 'select2me form-control',
+				'tabindex' => '1',
+				'id' => 'supplierId',
+			),
+		));
 
-	$this->add(array(
-		'name' => 'paymentTerms[paymentTermId]',
-		'type' => 'DoctrineModule\Form\Element\ObjectSelect',
-		'options' => array(
-			'object_manager' => $om,
-			'target_class'   => 'Database\Entity\PaymentTerms',
-			'property'       => 'paymentTermName',
-		),
-		'attributes' => array(
-			'class' => 'select2me form-control',
-			'tabindex' => '1',
-			'id' => 'paymentTermId',
-		),
-	));
+		$this->add( array(
+			'name' => 'size',
+			'type' => 'Text',
+			'required' => true,
+			'attributes' => array(
+				'class' => 'form-control',
+				'id' => 'size',
+			)
+		));
 
-	$this->add( array(
-		'name' => 'partNumber',
-		'type' => 'Text',
-		'attributes' => array(
-			'class' => 'form-control',
-			'id' => 'partNumber',
-		)
-	));
+		$this->add( array(
+			'name' => 'weight',
+			'type' => 'Text',
+			'required' => true,
+			'attributes' => array(
+				'class' => 'form-control',
+				'id' => 'weight',
+			)
+		));
 
-	$this->add( array(
-		'name' => 'blCode',
-		'type' => 'Text',
-		'attributes' => array(
-			'class' => 'form-control',
-			'id' => 'blCode',
-		)
-	));
+		$this->add(array(
+			'name' => 'productStatus',
+			'type' => 'Select',
+			'required' => true,
+			'attributes' => array(
+				'class' => 'select2me form-control',
+				'tabindex' => '1',
+				'id' => 'productStatus',
+			),
+			'options' => array(
+				'value_options' => array(
+					'Active'=>'Active',
+					'Inactive'=>'Inactive',
+					'Discontinued'=>'Discontinued',
+					'Cancelled'=>'Cancelled'
+				),
+			)
+		));
 
-	$this->add( array(
-		'name' => 'printedCode',
-		'type' => 'Text',
-		'attributes' => array(
-			'class' => 'form-control',
-			'id' => 'printedCode',
-		)
-	));
+		$this->add(array(
+			'name' => 'paymentTerm[paymentTermId]',
+			'type' => 'DoctrineModule\Form\Element\ObjectSelect',
+			'required' => true,
+			'options' => array(
+				'object_manager' => $em,
+				'target_class'   => 'Database\Entity\PaymentTerms',
+				'property'       => 'paymentTermName',
+			),
+			'attributes' => array(
+				'class' => 'select2me form-control',
+				'tabindex' => '1',
+				'id' => 'paymentTermId',
+			),
+		));
 
+		$this->add( array(
+			'name' => 'partNumber',
+			'type' => 'Text',
+			'required' => true,
+			'attributes' => array(
+				'class' => 'form-control',
+				'id' => 'partNumber',
+			)
+		));
 
+		$this->add( array(
+			'name' => 'blCode',
+			'type' => 'Text',
+			'required' => true,
+			'attributes' => array(
+				'class' => 'form-control',
+				'id' => 'blCode',
+			)
+		));
 
+		$this->add( array(
+			'name' => 'printedCode',
+			'type' => 'Text',
+			'required' => true,
+			'attributes' => array(
+				'class' => 'form-control',
+				'id' => 'printedCode',
+			)
+		));
 
+		$this->add( array(
+			'name' => 'unitQuantity',
+			'type' => 'Text',
+			'attributes' => array(
+				'class' => 'form-control',
+				'id' => 'unitQuantity',
+			)
+		));
+	
+		$this->add( array(
+			'name' => 'productDescription',
+			'type' => 'Textarea',
+			'attributes' => array(
+				'class' => 'form-control',
+				'id' => 'productDescription',
+				'rows' => '1'
+			)
+		));
 
-
-	$this->add( array(
-		'name' => 'unitQuantity',
-		'type' => 'Text',
-		'attributes' => array(
-			'class' => 'form-control',
-			'id' => 'unitQuantity',
-		)
-	));
-
-	$this->add( array(
-		'name' => 'productDescription',
-		'type' => 'Textarea',
-		'attributes' => array(
-			'class' => 'form-control',
-			'id' => 'productDescription',
-			'rows' => '6'
-		)
-	));
-
-
-// 	$this->add( array(
-// 		'name' => 'categories',
-// 		'type' => 'text',
-// 		'attributes' => array(
-// 			'class' => 'form-control tags medium',
-// 			'id' => 'categories',
-// 		)
-// 	));
-
-}
+	}
 }

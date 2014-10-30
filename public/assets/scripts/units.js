@@ -51,45 +51,36 @@ var Units = function () {
 	            }
 			});
 			
-			var uoms = [];
 			var uomsTable = $('#uomsTable').dataTable();
+			var uom = [];
+			
 			var manageUnits = {
-				
+					
 				add : function(){
-
-					if(!uoms[$('#uomId option:selected').val()]){
-						uoms[$('#uomId option:selected').val()] = $("#unitQuantity").val();
+					if(!uom[$('#uomId').val()]){
+						uom[$('#uomId').val()] = $('#uomId').val();
 						uomsTable.fnAddData([
 							$('#uomId option:selected').text() ,
-							$("#unitQuantity").val(), 
-							"<a href='#' class='units_delete_row"+uoms.length+"'>Delete</a>"]);
-					
-						$(".units_delete_row"+uoms.length).live('click', function (e) {
-							manageUnits.remove($(this));
-						});
+							$('#unitQuantity').val(),
+								"<a href='#' id='"+$('#uomId').val()+"' class='uom_delete_row"+$('#uomId').val()+"'>Delete</a>"
+								+"<input type='hidden' name='uom[][uom[uomId]]' value='"+$('#uomId').val()+"'>"
+							]);
+							$(".uom_delete_row"+$('#uomId').val()).live('click', function (e) {
+								manageUnits.remove($(this));
+								
+							});
+							$('#unitModal').modal('toggle');
 					}
-					else{
-						alert("Units already added, please remove first");
-					}
-					$('#unitModal').modal('toggle');
-					
-				},
-				edit : function(){
-					var uom = {
-						"uoms[uomId]" : $("#uomId").val(),
-						"unitQuantity" : $("#unitQuantity").val(),
-					};
-					uoms[$("#uomId").val()] = uom;
-					alert(JSON.stringify(uoms));
+
 				},
 				remove : function(elem){
 					if (confirm("Are you sure to delete this row ?") == false) {
 						 return;
 					}
+					delete uom[elem.attr('id')];
 					var nRow = elem.parents('tr')[0];
 					uomsTable.fnDeleteRow(nRow);
 				}
-				
 			}
 			
 		}
