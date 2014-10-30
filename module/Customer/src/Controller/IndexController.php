@@ -7,7 +7,7 @@ use Zend\View\Model\ViewModel;
 use Main\Controller\BaseController;
 use DoctrineModule\Stdlib\Hydrator\DoctrineObject as DoctrineHydrator;
 
-<<<<<<< HEAD
+
 class IndexController extends BaseController
 {
 
@@ -118,8 +118,6 @@ return new ViewModel(array(
 ));
 		}
 
-
-=======
 class IndexController extends BaseController {
 	
 	public function indexAction() {

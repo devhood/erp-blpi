@@ -32,6 +32,7 @@
 					<th>Customer</th>
 					<th>Inventory Location</th>
 					<th>Shipping Address</th>
+					<!-- 10 -->
 					<th>Billing Address</th>
 					<th>Order Source</th>
 					<th>Shipping Mode</th>
@@ -42,6 +43,7 @@
 					<th>Promo</th>
 					<th>Price Type</th>
 					<th>VAT Percentage</th>
+					<!-- 20 -->
 					<th>Total Items</th>
 					<th>Total VAT</th>
 					<th>Total Sales</th>
@@ -52,6 +54,7 @@
 					<th>OR No.</th>
 					<th>PR No.</th>
 					<th>Payment Status.</th>
+					<!-- 30 -->
 					<th>Transaction Status.</th>
 					<th>Notes</th>		
 					<th></th>
@@ -59,18 +62,49 @@
 				</tr>
 			</thead>
 			<tbody>
-	  
-	  <?php  foreach ($records as $record) :?>
-		<tr>
-					<td><?php echo $record->getCustomerType() ? $record->getCustomerType()->getCustomerTypeName() : "" ?></td>
-					<td><?php  echo $record->getCompanyName() ?></td>
-					<td></td>
-			
-			
+	  <?php  foreach ($dbSales as $dbSalesItem) :?>
+				 <tr>
+
+					<td><?php  echo $dbSalesItem->getSono() ?></td>
+					<td><?php  echo $dbSalesItem->getDrno() ?></td>
+					<td><?php  echo $dbSalesItem->getSino() ?></td>
+					<td><?php  echo $dbSalesItem->getRmrno() ?></td>
+					<td><?php  echo $dbSalesItem->getCmno() ?></td>
+					<td><?php  echo $dbSalesItem->getPmno() ?></td>
+					<td><?php  echo $dbSalesItem->getTransactionType() ?></td>
+					<td><?php  echo $dbSalesItem->getCustomer() ?></td>
+					<td><?php  echo $dbSalesItem->getInventoryLocation() ?></td>
+					<td><?php  echo $dbSalesItem->getShippingAddress() ?></td>
+					<!-- 10 -->
+					<td><?php  echo $dbSalesItem->getBillingAdress() ?></td>
+					<td><?php  echo $dbSalesItem->getShippingModeId() ? $dbSalesItem->getShippingModeId()->getCustomerTypeName() : "" ?></td>
+					<td><?php  echo $dbSalesItem->getOrderSource() ?></td>
+					<td><?php  echo $dataCustomer->getSalesExecutive() ? $dataCustomer->getSalesExecutive()->getUserName() : "" ?></td>
+					<td><?php  echo $dbSalesItem->getgetPaymentTerm() ?></td>
+					<td><?php  echo $dbSalesItem->getgetDeliveryDate() ?></td>
+					<td><?php  echo $dbSalesItem->getgetOrderedBy() ?></td>
+					<td><?php  echo $dbSalesItem->getgetPromoId() ?></td>
+					<td><?php  echo $dbSalesItem->getgetPriceType() ?></td>
+					<td><?php  echo $dbSalesItem->getgetPercentVat() ?></td>
+					<!-- 20 -->
+					<td><?php  echo $dbSalesItem->getTotalItems() ?></td>
+					<td><?php  echo $dbSalesItem->getTotalVat() ?></td>
+					<td><?php  echo $dbSalesItem->getTotalSales() ?></td>
+					<td><?php  echo $dbSalesItem->getTotalItemsReturn() ?></td>
+					<td><?php  echo $dbSalesItem->getTotalVatReturn() ?></td>
+					<td><?php  echo $dbSalesItem->getTotalSalesReturn() ?></td>
+					<td><?php  echo $dbSalesItem->getGrandTotal() ?></td>
+					<td><?php  echo $dbSalesItem->getOrno() ?></td>
+					<td><?php  echo $dbSalesItem->getPrno() ?></td>
+					<td><?php  echo $dbSalesItem->getgetPaymentStatus() ?></td>
+					<!-- 30 -->
+					<td><?php  echo $dbSalesItem->getTransactionStatus() ? $dataCustomer->getTransactionStatus()->getTransactionStatusName(): "" ?></td>
+					<td><?php  echo $dbSalesItem->getgetSalesNotes() ?></td>
+				
 					<td><a class="edit"
-						href=" <?php // echo  $this->basePath('/customer/edit'.$record->getCustomerId()) ?> ">Edit</a></td>
+						href=" <?php // echo  $this->basePath('/customer/edit'.$dbSalesItem->getCustomerId()) ?> ">Edit</a></td>
 					<td><a class="delete"
-						href=" <?php // echo $this->basePath('/customer'.$record->getCustomerId()) ?> ">Delete</a></td>
+						href=" <?php // echo $this->basePath('/customer'.$dbSalesItem->getCustomerId()) ?> ">Delete</a></td>
 				</tr>
 		  <?php endforeach; ?>
 		</tbody>
@@ -80,6 +114,6 @@
 
 
 
-
+				 	<?php  //echo $dbSalesItem->getCustomerType() ? $dbSalesItem->getCustomerType()->getCustomerTypeName() : "" ?>
 
 
