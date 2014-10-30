@@ -6,20 +6,18 @@ return array(
 		'template_path_stack' => array(
 			__DIR__ . '/../view',
 		),
-// 		'template_map' => array(
-// 			'customer/address'           =>   __DIR__ . '/../view/purchase/partial/address.phtml',
-// 			'customer/contact'           =>   __DIR__ . '/../view/purchase/partial/contact.phtml',
-// 			),
-
+		'template_map' => array(
+			'partial/access'      =>   __DIR__ . '/../view/purchasing/partial/access.phtml',
+		),
 	),
 	'router' => array(
 		'routes' => array(
-			__NAMESPACE__.'Purchase_Index_' => array(
+			__NAMESPACE__.'_Purchase_Index' => array(
 				'type' => 'Literal',
 				'options' => array(
-					'route'    => '/purchasing',
+					'route'    => '/purchase',
 					'defaults' => array(
-						'controller' => __NAMESPACE__ . '\Index',
+						'controller' => __NAMESPACE__ . '\Purchase',
 						'action'     => 'index',
 					),
 				),
@@ -27,41 +25,28 @@ return array(
 			__NAMESPACE__.'_Purchase_Add' => array(
 				'type' => 'Literal',
 				'options' => array(
-					'route'    => '/purchasing/add',
+					'route'    => '/purchase/add',
 					'defaults' => array(
-						'controller' => __NAMESPACE__ . '\Index',
+						'controller' => __NAMESPACE__ . '\Purchase',
 						'action'     => 'add',
 					),
 				),
 			),
-// 			__NAMESPACE__.'_Index_view' => array(
-// 				'type' => 'Literal',
+// 			__NAMESPACE__.'_Purchase_Edit' => array(
+// 				'type' => 'segment',
 // 				'options' => array(
-// 					'route'    => '/purchase/view',
+// 					'route'    => '/purchase/edit[/:id]',
 // 					'defaults' => array(
-// 						'controller' => __NAMESPACE__ . '\Index',
-// 						'action'     => 'view',
-// 					),
-// 				),
-// 			),
-
-// 			__NAMESPACE__.'_Index_edit' => array(
-// 				'type' => 'Literal',
-// 				'options' => array(
-// 					'route'    => '/purchase/edit',
-// 					'defaults' => array(
-// 						'controller' => __NAMESPACE__ . '\Index',
+// 						'controller' => __NAMESPACE__ . '\Purchase',
 // 						'action'     => 'edit',
 // 					),
 // 				),
 // 			),
-
-
-		),
-	),
+ 		),
+ 	),
 	'controllers' => array(
 		'invokables' => array(
-			__NAMESPACE__ . '\Index' => __NAMESPACE__ . '\Controller\IndexController',
+			__NAMESPACE__ . '\Purchase' => __NAMESPACE__ . '\Controller\PurchaseController'
 		),
 	),
 );
