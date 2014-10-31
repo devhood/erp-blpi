@@ -16,6 +16,17 @@ return array(
 	),
 	'router' => array(
 	    'routes' => array(
+    		__NAMESPACE__.'Sales' => array(
+    				'type' => 'Literal',
+    				'options' => array(
+    						'route'    => '/sales',
+    						'defaults' => array(
+    								'controller' => __NAMESPACE__ . '\Sales',
+    								'action'     => 'Sales',
+    						),
+    				),
+    		),
+	    		
     		__NAMESPACE__.'_Creditmemo' => array(
     				'type' => 'Literal',
     				'options' => array(

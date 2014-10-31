@@ -48,18 +48,19 @@ var Access = function() {
 				} 
 			});
 			
-			var accessTable = $('#accessTable').dataTable();
+			var accessTable = $('#accessTable').dataTable({"bLengthChange": false, "bFilter" : false});
 			var access = [];
 			
 			var manageAccess = {
 					
 				add : function(){
+					
 					if(!access[$('#permissionId').val()]){
 						access[$('#permissionId').val()] = $('#permissionId').val();
 						accessTable.fnAddData([
 							$('#permissionId option:selected').text() ,
 								"<a href='#' id='"+$('#permissionId').val()+"' class='access_delete_row"+$('#permissionId').val()+"'>Delete</a>"
-								+"<input type='hidden' name='permission[][permission[permissionId]]' value='"+$('#permissionId').val()+"'>"
+								+"<input type='hidden' name='permission[][permission][permissionId]' value='"+$('#permissionId').val()+"'>"
 							]);
 							$(".access_delete_row"+$('#permissionId').val()).live('click', function (e) {
 								manageAccess.remove($(this));

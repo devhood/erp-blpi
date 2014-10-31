@@ -12,7 +12,7 @@ class CustomerForm extends Form
 
 		$this->add(
 		array(
-			'name' => 'categories[categoryId]',
+			'name' => 'category[categoryId]',
 			'type' => 'DoctrineModule\Form\Element\ObjectSelect',
 			'options' => array(
 				'object_manager' => $om,
@@ -28,7 +28,7 @@ class CustomerForm extends Form
 		));
 
 		$this->add(array(
-			'name' => 'customerTypes[customerTypeId]',
+			'name' => 'customerType[customerTypeId]',
 			'type' => 'DoctrineModule\Form\Element\ObjectSelect',
 			'options' => array(
 				'object_manager' => $om,
@@ -125,8 +125,8 @@ class CustomerForm extends Form
 				'class' => 'form-control',
 				'label' => 'Consignee',
 				'id' => 'consignee',
-				'checked_value' => '1',
-				'unchecked_value' => '0'
+				'checked_value' => 'Yes',
+				'unchecked_value' => 'No'
 			)
 		));
 
@@ -139,8 +139,8 @@ class CustomerForm extends Form
 				'class' => 'form-control',
 				'label' => 'Franchise',
 				'id' => 'franchise',
-				'checked_value' => '1',
-				'unchecked_value' => '0'
+				'checked_value' => 'Yes',
+				'unchecked_value' => 'No'
 			)
 		));
 
@@ -165,7 +165,7 @@ class CustomerForm extends Form
 
 
 		$this->add(array(
-			'name' => 'paymentTerms[paymentTermId]',
+			'name' => 'paymentTerm[paymentTermId]',
 					'type' => 'DoctrineModule\Form\Element\ObjectSelect',
 					'options' => array(
 						'object_manager' => $om,
@@ -190,7 +190,7 @@ class CustomerForm extends Form
 		));
 
 		$this->add(array(
-			'name' => 'shippingModes[shippingModeId]',
+			'name' => 'shippingMode[shippingModeId]',
 			'type' => 'DoctrineModule\Form\Element\ObjectSelect',
 					'options' => array(
 						'object_manager' => $om,
@@ -206,7 +206,7 @@ class CustomerForm extends Form
 		));
 
 		$this->add(array(
-			'name' => 'users[userId]',
+			'name' => 'salesExecutive[userId]',
 			'type' => 'DoctrineModule\Form\Element\ObjectSelect',
 					'options' => array(
 						'object_manager' => $om,
@@ -233,7 +233,7 @@ class CustomerForm extends Form
 		));
 
 		$this->add(array(
-			'name' => 'priceTypes[priceTypeId]',
+			'name' => 'priceType[priceTypeId]',
 			'type' => 'DoctrineModule\Form\Element\ObjectSelect',
 					'options' => array(
 						'object_manager' => $om,

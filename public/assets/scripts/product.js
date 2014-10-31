@@ -142,10 +142,8 @@ var Product = function () {
 				submitHandler: function (form) {
 					success.show();
 					error.hide();
+					form.submit();
 				}
-			});
-			$('.select2me', form).change(function () {
-					form.validate().element($(this)); //revalidate the chosen dropdown value and show error or success message for the input
 			});
 			
 		}

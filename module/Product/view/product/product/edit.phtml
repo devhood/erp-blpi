@@ -1,0 +1,448 @@
+<!-- BEGIN PAGE LEVEL STYLES -->
+<?php 
+$this->headLink()
+		->appendStylesheet($this->basePath('/assets/plugins/select2/select2.css'))
+		->appendStylesheet($this->basePath('/assets/plugins/select2/select2-metronic.css'))
+		->appendStylesheet($this->basePath('/assets/plugins/data-tables/DT_bootstrap.css'))
+?>
+	<div class="portlet box grey">
+		<div class="portlet-title">
+			<div class="caption">
+				<i class="fa fa-reorder"></i>Product Profile
+			</div>
+			<div class="tools">
+				<a href="javascript:;" class="collapse">
+				</a>
+				<a href="#portlet-config" data-toggle="modal" class="config">
+				</a>
+				<a href="javascript:;" class="reload">
+				</a>
+				<a href="javascript:;" class="remove">
+				</a>
+			</div>
+		</div>
+		<div class="portlet-body form">
+			<!-- BEGIN FORM-->
+			<form action="#" class="form-horizontal">
+				<div class="form-body">
+					<h4 class="form-section">General Info</h4>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+									<?php  echo $this->formRow($form->get('productCode')); ?>
+									<span class="help-block">
+										 Item Code
+									</span>
+								</div>
+							</div>
+						</div>
+							<!--/span-->
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+									<?php  echo $this->formRow($form->get('productName')); ?>
+									<span class="help-block">
+										 Name
+									</span>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<div class="col-md-2 col-lg-2 "></div>
+								<div class="col-md-8 col-xs-12 col-sm-12 col-lg-8 ">
+									<?php echo $this->formRow($form->get('desc')); ?>
+									<span class="help-block">
+										 Description
+									</span>
+								</div>
+								<div class="col-md-2 col-lg-2 "></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+									<?php  echo $this->formRow($form->get('paymentTerms[paymentTermId]')); ?>
+									<span class="help-block">
+										 Payment Terms
+									</span>
+								</div>
+							</div>
+						</div>
+							<!--/span-->
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+									<?php  echo $this->formRow($form->get('partNumber')); ?>
+									<span class="help-block">
+										 Part Number
+									</span>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+					</div>		
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+									<?php  echo $this->formRow($form->get('blCode')); ?>
+									<span class="help-block">
+										 BL Code
+									</span>
+								</div>
+							</div>
+						</div>
+							<!--/span-->
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+									<?php  echo $this->formRow($form->get('printedCode')); ?>
+									<span class="help-block">
+										 Printed Code
+									</span>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+					</div>
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+									<?php  echo $this->formRow($form->get('classifications[classificationId]')); ?>
+									<span class="help-block">
+										 Classification
+									</span>
+								</div>
+							</div>
+						</div>
+							<!--/span-->
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+									<?php  echo $this->formRow($form->get('brands[brandId]')); ?>
+									<span class="help-block">
+										 Brand
+									</span>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+					</div>
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+									<?php  echo $this->formRow($form->get('supplier[supplierId]')); ?>
+									<span class="help-block">
+										 Supplier
+									</span>
+								</div>
+							</div>
+						</div>
+							<!--/span-->
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
+									<?php  echo $this->formRow($form->get('size')); ?>
+									<span class="help-block">
+										 Size
+									</span>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+					</div>
+										
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
+									<?php  echo $this->formRow($form->get('weight')); ?>
+									<span class="help-block">
+										 Weight
+									</span>
+								</div>
+							</div>
+						</div>
+							<!--/span-->
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left select">
+									<?php  echo $this->formRow($form->get('productStatus')); ?>
+									<span class="help-block">
+										 Product Status
+									</span>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+					</div>
+
+					<div class="row form-section">
+					<div class="col-md-12">
+						<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
+							<h4 class="">Bundled Items?</h4>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
+							<button id="kalabaw" type="button" data-toggle="modal" href="#bundleModal" class="btn-sm green custom-right">
+						Add New
+							<i class="fa fa-plus"></i>
+						</button>
+						</div>		
+					</div>
+					</div>
+					<div class="form-group">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+			<div class="row">
+				<div class="col-md-12">
+					<!-- BEGIN SAMPLE TABLE PORTLET-->
+						<div class="portlet-body flip-scroll">
+							<table class="table table-bordered table-condensed flip-content">
+							<thead class="flip-content bg-grey">
+							<tr>
+								<th width="20%">
+									 Items Included
+								</th>
+								<th>
+									 Quantity
+								</th>
+								<th width="11%">
+									 Edit
+								</th>
+								<th width="12%">
+									 Delete
+								</th>
+							</tr>
+							</thead>
+							<tbody>
+							<?php foreach ($bundles as $bundle) : ?>
+                            	 <tr>
+                                	 <td><?php echo $this->escapeHtml($bundle->getChildProduct()->getProductName()); ?></td>
+                                	 <td><?php echo $this->escapeHtml($bundle->getBundleQuantity()); ?></td>
+                                	 <td><a id="" data-toggle="modal" href="#bundleModal" class="btn-sm green custom-right">
+									Edit
+										<i class="fa fa-edit"></i>
+									</a></td>
+									<td><a id="" data-toggle="modal" href="#" class="btn-sm green custom-right">
+									Delete
+										<i class="fa fa-times"></i>
+									</a></td>
+                            	 </tr>
+                            <?php endforeach; ?>
+							</tbody>
+							</table>
+						</div>
+					<!-- END SAMPLE TABLE PORTLET-->
+				</div>
+			</div>
+			</div>
+			<div class="col-md-2"></div>
+					</div>
+					
+					<div class="row form-section">
+					<div class="col-md-12">
+						<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
+							<h4 class="">Unit of Measurement</h4>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
+							<button id="aso" type="button" data-toggle="modal" href="#unitModal" class="btn-sm green custom-right">
+						Add New
+							<i class="fa fa-plus"></i>
+						</button>
+						</div>	
+					</div>
+					</div>
+
+					<div class="form-group">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+			<div class="row">
+				<div class="col-md-12">
+					<!-- BEGIN SAMPLE TABLE PORTLET-->
+						<div class="portlet-body flip-scroll">
+							<table class="table table-bordered table-condensed flip-content">
+							<thead class="flip-content bg-grey">
+							<tr>
+								<th width="20%">
+									 Unit of Measurement
+								</th>
+								<th>
+									 Quantity
+								</th>
+								<th width="11%">
+									 Edit
+								</th>
+								<th width="12%">
+									 Delete
+								</th>
+							</tr>
+							</thead>
+							<tbody>
+							<?php foreach ($uoms as $uom) : ?>
+                            	 <tr>
+                                	 <td><?php echo $this->escapeHtml($uom->getUom()->getUomName()); ?></td>
+                                	 <td><?php echo $this->escapeHtml($uom->getQuantity()); ?></td>
+                                	 <td><a id="" data-toggle="modal" href="#unitModal" class="btn-sm green custom-right">
+									Edit
+										<i class="fa fa-edit"></i>
+									</a></td>
+									<td><a id="" data-toggle="modal" href="#" class="btn-sm green custom-right">
+									Delete
+										<i class="fa fa-times"></i>
+									</a></td>
+                            	 </tr>
+                            <?php endforeach; ?>
+							</tbody>
+							</table>
+						</div>
+					<!-- END SAMPLE TABLE PORTLET-->
+				</div>
+			</div>
+			</div>
+			<div class="col-md-2"></div>
+					</div>
+
+			<div class="col-md-12">
+				<div class="row form-section">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
+						<h4 class="">Categories</h4>
+					</div>	
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<div class="col-md-2 col-lg-2 "></div>
+							<div class="col-md-8 col-xs-12 col-sm-12 col-lg-8 ">
+								<?php  echo $this->formRow($form->get('categories')); ?>
+								<span class="help-block">
+									Categories
+								</span>
+							</div>
+						<div class="col-md-2 col-lg-2 "></div>
+					</div>
+				</div>
+			</div>
+
+					<div class="row form-section">
+					<div class="col-md-12">
+						<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
+							<h4 class="">Price</h4>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-md-6">
+				
+							<button id="sample_editable_1_new" type="button" data-toggle="modal" href="#priceModal" class="btn-sm green custom-right">
+						Add New
+							<i class="fa fa-plus"></i>
+						</button>
+						</div>
+							
+					</div>
+					</div>
+					<div class="form-group">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+			<div class="row">
+				<div class="col-md-12">
+					<!-- BEGIN SAMPLE TABLE PORTLET-->
+						<div class="portlet-body flip-scroll">
+							<table class="table table-bordered table-condensed flip-content">
+							<thead class="flip-content bg-grey">
+							<tr>
+								<th width="20%">
+									 Price Type
+								</th>
+								<th>
+									 Amount
+								</th>
+								<th>
+									 Currency
+								</th>
+								<th width="11%">
+									 Edit
+								</th>
+								<th width="12%">
+									 Delete
+								</th>
+							</tr>
+							</thead>
+							<tbody>
+							<?php foreach ($prices as $price) : ?>
+                            	 <tr>
+                                	 <td><?php echo $this->escapeHtml($price->getPriceType()->getPriceTypeName()); ?></td>
+                                	 <td><?php echo $this->escapeHtml($price->getPrice()); ?></td>
+                                	 <td><?php echo $this->escapeHtml($price->getCurrency()->getCurrencyName()); ?></td>
+                                	 <td><a id="" data-toggle="modal" href="#priceModal" class="btn-sm green custom-right">
+									Edit
+										<i class="fa fa-edit"></i>
+									</a></td>
+									<td><a id="" data-toggle="modal" href="#" class="btn-sm green custom-right">
+									Delete
+										<i class="fa fa-times"></i>
+									</a></td>
+                            	 </tr>
+                            <?php endforeach; ?>
+							</tbody>
+							</table>
+						</div>
+					<!-- END SAMPLE TABLE PORTLET-->
+				</div>
+			</div>
+			</div>
+			<div class="col-md-2"></div>
+					</div>
+					
+			<!-- BEGIN PAGE CONTENT-->
+
+				</div>
+				<div class="form-actions fluid">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="col-md-offset-3 col-md-9">
+								<button type="button" class="btn green">Submit</button>
+								<button type="button" class="btn default">Cancel</button>
+							</div>
+						</div>
+						<div class="col-md-6">
+						</div>
+					</div>
+				</div>
+			</form>
+			<!-- END FORM-->
+		</div>
+	</div>
+   <?php echo $this->render('product/units') ?>
+	<?php echo $this->render('product/price') ?>
+   <?php echo $this->render('product/bundle') ?>
+							
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<?php 
+	$this->inlineScript()
+		->appendFile($this->basePath('/assets/scripts/product.js'))
+?>
+<?php $this->inlineScript()->captureStart() ?>
+	jQuery(document).ready(function() {	
+		App.init();
+		Product.init();
+		ComponentsEditors.init();
+		$('.tags').tagsInput({
+            width: '100%',
+        });
+	});
+<?php $this->inlineScript()->captureEnd() ?>
+							

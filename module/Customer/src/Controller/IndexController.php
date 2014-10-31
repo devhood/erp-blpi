@@ -5,47 +5,43 @@ namespace Customer\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Main\Controller\BaseController;
+use DoctrineModule\Stdlib\Hydrator\DoctrineObject as DoctrineHydrator;
+
 
 class IndexController extends BaseController
 {
-	protected $em = null;
 
-
-	//ORM Entity
-	public function setEntityManager(\Doctrine\ORM\EntityManager $em)
-	{
-		$this->em = $em;
-	}
-	//ORM Entity
-	public function getEntityManager()
-	{
-		if (null === $this->em) {
-			$this->em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
-		}
-		return $this->em;
-	}
-
-
-		//calling customer/ page
     public function indexAction()
     {
-			//$records = $this->_getContents("records");
-
-			return new ViewModel();
-
-			//	'form' => $form,
-			//	'record' => $records,
-
+    	$records = $this->_getContents('Customers');
+//     	var_dump($records);
+//     	exit;
+    	return new ViewModel(array('records' => $records));
     }
 
-		//calling customer/add page
+
     public function addAction()
     {
-    	$em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+  		$em = $this->_getEntityManager();
     	$customerForm = new \Customer\Form\CustomerForm($em);
     	$contactForm = new \Customer\Form\ContactForm($em);
     	$addressForm = new \Customer\Form\AddressForm($em);
 
+    	
+    	$request = $this->getRequest();
+    	if($request->isPost()){
+    			
+    		$request = (array)($request->getPost());
+    			
+    		$table = self::DBNS.'Customers';
+    		$object = new $table();
+    		$hydrator = new DoctrineHydrator($em);
+    		$object = $hydrator->hydrate($request, $object);
+    		$em->persist($object);
+    		$em->flush();
+    		return $this->redirect()->toUrl('/customer');
+    	}
+    	
 
     	return new ViewModel(array(
 				'customerForm' => $customerForm,
@@ -57,16 +53,16 @@ class IndexController extends BaseController
 
 public function editAction()
     {
-    	$form = new \Customer\Form\CustomerForm();
+//     	$form = new \Customer\Form\CustomerForm();
 
- 		$addresses = $this->_getContents("Address");
-       	$contacts = $this->_getContents("Contacts");
+//  		$addresses = $this->_getContents("Address");
+//        	$contacts = $this->_getContents("Contacts");
 
-    	return new ViewModel(array(
-				'form' => $form,
-				'addresses' => $addresses,
-				'contacts' => $contacts,
-				));
+//     	return new ViewModel(array(
+// 				'form' => $form,
+// 				'addresses' => $addresses,
+// 				'contacts' => $contacts,
+// 				));
     }
 
 
@@ -122,5 +118,106 @@ return new ViewModel(array(
 ));
 		}
 
+class IndexController extends BaseController {
+	
+	public function indexAction() {
+		$dataCustomers = $this->_getContents ( 'Customers' );
+		$dataAddress = $this->_getContents ( 'Address' );
+		return new ViewModel ( array (
+				'dataCustomers' => $dataCustomers ,
+				'dataAddress' => $dataAddress 
+				
+		) );
+	}
+	public function addAction() {
+		$em = $this->_getEntityManager ();
+		$customerForm = new \Customer\Form\CustomerForm ( $em );
+		$contactForm = new \Customer\Form\ContactForm ( $em );
+		$addressForm = new \Customer\Form\AddressForm ( $em );
+		
+		$request = $this->getRequest ();
+		if ($request->isPost ()) {
+			
+			$request = ( array ) ($request->getPost ());
+			
+//  			var_dump ( $request );
+//  			Zend_Debug::dump($request);
+//  			exit ();
 
+			$table = self::DBNS . 'Customers';
+			$object = new $table ();
+			$hydrator = new DoctrineHydrator ( $em );
+			$object = $hydrator->hydrate ( $request, $object );
+			$em->persist ( $object );
+			$em->flush ();
+			return $this->redirect ()->toUrl ( '/customer' );
+		}
+		
+		return new ViewModel ( array (
+				'customerForm' => $customerForm,
+				'contactForm' => $contactForm,
+				'addressForm' => $addressForm 
+		) );
+	}
+	public function editAction() {
+		// $form = new \Customer\Form\CustomerForm();
+		// $addresses = $this->_getContents("Address");
+		// $contacts = $this->_getContents("Contacts");
+		// return new ViewModel(array(
+		// 'form' => $form,
+		// 'addresses' => $addresses,
+		// 'contacts' => $contacts,
+		// ));
+	}
+	public function viewAction() {
+		$form = new \Customer\Form\CustomerForm ();
+		$form->get ( "categories[categoryId]" )->setAttribute ( "disabled", true );
+		$form->get ( "customerTypes[customerTypeId]" )->setAttribute ( "disabled", true );
+		$form->get ( "companyName" )->setAttribute ( "readonly", true );
+		$form->get ( "branch" )->setAttribute ( "readonly", true );
+		
+		$form->get ( "tradeName" )->setAttribute ( "readonly", true );
+		
+		$form->get ( "tinNumber" )->setAttribute ( "readonly", true );
+		$form->get ( "phone" )->setAttribute ( "readonly", true );
+		$form->get ( "email" )->setAttribute ( "readonly", true );
+		$form->get ( "website" )->setAttribute ( "readonly", true );
+		$form->get ( "secNumber" )->setAttribute ( "readonly", true );
+		$form->get ( "consignee" )->setAttribute ( "readonly", true );
+		$form->get ( "franchise" )->setAttribute ( "readonly", true );
+		$form->get ( "creditLimit" )->setAttribute ( "readonly", true );
+		$form->get ( "unpaidTransactionLimit" )->setAttribute ( "readonly", true );
+		$form->get ( "paymentTerms[paymentTermId]" )->setAttribute ( "disabled", true );
+		$form->get ( "percentCommission" )->setAttribute ( "readonly", true );
+		$form->get ( "shippingModes[shippingModeId]" )->setAttribute ( "disabled", true );
+		$form->get ( "users" )->setAttribute ( "readonly", true );
+		// / $form->get("users[userId]")->setAttribute("disabled", true);
+		$form->get ( "customerStatus" )->setAttribute ( "readonly", true );
+		// $form->get("salesExecutive[salesExecutiveId]")->setAttribute("disabled", true);
+		
+		// address
+		$form->get ( "addressType[addressTypeId]" )->setAttribute ( "disabled", true );
+		$form->get ( "streetLandmark" )->setAttribute ( "readonly", true );
+		$form->get ( "city[cityId]" )->setAttribute ( "disabled", true );
+		$form->get ( "province[provinceId]" )->setAttribute ( "disabled", true );
+		$form->get ( "country[countryId]" )->setAttribute ( "disabled", true );
+		$form->get ( "zipcode" )->setAttribute ( "readonly", true );
+		
+		// contact
+		$form->get ( "position" )->setAttribute ( "readonly", true );
+		$form->get ( "primary" )->setAttribute ( "readonly", true );
+		$form->get ( "fullname" )->setAttribute ( "readonly", true );
+		$form->get ( "email" )->setAttribute ( "readonly", true );
+		$form->get ( "phone" )->setAttribute ( "readonly", true );
+		
+		$addresses = $this->_getContents ( "Address" );
+		$contacts = $this->_getContents ( "Contacts" );
+		
+		return new ViewModel ( array (
+				'form' => $form,
+				'addresses' => $addresses,
+				'contacts' => $contacts 
+		) );
+	}
+>>>>>>> bc9596ebf2837cbdd3f13b469d5a792837012b32
 }

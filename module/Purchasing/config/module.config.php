@@ -1,29 +1,52 @@
 <?php
-namespace Template;
+namespace Purchasing;
 
 return array(
 	'view_manager' => array(
 		'template_path_stack' => array(
 			__DIR__ . '/../view',
 		),
+		'template_map' => array(
+			'partial/access'      =>   __DIR__ . '/../view/purchasing/partial/access.phtml',
+		),
 	),
 	'router' => array(
 		'routes' => array(
-			__NAMESPACE__.'_Index_Home' => array(
+			__NAMESPACE__.'_Purchase_Index' => array(
 				'type' => 'Literal',
 				'options' => array(
-					'route'    => '/template',
+					'route'    => '/purchase',
 					'defaults' => array(
-						'controller' => __NAMESPACE__ . '\Index',
+						'controller' => __NAMESPACE__ . '\Purchase',
 						'action'     => 'index',
 					),
 				),
 			),
-		),
-	),
+			__NAMESPACE__.'_Purchase_Add' => array(
+				'type' => 'Literal',
+				'options' => array(
+					'route'    => '/purchase/add',
+					'defaults' => array(
+						'controller' => __NAMESPACE__ . '\Purchase',
+						'action'     => 'add',
+					),
+				),
+			),
+// 			__NAMESPACE__.'_Purchase_Edit' => array(
+// 				'type' => 'segment',
+// 				'options' => array(
+// 					'route'    => '/purchase/edit[/:id]',
+// 					'defaults' => array(
+// 						'controller' => __NAMESPACE__ . '\Purchase',
+// 						'action'     => 'edit',
+// 					),
+// 				),
+// 			),
+ 		),
+ 	),
 	'controllers' => array(
 		'invokables' => array(
-			__NAMESPACE__ . '\Index' => __NAMESPACE__ . '\Controller\IndexController',
+			__NAMESPACE__ . '\Purchase' => __NAMESPACE__ . '\Controller\PurchaseController'
 		),
 	),
 );

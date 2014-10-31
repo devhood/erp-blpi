@@ -103,6 +103,12 @@ var User = function () {
 					submitHandler: function (form) {
 						success.show();
 						error.hide();
+						var oTable = $('#accessTable').dataTable();
+						var data = oTable.fnGetData();
+						
+						var input = $("<input>", { type: "hidden", name: "address", value: "bla" }); 
+						form.append($(input));
+						form.submit();
 					}
 				});
 
