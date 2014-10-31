@@ -52,7 +52,7 @@ var Bundle = function () {
 			});
 			
 			var bundles = [];
-			var bundlesTable = $('#bundlesTable').dataTable();
+			var bundlesTable = $('#bundlesTable').dataTable({"bLengthChange": false, "bFilter" : false});
 			var manageBundles = {
 				
 				add : function(){
