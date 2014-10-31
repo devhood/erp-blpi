@@ -15,10 +15,16 @@ class IndexController extends BaseController
     {
     	$dbCustomers = $this->_getContents('Customers');
     	
-    	echo '<pre>';
-    	var_dump($dbCustomers);
-    	echo '<pre>';
-    	exit;
+//     	echo 'a<pre>';
+//     	var_dump($dbCustomers);
+//     	echo '<pre>';
+//     	exit;
+
+//		echo 'a<pre>';
+//		print_r($dbCustomers);
+//		echo '<pre>';
+//		exit;
+    	
     	return new ViewModel(array('dbCustomers' => $dbCustomers));
     }
 
@@ -30,12 +36,9 @@ class IndexController extends BaseController
     	$contactForm = new \Customer\Form\ContactForm($em);
     	$addressForm = new \Customer\Form\AddressForm($em);
 
-    	
     	$request = $this->getRequest();
     	if($request->isPost()){
-    			
     		$request = (array)($request->getPost());
-    			
     		$table = self::DBNS.'Customers';
     		$object = new $table();
     		$hydrator = new DoctrineHydrator($em);
@@ -44,7 +47,6 @@ class IndexController extends BaseController
     		$em->flush();
     		return $this->redirect()->toUrl('/customer');
     	}
-    	
 
     	return new ViewModel(array(
 				'customerForm' => $customerForm,
