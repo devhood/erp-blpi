@@ -54,8 +54,9 @@ var Document = function () {
             }
 			});
 			
-			var documentTable = $('#documentTable').dataTable();
+			var documentTable = $('#documentTable').dataTable({"bLengthChange": false, "bFilter" : false});
 			var document = [];
+			var documentctr = 1;
 			
 			var manageDocuments = {
 					
@@ -66,10 +67,11 @@ var Document = function () {
 							$('#documentName').val(),
 							$('#documentLink').val(),
 								"<a href='#' id='"+$('#documentTypeId').val()+"' class='document_delete_row"+$('#documentTypeId').val()+"'>Delete</a>"
-								+"<input type='hidden' name='document[][documentType][documentTypeId]' value='"+$('#documentTypeId').val()+"'>"
-								+"<input type='hidden' name='document[][documentName]' value='"+$('#documentName').val()+"'>"
-								+"<input type='hidden' name='document[][documentLink]' value='"+$('#documentLink').val()+"'>"
+								+"<input type='hidden' name='document["+documentctr+"][documentType][documentTypeId]' value='"+$('#documentTypeId').val()+"'>"
+								+"<input type='hidden' name='document["+documentctr+"][documentName]' value='"+$('#documentName').val()+"'>"
+								+"<input type='hidden' name='document["+documentctr+"][documentLink]' value='"+$('#documentLink').val()+"'>"
 							]);
+						documentctr++;
 							$(".document_delete_row"+$('#documentTypeId').val()).live('click', function (e) {
 								manageDocuments.remove($(this));
 								
