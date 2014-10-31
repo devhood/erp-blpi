@@ -45,6 +45,23 @@ class IndexController extends BaseController
     		$object = $hydrator->hydrate($request, $object);
     		$em->persist($object);
     		$em->flush();
+    		
+    		$customerId = $object->getCustomerId ();
+    		
+//     		foreach( $request['address'] as $address){
+//     			$content = array(
+//     					"product" => array (
+//     						'productId' => $productId 
+//     					),
+//     					"address" => $address ['address'],
+//     					"addressType" => $address ['uom'],
+//     					"address" => $address ['uom'],
+    					
+    					
+//     			)
+//     		}
+    		
+    		
     		return $this->redirect()->toUrl('/customer');
     	}
 

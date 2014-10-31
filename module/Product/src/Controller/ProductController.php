@@ -23,11 +23,8 @@ class ProductController extends BaseController {
 		$formProductDocument = new \Product\Form\ProductDocumentForm ( $em );
 		
 		$request = $this->getRequest ();
-		
 		if ($request->isPost ()) {
-			
 			$request = ( array ) ($request->getPost ());
-			
 			$table = self::DBNS . 'Products';
 			$object = new $table ();
 			$hydrator = new DoctrineHydrator ( $em );

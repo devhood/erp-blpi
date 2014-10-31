@@ -1,11 +1,11 @@
 
-var Contact = function () {
+var Address = function () {
 
 	return {
 
 		init: function () {
-	
-			var form = $('#customer_contact');
+			
+			var form = $('#customer_address');
             var error = $('.alert-danger', form);
             var success = $('.alert-success', form);
 			form.validate({
@@ -14,27 +14,32 @@ var Contact = function () {
                 focusInvalid: false, 
                 ignore: "",
                 rules: {
-                	position : {
-                        required: true,
-                        minlength: 2
-                    },
-                    
-                	fullname : {
-                        minlength: 2,
+                	addressType : {
                         required: true
                     },
                     
-                    email : {
-                        minlength: 2,
-                        required: true,
-                        email: true
-                    },
-                    
-                    phone : {
-                        minlength: 2,
+                    streetLandmark : {
                         required: true
                     },
                     
+                    cityId : {
+                        required: true
+                    },
+                    
+                    provinceId : {
+                        required: true
+                    },
+                    
+                    countryId : {
+                        required: true
+                    },
+                    
+                    zipcode : {
+                        minlength: 2,
+                        required: true,
+                        number: true
+                    },
+  
                 },
                 invalidHandler: function (event, validator) { //display error alert on form submit              
                 success.hide();
@@ -60,36 +65,30 @@ var Contact = function () {
             submitHandler: function (form) {
                 success.show();
                 error.hide();
-                manageContacts.add();
+                manageAddress.add();
             }
 			});
 			
-			var contactTable = $('#contactTable').dataTable({
-				"bLengthChange" : false,
-				"bFilter" : false
-			});
-			
-			var contact = [];
-			var contactctr = 1;
-			
-			var manageContacts = {
+			var address = [];
+			var addressTable = $('#addressTable').dataTable();
+			var manageAddress = {
 				
-				add : function(){						
-					contactTable.fnAddData([
-							$("#fullname").val(), 
-							$("#position").val(), 
-							$("#phone").val(), 
-							$("#email").val(),
-							"<a href='#' id='"+$('#Id').val()+"' class='contact_delete_row"+$('#contactId').val()+"'>Delete</a>"
-							+ "<input type='hidden' name='contact["+ contactctr+"][fullName]' value='" + $('#fullName').val() + " ' > "
-							+ "<input type='hidden' name='contact["+ contactctr +"][position]' value='" + $('#position').val() + " ' > "
-							+ "<input type='hidden' name='contact["+ contactctr +"][phone]' value='" + $('#phone').val() + " ' > "
-							+ "<input type='hidden' name='contact["+ contactctr +"][email]' value='" + $('#email').val() + " ' > "		]);
-					contactsctr ++;					
-					$(".contact_delete_row"+$.val()).live('click', function (e) {
-						manageContacts.remove($(this));
+				add : function(){
+					address.push(1);
+					addressTable.fnAddData([
+							$('#addressType option:selected').text() ,
+							$("#streetLandmark").val(), 
+							$('#cityId option:selected').text() ,
+							$('#provinceId option:selected').text() ,
+							$('#countryId option:selected').text() ,
+							$("#zipcode").val(), 
+							"<a href='#' class='address_delete_row"+address.length+"'>Delete</a>"]);
+					
+					$(".address_delete_row"+address.length).live('click', function (e) {
+						manageAddress.remove($(this));
 					});
-					$('#contactModal').modal('toggle');
+					$('#addressModal').modal('toggle');
+					
 				},
 			
 				remove : function(elem){
@@ -97,7 +96,7 @@ var Contact = function () {
 						 return;
 					}
 					var nRow = elem.parents('tr')[0];
-					contactTable.fnDeleteRow(nRow);
+					addressTable.fnDeleteRow(nRow);
 				}
 				
 			}
