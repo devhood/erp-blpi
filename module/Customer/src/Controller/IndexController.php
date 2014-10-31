@@ -20,10 +20,10 @@ class IndexController extends BaseController
 //     	echo '<pre>';
 //     	exit;
 
-//		echo 'a<pre>';
-//		print_r($dbCustomers);
-//		echo '<pre>';
-//		exit;
+// 		echo 'a<pre>';
+// 		print_r($dbCustomers);
+// 		echo '<pre>';
+// 		exit;
     	
     	return new ViewModel(array('dbCustomers' => $dbCustomers));
     }
@@ -81,7 +81,7 @@ class IndexController extends BaseController
 
 				$form->get("tradeName")->setAttribute("readonly", true);
 
-				$form->get("tinNumber")->setAttribute("readonly", true);
+				$form->get("tin")->setAttribute("readonly", true);
 				$form->get("phone")->setAttribute("readonly", true);
 				$form->get("email")->setAttribute("readonly", true);
 				$form->get("website")->setAttribute("readonly", true);
