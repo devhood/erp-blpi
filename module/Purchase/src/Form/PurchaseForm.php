@@ -49,7 +49,7 @@ class PurchaseForm extends Form {
 				'type' => 'text',
 				'required' => true,
 				'attributes' => array (
-						'class' => 'form-control',
+						'class' => 'form-control date-picker',
 						'id' => 'purchaseDate' 
 				) 
 		) );
@@ -59,7 +59,7 @@ class PurchaseForm extends Form {
 				'type' => 'text',
 				'required' => true,
 				'attributes' => array (
-						'class' => 'form-control',
+						'class' => 'form-control date-picker',
 						'id' => 'expectedArrivalDate' 
 				) 
 		) );
@@ -70,7 +70,7 @@ class PurchaseForm extends Form {
 				'attributes' => array (
 						'class' => 'form-control',
 						'id' => 'purchaseNotes',
-						'rows' => '1' 
+						'rows' => '2' 
 				) 
 		) );
 		
@@ -83,5 +83,6 @@ class PurchaseForm extends Form {
 						'id' => 'purchaseStatus' 
 				) 
 		) );
+
 	}
 }

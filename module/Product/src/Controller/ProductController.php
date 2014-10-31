@@ -37,6 +37,20 @@ class ProductController extends BaseController
     		$object = $hydrator->hydrate($request, $object);
     		$em->persist($object);
     		$em->flush();
+    		
+    		foreach ($request['uom'] as $uom) {
+    			$db = array(
+    					"uom" => array( 'uomId' => $objectUser->getUom()->getUomId()),
+    					"quantity" => $quantity
+    			);
+    		
+    			$uom = self::DBNS.'ProductUoms';
+    			$objectDp = new $uom();
+    			$hydrator = new DoctrineHydrator($em);
+    			$objectDp = $hydrator->hydrate($db, $objectDp);
+    			$em->persist($objectDp);
+    			$em->flush();
+    		}
     		return $this->redirect()->toUrl('/product');
     	}
     	

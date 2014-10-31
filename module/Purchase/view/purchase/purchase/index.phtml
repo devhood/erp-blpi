@@ -2,7 +2,7 @@
 					<div class="portlet box grey">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-edit"></i>Purchase List
+								<i class="fa fa-edit"></i>Purchase Order List
 							</div>
 							<div class="tools">
 								<a href="javascript:;" class="collapse">
@@ -23,28 +23,30 @@
 									</a>
 								</div>
 							</div>
-							<table class="main table table-striped table-hover table-bordered" id="purchases_table">
+							<table class="main table table-striped table-hover table-bordered" id="purchase_table">
 							<thead>
 							<tr>
-								<th>Purchase</th>
+								<th>ID</th>
 								<th>Supplier</th>
 								<th>Reference No.</th>
 								<th>Purchase Date</th>
 								<th>Expected Arrival Date</th>
-								<th>Status</th>
-								<th>Action</th>
+								<th>Purchase Status</th>
+								<th>Purchase Notes</th>
+								<th>Purchase Items</th>
 							</tr>
 							</thead>
 							<tbody>
 							<?php foreach ($records as $record) : ?>
 								 <tr>
-									 <td><?php echo $record->getPurchaseId() ?></td>
-									 <td><?php echo $record->getSupplier() ? $record->getSupplier()->getSupplierName() : "" ?></td>
-									 <td><?php echo $record->getReferenceNo() ?></td>
-									 <td><?php //echo $record->getPurchaseDate() ?></td>
-									 <td><?php //echo $record->getExpectedArrivalDate() ?></td>
-									 <td><?php echo $record->getPurchaseStatus() ?></td>
-									 <td><a class="edit" href="<?php echo $this->basePath('/purchase/edit/'.$record->getPurchaseId()) ?>">Edit</a></td>
+								 	<td><?php echo $record->getPurchaseId() ?></td>
+									<td><?php echo $record->getSupplier() ? $record->getSupplier()->getSupplierName() : "" ?></td>
+									<td><?php echo $record->getReferenceNo() ?></td>
+									<td><?php echo $record->getPurchaseDate() ? $record->getPurchaseDate()->format('Y-m-d H:i:s') : "" ?></td>
+									<td><?php echo $record->getExpectedArrivalDate() ? $record->getExpectedArrivalDate()->format('Y-m-d H:i:s') : "" ?></td>
+									<td><?php echo $record->getPurchaseStatus() ?></td>
+									<td><?php echo $record->getPurchaseNotes() ?></td>
+									<td><a class="edit" href="<?php echo $this->basePath('/purchase/edit/'.$record->getPurchaseId()) ?>">Edit</a></td>
 								 </tr>
 							<?php endforeach; ?>
 							</tbody>
