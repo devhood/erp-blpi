@@ -1,11 +1,11 @@
 
-var User = function () {
+var Shipments = function () {
 
 	return {
 
 		init: function () {
 
-			var form = $('#user_add');
+			var form = $('#shipment_add');
 			var error = $('.alert-danger', form);
 			var success = $('.alert-success', form);
 			form.validate({
@@ -15,71 +15,78 @@ var User = function () {
 				ignore: "",
 				rules: {
 
-					userName : {
+					shipmentId : {
 						minlength: 3,
 						required: true
 					},
-					fullName : {
+					supplierId : {
 						minlength: 5,
 						required: true
 					},
-					designationId : {
-						required: true
-					},
-					password : {
-						minlength: 5,
+					referenceNo : {
 						required: true
 					},
 
-					userStatus : {
+					arrivalDate : {
 						minlength: 3,
 						required: true
 					},
-					email : {
+					notes : {
+						minlength: 10,
+						required: true
+					},
+					confirmedBy : {
 						minlength: 5,
 						required: true
 					},
-					mobile : {
+					approveBy : {
 						minlength: 5,
 						required: true
 					},
+					
 
 				},
 
 					messages: { // custom messages for radio buttons and checkboxes
 
-						userName : {
+						shipmentId : {
 							minlength: "Minimum of 3 Characters",
-							required:  "Username is Required"
+							required:  "Shipment ID is Required"
 						},
-						fullName : {
+						supplierId : {
 							minlength: "Minimum of 5 Characters",
-							required: "Fullname is Required"
+							required: "Supplier ID is Required"
 						},
-						designationId : {
-							required: "Designation Id Required"
+						referenceNo : {
+							required: "Reference number is Required"
 						},
-						password : {
+						shipmentStatus : {
 							minlength: "Minimum of 5 Characters",
-							required: "Password is Required"
+							required: "Shipment status is Required"
 						},
 
-						userStatus : {
+						arrivalDate : {
 							minlength: "Minimum of 3 Characters",
-							required: "User Status is Required"
+							required: "Arrival date Required"
 						},
-						email : {
+						notes : {
 							minlength: "Minimum of 5 Characters",
-							required: "Email is Required"
+							required: "Notes is Required"
 						},
-						mobile : {
+						confirmedBy : {
 							minlength: "Minimum of 5 Characters",
-							required: "Mobile is Required"
+							required: "Confirmed By is Required"
 						},
+						approveBy : {
+							minlength: "Minimum of 5 Characters",
+							required: "Approve By is Required"
+							},
+						
+						
 
 
 					},
-					invalidHandler: function (event, validator) { //display error alert on form submit
+					invalidHandler: function (event, validator) { //display error alert on form subm
 						success.hide();
 						error.show();
 						App.scrollTo(error, -200);
@@ -103,11 +110,8 @@ var User = function () {
 					submitHandler: function (form) {
 						success.show();
 						error.hide();
-						var oTable = $('#accessTable').dataTable();
-						var data = oTable.fnGetData();
-						
-						var input = $("<input>", { type: "hidden", name: "address", value: "bla" }); 
-						form.append($(input));
+		//				var oTable = $(#itemsTable).dataTable();
+			//			var data = oTable.fn
 						form.submit();
 					}
 				});
