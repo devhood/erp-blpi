@@ -27,10 +27,11 @@ class ProductController extends BaseController
     	$formProductDocument = new \Product\Form\ProductDocumentForm($em);
 		
     	$request = $this->getRequest();
+    	
     	if($request->isPost()){
-    			
+    		
     		$request = (array)($request->getPost());
-    			
+    		
     		$table = self::DBNS.'Products';
     		$object = new $table();
     		$hydrator = new DoctrineHydrator($em);
@@ -38,19 +39,67 @@ class ProductController extends BaseController
     		$em->persist($object);
     		$em->flush();
     		
-    		foreach ($request['uom'] as $uom) {
-    			$db = array(
-    					"uom" => array( 'uomId' => $objectUser->getUom()->getUomId()),
-    					"quantity" => $quantity
-    			);
     		
-    			$uom = self::DBNS.'ProductUoms';
-    			$objectDp = new $uom();
+    		$productId = $object->getProductId();
+    		
+    		
+    		foreach ($request['uom'] as $uom) {
+    			$content = array(
+    					"product" => array( 'productId' => $productId),
+    					"uom" => $uom['uom'],
+    					"quantity" => $uom['quantity']
+    			);
+    			$uomTable = self::DBNS.'ProductUoms';
+    			$objectUom = new $uomTable();
     			$hydrator = new DoctrineHydrator($em);
-    			$objectDp = $hydrator->hydrate($db, $objectDp);
-    			$em->persist($objectDp);
+    			$objectUom = $hydrator->hydrate($content, $objectUom);
+    			$em->persist($objectUom);
     			$em->flush();
     		}
+    		
+    		foreach ($request['price'] as $price) {
+    			$content = array(
+    					"product" => array( 'productId' => $productId),
+    					"priceType" => $price['priceType'],
+    					"price" => $price['price'],
+    					"currency" => $price['currency']
+    			);
+    			
+    			$priceTable = self::DBNS.'ProductPrice';
+    			$objectPrice = new $priceTable();
+    			$hydrator = new DoctrineHydrator($em);
+    			$objectPrice = $hydrator->hydrate($content, $objectPrice);
+    			$em->persist($objectPrice);
+    			$em->flush();
+    		}
+    		
+    		foreach ($request['bundle'] as $bundle) {
+    			$content = array(
+    					"product" => array( 'productId' => $productId),
+    					"priceType" => $price['priceType'],
+    					"price" => $price['price'],
+    					"currency" => $price['currency']
+    			);
+    			 
+    			$priceTable = self::DBNS.'ProductPrice';
+    			$objectPrice = new $priceTable();
+    			$hydrator = new DoctrineHydrator($em);
+    			$objectPrice = $hydrator->hydrate($content, $objectPrice);
+    			$em->persist($objectPrice);
+    			$em->flush();
+    		}
+    		
+    		
+    		var_dump($request['uom']);
+    		echo "<br/><br/>";
+    		var_dump($request['bundle']);
+    		echo "<br/><br/>";
+    		var_dump($request['document']);
+    		echo "<br/><br/>";
+    		var_dump($request['price']);
+    		echo "<br/><br/>";
+    		exit;
+    		
     		return $this->redirect()->toUrl('/product');
     	}
     	

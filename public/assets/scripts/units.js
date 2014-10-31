@@ -14,7 +14,7 @@ var Units = function () {
                 focusInvalid: false, 
                 ignore: "",
                 rules: {
-                    unitQuantity : {
+                    quantity : {
                         minlength: 1,
                         required: true,
                         number: true
@@ -53,18 +53,22 @@ var Units = function () {
 			
 			var uomsTable = $('#uomsTable').dataTable();
 			var uom = [];
+			var uomctr = 1;
 			
 			var manageUnits = {
 					
 				add : function(){
 					if(!uom[$('#uomId').val()]){
 						uom[$('#uomId').val()] = $('#uomId').val();
+						
 						uomsTable.fnAddData([
 							$('#uomId option:selected').text() ,
-							$('#unitQuantity').val(),
+							$('#quantity').val(),
 								"<a href='#' id='"+$('#uomId').val()+"' class='uom_delete_row"+$('#uomId').val()+"'>Delete</a>"
-								+"<input type='hidden' name='uom[][uom[uomId]]' value='"+$('#uomId').val()+"'>"
+								+"<input type='hidden' name='uom["+uomctr+"][uom][uomId]' value='"+$('#uomId').val()+"'>"
+								+"<input type='hidden' name='uom["+uomctr+"][quantity]' value='"+$('#quantity').val()+"'>"
 							]);
+						uomctr++;
 							$(".uom_delete_row"+$('#uomId').val()).live('click', function (e) {
 								manageUnits.remove($(this));
 								

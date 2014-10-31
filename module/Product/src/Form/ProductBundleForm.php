@@ -21,7 +21,7 @@ class ProductBundleForm extends Form
 				'attributes' => array(
 						'class' => 'select2me form-control',
 						'tabindex' => '1',
-						'id' => 'productId',
+						'id' => 'childProductId',
 				),
 
         ));

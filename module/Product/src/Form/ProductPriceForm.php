@@ -11,7 +11,7 @@ class ProductPriceForm extends Form
 
 
   $this->add(array(
-      'name' => 'priceTypes[priceTypeId]',
+      'name' => 'priceType[priceTypeId]',
       'type' => 'DoctrineModule\Form\Element\ObjectSelect',
       'options' => array(
       'object_manager' => $om,
@@ -27,16 +27,16 @@ class ProductPriceForm extends Form
       ));
 
   $this->add( array(
-      'name' => 'priceAmount',
+      'name' => 'price',
       'type' => 'Text',
       'attributes' => array(
           'class' => 'form-control',
-          'id' => 'priceQuantity',
+          'id' => 'price',
       )
       ));
 
   $this->add(array(
-      'name' => 'currencies[currencyId]',
+      'name' => 'currency[currencyId]',
       'type' => 'DoctrineModule\Form\Element\ObjectSelect',
       'options' => array(
       'object_manager' => $om,

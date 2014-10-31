@@ -14,7 +14,7 @@ var Bundle = function () {
                 focusInvalid: false, 
                 ignore: "",
                 rules: {
-                    productId : {
+                    childProductId : {
                         required: true
                     },
                     bundleQuantity : {
@@ -51,24 +51,30 @@ var Bundle = function () {
             }
 			});
 			
-			var bundles = [];
-			var bundlesTable = $('#bundlesTable').dataTable({"bLengthChange": false, "bFilter" : false});
-			var manageBundles = {
-				
-				add : function(){
-					bundles.push(1);
-					bundlesTable.fnAddData([
-							$('#productId option:selected').text() ,
-							$("#bundleQuantity").val(), 
-							"<a href='#' class='bundles_delete_row"+bundles.length+"'>Delete</a>"]);
-					
-					$(".bundles_delete_row"+bundles.length).live('click', function (e) {
-						manageBundles.remove($(this));
-					});
-					$('#bundleModal').modal('toggle');
-					
-				},
+			var bundlesTable = $('#bundlesTable').dataTable();
+			var bundle = [];
+			var bundlectr = 1;
 			
+			var manageBundles = {
+					
+				add : function(){
+					
+						bundlesTable.fnAddData([
+							$('#childProductId option:selected').text() ,
+							$('#bundleQuantity').val(),
+								"<a href='#' id='"+$('#childProductId').val()+"' class='bundle_delete_row"+$('#childProductId').val()+"'>Delete</a>"
+								+"<input type='hidden' name='bundle["+bundlectr+"][childProduct][productId]' value='"+$('#childProductId').val()+"'>"
+								+"<input type='hidden' name='bundle["+bundlectr+"][bundleQuantity]' value='"+$('#bundleQuantity').val()+"'>"
+							]);
+						bundlectr++;
+							$(".bundle_delete_row"+$('#childProductId').val()).live('click', function (e) {
+								manageBundles.remove($(this));
+								
+							});
+							$('#bundleModal').modal('toggle');
+			
+
+				},
 				remove : function(elem){
 					if (confirm("Are you sure to delete this row ?") == false) {
 						 return;
@@ -76,7 +82,6 @@ var Bundle = function () {
 					var nRow = elem.parents('tr')[0];
 					bundlesTable.fnDeleteRow(nRow);
 				}
-				
 			}
 			
 		}

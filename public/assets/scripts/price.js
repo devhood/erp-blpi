@@ -17,7 +17,7 @@ var Price = function () {
                     priceTypeId : {
                         required: true
                     },
-                    priceAmount : {
+                    price : {
                         minlength: 1,
                         required: true,
                         number: true
@@ -55,33 +55,42 @@ var Price = function () {
             }
 			});
 			
-			var prices = [];
 			var priceTable = $('#priceTable').dataTable();
+			var price = [];
+			var pricectr = 1;
+			
 			var managePrices = {
-				
+					
 				add : function(){
-					prices.push(1);
+					if(!price[$('#priceTypeId').val()]){
+						price[$('#priceTypeId').val()] = $('#priceTypeId').val();
 					priceTable.fnAddData([
 							$('#priceTypeId option:selected').text() ,
-							$("#priceQuantity").val(), 
+							$('#price').val(),
 							$('#currencyId option:selected').text() ,
-							"<a href='#' class='price_delete_row"+prices.length+"'>Delete</a>"]);
-					
-					$(".price_delete_row"+prices.length).live('click', function (e) {
-						managePrices.remove($(this));
-					});
-					$('#priceModal').modal('toggle');
-					
-				},
+								"<a href='#' id='"+$('#priceTypeId').val()+"' class='price_delete_row"+$('#priceTypeId').val()+"'>Delete</a>"
+								+"<input type='hidden' name='price["+pricectr+"][priceType][priceTypeId]' value='"+$('#priceTypeId').val()+"'>"
+								+"<input type='hidden' name='price["+pricectr+"][price]' value='"+$('#price').val()+"'>"
+								+"<input type='hidden' name='price["+pricectr+"][currency][currencyId]' value='"+$('#currencyId').val()+"'>"
+							]);
+					pricectr++;
+							$(".price_delete_row"+$('#priceTypeId').val()).live('click', function (e) {
+								managePrices.remove($(this));
+								
+							});
+							$('#priceModal').modal('toggle');
+					}
 			
+
+				},
 				remove : function(elem){
 					if (confirm("Are you sure to delete this row ?") == false) {
 						 return;
 					}
+					delete price[elem.attr('id')];
 					var nRow = elem.parents('tr')[0];
 					priceTable.fnDeleteRow(nRow);
 				}
-				
 			}
 			
 		}

@@ -25,11 +25,11 @@ class ProductUomForm extends Form
         ));
         
         $this->add( array(
-            'name' => 'unitQuantity',
+            'name' => 'quantity',
             'type' => 'Text',
             'attributes' => array(
                 'class' => 'form-control',
-                'id' => 'unitQuantity',
+                'id' => 'quantity',
             )
         ));
         

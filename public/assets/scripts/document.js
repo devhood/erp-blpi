@@ -14,7 +14,7 @@ var Document = function () {
                 focusInvalid: false, 
                 ignore: "",
                 rules: {
-                	documentTypesId : {
+                	documentTypeId : {
                         required: true
                     },
                     documentLink : {
@@ -54,25 +54,30 @@ var Document = function () {
             }
 			});
 			
-			var documents = [];
 			var documentTable = $('#documentTable').dataTable();
-			var manageDocuments = {
-				
-				add : function(){
-					documents.push(1);
-					documentTable.fnAddData([
-							$('#documentTypesId option:selected').text() ,
-							$("#documentLink").val(), 
-							$("#documentName").val(),
-							"<a href='#' class='document_delete_row"+documents.length+"'>Delete</a>"]);
-
-					$(".document_delete_row"+documents.length).live('click', function (e) {
-						manageDocuments.remove($(this));
-					});
-					$('#documentModal').modal('toggle');
-					
-				},
+			var document = [];
 			
+			var manageDocuments = {
+					
+				add : function(){
+					
+						documentTable.fnAddData([
+							$('#documentTypeId option:selected').text() ,
+							$('#documentName').val(),
+							$('#documentLink').val(),
+								"<a href='#' id='"+$('#documentTypeId').val()+"' class='document_delete_row"+$('#documentTypeId').val()+"'>Delete</a>"
+								+"<input type='hidden' name='document[][documentType][documentTypeId]' value='"+$('#documentTypeId').val()+"'>"
+								+"<input type='hidden' name='document[][documentName]' value='"+$('#documentName').val()+"'>"
+								+"<input type='hidden' name='document[][documentLink]' value='"+$('#documentLink').val()+"'>"
+							]);
+							$(".document_delete_row"+$('#documentTypeId').val()).live('click', function (e) {
+								manageDocuments.remove($(this));
+								
+							});
+							$('#documentModal').modal('toggle');
+			
+
+				},
 				remove : function(elem){
 					if (confirm("Are you sure to delete this row ?") == false) {
 						 return;
@@ -80,9 +85,7 @@ var Document = function () {
 					var nRow = elem.parents('tr')[0];
 					documentTable.fnDeleteRow(nRow);
 				}
-				
 			}
-			
 		}
 	};
 

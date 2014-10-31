@@ -22,7 +22,7 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-									<?php  echo $this->formRow($formProductPrice->get('priceTypes[priceTypeId]')); ?>
+									<?php  echo $this->formRow($formProductPrice->get('priceType[priceTypeId]')); ?>
 									<span class="col-md-12 control-label">
 										 Price Type
 									</span>
@@ -33,7 +33,7 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
-									<?php  echo $this->formRow($formProductPrice->get('priceAmount')); ?>
+									<?php  echo $this->formRow($formProductPrice->get('price')); ?>
 									<span class="col-md-12 control-label">
 										 Amount
 									</span>
@@ -48,7 +48,7 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-									<?php  echo $this->formRow($formProductPrice->get('currencies[currencyId]')); ?>
+									<?php  echo $this->formRow($formProductPrice->get('currency[currencyId]')); ?>
 									<span class="col-md-12 control-label">
 										 Currency
 									</span>
