@@ -422,7 +422,7 @@
 </div>
 
 <div>
-<?php echo $this->render('customer/address') ?>
+<?php  // echo $this->render('customer/address') ?>
 </div>
 <div>
 <?php echo $this->render('customer/contact') ?>
@@ -436,16 +436,16 @@
 <?php
 $this->inlineScript()
 ->appendFile($this->basePath('/assets/scripts/ajax/generic.js'))
-->appendFile($this->basePath('/assets/scripts/customer.js'))
-->appendFile($this->basePath('/assets/scripts/contact.js'))
-->appendFile($this->basePath('/assets/scripts/address.js'))
+->appendFile($this->basePath('/assets/scripts/customer/customer.js'))
+->appendFile($this->basePath('/assets/scripts/customer/contact.js'))
+// ->appendFile($this->basePath('/assets/scripts/customer/address.js'))
 
 ?>
 <?php $this->inlineScript()->captureStart() ?>
 jQuery(document).ready(function() {
 	Customer.init();
 	Contact.init();
-	Address.init();
+<!--     Address.init(); -->
 
 	
 });
