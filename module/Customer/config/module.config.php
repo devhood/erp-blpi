@@ -14,43 +14,43 @@ return array(
 	),
 	'router' => array(
 		'routes' => array(
-			__NAMESPACE__.'_Index_Home' => array(
+			__NAMESPACE__.'_Customer_Home' => array(
 				'type' => 'Literal',
 				'options' => array(
 					'route'    => '/customer',
 					'defaults' => array(
-						'controller' => __NAMESPACE__ . '\Index',
+						'controller' => __NAMESPACE__ . '\Customer',
 						'action'     => 'index',
 					),
 				),
 			),
-			__NAMESPACE__.'_Index_Add' => array(
+			__NAMESPACE__.'_Customer_Add' => array(
 				'type' => 'Literal',
 				'options' => array(
 					'route'    => '/customer/add',
 					'defaults' => array(
-						'controller' => __NAMESPACE__ . '\Index',
+						'controller' => __NAMESPACE__ . '\Customer',
 						'action'     => 'add',
 					),
 				),
 			),
-			__NAMESPACE__.'_Index_view' => array(
+			__NAMESPACE__.'_Customer_view' => array(
 				'type' => 'Literal',
 				'options' => array(
 					'route'    => '/customer/view',
 					'defaults' => array(
-						'controller' => __NAMESPACE__ . '\Index',
+						'controller' => __NAMESPACE__ . '\Customer',
 						'action'     => 'view',
 					),
 				),
 			),
 
-			__NAMESPACE__.'_Index_edit' => array(
+			__NAMESPACE__.'_Customer_edit' => array(
 				'type' => 'Literal',
 				'options' => array(
 					'route'    => '/customer/edit',
 					'defaults' => array(
-						'controller' => __NAMESPACE__ . '\Index',
+						'controller' => __NAMESPACE__ . '\Customer',
 						'action'     => 'edit',
 					),
 				),
@@ -61,7 +61,7 @@ return array(
 	),
 	'controllers' => array(
 		'invokables' => array(
-			__NAMESPACE__ . '\Index' => __NAMESPACE__ . '\Controller\IndexController',
+			__NAMESPACE__ . '\Customer' => __NAMESPACE__ . '\Controller\CustomerController',
 		),
 	),
 );
