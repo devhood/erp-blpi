@@ -54,6 +54,7 @@ var Access = function() {
 			var manageAccess = {
 					
 				add : function(){
+					
 					if(!access[$('#permissionId').val()]){
 						access[$('#permissionId').val()] = $('#permissionId').val();
 						accessTable.fnAddData([

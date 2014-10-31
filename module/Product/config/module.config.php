@@ -37,7 +37,7 @@ return array(
 				),
 			),
 			__NAMESPACE__.'_Product_Edit' => array(
-				'type' => 'Literal',
+				'type' => 'segment',
 				'options' => array(
 					'route'    => '/product/edit[/:id]',
 					'defaults' => array(
