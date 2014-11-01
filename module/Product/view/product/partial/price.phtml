@@ -18,43 +18,65 @@
 					</div>
 
 					<div class="modal-body">
-						<div class="scroller" style="height: 250px;"
-							data-always-visible="1" data-rail-visible1="1">
+						<div class="scroller" style="height: 225px;" data-always-visible="1" data-rail-visible1="1">
 							<div class="row">
-								<div class="col-md-6">
+								<div class="col-md-4">
 									<div class="form-group">
-										<div
-											class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-									<?php  echo $this->formRow($formProductPrice->get('priceType[priceTypeId]')); ?>
-									<span class="col-md-12 control-label"> Price Type </span>
+										<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
+											<span class="col-md-12 modal-control-label">
+												 Price Type
+											</span>
 										</div>
 									</div>
 								</div>
-								<!--/span-->
-								<div class="col-md-6">
+									<!--/span-->
+								<div class="col-md-8">
 									<div class="form-group">
-										<div
-											class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
-									<?php  echo $this->formRow($formProductPrice->get('price')); ?>
-									<span class="col-md-12 control-label"> Amount </span>
+										<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
+											<?php  echo $this->formRow($formProductPrice->get('priceType[priceTypeId]')); ?>
 										</div>
 									</div>
 								</div>
-
-								<!--/span-->
 							</div>
-
+						
 							<div class="row">
-								<div class="col-md-6">
+								<div class="col-md-4">
 									<div class="form-group">
-										<div
-											class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-									<?php  echo $this->formRow($formProductPrice->get('currency[currencyId]')); ?>
-									<span class="col-md-12 control-label"> Currency </span>
+										<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
+											<span class="col-md-12 modal-control-label">
+												 Price
+											</span>
 										</div>
 									</div>
 								</div>
-								<!--/span-->
+									<!--/span-->
+								<div class="col-md-8">
+									<div class="form-group">
+										<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
+											<?php  echo $this->formRow($formProductPrice->get('price')); ?>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
+											<span class="col-md-12 modal-control-label">
+												 Currency
+											</span>
+										</div>
+									</div>
+								</div>
+									<!--/span-->
+								<div class="col-md-8">
+									<div class="form-group">
+										<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
+											<?php  echo $this->formRow($formProductPrice->get('currency[currencyId]')); ?>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
