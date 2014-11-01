@@ -36,16 +36,6 @@ class ProductPrice
     private $recordStatus;
 
     /**
-     * @var \Database\Entity\PriceTypes
-     *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\PriceTypes")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="price_type_id", referencedColumnName="price_type_id", nullable=true)
-     * })
-     */
-    private $priceType;
-
-    /**
      * @var \Database\Entity\Currencies
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Currencies")
@@ -54,6 +44,16 @@ class ProductPrice
      * })
      */
     private $currency;
+
+    /**
+     * @var \Database\Entity\PriceTypes
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\PriceTypes")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="price_type_id", referencedColumnName="price_type_id", nullable=true)
+     * })
+     */
+    private $priceType;
 
     /**
      * @var \Database\Entity\Products
@@ -123,29 +123,6 @@ class ProductPrice
     }
 
     /**
-     * Set priceType
-     *
-     * @param \Database\Entity\PriceTypes $priceType
-     * @return ProductPrice
-     */
-    public function setPriceType(\Database\Entity\PriceTypes $priceType = null)
-    {
-        $this->priceType = $priceType;
-
-        return $this;
-    }
-
-    /**
-     * Get priceType
-     *
-     * @return \Database\Entity\PriceTypes 
-     */
-    public function getPriceType()
-    {
-        return $this->priceType;
-    }
-
-    /**
      * Set currency
      *
      * @param \Database\Entity\Currencies $currency
@@ -166,6 +143,29 @@ class ProductPrice
     public function getCurrency()
     {
         return $this->currency;
+    }
+
+    /**
+     * Set priceType
+     *
+     * @param \Database\Entity\PriceTypes $priceType
+     * @return ProductPrice
+     */
+    public function setPriceType(\Database\Entity\PriceTypes $priceType = null)
+    {
+        $this->priceType = $priceType;
+
+        return $this;
+    }
+
+    /**
+     * Get priceType
+     *
+     * @return \Database\Entity\PriceTypes 
+     */
+    public function getPriceType()
+    {
+        return $this->priceType;
     }
 
     /**

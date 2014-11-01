@@ -36,14 +36,14 @@ class PurchaseItems
     private $cost;
 
     /**
-     * @var \Database\Entity\Purchases
+     * @var \Database\Entity\Currencies
      *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\Purchases")
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Currencies")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="purchase_id", referencedColumnName="purchase_id", nullable=true)
+     *   @ORM\JoinColumn(name="currency_id", referencedColumnName="currency_id", nullable=true)
      * })
      */
-    private $purchase;
+    private $currency;
 
     /**
      * @var \Database\Entity\Products
@@ -56,14 +56,14 @@ class PurchaseItems
     private $product;
 
     /**
-     * @var \Database\Entity\Currencies
+     * @var \Database\Entity\Purchases
      *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\Currencies")
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Purchases")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="currency_id", referencedColumnName="currency_id", nullable=true)
+     *   @ORM\JoinColumn(name="purchase_id", referencedColumnName="purchase_id", nullable=true)
      * })
      */
-    private $currency;
+    private $purchase;
 
 
     /**
@@ -123,26 +123,26 @@ class PurchaseItems
     }
 
     /**
-     * Set purchase
+     * Set currency
      *
-     * @param \Database\Entity\Purchases $purchase
+     * @param \Database\Entity\Currencies $currency
      * @return PurchaseItems
      */
-    public function setPurchase(\Database\Entity\Purchases $purchase = null)
+    public function setCurrency(\Database\Entity\Currencies $currency = null)
     {
-        $this->purchase = $purchase;
+        $this->currency = $currency;
 
         return $this;
     }
 
     /**
-     * Get purchase
+     * Get currency
      *
-     * @return \Database\Entity\Purchases 
+     * @return \Database\Entity\Currencies 
      */
-    public function getPurchase()
+    public function getCurrency()
     {
-        return $this->purchase;
+        return $this->currency;
     }
 
     /**
@@ -169,25 +169,25 @@ class PurchaseItems
     }
 
     /**
-     * Set currency
+     * Set purchase
      *
-     * @param \Database\Entity\Currencies $currency
+     * @param \Database\Entity\Purchases $purchase
      * @return PurchaseItems
      */
-    public function setCurrency(\Database\Entity\Currencies $currency = null)
+    public function setPurchase(\Database\Entity\Purchases $purchase = null)
     {
-        $this->currency = $currency;
+        $this->purchase = $purchase;
 
         return $this;
     }
 
     /**
-     * Get currency
+     * Get purchase
      *
-     * @return \Database\Entity\Currencies 
+     * @return \Database\Entity\Purchases 
      */
-    public function getCurrency()
+    public function getPurchase()
     {
-        return $this->currency;
+        return $this->purchase;
     }
 }

@@ -183,26 +183,6 @@ class Sales
     private $salesNotes;
 
     /**
-     * @var \Database\Entity\TransactionStatus
-     *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\TransactionStatus")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="transaction_status_id", referencedColumnName="transaction_status_id", nullable=true)
-     * })
-     */
-    private $transactionStatus;
-
-    /**
-     * @var \Database\Entity\InventoryLocations
-     *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\InventoryLocations")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="inventory_location_id", referencedColumnName="location_id", nullable=true)
-     * })
-     */
-    private $inventoryLocation;
-
-    /**
      * @var \Database\Entity\Address
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Address")
@@ -233,14 +213,14 @@ class Sales
     private $customer;
 
     /**
-     * @var \Database\Entity\TransactionTypes
+     * @var \Database\Entity\InventoryLocations
      *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\TransactionTypes")
+     * @ORM\ManyToOne(targetEntity="Database\Entity\InventoryLocations")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="transaction_type_id", referencedColumnName="transaction_type_id", nullable=true)
+     *   @ORM\JoinColumn(name="inventory_location_id", referencedColumnName="location_id", nullable=true)
      * })
      */
-    private $transactionType;
+    private $inventoryLocation;
 
     /**
      * @var \Database\Entity\OrderSource
@@ -271,6 +251,26 @@ class Sales
      * })
      */
     private $priceType;
+
+    /**
+     * @var \Database\Entity\TransactionStatus
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\TransactionStatus")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="transaction_status_id", referencedColumnName="transaction_status_id", nullable=true)
+     * })
+     */
+    private $transactionStatus;
+
+    /**
+     * @var \Database\Entity\TransactionTypes
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\TransactionTypes")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="transaction_type_id", referencedColumnName="transaction_type_id", nullable=true)
+     * })
+     */
+    private $transactionType;
 
 
     /**
@@ -813,52 +813,6 @@ class Sales
     }
 
     /**
-     * Set transactionStatus
-     *
-     * @param \Database\Entity\TransactionStatus $transactionStatus
-     * @return Sales
-     */
-    public function setTransactionStatus(\Database\Entity\TransactionStatus $transactionStatus = null)
-    {
-        $this->transactionStatus = $transactionStatus;
-
-        return $this;
-    }
-
-    /**
-     * Get transactionStatus
-     *
-     * @return \Database\Entity\TransactionStatus 
-     */
-    public function getTransactionStatus()
-    {
-        return $this->transactionStatus;
-    }
-
-    /**
-     * Set inventoryLocation
-     *
-     * @param \Database\Entity\InventoryLocations $inventoryLocation
-     * @return Sales
-     */
-    public function setInventoryLocation(\Database\Entity\InventoryLocations $inventoryLocation = null)
-    {
-        $this->inventoryLocation = $inventoryLocation;
-
-        return $this;
-    }
-
-    /**
-     * Get inventoryLocation
-     *
-     * @return \Database\Entity\InventoryLocations 
-     */
-    public function getInventoryLocation()
-    {
-        return $this->inventoryLocation;
-    }
-
-    /**
      * Set shippingAddress
      *
      * @param \Database\Entity\Address $shippingAddress
@@ -928,26 +882,26 @@ class Sales
     }
 
     /**
-     * Set transactionType
+     * Set inventoryLocation
      *
-     * @param \Database\Entity\TransactionTypes $transactionType
+     * @param \Database\Entity\InventoryLocations $inventoryLocation
      * @return Sales
      */
-    public function setTransactionType(\Database\Entity\TransactionTypes $transactionType = null)
+    public function setInventoryLocation(\Database\Entity\InventoryLocations $inventoryLocation = null)
     {
-        $this->transactionType = $transactionType;
+        $this->inventoryLocation = $inventoryLocation;
 
         return $this;
     }
 
     /**
-     * Get transactionType
+     * Get inventoryLocation
      *
-     * @return \Database\Entity\TransactionTypes 
+     * @return \Database\Entity\InventoryLocations 
      */
-    public function getTransactionType()
+    public function getInventoryLocation()
     {
-        return $this->transactionType;
+        return $this->inventoryLocation;
     }
 
     /**
@@ -1017,5 +971,51 @@ class Sales
     public function getPriceType()
     {
         return $this->priceType;
+    }
+
+    /**
+     * Set transactionStatus
+     *
+     * @param \Database\Entity\TransactionStatus $transactionStatus
+     * @return Sales
+     */
+    public function setTransactionStatus(\Database\Entity\TransactionStatus $transactionStatus = null)
+    {
+        $this->transactionStatus = $transactionStatus;
+
+        return $this;
+    }
+
+    /**
+     * Get transactionStatus
+     *
+     * @return \Database\Entity\TransactionStatus 
+     */
+    public function getTransactionStatus()
+    {
+        return $this->transactionStatus;
+    }
+
+    /**
+     * Set transactionType
+     *
+     * @param \Database\Entity\TransactionTypes $transactionType
+     * @return Sales
+     */
+    public function setTransactionType(\Database\Entity\TransactionTypes $transactionType = null)
+    {
+        $this->transactionType = $transactionType;
+
+        return $this;
+    }
+
+    /**
+     * Get transactionType
+     *
+     * @return \Database\Entity\TransactionTypes 
+     */
+    public function getTransactionType()
+    {
+        return $this->transactionType;
     }
 }

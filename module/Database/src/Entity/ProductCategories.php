@@ -29,16 +29,6 @@ class ProductCategories
     private $recordStatus;
 
     /**
-     * @var \Database\Entity\Products
-     *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\Products")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="product_id", referencedColumnName="product_id", nullable=true)
-     * })
-     */
-    private $product;
-
-    /**
      * @var \Database\Entity\Categories
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Categories")
@@ -47,6 +37,16 @@ class ProductCategories
      * })
      */
     private $category;
+
+    /**
+     * @var \Database\Entity\Products
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Products")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="product_id", referencedColumnName="product_id", nullable=true)
+     * })
+     */
+    private $product;
 
 
     /**
@@ -83,29 +83,6 @@ class ProductCategories
     }
 
     /**
-     * Set product
-     *
-     * @param \Database\Entity\Products $product
-     * @return ProductCategories
-     */
-    public function setProduct(\Database\Entity\Products $product = null)
-    {
-        $this->product = $product;
-
-        return $this;
-    }
-
-    /**
-     * Get product
-     *
-     * @return \Database\Entity\Products 
-     */
-    public function getProduct()
-    {
-        return $this->product;
-    }
-
-    /**
      * Set category
      *
      * @param \Database\Entity\Categories $category
@@ -126,5 +103,28 @@ class ProductCategories
     public function getCategory()
     {
         return $this->category;
+    }
+
+    /**
+     * Set product
+     *
+     * @param \Database\Entity\Products $product
+     * @return ProductCategories
+     */
+    public function setProduct(\Database\Entity\Products $product = null)
+    {
+        $this->product = $product;
+
+        return $this;
+    }
+
+    /**
+     * Get product
+     *
+     * @return \Database\Entity\Products 
+     */
+    public function getProduct()
+    {
+        return $this->product;
     }
 }

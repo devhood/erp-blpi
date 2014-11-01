@@ -22,16 +22,6 @@ class DesignationPermissions
     private $dpId;
 
     /**
-     * @var \Database\Entity\Permissions
-     *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\Permissions")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="permission_id", referencedColumnName="permission_id", nullable=true)
-     * })
-     */
-    private $permission;
-
-    /**
      * @var \Database\Entity\Designations
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Designations")
@@ -40,6 +30,16 @@ class DesignationPermissions
      * })
      */
     private $designation;
+
+    /**
+     * @var \Database\Entity\Permissions
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Permissions")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="permission_id", referencedColumnName="permission_id", nullable=true)
+     * })
+     */
+    private $permission;
 
 
     /**
@@ -50,29 +50,6 @@ class DesignationPermissions
     public function getDpId()
     {
         return $this->dpId;
-    }
-
-    /**
-     * Set permission
-     *
-     * @param \Database\Entity\Permissions $permission
-     * @return DesignationPermissions
-     */
-    public function setPermission(\Database\Entity\Permissions $permission = null)
-    {
-        $this->permission = $permission;
-
-        return $this;
-    }
-
-    /**
-     * Get permission
-     *
-     * @return \Database\Entity\Permissions 
-     */
-    public function getPermission()
-    {
-        return $this->permission;
     }
 
     /**
@@ -96,5 +73,28 @@ class DesignationPermissions
     public function getDesignation()
     {
         return $this->designation;
+    }
+
+    /**
+     * Set permission
+     *
+     * @param \Database\Entity\Permissions $permission
+     * @return DesignationPermissions
+     */
+    public function setPermission(\Database\Entity\Permissions $permission = null)
+    {
+        $this->permission = $permission;
+
+        return $this;
+    }
+
+    /**
+     * Get permission
+     *
+     * @return \Database\Entity\Permissions 
+     */
+    public function getPermission()
+    {
+        return $this->permission;
     }
 }
