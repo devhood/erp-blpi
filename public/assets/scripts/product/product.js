@@ -26,13 +26,13 @@ var Product = function () {
 						minlength: 2,
 						required: true
 					},
-					ClassificationId : {
+					classificationId : {
 						required: true
 					},
-					BrandId : {
+					brandId : {
 						required: true
 					},
-					SupplierId : {
+					supplierId : {
 						required: true
 					},
 					size : {
@@ -78,13 +78,13 @@ var Product = function () {
 					productCode : {
 						required: "Product Code is required"
 					},
-					ClassificationId : {
+					classificationId : {
 						required: "Classification is required"
 					},
-					BrandId : {
+					brandId : {
 						required: "Brand is required"
 					},
-					SupplierId : {
+					supplierId : {
 						required: "Supplier is required"
 					},
 					size : {

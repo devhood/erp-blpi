@@ -64,10 +64,10 @@ class Customers extends \Database\Entity\Customers implements \Doctrine\ORM\Prox
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'customerId', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'companyName', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'branch', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'tradeName', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'tin', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'phone', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'email', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'website', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'secNo', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'consignee', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'franchisee', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'creditLimit', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'transactionLimit', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'percentCommision', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'customerStatus', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'priceType', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'paymentTerm', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'category', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'customerType', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'salesExecutive', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'shippingMode');
+            return array('__isInitialized__', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'customerId', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'companyName', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'branch', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'tradeName', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'tin', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'phone', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'email', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'website', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'secNo', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'consignee', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'franchisee', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'creditLimit', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'transactionLimit', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'percentCommission', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'customerStatus', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'category', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'customerType', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'paymentTerm', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'priceType', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'shippingMode', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'salesExecutive');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'customerId', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'companyName', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'branch', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'tradeName', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'tin', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'phone', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'email', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'website', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'secNo', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'consignee', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'franchisee', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'creditLimit', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'transactionLimit', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'percentCommision', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'customerStatus', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'priceType', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'paymentTerm', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'category', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'customerType', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'salesExecutive', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'shippingMode');
+        return array('__isInitialized__', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'customerId', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'companyName', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'branch', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'tradeName', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'tin', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'phone', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'email', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'website', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'secNo', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'consignee', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'franchisee', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'creditLimit', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'transactionLimit', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'percentCommission', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'customerStatus', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'category', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'customerType', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'paymentTerm', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'priceType', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'shippingMode', '' . "\0" . 'Database\\Entity\\Customers' . "\0" . 'salesExecutive');
     }
 
     /**
@@ -455,23 +455,23 @@ class Customers extends \Database\Entity\Customers implements \Doctrine\ORM\Prox
     /**
      * {@inheritDoc}
      */
-    public function setPercentCommision($percentCommision)
+    public function setPercentCommission($percentCommission)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPercentCommision', array($percentCommision));
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPercentCommission', array($percentCommission));
 
-        return parent::setPercentCommision($percentCommision);
+        return parent::setPercentCommission($percentCommission);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getPercentCommision()
+    public function getPercentCommission()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPercentCommision', array());
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPercentCommission', array());
 
-        return parent::getPercentCommision();
+        return parent::getPercentCommission();
     }
 
     /**
@@ -494,50 +494,6 @@ class Customers extends \Database\Entity\Customers implements \Doctrine\ORM\Prox
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCustomerStatus', array());
 
         return parent::getCustomerStatus();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setPriceType(\Database\Entity\PriceTypes $priceType = NULL)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPriceType', array($priceType));
-
-        return parent::setPriceType($priceType);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getPriceType()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPriceType', array());
-
-        return parent::getPriceType();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setPaymentTerm(\Database\Entity\PaymentTerms $paymentTerm = NULL)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPaymentTerm', array($paymentTerm));
-
-        return parent::setPaymentTerm($paymentTerm);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getPaymentTerm()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPaymentTerm', array());
-
-        return parent::getPaymentTerm();
     }
 
     /**
@@ -587,23 +543,45 @@ class Customers extends \Database\Entity\Customers implements \Doctrine\ORM\Prox
     /**
      * {@inheritDoc}
      */
-    public function setSalesExecutive(\Database\Entity\Users $salesExecutive = NULL)
+    public function setPaymentTerm(\Database\Entity\PaymentTerms $paymentTerm = NULL)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setSalesExecutive', array($salesExecutive));
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPaymentTerm', array($paymentTerm));
 
-        return parent::setSalesExecutive($salesExecutive);
+        return parent::setPaymentTerm($paymentTerm);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getSalesExecutive()
+    public function getPaymentTerm()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSalesExecutive', array());
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPaymentTerm', array());
 
-        return parent::getSalesExecutive();
+        return parent::getPaymentTerm();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setPriceType(\Database\Entity\PriceTypes $priceType = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPriceType', array($priceType));
+
+        return parent::setPriceType($priceType);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getPriceType()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPriceType', array());
+
+        return parent::getPriceType();
     }
 
     /**
@@ -626,6 +604,28 @@ class Customers extends \Database\Entity\Customers implements \Doctrine\ORM\Prox
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getShippingMode', array());
 
         return parent::getShippingMode();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setSalesExecutive(\Database\Entity\Users $salesExecutive = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setSalesExecutive', array($salesExecutive));
+
+        return parent::setSalesExecutive($salesExecutive);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getSalesExecutive()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSalesExecutive', array());
+
+        return parent::getSalesExecutive();
     }
 
 }

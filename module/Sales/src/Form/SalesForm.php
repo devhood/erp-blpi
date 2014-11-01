@@ -195,7 +195,8 @@ class SalesForm extends Form {
 				'attributes' => array (
 						'class' => 'select2me form-control',
 						'tabindex' => '1',
-						'id' => 'transactionTypeId' 
+						'id' => 'transactionTypeId',
+						'required' => true
 				) 
 		) );
 		
@@ -211,7 +212,8 @@ class SalesForm extends Form {
 				'attributes' => array (
 						'class' => 'select2me form-control',
 						'tabindex' => '1',
-						'id' => 'customerId' 
+						'id' => 'customerId',
+						'required' => true
 				) 
 		) );
 		
@@ -227,7 +229,8 @@ class SalesForm extends Form {
 				'attributes' => array (
 						'class' => 'select2me form-control',
 						'tabindex' => '1',
-						'id' => 'inventoryLocationId' 
+						'id' => 'inventoryLocationId',
+						'required' => true
 				) 
 		) );
 		
@@ -246,7 +249,8 @@ class SalesForm extends Form {
 				'attributes' => array (
 						'class' => 'select2me form-control',
 						'tabindex' => '1',
-						'id' => 'shippingAddressId' 
+						'id' => 'shippingAddressId',
+						'required' => true
 				) 
 		) );
 		
@@ -265,7 +269,8 @@ class SalesForm extends Form {
 				'attributes' => array (
 						'class' => 'select2me form-control',
 						'tabindex' => '1',
-						'id' => 'billingAddressId' 
+						'id' => 'billingAddressId',
+						'required' => true
 				) 
 		) );
 		
@@ -281,7 +286,8 @@ class SalesForm extends Form {
 				'attributes' => array (
 						'class' => 'select2me form-control',
 						'tabindex' => '1',
-						'id' => 'orderSourceId' 
+						'id' => 'orderSourceId',
+						'required' => true
 				) 
 		) );
 		
@@ -297,7 +303,8 @@ class SalesForm extends Form {
 				'attributes' => array (
 						'class' => 'select2me form-control',
 						'tabindex' => '1',
-						'id' => 'shippingModeId' 
+						'id' => 'shippingModeId',
+						'required' => true
 				) 
 		) );
 		
@@ -313,7 +320,8 @@ class SalesForm extends Form {
 				'attributes' => array (
 						'class' => 'select2me form-control',
 						'tabindex' => '1',
-						'id' => 'userId' 
+						'id' => 'userId',
+						'required' => true 
 				) 
 		) );
 		
@@ -373,7 +381,8 @@ class SalesForm extends Form {
 				'attributes' => array (
 						'class' => 'text-area form-control',
 						'id' => 'salesNotes',
-						'rows' => '1' 
+						'rows' => '1',
+						'required' => true
 				) 
 		) );
 		

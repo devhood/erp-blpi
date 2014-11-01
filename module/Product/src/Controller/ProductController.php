@@ -114,4 +114,21 @@ class ProductController extends BaseController {
 				'formProductDocument' => $formProductDocument 
 		) );
 	}
+	
+	public function editAction() {
+		$em = $this->_getEntityManager ();
+		$formProduct = new \Product\Form\ProductForm ( $em );
+		$formProductUom = new \Product\Form\ProductUomForm ( $em );
+		$formProductBundle = new \Product\Form\ProductBundleForm ( $em );
+		$formProductPrice = new \Product\Form\ProductPriceForm ( $em );
+		$formProductDocument = new \Product\Form\ProductDocumentForm ( $em );
+	
+		return new ViewModel ( array (
+				'formProduct' => $formProduct,
+				'formProductUom' => $formProductUom,
+				'formProductBundle' => $formProductBundle,
+				'formProductPrice' => $formProductPrice,
+				'formProductDocument' => $formProductDocument
+		) );
+	}
 }
