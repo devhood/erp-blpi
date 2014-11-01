@@ -190,7 +190,8 @@ class SalesForm extends Form {
 						'object_manager' => $em,
 						'target_class' => 'Database\Entity\TransactionTypes',
 						'property' => 'transactionTypeName',
-						'display_empty_item' => true 
+						'display_empty_item' => true,
+						'empty_item_label' => ' '
 				),
 				'attributes' => array (
 						'class' => 'select2me form-control',
@@ -207,7 +208,8 @@ class SalesForm extends Form {
 						'object_manager' => $em,
 						'target_class' => 'Database\Entity\Customers',
 						'property' => 'companyName',
-						'display_empty_item' => true 
+						'display_empty_item' => true,
+						'empty_item_label' => ' '
 				),
 				'attributes' => array (
 						'class' => 'select2me form-control',
@@ -224,7 +226,8 @@ class SalesForm extends Form {
 						'object_manager' => $em,
 						'target_class' => 'Database\Entity\InventoryLocations',
 						'property' => 'locationName',
-						'display_empty_item' => true 
+						'display_empty_item' => true,
+						'empty_item_label' => ' '
 				),
 				'attributes' => array (
 						'class' => 'select2me form-control',
@@ -242,6 +245,7 @@ class SalesForm extends Form {
 						'target_class' => 'Database\Entity\Address',
 						'property' => 'addressName',
 						'display_empty_item' => true,
+						'empty_item_label' => ' ',
 						'label_generator' => function ($row) {
 							return $row->getStreetLandmark () . ', ' . $row->getCity ()->getCityName () . ', ' . $row->getProvince ()->getProvinceName () . ', ' . $row->getCountry ()->getCountryName () . ', ' . $row->getZipcode ();
 						} 
@@ -262,6 +266,7 @@ class SalesForm extends Form {
 						'target_class' => 'Database\Entity\Address',
 						'property' => 'addressName',
 						'display_empty_item' => true,
+						'empty_item_label' => ' ',
 						'label_generator' => function ($row) {
 							return $row->getStreetLandmark () . ', ' . $row->getCity ()->getCityName () . ', ' . $row->getProvince ()->getProvinceName () . ', ' . $row->getCountry ()->getCountryName () . ', ' . $row->getZipcode ();
 						} 
@@ -281,7 +286,8 @@ class SalesForm extends Form {
 						'object_manager' => $em,
 						'target_class' => 'Database\Entity\OrderSource',
 						'property' => 'orderSourceName',
-						'display_empty_item' => true 
+						'display_empty_item' => true,
+						'empty_item_label' => ' '
 				),
 				'attributes' => array (
 						'class' => 'select2me form-control',
@@ -298,7 +304,8 @@ class SalesForm extends Form {
 						'object_manager' => $em,
 						'target_class' => 'Database\Entity\ShippingModes',
 						'property' => 'shippingModeName',
-						'display_empty_item' => true 
+						'display_empty_item' => true,
+						'empty_item_label' => ' '
 				),
 				'attributes' => array (
 						'class' => 'select2me form-control',
@@ -309,18 +316,19 @@ class SalesForm extends Form {
 		) );
 		
 		$this->add ( array (
+				'name' => 'salesExecutiveId',
 				'type' => 'DoctrineModule\Form\Element\ObjectSelect',
-				'name' => 'user[userId]',
 				'options' => array (
 						'object_manager' => $em,
 						'target_class' => 'Database\Entity\Users',
 						'property' => 'userName',
-						'display_empty_item' => true 
+						'display_empty_item' => true,
+						'empty_item_label' => ' '
 				),
 				'attributes' => array (
 						'class' => 'select2me form-control',
 						'tabindex' => '1',
-						'id' => 'userId',
+						'id' => 'salesExecutiveId',
 						'required' => true 
 				) 
 		) );
@@ -332,7 +340,8 @@ class SalesForm extends Form {
 						'object_manager' => $em,
 						'target_class' => 'Database\Entity\PaymentTerms',
 						'property' => 'paymentTermName',
-						'display_empty_item' => true 
+						'display_empty_item' => true,
+						'empty_item_label' => ' '
 				),
 				'attributes' => array (
 						'class' => 'select2me form-control',
@@ -366,7 +375,8 @@ class SalesForm extends Form {
 						'object_manager' => $em,
 						'target_class' => 'Database\Entity\PriceTypes',
 						'property' => 'priceTypeName',
-						'display_empty_item' => true 
+						'display_empty_item' => true,
+						'empty_item_label' => ' '
 				),
 				'attributes' => array (
 						'class' => 'form-control select2me',

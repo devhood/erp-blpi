@@ -36,7 +36,6 @@ class ProductController extends BaseController {
 				$uom["product"] = array (
 								'productId' => $productId 
 				);
-				$uomTable = self::DBNS . 'ProductUoms';
 				$this->_saveRecord('ProductUoms',$uom);
 			}
 			

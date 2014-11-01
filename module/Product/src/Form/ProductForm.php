@@ -37,13 +37,14 @@ class ProductForm extends Form {
 						'object_manager' => $em,
 						'target_class' => 'Database\Entity\Classifications',
 						'property' => 'classificationName',
-						'display_empty_item' => true 
+						'display_empty_item' => true,
+						'empty_item_label' => ' '
 				),
 				'attributes' => array (
 						'class' => 'select2me form-control',
 						'tabindex' => '1',
 						'id' => 'classificationId' ,
-						'required' => true,
+						'required' => true
 				) 
 		) );
 		
@@ -55,7 +56,8 @@ class ProductForm extends Form {
 						'object_manager' => $em,
 						'target_class' => 'Database\Entity\Brands',
 						'property' => 'brandName',
-						'display_empty_item' => true
+						'display_empty_item' => true,
+						'empty_item_label' => ' '
 				),
 				'attributes' => array (
 						'class' => 'select2me form-control',
@@ -74,7 +76,8 @@ class ProductForm extends Form {
 						'object_manager' => $em,
 						'target_class' => 'Database\Entity\Suppliers',
 						'property' => 'supplierName',
-						'display_empty_item' => true
+						'display_empty_item' => true,
+						'empty_item_label' => ' '
 				),
 				'attributes' => array (
 						'class' => 'select2me form-control',
@@ -131,7 +134,8 @@ class ProductForm extends Form {
 						'object_manager' => $em,
 						'target_class' => 'Database\Entity\PaymentTerms',
 						'property' => 'paymentTermName',
-						'display_empty_item' => true
+						'display_empty_item' => true,
+						'empty_item_label' => ' '
 				),
 				'attributes' => array (
 						'class' => 'select2me form-control',
