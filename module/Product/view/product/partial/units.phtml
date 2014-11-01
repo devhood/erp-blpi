@@ -20,30 +20,44 @@
 
 					<div class="scroller" style="height:150px" data-always-visible="1" data-rail-visible1="1">
 						<div class="row">
-						<div class="col-md-6">
-							<div class="form-group">
-								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-									<?php   echo $this->formRow($formProductUom->get('uom[uomId]')); ?>
-									<span class="col-md-12 control-label">
-										 Unit of Measurement
-									</span>
+							<div class="col-md-4">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
+										<span class="col-md-12 modal-control-label">
+											 Unit
+										</span>
+									</div>
+								</div>
+							</div>
+								<!--/span-->
+							<div class="col-md-8">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
+										<?php  echo $this->formRow($formProductUom->get('uom[uomId]')); ?>
+									</div>
 								</div>
 							</div>
 						</div>
-							<!--/span-->
-						<div class="col-md-6">
-							<div class="form-group">
-								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
-									<?php  echo $this->formRow($formProductUom->get('quantity')); ?>
-									<span class="col-md-12 control-label">
-										 Quantity
-									</span>
+						
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
+										<span class="col-md-12 modal-control-label">
+											 Quantity
+										</span>
+									</div>
+								</div>
+							</div>
+								<!--/span-->
+							<div class="col-md-8">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
+										<?php  echo $this->formRow($formProductUom->get('quantity')); ?>
+									</div>
 								</div>
 							</div>
 						</div>
-
-						<!--/span-->
-					</div>
 					</div>
 				</div>
 				<div class="modal-footer">
