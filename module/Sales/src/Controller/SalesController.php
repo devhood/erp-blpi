@@ -8,12 +8,12 @@ use Main\Controller\BaseController;
 use DoctrineModule\Stdlib\Hydrator\DoctrineObject as DoctrineHydrator;
 
 class SalesController extends BaseController {
-	public function Sales() {
-		$dbSales = $this->_getContents ( 'Sales' );
+	
+	public function orderAction() {
+		$records = $this->_getContents ( 'Sales' );
 		return new ViewModel ( array (
-				'dbSales' => $dbSales 
-		)
-		 );
+				'records' => $records
+		) );
 	}
 	
 	public function CreditmemoAction() {

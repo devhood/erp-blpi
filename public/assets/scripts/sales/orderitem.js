@@ -23,11 +23,6 @@ var OrderItem = function () {
 						required: true,
 						number: true
 					},
-					
-					ppId : {
-						required: true
-					},
-					
 				},
 
 					messages: { // custom messages for radio buttons and checkboxes
@@ -82,7 +77,7 @@ var OrderItem = function () {
 							required: "Percent Vat is Required"
 						},
 						notes : {
-							required: "Note is Required"
+							required: "Notes is Required"
 						},
 					},
 					invalidHandler: function (event, validator) { //display error alert on form submit
@@ -109,10 +104,45 @@ var OrderItem = function () {
 					submitHandler: function (form) {
 						success.show();
 						error.hide();
-						form.submit();
+						manageOrders.add();
 					}
 				});
-			}
-		};
+			var orderTable = $('#orderTable').dataTable({"bLengthChange": false, "bFilter" : false});
+			var order = [];
+			var orderctr = 1;
+			
+			var manageOrders = {
+					
+				add : function(){
+					if (!order[$('#productId').val()]) {
+						order[$('#productId').val()] = $('#productId').val();
+					
+						orderTable.fnAddData([
+							$('#productId option:selected').text() ,
+							$('#quantity').val(),
+								"<a href='#' id='"+$('#productId').val()+"' class='order_delete_row"+$('#productId').val()+"'>Delete</a>"
+								+"<input type='hidden' name='order["+orderctr+"][product][productId]' value='"+$('#productId').val()+"'>"
+								+"<input type='hidden' name='order["+orderctr+"][quantity]' value='"+$('#quantity').val()+"'>"
+							]);
+						orderctr++;
+							$(".order_delete_row"+$('#productId').val()).live('click', function (e) {
+								manageOrders.remove($(this));
+								
+							});
+							$('#itemsModal').modal('toggle');
+					}
 
-	}();
+				},
+				remove : function(elem){
+					if (confirm("Are you sure to delete this row ?") == false) {
+						 return;
+					}
+					delete order[elem.attr('id')];
+					var nRow = elem.parents('tr')[0];
+					orderTable.fnDeleteRow(nRow);
+				}
+			}
+		}
+	};
+
+}();
