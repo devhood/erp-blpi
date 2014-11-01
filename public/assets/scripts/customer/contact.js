@@ -19,18 +19,18 @@ var Contact = function () {
                         minlength: 2
                     },
                     
-                	fullname : {
+                	fullName : {
                         minlength: 2,
                         required: true
                     },
                     
-                    email : {
+                    contactemail : {
                         minlength: 2,
                         required: true,
                         email: true
                     },
                     
-                    phone : {
+                    contactphone : {
                         minlength: 2,
                         required: true
                     },
@@ -76,19 +76,20 @@ var Contact = function () {
 				
 				add : function(){						
 					contactTable.fnAddData([
-							$("#fullname").val(), 
+							$("#fullName").val(), 
 							$("#position").val(), 
-							$("#phone").val(), 
-							$("#email").val(),
-							"<a href='#' id='"+$('#Id').val()+"' class='contact_delete_row"+$('#contactId').val()+"'>Delete</a>"
-							+ "<input type='hidden' name='contact["+ contactctr+"][fullName]' value='" + $('#fullName').val() + " ' > "
+							$("#contactphone").val(), 
+							$("#contactemail").val(),
+							"<a href='#' class='contact_delete_row"+contactctr+"'>Delete</a>"
+							+ "<input type='hidden' name='contact["+ contactctr +"][fullName]' value='" + $('#fullName').val() + " ' > "
 							+ "<input type='hidden' name='contact["+ contactctr +"][position]' value='" + $('#position').val() + " ' > "
-							+ "<input type='hidden' name='contact["+ contactctr +"][phone]' value='" + $('#phone').val() + " ' > "
-							+ "<input type='hidden' name='contact["+ contactctr +"][email]' value='" + $('#email').val() + " ' > "		]);
-					contactsctr ++;					
-					$(".contact_delete_row"+$.val()).live('click', function (e) {
+							+ "<input type='hidden' name='contact["+ contactctr +"][phone]' value='" + $('#contactphone').val() + " ' > "
+							+ "<input type='hidden' name='contact["+ contactctr +"][email]' value='" + $('#contactemail').val() + " ' > "		]);
+					
+					$(".contact_delete_row"+	contactctr).live('click', function (e) {
 						manageContacts.remove($(this));
 					});
+					contactctr ++;			
 					$('#contactModal').modal('toggle');
 				},
 			
@@ -100,8 +101,8 @@ var Contact = function () {
 					contactTable.fnDeleteRow(nRow);
 				}
 				
-			}
-		}
-	};
+			} // end manage contacts
+		} //end init function
+	}; //return Contact.init
 
 }();

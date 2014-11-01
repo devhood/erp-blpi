@@ -46,7 +46,7 @@ class AddressForm extends Form
 		));
 		
 		$this->add(array(
-				'name' => 'cities[cityId]',
+				'name' => 'city[cityId]',
 				'type' => 'DoctrineModule\Form\Element\ObjectSelect',
 				'options' => array(
 						'object_manager' => $om,
@@ -61,7 +61,7 @@ class AddressForm extends Form
 		));
 		
 		$this->add(array(
-				'name' => 'provinces[provinceId]',
+				'name' => 'province[provinceId]',
 				'type' => 'DoctrineModule\Form\Element\ObjectSelect',
 				'options' => array(
 						'object_manager' => $om,
@@ -76,7 +76,7 @@ class AddressForm extends Form
 		));
 		
 		$this->add(array(
-				'name' => 'countries[countryId]',
+				'name' => 'country[countryId]',
 				'type' => 'DoctrineModule\Form\Element\ObjectSelect',
 				'options' => array(
 						'object_manager' => $om,

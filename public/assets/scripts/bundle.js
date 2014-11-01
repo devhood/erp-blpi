@@ -71,7 +71,7 @@ var Bundle = function() {
 
 							});
 					$('#bundleModal').modal('toggle');
-
+				//	alert(JSON.stringify(bundle));
 				},
 				remove : function(elem) {
 					if (confirm("Are you sure to delete this row ?") == false) {

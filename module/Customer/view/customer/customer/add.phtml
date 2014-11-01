@@ -121,7 +121,7 @@
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-								<?php  echo $this->formRow($customerForm->get('secNumber')); ?>
+								<?php  echo $this->formRow($customerForm->get('secNo')); ?>
 								<span class="col-md-12 control-label"> SEC Number </span>
 							</div>
 						</div>
@@ -170,7 +170,7 @@
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left select">
-								<?php  echo $this->formRow($customerForm->get('unpaidTransactionLimit')); ?>
+								<?php  echo $this->formRow($customerForm->get('transactionLimit')); ?>
 								<span class="col-md-12 control-label"> Unpaid Transaction Limit
 								</span>
 							</div>
@@ -293,7 +293,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-										<?php echo $this->formRow($addressForm->get('cities[cityId]')); ?>
+										<?php echo $this->formRow($addressForm->get('city[cityId]')); ?>
 										<span class="col-md-12 control-label"> City </span>
 									</div>
 								</div>
@@ -302,7 +302,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
-										<?php echo $this->formRow($addressForm->get('provinces[provinceId]')); ?>
+										<?php echo $this->formRow($addressForm->get('province[provinceId]')); ?>
 										<span class="col-md-12 control-label"> Province </span>
 									</div>
 								</div>
@@ -314,7 +314,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-										<?php echo $this->formRow($addressForm->get('countries[countryId]')); ?>
+										<?php echo $this->formRow($addressForm->get('country[countryId]')); ?>
 										<span class="col-md-12 control-label"> Country </span>
 									</div>
 								</div>
