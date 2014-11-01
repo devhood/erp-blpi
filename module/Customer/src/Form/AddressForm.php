@@ -52,6 +52,7 @@ class AddressForm extends Form
 						'object_manager' => $om,
 						'target_class'   => 'Database\Entity\Cities',
 						'property'       => 'cityName',
+						'display_empty_item' => true,
 				),
 				'attributes' => array(
 						'class' => 'select2me form-control',
@@ -67,6 +68,7 @@ class AddressForm extends Form
 						'object_manager' => $om,
 						'target_class'   => 'Database\Entity\Provinces',
 						'property'       => 'provinceName',
+						'display_empty_item' => true,
 				),
 				'attributes' => array(
 						'class' => 'select2me form-control',
@@ -82,6 +84,7 @@ class AddressForm extends Form
 						'object_manager' => $om,
 						'target_class'   => 'Database\Entity\Countries',
 						'property'       => 'countryName',
+						'display_empty_item' => true,
 				),
 				'attributes' => array(
 						'class' => 'select2me form-control',

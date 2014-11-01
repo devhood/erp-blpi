@@ -18,12 +18,14 @@ class CustomerForm extends Form
 				'object_manager' => $om,
 				'target_class'   => 'Database\Entity\Categories',
 				'property'       => 'categoryName',
-				'empty_item_label' => null,
+				'display_empty_item' => true,
+				'empty_item_label' => "",
 			),
 			'attributes' => array(
 				'class' => 'select2me form-control',
 				'tabindex' => '1',
 				'id' => 'categoryId',
+				'required' => true
 			),
 		));
 
@@ -34,12 +36,14 @@ class CustomerForm extends Form
 				'object_manager' => $om,
 				'target_class'   => 'Database\Entity\CustomerTypes',
 				'property'       => 'customerTypeName',
-				'empty_item_label' => ' ',
+				'display_empty_item' => true,
+				'empty_item_label' => "",
 			),
 			'attributes' => array(
 				'class' => 'select2me form-control',
 				'tabindex' => '1',
 				'id' => 'customerTypeId',
+				'required' => true
 			),
 		));
 
@@ -173,12 +177,14 @@ class CustomerForm extends Form
 						'object_manager' => $om,
 						'target_class'   => 'Database\Entity\PaymentTerms',
 						'property'       => 'paymentTermName',
-						'empty_item_label' => ' ',
+						'display_empty_item' => true,
+						'empty_item_label' => "",
 					),
 					'attributes' => array(
 						'class' => 'select2me form-control',
 						'tabindex' => '1',
 						'id' => 'paymentTermId',
+						'required' => true
 					),
 		));
 
@@ -198,7 +204,8 @@ class CustomerForm extends Form
 						'object_manager' => $om,
 						'target_class'   => 'Database\Entity\ShippingModes',
 						'property'       => 'shippingModeName',
-						'empty_item_label' => ' ',
+						'display_empty_item' => true,
+						'empty_item_label' => "",
 					),
 					'attributes' => array(
 						'class' => 'select2me form-control',
@@ -213,7 +220,8 @@ class CustomerForm extends Form
 					'options' => array(
 						'object_manager' => $om,
 						'target_class'   => 'Database\Entity\Users',
-							'empty_item_label' => ' ',
+							'display_empty_item' => true,
+							'empty_item_label' => "",
 							'label_generator' => function($row) {
 								return $row->getFullName();	
 							},
@@ -221,7 +229,7 @@ class CustomerForm extends Form
 							'find_method'    => array(
 									'name'   => 'findBy',
 									'params' => array(
-											'criteria' => array('designation' => 2),
+									'criteria' => array('designation' => 2),
 
 									),
 							),
@@ -231,6 +239,7 @@ class CustomerForm extends Form
 						'class' => 'select2me form-control',
 						'tabindex' => '1',
 						'id' => 'userId',
+						'required' => true
 					),
 		));
 
@@ -241,12 +250,14 @@ class CustomerForm extends Form
 						'object_manager' => $om,
 						'target_class'   => 'Database\Entity\PriceTypes',
 						'property'       => 'priceTypeName',
+						'display_empty_item' => true,
 						'empty_item_label' => ' ',
 					),
 					'attributes' => array(
 						'class' => 'select2me form-control',
 						'tabindex' => '1',
 						'id' => 'priceTypeId',
+						'required' => true
 					),
 		));
 
@@ -258,7 +269,9 @@ class CustomerForm extends Form
 				'class' => 'select2me form-control',
 				'tabindex' => '1',
 				'id' => 'customerStatus',
-				'empty_item_label' => ' ',
+				'display_empty_item' => true,
+				'empty_item_label' => "",
+				'required' => true
 			),
 			'options' => array(
 				'value_options' => array(

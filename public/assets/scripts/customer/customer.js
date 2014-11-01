@@ -137,6 +137,8 @@ var Customer = function () {
                         required: "Customer Type is Required"
                     },
                     
+             
+                    
                 	companyName : {
                         minlength: 2,
                         required: "Company Name is Required"
@@ -165,7 +167,6 @@ var Customer = function () {
                     
                     website : {
                         minlength: "Please enter a valid website.",
-                        required: "Website is Required",
                     },
                     
                     secNumber : {
@@ -187,9 +188,7 @@ var Customer = function () {
                         number: "Please enter a valid number."
                     }, 
                     
-                    unpaidTransactionLimit: {
-                        required: "Product is Required"
-                    },
+                
                     
                     paymentTermId: {
                        required: "Product is Required"
