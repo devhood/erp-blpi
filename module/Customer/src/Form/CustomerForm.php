@@ -107,15 +107,17 @@ class CustomerForm extends Form
 				'id' => 'website',
 			)
 		));
-
+		
 		$this->add( array(
-			'name' => 'secNumber',
+			'name' => 'secNo',
 			'type' => 'Text',
 			'attributes' => array(
 				'class' => 'form-control',
-				'id' => 'secNumber',
+				'id' => 'secNo',
 			)
 		));
+
+	
 
 
 		$this->add( array(
@@ -150,16 +152,16 @@ class CustomerForm extends Form
 			'type' => 'Text',
 			'attributes' => array(
 				'class' => 'form-control',
-				'id' => 'unpaidTransactionLimit',
+				'id' => 'creditLimit',
 			)
 		));
 
 		$this->add( array(
-			'name' => 'unpaidTransactionLimit',
+			'name' => 'transactionLimit',
 			'type' => 'Text',
 			'attributes' => array(
 				'class' => 'form-control',
-				'id' => 'unpaidTransactionLimit',
+				'id' => 'transactionLimit',
 			)
 		));
 

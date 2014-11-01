@@ -36,6 +36,8 @@ class CustomerController extends BaseController
     	$contactForm = new \Customer\Form\ContactForm($em);
     	$addressForm = new \Customer\Form\AddressForm($em);
 
+    	
+    	//INSERT data to CUSTOMERS TABLE
     	$request = $this->getRequest();
     	if($request->isPost()){
     		$request = (array)($request->getPost());
@@ -45,8 +47,50 @@ class CustomerController extends BaseController
     		$object = $hydrator->hydrate($request, $object);
     		$em->persist($object);
     		$em->flush();
-    		
+   
     		$customerId = $object->getCustomerId ();
+    		
+    		
+    		
+    		//INSERT data to CONTACTS TABLE
+    		foreach ( $request ['contact'] as $contact ) {
+    		
+    			
+    		
+    			$content = array (
+    					"fullName" => $contact ['fullName'],
+    					"position" => $contact ['position'],
+    					"phone" => $contact ['contactphone'],
+    					"email" => $contact ['contactemail']
+    			);
+    		
+    			echo 'a<pre>';
+    			print_r($contact);
+    			echo '<pre>';
+    			echo 'a<pre>';
+    			echo 'a<hr>';
+    			print_r($contact ['position']);
+    			echo '<pre>';
+    			echo 'a<pre>';
+    			print_r($contact ['contactphone']);
+    			echo '<pre>';
+    			echo 'a<pre>';
+    			print_r($contact ['contactemail']);
+    			echo '<pre>';
+    			exit;
+    			
+    			$contactsTable = self::DBNS . 'Contacts';
+    			$objectContacts = new $contactsTable ();
+    			$hydrator = new DoctrineHydrator ( $em );
+    			$objectContacts = $hydrator->hydrate ( $content, $objectContacts );
+    			$em->persist ( $objectContacts );
+    			$em->flush ();
+    		}
+    			
+    		
+    		
+    		
+    		
     		
 //     		foreach( $request['address'] as $address){
 //     			$content = array(
@@ -102,20 +146,20 @@ class CustomerController extends BaseController
 				$form->get("phone")->setAttribute("readonly", true);
 				$form->get("email")->setAttribute("readonly", true);
 				$form->get("website")->setAttribute("readonly", true);
-				$form->get("secNumber")->setAttribute("readonly", true);
+				$form->get("secNo")->setAttribute("readonly", true);
 				$form->get("consignee")->setAttribute("readonly", true);
 				$form->get("franchise")->setAttribute("readonly", true);
 				$form->get("creditLimit")->setAttribute("readonly", true);
-				$form->get("unpaidTransactionLimit")->setAttribute("readonly", true);
+				$form->get("transactionLimit")->setAttribute("readonly", true);
 				$form->get("paymentTerms[paymentTermId]")->setAttribute("disabled", true);
 				$form->get("percentCommission")->setAttribute("readonly", true);
 				$form->get("shippingModes[shippingModeId]")->setAttribute("disabled", true);
 				$form->get("users")->setAttribute("readonly", true);
-			///	$form->get("users[userId]")->setAttribute("disabled", true);
+			//	$form->get("users[userId]")->setAttribute("disabled", true);
 					$form->get("customerStatus")->setAttribute("readonly", true);
 			//	$form->get("salesExecutive[salesExecutiveId]")->setAttribute("disabled", true);
 
-				//address
+			//address
 				$form->get("addressType[addressTypeId]")->setAttribute("disabled", true);
 				$form->get("streetLandmark")->setAttribute("readonly", true);
 				$form->get("city[cityId]")->setAttribute("disabled", true);
@@ -123,7 +167,7 @@ class CustomerController extends BaseController
 				$form->get("country[countryId]")->setAttribute("disabled", true);
 				$form->get("zipcode")->setAttribute("readonly", true);
 
-				//contact
+			//contact
 				$form->get("position")->setAttribute("readonly", true);
 				$form->get("primary")->setAttribute("readonly", true);
 				$form->get("fullname")->setAttribute("readonly", true);

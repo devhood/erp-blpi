@@ -32,12 +32,12 @@ class ContactForm extends Form
 		));
 		
 		$this->add( array(
-				'name' => 'fullname',
+				'name' => 'fullName',
 				'type' => 'Text',
 				'attributes' => array(
 						'class' => 'form-control',
-						'placeholder' => 'Enter Fullname',
-						'id' => 'fullname',
+					//	'placeholder' => 'Enter Fullname',
+						'id' => 'fullName',
 				)
 		));
 		
@@ -47,7 +47,7 @@ class ContactForm extends Form
 				'attributes' => array(
 						'class' => 'form-control',
 						'placeholder' => 'Enter Email',
-						'id' => 'email',
+						'id' => 'contactemail',
 				)
 		));
 		
@@ -57,7 +57,7 @@ class ContactForm extends Form
 				'attributes' => array(
 						'class' => 'form-control',
 						'placeholder' => 'Enter Phone Number',
-						'id' => 'phone',
+						'id' => 'contactphone',
 				)
 		));
 	}
