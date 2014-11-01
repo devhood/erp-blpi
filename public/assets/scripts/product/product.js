@@ -142,12 +142,6 @@ var Product = function () {
 				submitHandler: function (form) {
 					success.show();
 					error.hide();
-					var oTable = $('#uomsTable').dataTable();
-					var data = oTable.fnGetData();
-					alert(JSON.stringify(data));
-					
-					var input = $("<input>", { type: "hidden", name: "address", value: "bla" }); 
-					form.append($(input));
 					form.submit();
 				}
 			});

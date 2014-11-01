@@ -79,7 +79,7 @@
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-								<?php  echo $this->formRow($customerForm->get('tinNumber')); ?>
+								<?php  echo $this->formRow($customerForm->get('tin')); ?>
 								<span class="col-md-12 control-label"> TIN </span>
 							</div>
 						</div>
@@ -355,7 +355,7 @@
 							<div class="row">
 								<br />
  								<div class="col-md-2"></div>
- 								<div class="col-md-8"> -->
+ 								<div class="col-md-8">
  									<div class="col-xs-6 col-sm-6 col-md-6 col-md-6" 
  										style="padding-left: 0px;">
 										<button type="button" data-toggle="modal" href="#contactModal"
@@ -422,7 +422,7 @@
 </div>
 
 <div>
-<?php echo $this->render('customer/address') ?>
+<?php  // echo $this->render('customer/address') ?>
 </div>
 <div>
 <?php echo $this->render('customer/contact') ?>
@@ -436,16 +436,16 @@
 <?php
 $this->inlineScript()
 ->appendFile($this->basePath('/assets/scripts/ajax/generic.js'))
-->appendFile($this->basePath('/assets/scripts/customer.js'))
-->appendFile($this->basePath('/assets/scripts/contact.js'))
-->appendFile($this->basePath('/assets/scripts/address.js'))
+->appendFile($this->basePath('/assets/scripts/customer/customer.js'))
+->appendFile($this->basePath('/assets/scripts/customer/contact.js'))
+// ->appendFile($this->basePath('/assets/scripts/customer/address.js'))
 
 ?>
 <?php $this->inlineScript()->captureStart() ?>
 jQuery(document).ready(function() {
 	Customer.init();
 	Contact.init();
-	Address.init();
+<!--     Address.init(); -->
 
 	
 });

@@ -72,7 +72,7 @@ class CustomerForm extends Form
 		));
 
 		$this->add( array(
-			'name' => 'tinNumber',
+			'name' => 'tin',
 			'type' => 'Text',
 			'attributes' => array(
 				'class' => 'form-control',

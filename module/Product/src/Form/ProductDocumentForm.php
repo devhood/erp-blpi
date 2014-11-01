@@ -29,7 +29,7 @@ class ProductDocumentForm extends Form
       ));
 
   $this->add(array(
-      'name' => 'documents[documentId]',
+      'name' => 'document[documentId]',
       'type' => 'DoctrineModule\Form\Element\ObjectSelect',
       'options' => array(
       'object_manager' => $om,
@@ -45,7 +45,7 @@ class ProductDocumentForm extends Form
       ));
 
   $this->add(array(
-      'name' => 'documentTypes[documentTypeId]',
+      'name' => 'documentType[documentTypeId]',
       'type' => 'DoctrineModule\Form\Element\ObjectSelect',
       'options' => array(
           'object_manager' => $om,
@@ -55,7 +55,7 @@ class ProductDocumentForm extends Form
       'attributes' => array(
           'class' => 'select2me form-control',
           'tabindex' => '1',
-          'id' => 'documentTypesId',
+          'id' => 'documentTypeId',
       ),
 
   ));

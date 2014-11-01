@@ -1,11 +1,11 @@
 
-var Contact = function () {
+var Document = function () {
 
 	return {
 
 		init: function () {
-	
-			var form = $('#customer_contact');
+			
+			var form = $('#product_document');
             var error = $('.alert-danger', form);
             var success = $('.alert-success', form);
 			form.validate({
@@ -14,27 +14,17 @@ var Contact = function () {
                 focusInvalid: false, 
                 ignore: "",
                 rules: {
-                	position : {
-                        required: true,
-                        minlength: 2
-                    },
-                    
-                	fullname : {
-                        minlength: 2,
+                	documentTypeId : {
                         required: true
                     },
-                    
-                    email : {
-                        minlength: 2,
-                        required: true,
-                        email: true
-                    },
-                    
-                    phone : {
-                        minlength: 2,
+                    documentLink : {
+                        minlength: 1,
                         required: true
                     },
-                    
+                    documentName : {
+                        minlength: 1,
+                        required: true
+                    },
                 },
                 invalidHandler: function (event, validator) { //display error alert on form submit              
                 success.hide();
@@ -60,39 +50,43 @@ var Contact = function () {
             submitHandler: function (form) {
                 success.show();
                 error.hide();
-                manageContacts.add();
+                manageDocuments.add();
             }
 			});
 			
-			var contacts = [];
-			var contactTable = $('#contactTable').dataTable();
-		
-			var manageContacts = {
-				
-				add : function(){
-					contacts.push(1);
-					contactTable.fnAddData([
-							$("#fullname").val(), 
-							$("#position").val(), 
-							$("#phone").val(), 
-							$("#email").val(),
-							"<a href='#' class='contact_delete_row"+contacts.length+"'>Delete</a>"]);
-					
-					$(".contact_delete_row"+contacts.length).live('click', function (e) {
-						manageContacts.remove($(this));
-					});
-					$('#contactModal').modal('toggle');
-					
-				},
+			var documentTable = $('#documentTable').dataTable({"bLengthChange": false, "bFilter" : false});
+			var document = [];
+			var documentctr = 1;
 			
+			var manageDocuments = {
+					
+				add : function(){
+					
+						documentTable.fnAddData([
+							$('#documentTypeId option:selected').text() ,
+							$('#documentName').val(),
+							$('#documentLink').val(),
+								"<a href='#' id='"+$('#documentTypeId').val()+"' class='document_delete_row"+$('#documentTypeId').val()+"'>Delete</a>"
+								+"<input type='hidden' name='document["+documentctr+"][documentType][documentTypeId]' value='"+$('#documentTypeId').val()+"'>"
+								+"<input type='hidden' name='document["+documentctr+"][documentName]' value='"+$('#documentName').val()+"'>"
+								+"<input type='hidden' name='document["+documentctr+"][documentLink]' value='"+$('#documentLink').val()+"'>"
+							]);
+						documentctr++;
+							$(".document_delete_row"+$('#documentTypeId').val()).live('click', function (e) {
+								manageDocuments.remove($(this));
+								
+							});
+							$('#documentModal').modal('toggle');
+			
+
+				},
 				remove : function(elem){
 					if (confirm("Are you sure to delete this row ?") == false) {
 						 return;
 					}
 					var nRow = elem.parents('tr')[0];
-					contactTable.fnDeleteRow(nRow);
+					documentTable.fnDeleteRow(nRow);
 				}
-				
 			}
 		}
 	};
