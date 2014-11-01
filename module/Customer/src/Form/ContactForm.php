@@ -21,15 +21,7 @@ class ContactForm extends Form
 				)
 		));
 		
-		$this->add( array(
-				'name' => 'primary',
-				'type' => 'Text',
-				'attributes' => array(
-						'class' => 'form-control',
-						'placeholder' => 'Enter Primary',
-						'id' => 'primary',
-				)
-		));
+	
 		
 		$this->add( array(
 				'name' => 'fullName',

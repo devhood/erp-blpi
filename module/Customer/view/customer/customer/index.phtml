@@ -63,14 +63,14 @@
 		  <td><?php  echo $dbCustomer->getTransactionLimit() ?></td>
 		  <td><?php  echo $dbCustomer->getPaymentTerm() ? $dbCustomer->getPaymentTerm()->getPaymentTermName() : "" ?></td>
 		  <td><?php  echo $dbCustomer->getShippingMode() ? $dbCustomer->getShippingMode()->getShippingModeName() : "" ?></td>
-		  <td><?php  echo $dbCustomer->getPercentCommision() ?></td>
+		  <td><?php  echo $dbCustomer->getPercentCommission() ?></td>
 		  <td><?php  echo $dbCustomer->getSalesExecutive() ? $dbCustomer->getSalesExecutive()->getUserName() : "" ?></td>
 		  <td><?php  echo $dbCustomer->getPriceType() ? $dbCustomer->getPriceType()->getPriceTypeName() : "" ?></td>
 		  <td><?php  echo $dbCustomer->getCustomerStatus() ?></td>
 		  <td><a class="edit"
-			href=" <?php // echo  $this->basePath('/customer/edit'.$dbCustomer->getCustomerId()) ?> ">Edit</a></td>
+			href=" <?php  echo  $this->basePath('/customer/edit'.$dbCustomer->getCustomerId()) ?> ">Edit</a></td>
 			<td><a class="delete"
-			  href=" <?php // echo $this->basePath('/customer'.$dbCustomer->getCustomerId()) ?> ">Delete</a></td>
+			  href=" <?php  echo $this->basePath('/customer/delete'.$dbCustomer->getCustomerId()) ?> ">Delete</a></td>
 			</tr>
 		  <?php endforeach; ?>
 		</tbody>
