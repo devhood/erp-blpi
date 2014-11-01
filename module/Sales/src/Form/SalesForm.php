@@ -424,5 +424,15 @@ class SalesForm extends Form {
 						'readonly' => 'readonly' 
 				) 
 		) );
+		
+		$this->add ( array (
+				'name' => 'discount',
+				'type' => 'Text',
+				'attributes' => array (
+						'class' => 'form-control',
+						'id' => 'discount',
+						'readonly' => 'readonly'
+				)
+		) );
 	}
 }
