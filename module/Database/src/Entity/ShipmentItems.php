@@ -43,14 +43,14 @@ class ShipmentItems
     private $expiryDate;
 
     /**
-     * @var \Database\Entity\Shipments
+     * @var \Database\Entity\Currencies
      *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\Shipments")
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Currencies")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="shipment_id", referencedColumnName="shipment_id", nullable=true)
+     *   @ORM\JoinColumn(name="currency_id", referencedColumnName="currency_id", nullable=true)
      * })
      */
-    private $shipment;
+    private $currency;
 
     /**
      * @var \Database\Entity\Products
@@ -63,16 +63,6 @@ class ShipmentItems
     private $product;
 
     /**
-     * @var \Database\Entity\Currencies
-     *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\Currencies")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="currency_id", referencedColumnName="currency_id", nullable=true)
-     * })
-     */
-    private $currency;
-
-    /**
      * @var \Database\Entity\ProductConditions
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\ProductConditions")
@@ -81,6 +71,16 @@ class ShipmentItems
      * })
      */
     private $condition;
+
+    /**
+     * @var \Database\Entity\Shipments
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Shipments")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="shipment_id", referencedColumnName="shipment_id", nullable=true)
+     * })
+     */
+    private $shipment;
 
 
     /**
@@ -163,26 +163,26 @@ class ShipmentItems
     }
 
     /**
-     * Set shipment
+     * Set currency
      *
-     * @param \Database\Entity\Shipments $shipment
+     * @param \Database\Entity\Currencies $currency
      * @return ShipmentItems
      */
-    public function setShipment(\Database\Entity\Shipments $shipment = null)
+    public function setCurrency(\Database\Entity\Currencies $currency = null)
     {
-        $this->shipment = $shipment;
+        $this->currency = $currency;
 
         return $this;
     }
 
     /**
-     * Get shipment
+     * Get currency
      *
-     * @return \Database\Entity\Shipments 
+     * @return \Database\Entity\Currencies 
      */
-    public function getShipment()
+    public function getCurrency()
     {
-        return $this->shipment;
+        return $this->currency;
     }
 
     /**
@@ -209,29 +209,6 @@ class ShipmentItems
     }
 
     /**
-     * Set currency
-     *
-     * @param \Database\Entity\Currencies $currency
-     * @return ShipmentItems
-     */
-    public function setCurrency(\Database\Entity\Currencies $currency = null)
-    {
-        $this->currency = $currency;
-
-        return $this;
-    }
-
-    /**
-     * Get currency
-     *
-     * @return \Database\Entity\Currencies 
-     */
-    public function getCurrency()
-    {
-        return $this->currency;
-    }
-
-    /**
      * Set condition
      *
      * @param \Database\Entity\ProductConditions $condition
@@ -252,5 +229,28 @@ class ShipmentItems
     public function getCondition()
     {
         return $this->condition;
+    }
+
+    /**
+     * Set shipment
+     *
+     * @param \Database\Entity\Shipments $shipment
+     * @return ShipmentItems
+     */
+    public function setShipment(\Database\Entity\Shipments $shipment = null)
+    {
+        $this->shipment = $shipment;
+
+        return $this;
+    }
+
+    /**
+     * Get shipment
+     *
+     * @return \Database\Entity\Shipments 
+     */
+    public function getShipment()
+    {
+        return $this->shipment;
     }
 }

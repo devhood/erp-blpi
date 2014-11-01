@@ -43,16 +43,6 @@ class Documents
     private $recordStatus;
 
     /**
-     * @var \Database\Entity\Products
-     *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\Products")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="product_id", referencedColumnName="product_id", nullable=true)
-     * })
-     */
-    private $product;
-
-    /**
      * @var \Database\Entity\Customers
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Customers")
@@ -63,16 +53,6 @@ class Documents
     private $cutomer;
 
     /**
-     * @var \Database\Entity\Sales
-     *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\Sales")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="sales_id", referencedColumnName="sales_id", nullable=true)
-     * })
-     */
-    private $sales;
-
-    /**
      * @var \Database\Entity\DocumentTypes
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\DocumentTypes")
@@ -81,6 +61,26 @@ class Documents
      * })
      */
     private $documentType;
+
+    /**
+     * @var \Database\Entity\Products
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Products")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="product_id", referencedColumnName="product_id", nullable=true)
+     * })
+     */
+    private $product;
+
+    /**
+     * @var \Database\Entity\Sales
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Sales")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="sales_id", referencedColumnName="sales_id", nullable=true)
+     * })
+     */
+    private $sales;
 
 
     /**
@@ -163,29 +163,6 @@ class Documents
     }
 
     /**
-     * Set product
-     *
-     * @param \Database\Entity\Products $product
-     * @return Documents
-     */
-    public function setProduct(\Database\Entity\Products $product = null)
-    {
-        $this->product = $product;
-
-        return $this;
-    }
-
-    /**
-     * Get product
-     *
-     * @return \Database\Entity\Products 
-     */
-    public function getProduct()
-    {
-        return $this->product;
-    }
-
-    /**
      * Set cutomer
      *
      * @param \Database\Entity\Customers $cutomer
@@ -209,29 +186,6 @@ class Documents
     }
 
     /**
-     * Set sales
-     *
-     * @param \Database\Entity\Sales $sales
-     * @return Documents
-     */
-    public function setSales(\Database\Entity\Sales $sales = null)
-    {
-        $this->sales = $sales;
-
-        return $this;
-    }
-
-    /**
-     * Get sales
-     *
-     * @return \Database\Entity\Sales 
-     */
-    public function getSales()
-    {
-        return $this->sales;
-    }
-
-    /**
      * Set documentType
      *
      * @param \Database\Entity\DocumentTypes $documentType
@@ -252,5 +206,51 @@ class Documents
     public function getDocumentType()
     {
         return $this->documentType;
+    }
+
+    /**
+     * Set product
+     *
+     * @param \Database\Entity\Products $product
+     * @return Documents
+     */
+    public function setProduct(\Database\Entity\Products $product = null)
+    {
+        $this->product = $product;
+
+        return $this;
+    }
+
+    /**
+     * Get product
+     *
+     * @return \Database\Entity\Products 
+     */
+    public function getProduct()
+    {
+        return $this->product;
+    }
+
+    /**
+     * Set sales
+     *
+     * @param \Database\Entity\Sales $sales
+     * @return Documents
+     */
+    public function setSales(\Database\Entity\Sales $sales = null)
+    {
+        $this->sales = $sales;
+
+        return $this;
+    }
+
+    /**
+     * Get sales
+     *
+     * @return \Database\Entity\Sales 
+     */
+    public function getSales()
+    {
+        return $this->sales;
     }
 }

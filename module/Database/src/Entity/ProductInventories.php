@@ -88,16 +88,6 @@ class ProductInventories
     private $location;
 
     /**
-     * @var \Database\Entity\ProductConditions
-     *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\ProductConditions")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="condition_id", referencedColumnName="condition_id", nullable=true)
-     * })
-     */
-    private $condition;
-
-    /**
      * @var \Database\Entity\Products
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Products")
@@ -106,6 +96,16 @@ class ProductInventories
      * })
      */
     private $product;
+
+    /**
+     * @var \Database\Entity\ProductConditions
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\ProductConditions")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="condition_id", referencedColumnName="condition_id", nullable=true)
+     * })
+     */
+    private $condition;
 
 
     /**
@@ -326,29 +326,6 @@ class ProductInventories
     }
 
     /**
-     * Set condition
-     *
-     * @param \Database\Entity\ProductConditions $condition
-     * @return ProductInventories
-     */
-    public function setCondition(\Database\Entity\ProductConditions $condition = null)
-    {
-        $this->condition = $condition;
-
-        return $this;
-    }
-
-    /**
-     * Get condition
-     *
-     * @return \Database\Entity\ProductConditions 
-     */
-    public function getCondition()
-    {
-        return $this->condition;
-    }
-
-    /**
      * Set product
      *
      * @param \Database\Entity\Products $product
@@ -369,5 +346,28 @@ class ProductInventories
     public function getProduct()
     {
         return $this->product;
+    }
+
+    /**
+     * Set condition
+     *
+     * @param \Database\Entity\ProductConditions $condition
+     * @return ProductInventories
+     */
+    public function setCondition(\Database\Entity\ProductConditions $condition = null)
+    {
+        $this->condition = $condition;
+
+        return $this;
+    }
+
+    /**
+     * Get condition
+     *
+     * @return \Database\Entity\ProductConditions 
+     */
+    public function getCondition()
+    {
+        return $this->condition;
     }
 }

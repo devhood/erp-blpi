@@ -108,9 +108,9 @@ class Customers
     /**
      * @var string
      *
-     * @ORM\Column(name="percent_commision", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="percent_commission", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
-    private $percentCommision;
+    private $percentCommission;
 
     /**
      * @var string
@@ -118,26 +118,6 @@ class Customers
      * @ORM\Column(name="customer_status", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $customerStatus;
-
-    /**
-     * @var \Database\Entity\PriceTypes
-     *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\PriceTypes")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="price_type_id", referencedColumnName="price_type_id", nullable=true)
-     * })
-     */
-    private $priceType;
-
-    /**
-     * @var \Database\Entity\PaymentTerms
-     *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\PaymentTerms")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="payment_term_id", referencedColumnName="payment_term_id", nullable=true)
-     * })
-     */
-    private $paymentTerm;
 
     /**
      * @var \Database\Entity\Categories
@@ -160,14 +140,24 @@ class Customers
     private $customerType;
 
     /**
-     * @var \Database\Entity\Users
+     * @var \Database\Entity\PaymentTerms
      *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\Users")
+     * @ORM\ManyToOne(targetEntity="Database\Entity\PaymentTerms")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="sales_executive", referencedColumnName="user_id", nullable=true)
+     *   @ORM\JoinColumn(name="payment_term_id", referencedColumnName="payment_term_id", nullable=true)
      * })
      */
-    private $salesExecutive;
+    private $paymentTerm;
+
+    /**
+     * @var \Database\Entity\PriceTypes
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\PriceTypes")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="price_type_id", referencedColumnName="price_type_id", nullable=true)
+     * })
+     */
+    private $priceType;
 
     /**
      * @var \Database\Entity\ShippingModes
@@ -178,6 +168,16 @@ class Customers
      * })
      */
     private $shippingMode;
+
+    /**
+     * @var \Database\Entity\Users
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Users")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="sales_executive", referencedColumnName="user_id", nullable=true)
+     * })
+     */
+    private $salesExecutive;
 
 
     /**
@@ -467,26 +467,26 @@ class Customers
     }
 
     /**
-     * Set percentCommision
+     * Set percentCommission
      *
-     * @param string $percentCommision
+     * @param string $percentCommission
      * @return Customers
      */
-    public function setPercentCommision($percentCommision)
+    public function setPercentCommission($percentCommission)
     {
-        $this->percentCommision = $percentCommision;
+        $this->percentCommission = $percentCommission;
 
         return $this;
     }
 
     /**
-     * Get percentCommision
+     * Get percentCommission
      *
      * @return string 
      */
-    public function getPercentCommision()
+    public function getPercentCommission()
     {
-        return $this->percentCommision;
+        return $this->percentCommission;
     }
 
     /**
@@ -510,52 +510,6 @@ class Customers
     public function getCustomerStatus()
     {
         return $this->customerStatus;
-    }
-
-    /**
-     * Set priceType
-     *
-     * @param \Database\Entity\PriceTypes $priceType
-     * @return Customers
-     */
-    public function setPriceType(\Database\Entity\PriceTypes $priceType = null)
-    {
-        $this->priceType = $priceType;
-
-        return $this;
-    }
-
-    /**
-     * Get priceType
-     *
-     * @return \Database\Entity\PriceTypes 
-     */
-    public function getPriceType()
-    {
-        return $this->priceType;
-    }
-
-    /**
-     * Set paymentTerm
-     *
-     * @param \Database\Entity\PaymentTerms $paymentTerm
-     * @return Customers
-     */
-    public function setPaymentTerm(\Database\Entity\PaymentTerms $paymentTerm = null)
-    {
-        $this->paymentTerm = $paymentTerm;
-
-        return $this;
-    }
-
-    /**
-     * Get paymentTerm
-     *
-     * @return \Database\Entity\PaymentTerms 
-     */
-    public function getPaymentTerm()
-    {
-        return $this->paymentTerm;
     }
 
     /**
@@ -605,26 +559,49 @@ class Customers
     }
 
     /**
-     * Set salesExecutive
+     * Set paymentTerm
      *
-     * @param \Database\Entity\Users $salesExecutive
+     * @param \Database\Entity\PaymentTerms $paymentTerm
      * @return Customers
      */
-    public function setSalesExecutive(\Database\Entity\Users $salesExecutive = null)
+    public function setPaymentTerm(\Database\Entity\PaymentTerms $paymentTerm = null)
     {
-        $this->salesExecutive = $salesExecutive;
+        $this->paymentTerm = $paymentTerm;
 
         return $this;
     }
 
     /**
-     * Get salesExecutive
+     * Get paymentTerm
      *
-     * @return \Database\Entity\Users 
+     * @return \Database\Entity\PaymentTerms 
      */
-    public function getSalesExecutive()
+    public function getPaymentTerm()
     {
-        return $this->salesExecutive;
+        return $this->paymentTerm;
+    }
+
+    /**
+     * Set priceType
+     *
+     * @param \Database\Entity\PriceTypes $priceType
+     * @return Customers
+     */
+    public function setPriceType(\Database\Entity\PriceTypes $priceType = null)
+    {
+        $this->priceType = $priceType;
+
+        return $this;
+    }
+
+    /**
+     * Get priceType
+     *
+     * @return \Database\Entity\PriceTypes 
+     */
+    public function getPriceType()
+    {
+        return $this->priceType;
     }
 
     /**
@@ -648,5 +625,28 @@ class Customers
     public function getShippingMode()
     {
         return $this->shippingMode;
+    }
+
+    /**
+     * Set salesExecutive
+     *
+     * @param \Database\Entity\Users $salesExecutive
+     * @return Customers
+     */
+    public function setSalesExecutive(\Database\Entity\Users $salesExecutive = null)
+    {
+        $this->salesExecutive = $salesExecutive;
+
+        return $this;
+    }
+
+    /**
+     * Get salesExecutive
+     *
+     * @return \Database\Entity\Users 
+     */
+    public function getSalesExecutive()
+    {
+        return $this->salesExecutive;
     }
 }

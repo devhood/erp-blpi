@@ -85,16 +85,6 @@ class Products
     private $printedCode;
 
     /**
-     * @var \Database\Entity\Suppliers
-     *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\Suppliers")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="supplier_id", referencedColumnName="supplier_id", nullable=true)
-     * })
-     */
-    private $supplier;
-
-    /**
      * @var \Database\Entity\Brands
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Brands")
@@ -123,6 +113,16 @@ class Products
      * })
      */
     private $paymentTerm;
+
+    /**
+     * @var \Database\Entity\Suppliers
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Suppliers")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="supplier_id", referencedColumnName="supplier_id", nullable=true)
+     * })
+     */
+    private $supplier;
 
 
     /**
@@ -343,29 +343,6 @@ class Products
     }
 
     /**
-     * Set supplier
-     *
-     * @param \Database\Entity\Suppliers $supplier
-     * @return Products
-     */
-    public function setSupplier(\Database\Entity\Suppliers $supplier = null)
-    {
-        $this->supplier = $supplier;
-
-        return $this;
-    }
-
-    /**
-     * Get supplier
-     *
-     * @return \Database\Entity\Suppliers 
-     */
-    public function getSupplier()
-    {
-        return $this->supplier;
-    }
-
-    /**
      * Set brand
      *
      * @param \Database\Entity\Brands $brand
@@ -432,5 +409,28 @@ class Products
     public function getPaymentTerm()
     {
         return $this->paymentTerm;
+    }
+
+    /**
+     * Set supplier
+     *
+     * @param \Database\Entity\Suppliers $supplier
+     * @return Products
+     */
+    public function setSupplier(\Database\Entity\Suppliers $supplier = null)
+    {
+        $this->supplier = $supplier;
+
+        return $this;
+    }
+
+    /**
+     * Get supplier
+     *
+     * @return \Database\Entity\Suppliers 
+     */
+    public function getSupplier()
+    {
+        return $this->supplier;
     }
 }
