@@ -4,6 +4,7 @@
 namespace Main\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
+use DoctrineModule\Stdlib\Hydrator\DoctrineObject as DoctrineHydrator;
 
 class BaseController extends AbstractActionController
 {
@@ -62,19 +63,20 @@ class BaseController extends AbstractActionController
 			$table = ucwords($table);
 			$request = (array)$record;
 			$table = self::DBNS.$table;
+			$em =  $this->_getEntityManager();
 			if($id){
-				$object = $this->getEntityManager()
-				->find($table, $id);
+				$object = $em->find($table, $id);
 			}
 			else{
 				$object = new $table();
 			}
-			$hydrator = new DoctrineHydrator($this->getEntityManager());
+			$hydrator = new DoctrineHydrator($em);
 			$object = $hydrator->hydrate($request, $object);
-			$this->getEntityManager()->persist($object);
-			$this->getEntityManager()->flush();
-			return true;
+			$em->persist($object);
+			$em->flush();
+			return $object;
 		}catch(\Exception $e){
+			var_dump("error");
 			return false;
 		}
 			

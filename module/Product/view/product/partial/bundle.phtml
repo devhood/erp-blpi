@@ -18,30 +18,49 @@
 
 				<div class="modal-body">
 					<div class="scroller" style="height:150px" data-always-visible="1" data-rail-visible1="1">
+						
 						<div class="row">
-						<div class="col-md-6">
-							<div class="form-group">
-								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-									<?php  echo $this->formRow($formProductBundle->get('products[productId]')); ?>
-									<span class="col-md-12 control-label">
-										 Items Included
-									</span>
+							<div class="col-md-4">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
+										<span class="col-md-12 modal-control-label">
+											 Items Included
+										</span>
+									</div>
+								</div>
+							</div>
+								<!--/span-->
+							<div class="col-md-8">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
+										<?php  echo $this->formRow($formProductBundle->get('products[productId]')); ?>
+									</div>
 								</div>
 							</div>
 						</div>
-							<!--/span-->
-						<div class="col-md-6">
-							<div class="form-group">
-								<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
-									<?php  echo $this->formRow($formProductBundle->get('bundleQuantity')); ?>
-									<span class="col-md-12 control-label">
-										 Quantity
-									</span>
+						
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
+										<span class="col-md-12 modal-control-label">
+											 Quantity
+										</span>
+									</div>
+								</div>
+							</div>
+								<!--/span-->
+							<div class="col-md-8">
+								<div class="form-group">
+									<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
+										<?php  echo $this->formRow($formProductBundle->get('bundleQuantity')); ?>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+					
 				<div class="modal-footer">
 					<button type="button" data-dismiss="modal" class="btn default">Close</button>
 					<button type="submit" class="btn green">Save changes</button>

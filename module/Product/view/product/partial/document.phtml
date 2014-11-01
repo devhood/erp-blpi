@@ -17,53 +17,73 @@
 					</div>
 
 					<div class="modal-body">
-						<div class="scroller" style="height: 250px" data-always-visible="1" data-rail-visible1="1">
+						<div class="scroller" style="height: 225px" data-always-visible="1" data-rail-visible1="1">
 							<div class="row">
-								<div class="col-md-6">
+								<div class="col-md-4">
 									<div class="form-group">
 										<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-											<?php  echo $this->formRow($formProductDocument->get('documentName')); ?>
-											<span class="col-md-12 control-label"> File Name </span>
+											<span class="col-md-12 modal-control-label">
+												 File Name
+											</span>
 										</div>
 									</div>
 								</div>
-								<!--/span-->
-								<div class="col-md-6">
+									<!--/span-->
+								<div class="col-md-8">
+									<div class="form-group">
+										<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
+											<?php  echo $this->formRow($formProductDocument->get('documentName')); ?>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
+											<span class="col-md-12 modal-control-label">
+												 Link
+											</span>
+										</div>
+									</div>
+								</div>
+									<!--/span-->
+								<div class="col-md-8">
 									<div class="form-group">
 										<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
 											<?php  echo $this->formRow($formProductDocument->get('documentLink')); ?>
-											<span class="col-md-12 control-label"> Link </span>
 										</div>
 									</div>
 								</div>
 							</div>
-
-
+							
 							<div class="row">
-								<div class="col-md-6">
+								<div class="col-md-4">
 									<div class="form-group">
 										<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-right">
-											<?php  echo $this->formRow($formProductDocument->get('documentType[documentTypeId]')); ?>
-											<span class="col-md-12 control-label"> File Type </span>
+											<span class="col-md-12 modal-control-label">
+												 File Type
+											</span>
 										</div>
 									</div>
 								</div>
-								<!--/span-->
-								<div class="col-md-6">
+									<!--/span-->
+								<div class="col-md-8">
 									<div class="form-group">
-										<div
-											class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
+										<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 custom-left">
+											<?php  echo $this->formRow($formProductDocument->get('documentType[documentTypeId]')); ?>
 										</div>
 									</div>
 								</div>
 							</div>
-							<!--/row-->
-
+						</div>
+					</div>
 							<div class="modal-footer">
 								<button type="button" data-dismiss="modal" class="btn default">Close</button>
 								<button type="submit" class="btn green">Save</button>
 							</div>
-						</div>
+						
 						<!--/form-body  -->
 			</form>
 		</div>

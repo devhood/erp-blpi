@@ -14,12 +14,15 @@ class ProductPriceForm extends Form {
 				'options' => array (
 						'object_manager' => $om,
 						'target_class' => 'Database\Entity\PriceTypes',
-						'property' => 'priceTypeName' 
+						'property' => 'priceTypeName',
+						'display_empty_item' => true,
+						'empty_item_label' => ' '
 				),
 				'attributes' => array (
 						'class' => 'select2me form-control',
 						'tabindex' => '1',
-						'id' => 'priceTypeId' 
+						'id' => 'priceTypeId',
+						'required' => true
 				) 
 		) );
 		
@@ -38,12 +41,15 @@ class ProductPriceForm extends Form {
 				'options' => array (
 						'object_manager' => $om,
 						'target_class' => 'Database\Entity\Currencies',
-						'property' => 'currencyName' 
+						'property' => 'currencyName',
+						'display_empty_item' => true,
+						'empty_item_label' => ' '
 				),
 				'attributes' => array (
 						'class' => 'select2me form-control',
 						'tabindex' => '1',
-						'id' => 'currencyId' 
+						'id' => 'currencyId',
+						'required' => true
 				) 
 		) );
 	}
