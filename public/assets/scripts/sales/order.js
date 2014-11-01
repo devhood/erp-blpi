@@ -5,7 +5,7 @@ var Order = function () {
 
 		init: function () {
 
-			var form = $('#sales');
+			var form = $('#order_add');
 			var error = $('.alert-danger', form);
 			var success = $('.alert-success', form);
 			form.validate({
@@ -82,8 +82,11 @@ var Order = function () {
 						inventoryLocationId : {
 							required: "Inventory Location is Required"
 						},
-						addressId : {
-							required: "Address is Required"
+						shippingAddressId : {
+							required: "Shipping Address is Required"
+						},
+						billingAddressId : {
+							required: "Billing Address is Required"
 						},
 						orderSourceId : {
 							minlength: 1,
