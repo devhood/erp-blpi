@@ -15,7 +15,6 @@ class ShipmentController extends BaseController
 		return new ViewModel(array('records' => $records));
 	}
 	public function addAction(){
-		
 		$em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
 		$formShipment = new \Shipments\Form\ShipmentForm($em);
 		$formShipmentItem = new \Shipments\Form\ShipmentItemForm($em);

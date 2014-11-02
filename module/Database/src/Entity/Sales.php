@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Sales
  *
- * @ORM\Table(name="Sales", uniqueConstraints={@ORM\UniqueConstraint(name="sono_UNIQUE", columns={"sono"}), @ORM\UniqueConstraint(name="drno_UNIQUE", columns={"drno"}), @ORM\UniqueConstraint(name="sino_UNIQUE", columns={"sino"}), @ORM\UniqueConstraint(name="rmrno_UNIQUE", columns={"rmrno"}), @ORM\UniqueConstraint(name="cmno_UNIQUE", columns={"cmno"}), @ORM\UniqueConstraint(name="pmno_UNIQUE", columns={"pmno"})}, indexes={@ORM\Index(name="fk_Sales_Transaction_Status1_idx", columns={"transaction_status_id"}), @ORM\Index(name="fk_Sales_Inventory_Locations1_idx", columns={"location_id"}), @ORM\Index(name="fk_Sales_Address1_idx", columns={"shipping_address_id"}), @ORM\Index(name="fk_Sales_Address2_idx", columns={"billing_address_id"}), @ORM\Index(name="fk_Sales_Customers1_idx", columns={"customer_id"}), @ORM\Index(name="fk_Sales_Transaction_Types1_idx", columns={"transaction_type_id"}), @ORM\Index(name="fk_Sales_Order_Source1_idx", columns={"order_source_id"}), @ORM\Index(name="fk_Sales_Payment_Terms1_idx", columns={"payment_term_id"}), @ORM\Index(name="fk_Sales_Price_Types1_idx", columns={"price_type_id"}), @ORM\Index(name="fk_Sales_Shipping_Modes1_idx", columns={"shipping_mode_id"})})
+ * @ORM\Table(name="Sales", uniqueConstraints={@ORM\UniqueConstraint(name="sono_UNIQUE", columns={"sono"}), @ORM\UniqueConstraint(name="drno_UNIQUE", columns={"drno"}), @ORM\UniqueConstraint(name="sino_UNIQUE", columns={"sino"}), @ORM\UniqueConstraint(name="rmrno_UNIQUE", columns={"rmrno"}), @ORM\UniqueConstraint(name="cmno_UNIQUE", columns={"cmno"}), @ORM\UniqueConstraint(name="pmno_UNIQUE", columns={"pmno"})}, indexes={@ORM\Index(name="fk_Sales_Transaction_Status1_idx", columns={"transaction_status_id"}), @ORM\Index(name="fk_Sales_Inventory_Locations1_idx", columns={"location_id"}), @ORM\Index(name="fk_Sales_Address1_idx", columns={"shipping_address_id"}), @ORM\Index(name="fk_Sales_Address2_idx", columns={"billing_address_id"}), @ORM\Index(name="fk_Sales_Customers1_idx", columns={"customer_id"}), @ORM\Index(name="fk_Sales_Transaction_Types1_idx", columns={"transaction_type_id"}), @ORM\Index(name="fk_Sales_Order_Source1_idx", columns={"order_source_id"}), @ORM\Index(name="fk_Sales_Payment_Terms1_idx", columns={"payment_term_id"}), @ORM\Index(name="fk_Sales_Price_Types1_idx", columns={"price_type_id"}), @ORM\Index(name="fk_Sales_Shipping_Modes1_idx", columns={"shipping_mode_id"}), @ORM\Index(name="fk_Sales_Users1_idx", columns={"sales_executive_id"})})
  * @ORM\Entity
  */
 class Sales
@@ -62,13 +62,6 @@ class Sales
      * @ORM\Column(name="pmno", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $pmno;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="sales_executive_id", type="integer", precision=0, scale=0, nullable=true, unique=false)
-     */
-    private $salesExecutiveId;
 
     /**
      * @var \DateTime
@@ -275,6 +268,16 @@ class Sales
      */
     private $shippingMode;
 
+    /**
+     * @var \Database\Entity\Users
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Users")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="sales_executive_id", referencedColumnName="user_id", nullable=true)
+     * })
+     */
+    private $salesExecutive;
+
 
     /**
      * Get salesId
@@ -422,29 +425,6 @@ class Sales
     public function getPmno()
     {
         return $this->pmno;
-    }
-
-    /**
-     * Set salesExecutiveId
-     *
-     * @param integer $salesExecutiveId
-     * @return Sales
-     */
-    public function setSalesExecutiveId($salesExecutiveId)
-    {
-        $this->salesExecutiveId = $salesExecutiveId;
-
-        return $this;
-    }
-
-    /**
-     * Get salesExecutiveId
-     *
-     * @return integer 
-     */
-    public function getSalesExecutiveId()
-    {
-        return $this->salesExecutiveId;
     }
 
     /**
@@ -1020,5 +1000,28 @@ class Sales
     public function getShippingMode()
     {
         return $this->shippingMode;
+    }
+
+    /**
+     * Set salesExecutive
+     *
+     * @param \Database\Entity\Users $salesExecutive
+     * @return Sales
+     */
+    public function setSalesExecutive(\Database\Entity\Users $salesExecutive = null)
+    {
+        $this->salesExecutive = $salesExecutive;
+
+        return $this;
+    }
+
+    /**
+     * Get salesExecutive
+     *
+     * @return \Database\Entity\Users 
+     */
+    public function getSalesExecutive()
+    {
+        return $this->salesExecutive;
     }
 }
