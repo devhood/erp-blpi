@@ -9,7 +9,8 @@ return array (
 				'Customer',
 				'Sales',
 				'Users',
-				'Purchase' 
+				'Purchase', 
+				'Shipments' 
 		),
 		'module_listener_options' => array (
 				'module_paths' => array (

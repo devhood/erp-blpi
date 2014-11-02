@@ -26,29 +26,28 @@
 							<table class="main table table-striped table-hover table-bordered" id="shipments_table">
 							<thead>
 							<tr>
-								<th>Shipment</th>
+								<th>#</th>
 								<th>Supplier</th>
 								<th>Reference Number</th>
 								<th>Shipment Status</th>
 								<th>Arrival Date</th>
-								<th>Notes</th>
 								<th>Confirmed By</th>
 								<th>Approved By</th>
+								<th>Notes</th>
 								<th>Action</th>
 							</tr>
 							</thead>
 							<tbody>
-							<?php foreach ($records as $record) : ?>
+							<?php $i=1; foreach ($records as $record) : ?>
 								 <tr>
-									 <td><?php echo $record->getShipmentId() ?></td>
+									 <td><?php echo $i; $i++; ?></td>
 									 <td><?php echo $record->getSupplier()->getSupplierName() ?></td>
 									 <td><?php echo $record->getReferenceNo() ?></td>
 									 <td><?php echo $record->getShipmentStatus() ?></td>
 									 <td><?php echo $record->getArrivalDate()->format('Y-m-d H:i:s') ?></td>
-									 <td><?php echo $record->getShipmentNotes() ?></td>
 									 <td><?php echo $record->getConfirmedBy() ?></td>
 									 <td><?php echo $record->getApprovedBy() ?></td>
-									 
+									 <td><?php echo $record->getShipmentNotes() ?></td>
 									 <td><a class="edit" href="<?php echo $this->basePath('/shipment/edit/'.$record->getShipmentId()) ?>">Edit</a></td>
 								 </tr>
 							<?php endforeach; ?>

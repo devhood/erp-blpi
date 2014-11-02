@@ -1173,6 +1173,16 @@ COMMIT;
 
 
 -- -----------------------------------------------------
+-- Data for table `blpi`.`Permissions`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `blpi`;
+INSERT INTO `blpi`.`Permissions` (`permission_id`, `permission_name`, `permission_link`, `record_status`) VALUES (1, 'Executive', NULL, 'Active');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
 -- Data for table `blpi`.`Price_Types`
 -- -----------------------------------------------------
 START TRANSACTION;
@@ -1237,6 +1247,26 @@ START TRANSACTION;
 USE `blpi`;
 INSERT INTO `blpi`.`Shipping_Modes` (`shipping_mode_id`, `shipping_mode_name`, `record_status`) VALUES (1, 'Walk-in', 'Active');
 INSERT INTO `blpi`.`Shipping_Modes` (`shipping_mode_id`, `shipping_mode_name`, `record_status`) VALUES (2, 'In-House Delivery', 'Active');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `blpi`.`Designation_Permissions`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `blpi`;
+INSERT INTO `blpi`.`Designation_Permissions` (`dp_id`, `designation_id`, `permission_id`) VALUES (1, 1, 1);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `blpi`.`Countries`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `blpi`;
+INSERT INTO `blpi`.`Countries` (`country_id`, `country_name`, `record_status`) VALUES (1, 'Phillippines', 'Active');
 
 COMMIT;
 
