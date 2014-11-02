@@ -15,117 +15,82 @@ var Order = function () {
 				ignore: "",
 				rules: {
 
-					transactionTypeId : {
+					"transactionType[transactionTypeId]" : {
 						required: true
 					},
 					
-					customerId : {
+					"customer[customerId]" : {
 						required: true
 					},
 					
-					inventoryLocationId : {
+					"inventoryLocation[locationId]" : {
 						required: true
 					},
 					
-					shippingAddressId : {
+					"salesExecutive[userId]" : {
 						required: true
 					},
 					
-					billingAddressId : {
+					"shippingAddress[addressId]" : {
 						required: true
 					},
 					
-					orderSourceId : {
+					"billingAddress[addressId]" : {
 						required: true
 					},
 					
-					shippingModeId : {
+					"orderSource[orderSourceId]" : {
 						required: true
 					},
-					customerId : {
+					
+					"shippingMode[shippingModeId]" : {
 						required: true
 					},
-					paymentTermId : {
-						required: true
-					},
-					deliveryDate : {
-						minlength: 2,
-						required: true
-					},
+
 					orderedBy : {
 						minlength: 2,
 						required: true
 					},
-					printedCode : {
-						minlength: 2,
-						required: true
-					},
-				
-					productDescription : {
-						required: true
-					},
-					percentVat : {
-						required: true
-					},
-					notes : {
-						required: false
-					},
 				},
 
 					messages: { // custom messages for radio buttons and checkboxes
-						transactionTypeId: {
-							required: "Transaction Type is Required"
+						"transactionType[transactionTypeId]" : {
+							required: "Transaction Type is required!"
 						},
-						customerId: {
-							required: "Customer is Required"
+						
+						"customer[customerId]" : {
+							required: "Customer is required!"
 						},
-						inventoryLocationId : {
-							required: "Inventory Location is Required"
+						
+						"inventoryLocation[locationId]" : {
+							required: "Inventory Location is required!"
 						},
-						shippingAddressId : {
-							required: "Shipping Address is Required"
+						
+						"salesExecutive[userId]" : {
+							required: "Sales Executive is required!"
 						},
-						billingAddressId : {
-							required: "Billing Address is Required"
+						
+						"shippingAddress[addressId]" : {
+							required: "Shipping Address is required!"
 						},
-						orderSourceId : {
-							minlength: 1,
-							required: "Order Source is Required"
+						
+						"billingAddress[addressId]" : {
+							required: "Billing Address is required!"
 						},
-						shippingModeId : {
-							minlength: 1,
-							required: "Shipping Mode is Required"
+						
+						"orderSource[orderSourceId]" : {
+							required: "Order Source is required!"
 						},
-						userId : {
-							required: "User is Required"
+						
+						"shippingMode[shippingModeId]" : {
+							required: "Delivery Method is required!"
 						},
-						paymentTermId : {
-							required: "Payment Term is Required"
-						},
-						deliveryDate : {
-							minlength: 2,
-							required: "Delivery Date is Required"
-						},
+
 						orderedBy : {
-							minlength: 2,
-							required: "Ordered By is Required"
+							minlength: "Type atleast 2 characters!",
+							required: "Ordered By is required!"
 						},
-						printedCode : {
-							minlength: 2,
-							required: "Printed Code is Required"
-						},
-						priceTypeId : {
-							required: "Please select  at least 1 types of Service",
-						},
-						productDescription : {
-							required: "Product Description is Required"
-						},
-						percentVat : {
-							required: "Percent Vat is Required"
-						},
-						notes : {
-							required: "Note is Required"
-						},
+
 					},
 					invalidHandler: function (event, validator) { //display error alert on form submit
 						success.hide();

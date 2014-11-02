@@ -20,3 +20,7 @@ span.col-md-12.modal-control-label {
 div.custom-center{
 	text-align:center;
 }
+
+textarea{
+	resize:none;
+}

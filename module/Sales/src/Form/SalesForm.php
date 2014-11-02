@@ -220,7 +220,7 @@ class SalesForm extends Form {
 		) );
 		
 		$this->add ( array (
-				'name' => 'inventoryLocation[inventoryLocationId]',
+				'name' => 'inventoryLocation[locationId]',
 				'type' => 'DoctrineModule\Form\Element\ObjectSelect',
 				'options' => array (
 						'object_manager' => $em,
@@ -238,7 +238,7 @@ class SalesForm extends Form {
 		) );
 		
 		$this->add ( array (
-				'name' => 'shippingAddressId',
+				'name' => 'shippingAddress[addressId]',
 				'type' => 'DoctrineModule\Form\Element\ObjectSelect',
 				'options' => array (
 						'object_manager' => $em,
@@ -247,7 +247,7 @@ class SalesForm extends Form {
 						'display_empty_item' => true,
 						'empty_item_label' => ' ',
 						'label_generator' => function ($row) {
-							return $row->getStreetLandmark () . ', ' . $row->getCity ()->getCityName () . ', ' . $row->getProvince ()->getProvinceName () . ', ' . $row->getCountry ()->getCountryName () . ', ' . $row->getZipcode ();
+							return $row->getStreetLandmark () . ', ' . $row->getCity()->getCityName() . ', ' . $row->getProvince ()->getProvinceName () . ', ' . $row->getCountry ()->getCountryName () . ', ' . $row->getZipcode ();
 						} 
 				),
 				'attributes' => array (
@@ -259,7 +259,7 @@ class SalesForm extends Form {
 		) );
 		
 		$this->add ( array (
-				'name' => 'billingAddressId',
+				'name' => 'billingAddress[addressId]',
 				'type' => 'DoctrineModule\Form\Element\ObjectSelect',
 				'options' => array (
 						'object_manager' => $em,
@@ -268,7 +268,7 @@ class SalesForm extends Form {
 						'display_empty_item' => true,
 						'empty_item_label' => ' ',
 						'label_generator' => function ($row) {
-							return $row->getStreetLandmark () . ', ' . $row->getCity ()->getCityName () . ', ' . $row->getProvince ()->getProvinceName () . ', ' . $row->getCountry ()->getCountryName () . ', ' . $row->getZipcode ();
+							return $row->getStreetLandmark () . ', ' . $row->getCity()->getCityName () . ', ' . $row->getProvince ()->getProvinceName () . ', ' . $row->getCountry ()->getCountryName () . ', ' . $row->getZipcode ();
 						} 
 				),
 				'attributes' => array (
@@ -315,23 +315,34 @@ class SalesForm extends Form {
 				) 
 		) );
 		
-		$this->add ( array (
-				'name' => 'user[salesExecutiveId]',
-				'type' => 'DoctrineModule\Form\Element\ObjectSelect',
-				'options' => array (
+		$this->add(array(
+			'name' => 'salesExecutive[userId]',
+			'type' => 'DoctrineModule\Form\Element\ObjectSelect',
+					'options' => array(
 						'object_manager' => $em,
-						'target_class' => 'Database\Entity\Users',
-						'property' => 'userName',
-						'display_empty_item' => true,
-						'empty_item_label' => ' '
-				),
-				'attributes' => array (
+						'target_class'   => 'Database\Entity\Users',
+							'display_empty_item' => true,
+							'empty_item_label' => " ",
+							'label_generator' => function($row) {
+								return $row->getFullName();	
+							},
+							'is_method'      => true,
+							'find_method'    => array(
+									'name'   => 'findBy',
+									'params' => array(
+									'criteria' => array('designation' => 2),
+
+									),
+							),
+	
+					),
+					'attributes' => array(
 						'class' => 'select2me form-control',
 						'tabindex' => '1',
-						'id' => 'salesExecutiveId',
-						'required' => true 
-				) 
-		) );
+						'id' => 'userId',
+						'required' => true
+					),
+		));
 		
 		$this->add ( array (
 				'type' => 'DoctrineModule\Form\Element\ObjectSelect',

@@ -1,21 +1,20 @@
 <div class="portlet box grey">
 	<div class="portlet-title">
 		<div class="caption">
-			<i class="fa fa-edit"></i>LIST OF SALES INVOICE
+			<i class="fa fa-edit"></i>Sales Invoice List
 		</div>
 		<div class="tools">
-			<a href="javascript:;" class="collapse"> </a> <a
-				href="#portlet-config" data-toggle="modal" class="config"> </a> <a
-				href="/" class="reload"> </a> <a href="javascript:;" class="remove">
-			</a>
+			<a href="javascript:;" class="collapse"> </a>
+			<a href="#portlet-config" data-toggle="modal" class="config"> </a>
+			<a href="/" class="reload"> </a>
+			<a href="javascript:;" class="remove"></a>
 		</div>
 	</div>
 	<div class="portlet-body">
 		<div class="table-toolbar">
-			<h5></h5>
 			<div class="btn-group">
-				<a id="sample_editable_1_new" class="btn green"
-					href="/sales/invoice/approve"> Add New <i class="fa fa-plus"></i>
+				<a id="sample_editable_1_new" class="btn green" href="/sales/invoice/approve">
+					Add New <i class="fa fa-plus"></i>
 				</a>
 			</div>
 			<div class="btn-group pull-right">
@@ -23,14 +22,13 @@
 					Tools <i class="fa fa-angle-down"></i>
 				</button>
 				<ul class="dropdown-menu pull-right">
-					<li><a href="/sales/invoice/print"> Print </a></li>
+					<li><a href="#"> Print </a></li>
 					<li><a href="#"> Save as PDF </a></li>
 					<li><a href="#"> Export to Excel </a></li>
 				</ul>
 			</div>
 		</div>
-		<table class="main table table-striped table-hover table-bordered"
-			id="products_table">
+		<table class="main table table-striped table-hover table-bordered" id="invoice_table">
 			<thead>
 				<tr>
 					<th>#</th>
@@ -48,22 +46,22 @@
 				</tr>
 			</thead>
 			<tbody>
-				<?php $i=1; foreach ($records as $record) : ?>
+				<?php  $i=1; foreach ($records as $record) : ?>
 					<tr>
-					<td><?php echo $i; $i++; ?></td>
-					<td><?php echo $record->getSino() ?></td>					
-					<td><?php echo $record->getDrno() ?></td>
-					<td><?php echo $record->getSono() ?></td>
-					<td><?php //echo $record->getInventoryLocation() ?  $record->getInventoryLocation()->getInventoryLocationName() : "" ?></td>
-					<td><?php echo $record->getOrderSource() ? $record->getOrderSource()->getOrderSourceName() : "" ?></td>
-					<td><?php //echo $record->getSalesExcutive() ?></td>
-					<td><?php //echo $record->getShippingMode() ? $record->getShippingMode()->getShippingModeName() : "" ?></td>
-					<td><?php echo $record->getDeliveryDate() ?></td>
-					<td><?php echo $record->getOrderedBy() ?></td>
-					<td><?php //echo $record->getCustomer() ? $record->getCustomer()->getCustomerName() : "" ?></td>
-					<td><a class="edit" href="<?php echo $this->basePath('/sales/delivery/edit/'.$record->getSalesId()) ?>">Edit</a></td>
-				</tr>
-				<?php endforeach; ?>
+						<td><?php echo $i; ?></td>
+						<td><?php echo $record->getSino() ?></td>
+						<td><?php echo $record->getDrno() ?></td>
+						<td><?php echo $record->getSono() ?></td>
+						<td><?php echo $record->getLocation() ?  $record->getLocation()->getLocationName() : "" ?></td>
+						<td><?php echo $record->getOrderSource() ? $record->getOrderSource()->getOrderSourceName() : "" ?></td>
+						<td><?php echo $record->getSalesExecutive() ? $record->getSalesExecutive()->getFullName() : "" ?></td>
+						<td><?php echo $record->getShippingMode() ? $record->getShippingMode()->getShippingModeName() : "" ?></td>
+						<td><?php echo $record->getDeliveryDate()->format('m-d-Y') ?></td>
+						<td><?php echo $record->getOrderedBy() ?></td>
+						<td><?php echo $record->getCustomer() ? $record->getCustomer()->getCompanyName() : "" ?></td>
+						<td><a class="edit" href="<?php echo $this->basePath('/sales/invoice/view/'. $record->getSalesId()) ?>">View</a></td>
+					</tr>
+				<?php $i++; endforeach; ?>
 			</tbody>
 		</table>
 	</div>

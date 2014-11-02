@@ -55,7 +55,8 @@ class SalesItemForm extends Form {
 				'type' => 'Text',
 				'attributes' => array (
 						'class' => 'form-control',
-						'id' => 'price' 
+						'id' => 'price',
+						'readonly' => 'readonly'
 				)
 				 
 		) );
@@ -69,6 +70,7 @@ class SalesItemForm extends Form {
 				)
 					
 		) );
+		
 		$this->add ( array (
 				'name' => 'sales',
 				'type' => 'Text',
@@ -100,6 +102,16 @@ class SalesItemForm extends Form {
 						'id' => 'freebie',
 						'readonly' => 'readonly'
 				) 
+		) );
+		
+		$this->add ( array (
+				'name' => 'returnQuantity',
+				'type' => 'Text',
+				'attributes' => array (
+						'class' => 'form-control',
+						'id' => 'returnQuantity'
+				)
+					
 		) );
 	}
 }

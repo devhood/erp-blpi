@@ -10,7 +10,8 @@ return array (
 				'template_map' => array (
 						'sales/items' => __DIR__ . '/../view/sales/partial/items.phtml',
 						'sales/document' => __DIR__ . '/../view/sales/partial/document.phtml',
-						'sales/paymentdetail' => __DIR__ . '/../view/sales/partial/paymentdetail.phtml' 
+						'sales/paymentdetail' => __DIR__ . '/../view/sales/partial/paymentdetail.phtml',
+						'sales/return' => __DIR__ . '/../view/sales/partial/return.phtml' 
 				)
 				 
 		)

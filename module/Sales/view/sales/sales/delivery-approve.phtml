@@ -12,7 +12,7 @@
 
 	<div class="portlet-body form">
 		<!-- BEGIN FORM-->
-		<form action="/sales/order/add" method="post" class="form-horizontal" id="order_add">
+		<form action="/sales/delivery/approve" method="post" class="form-horizontal" id="delivery_approve">
 			<div class="form-body">
 				<div class="alert alert-danger display-hide">
 					<button class="close" data-close="alert"></button>
@@ -27,8 +27,8 @@
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-								<?php  echo $this->formRow($formSales->get('deliveryDate')); ?>
-				                <span class="col-md-12 control-label"> Delivery Date </span>
+								<?php  echo $this->formRow($formSales->get('sono')); ?>
+					            <span class="col-md-12 control-label"> SO Number </span>
 							</div>
 						</div>
 					</div>
@@ -48,8 +48,8 @@
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-								<?php  echo $this->formRow($formSales->get('sono')); ?>
-					            <span class="col-md-12 control-label"> SO Number </span>
+					            <?php  echo $this->formRow($formSales->get('deliveryDate')); ?>
+				                <span class="col-md-12 control-label"> Delivery Date </span>
 							</div>
 						</div>
 					</div>
@@ -98,7 +98,7 @@
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-								<?php  echo $this->formRow($formSales->get('user[salesExecutiveId]')); ?>
+								<?php  echo $this->formRow($formSales->get('salesExecutive[userId]')); ?>
 				                <span class="col-md-12 control-label"> Sales Executive </span>
 							</div>
 						</div>
@@ -163,7 +163,7 @@
 						<div class="form-group">
 							<div class="col-md-2 col-lg-2 "></div>
 							<div class="col-md-8 col-xs-12 col-sm-12 col-lg-8 ">
-				                <?php  echo $this->formRow($formSales->get('shippingAddressId')); ?>
+				                <?php  echo $this->formRow($formSales->get('shippingAddress[addressId]')); ?>
 				                <span class="col-md-12 control-label"> Shipping Address </span>
 							</div>
 							<div class="col-md-2 col-lg-2 "></div>
@@ -176,7 +176,7 @@
 						<div class="form-group">
 							<div class="col-md-2 col-lg-2 "></div>
 							<div class="col-md-8 col-xs-12 col-sm-12 col-lg-8 ">
-				                <?php  echo $this->formRow($formSales->get('billingAddressId')); ?>
+				                <?php  echo $this->formRow($formSales->get('billingAddress[addressId]')); ?>
 				                <span class="col-md-12 control-label"> Billing Address </span>
 							</div>
 							<div class="col-md-2 col-lg-2 "></div>
@@ -228,7 +228,6 @@
 															<th>Quantity</th>
 															<th>Unit Price</th>
 															<th>Total</th>
-															<th width="12%">Action</th>
 														</tr>
 													</thead>
 													<tbody>
@@ -381,13 +380,11 @@
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <?php
 $this->inlineScript ()
-	->appendFile ( $this->basePath ( '/assets/scripts/sales/order.js' ) )
-	->appendFile ( $this->basePath ( '/assets/scripts/sales/orderitem.js' ) )
+	->appendFile ( $this->basePath ( '/assets/scripts/sales/delivery.js' ) )
 
 ?>
 <?php $this->inlineScript()->captureStart()?>
 jQuery(document).ready(function() {
-  Order.init();
-  OrderItem.init();
+  Delivery.init();
 });
 <?php $this->inlineScript()->captureEnd()?>

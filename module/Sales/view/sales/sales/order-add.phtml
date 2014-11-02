@@ -48,7 +48,7 @@
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-right">
-				                <?php  echo $this->formRow($formSales->get('inventoryLocation[inventoryLocationId]')); ?>
+				                <?php  echo $this->formRow($formSales->get('inventoryLocation[locationId]')); ?>
 				                <span class="col-md-12 control-label"> Inventory Location </span>
 							</div>
 						</div>
@@ -75,7 +75,7 @@
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 custom-left">
-								<?php  echo $this->formRow($formSales->get('user[salesExecutiveId]')); ?>
+								<?php  echo $this->formRow($formSales->get('salesExecutive[userId]')); ?>
 				                <span class="col-md-12 control-label"> Sales Executive </span>
 							</div>
 						</div>
@@ -140,7 +140,7 @@
 						<div class="form-group">
 							<div class="col-md-2 col-lg-2 "></div>
 							<div class="col-md-8 col-xs-12 col-sm-12 col-lg-8 ">
-				                <?php  echo $this->formRow($formSales->get('shippingAddressId')); ?>
+				                <?php  echo $this->formRow($formSales->get('shippingAddress[addressId]')); ?>
 				                <span class="col-md-12 control-label"> Shipping Address </span>
 							</div>
 							<div class="col-md-2 col-lg-2 "></div>
@@ -153,7 +153,7 @@
 						<div class="form-group">
 							<div class="col-md-2 col-lg-2 "></div>
 							<div class="col-md-8 col-xs-12 col-sm-12 col-lg-8 ">
-				                <?php  echo $this->formRow($formSales->get('billingAddressId')); ?>
+				                <?php  echo $this->formRow($formSales->get('billingAddress[addressId]')); ?>
 				                <span class="col-md-12 control-label"> Billing Address </span>
 							</div>
 							<div class="col-md-2 col-lg-2 "></div>

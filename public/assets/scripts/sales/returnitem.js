@@ -1,11 +1,11 @@
 
-var OrderItem = function () {
+var ReturnItem = function () {
 
 	return {
 
 		init: function () {
 
-			var form = $('#order_item_add');
+			var form = $('#return_item_add');
 			var error = $('.alert-danger', form);
 			var success = $('.alert-success', form);
 			form.validate({
@@ -23,6 +23,10 @@ var OrderItem = function () {
 						required: true,
 						number: true
 					},
+					returnQuantity : {
+						required: true,
+						number: true
+					},
 				},
 
 					messages: { // custom messages for radio buttons and checkboxes
@@ -31,6 +35,10 @@ var OrderItem = function () {
 						},
 						
 						quantity : {
+							required: "Quantity is required!",
+							number: "Please enter a valid number!"
+						},
+						returnQuantity : {
 							required: "Quantity is required!",
 							number: "Please enter a valid number!"
 						},

@@ -41,12 +41,9 @@ class SalesController extends BaseController {
 	}
 	
 	public function DeliveryAction() {
-		$formSales = new \Sales\Form\SalesForm ( $this->getServiceLocator ()->get ( 'Doctrine\ORM\EntityManager' ) );
-		$formSalesItem = new \Sales\Form\SalesItemForm ( $this->getServiceLocator ()->get ( 'Doctrine\ORM\EntityManager' ) );
-		
+		$records = $this->_getContents ( 'Sales' );
 		return new ViewModel ( array (
-				'formSales' => $formSales,
-				'formSalesItem' => $formSalesItem 
+				'records' => $records
 		) );
 	}
 	
@@ -92,10 +89,22 @@ class SalesController extends BaseController {
 	return new ViewModel();
 	}
 	public function InvoiceAction() {
-	return new ViewModel();
+		$records = $this->_getContents ( 'Sales' );
+		return new ViewModel ( array (
+				'records' => $records
+		) );
 	}
 	public function InvoiceApproveAction() {
-	return new ViewModel();
+		$formSales = new \Sales\Form\SalesForm ( $this->getServiceLocator ()->get ( 'Doctrine\ORM\EntityManager' ) );
+		$formSalesItem = new \Sales\Form\SalesItemForm ( $this->getServiceLocator ()->get ( 'Doctrine\ORM\EntityManager' ) );
+		
+		$this->DisableForms ( $formSales );
+		$formSales->get ( 'deliveryDate' )->setAttribute ( "disabled", true);
+		
+		return new ViewModel ( array (
+				'formSales' => $formSales,
+				'formSalesItem' => $formSalesItem 
+		) );
 	}
 	public function InvoicePrintAction() {
 	return new ViewModel();
@@ -107,13 +116,19 @@ class SalesController extends BaseController {
 		$formSales = new \Sales\Form\SalesForm ( $this->getServiceLocator ()->get ( 'Doctrine\ORM\EntityManager' ) );
 		$formSalesItem = new \Sales\Form\SalesItemForm ( $this->getServiceLocator ()->get ( 'Doctrine\ORM\EntityManager' ) );
 		
+		$this->DisableForms ( $formSales );
+		$formSales->get ( 'deliveryDate' )->setAttribute ( "disabled", true);
+		
 		return new ViewModel ( array (
 				'formSales' => $formSales,
 				'formSalesItem' => $formSalesItem 
 		) );
 	}
 	public function ReturnAction() {
-	return new ViewModel();
+		$records = $this->_getContents ( 'Sales' );
+		return new ViewModel ( array (
+				'records' => $records
+		) );
 	}
 	public function ReturnApproveAction() {
 	return new ViewModel();
@@ -123,11 +138,11 @@ class SalesController extends BaseController {
 		$formSales->get ( 'transactionType[transactionTypeId]' )->setAttribute ( "disabled", true );
 		$formSales->get ( 'inventoryLocation[locationId]' )->setAttribute ( "disabled", true );
 		$formSales->get ( 'customer[customerId]' )->setAttribute ( "disabled", true );
-		$formSales->get ( 'shippingAddressId' )->setAttribute ( "disabled", true );
-		$formSales->get ( 'billingAddressId' )->setAttribute ( "disabled", true );
+		$formSales->get ( 'shippingAddress[addressId]' )->setAttribute ( "disabled", true );
+		$formSales->get ( 'billingAddress[addressId]' )->setAttribute ( "disabled", true );
 		$formSales->get ( 'orderSource[orderSourceId]' )->setAttribute ( "disabled", true );
 		$formSales->get ( 'shippingMode[shippingModeId]' )->setAttribute ( "disabled", true );
-		$formSales->get ( 'user[salesExecutiveId]' )->setAttribute ( "disabled", true );
+		$formSales->get ( 'salesExecutive[userId]' )->setAttribute ( "disabled", true );
 		$formSales->get ( 'paymentTerm[paymentTermId]' )->setAttribute ( "disabled", true );
 		$formSales->get ( 'priceType[priceTypeId]' )->setAttribute ( "disabled", true );
 		$formSales->get ( 'orderedBy' )->setAttribute ( "disabled", true );
