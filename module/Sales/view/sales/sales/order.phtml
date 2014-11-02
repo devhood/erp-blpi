@@ -31,26 +31,29 @@
 		<table class="main table table-striped table-hover table-bordered" id="products_table">
 			<thead>
 				<tr>
-					<th>ID</th>
+					<th>#</th>
 					<th>SO Number</th>
 					<th>Inventory Location</th>
 					<th>Order Source</th>
 					<th>Sales Executive</th>
 					<th>Delivery Method</th>
+					<th>Delivery Date</th>
 					<th>Ordered By</th>
 					<th>Customer</th>
 					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>
-				<?php foreach ($records as $record) : ?>
+				<?php $i=0;  foreach ($records as $record) : ?>
 					<tr>
+						<td><?php echo $i; $i++; ?></td>
 						<td><?php echo $record->getSalesId() ?></td>
 						<td><?php echo $record->getSono() ?></td>
 						<td><?php //echo $record->getInventoryLocation() ?  $record->getInventoryLocation()->getInventoryLocationName() : "" ?></td>
 						<td><?php echo $record->getOrderSource() ? $record->getOrderSource()->getOrderSourceName() : "" ?></td>
 						<td><?php //echo $record->getSalesExcutive() ?></td>
 						<td><?php //echo $record->getShippingMode() ? $record->getShippingMode()->getShippingModeName() : "" ?></td>
+						<td><?php echo $record->getDeliveryDate() ?></td>
 						<td><?php echo $record->getOrderedBy() ?></td>
 						<td><?php //echo $record->getCustomer() ? $record->getCustomer()->getCustomerName() : "" ?></td>
 						<td><a class="edit" href="<?php echo $this->basePath('/sales/order/edit/'.$record->getSalesId()) ?>">Edit</a></td>
