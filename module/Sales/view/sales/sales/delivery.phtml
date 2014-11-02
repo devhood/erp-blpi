@@ -33,6 +33,7 @@
 				<tr>
 					<th>#</th>
 					<th>DR Number</th>
+					<th>SO Number</th>
 					<th>Inventory Location</th>
 					<th>Order Source</th>
 					<th>Sales Executive</th>
@@ -47,7 +48,7 @@
 				<?php $i=0;  foreach ($records as $record) : ?>
 					<tr>
 						<td><?php echo $i; $i++; ?></td>
-						<td><?php echo $record->getSalesId() ?></td>
+						<td><?php echo $record->getDrno() ?></td>
 						<td><?php echo $record->getSono() ?></td>
 						<td><?php //echo $record->getInventoryLocation() ?  $record->getInventoryLocation()->getInventoryLocationName() : "" ?></td>
 						<td><?php echo $record->getOrderSource() ? $record->getOrderSource()->getOrderSourceName() : "" ?></td>

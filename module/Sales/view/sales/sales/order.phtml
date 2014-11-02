@@ -44,19 +44,18 @@
 				</tr>
 			</thead>
 			<tbody>
-				<?php $i=0;  foreach ($records as $record) : ?>
+				<?php $i=1;  foreach ($records as $record) : ?>
 					<tr>
 						<td><?php echo $i; $i++; ?></td>
-						<td><?php echo $record->getSalesId() ?></td>
 						<td><?php echo $record->getSono() ?></td>
-						<td><?php //echo $record->getInventoryLocation() ?  $record->getInventoryLocation()->getInventoryLocationName() : "" ?></td>
+						<td><?php echo $record->getInventoryLocation() ?  $record->getInventoryLocation()->getInventoryLocationName() : "" ?></td>
 						<td><?php echo $record->getOrderSource() ? $record->getOrderSource()->getOrderSourceName() : "" ?></td>
-						<td><?php //echo $record->getSalesExcutive() ?></td>
-						<td><?php //echo $record->getShippingMode() ? $record->getShippingMode()->getShippingModeName() : "" ?></td>
+						<td><?php echo $record->getSalesExcutive() ?></td>
+						<td><?php echo $record->getShippingMode() ? $record->getShippingMode()->getShippingModeName() : "" ?></td>
 						<td><?php echo $record->getDeliveryDate() ?></td>
 						<td><?php echo $record->getOrderedBy() ?></td>
-						<td><?php //echo $record->getCustomer() ? $record->getCustomer()->getCustomerName() : "" ?></td>
-						<td><a class="edit" href="<?php echo $this->basePath('/sales/order/edit/'.$record->getSalesId()) ?>">Edit</a></td>
+						<td><?php echo $record->getCustomer() ? $record->getCustomer()->getCustomerName() : "" ?></td>
+						<td><a class="edit" href="<?php echo $this->basePath('/sales/order/edit/'. $record->getSalesId()) ?>">Edit</a></td>
 					</tr>
 				<?php endforeach; ?>
 			</tbody>

@@ -76,6 +76,9 @@ class BaseController extends AbstractActionController
 			$em->flush();
 			return $object;
 		}catch(\Exception $e){
+// 			echo("<pre>");
+// 			var_dump($e);
+// 			echo("<pre>");
 			var_dump("error");
 			return false;
 		}

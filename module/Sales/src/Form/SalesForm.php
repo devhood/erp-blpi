@@ -220,7 +220,7 @@ class SalesForm extends Form {
 		) );
 		
 		$this->add ( array (
-				'name' => 'inventoryLocation[locationId]',
+				'name' => 'inventoryLocation[inventoryLocationId]',
 				'type' => 'DoctrineModule\Form\Element\ObjectSelect',
 				'options' => array (
 						'object_manager' => $em,
