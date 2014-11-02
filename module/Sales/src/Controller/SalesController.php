@@ -61,23 +61,20 @@ class SalesController extends BaseController {
 	}
 	
 	public function OrderAddAction() {
+		
+		$id = ucwords($this->params()->fromRoute('id'));
+		$id = $id ? $id : null;
 		$em = $this->_getEntityManager ();
 		$formSales = new \Sales\Form\SalesForm ( $em );
 		$formSalesItem = new \Sales\Form\SalesItemForm ( $em );
 		
 		$request = $this->getRequest ();
-		
 		if ($request->isPost ()) {
 			$request = ( array ) ($request->getPost ());
-			$table = self::DBNS . 'Sales';
-			$object = new $table ();
-			$hydrator = new DoctrineHydrator ( $em );
-		
-			$object = $hydrator->hydrate ( $request, $object );
-			$em->persist ( $object );
-			$em->flush ();
 			
-			
+			$object = $this->_saveRecord('Sales',$request,$id);
+			$salesId = $object->getSalesId ();
+				
 			return $this->redirect ()->toUrl ( '/sales/order' );
 		}
 		
@@ -88,68 +85,23 @@ class SalesController extends BaseController {
 	}
 	
 	public function OrderApproveAction() {
-		$formSales = new \Sales\Form\SalesForm ( $this->getServiceLocator ()->get ( 'Doctrine\ORM\EntityManager' ) );
-		$formSalesItem = new \Sales\Form\SalesItemForm ( $this->getServiceLocator ()->get ( 'Doctrine\ORM\EntityManager' ) );
-		
-		$this->DisableForms ( $formSales );
-		
-		return new ViewModel ( array (
-				'formSales' => $formSales,
-				'formSalesItem' => $formSalesItem 
-		) );
+	return new ViewModel();
 	}
 	
 	public function OrderPrintAction() {
-		$formSales = new \Sales\Form\SalesForm ( $this->getServiceLocator ()->get ( 'Doctrine\ORM\EntityManager' ) );
-		$formSalesItem = new \Sales\Form\SalesItemForm ( $this->getServiceLocator ()->get ( 'Doctrine\ORM\EntityManager' ) );
-		
-		return new ViewModel ( array (
-				'formSales' => $formSales,
-				'formSalesItem' => $formSalesItem 
-		) );
+	return new ViewModel();
 	}
 	public function InvoiceAction() {
-		$formSales = new \Sales\Form\SalesForm ( $this->getServiceLocator ()->get ( 'Doctrine\ORM\EntityManager' ) );
-		$formSalesItem = new \Sales\Form\SalesItemForm ( $this->getServiceLocator ()->get ( 'Doctrine\ORM\EntityManager' ) );
-		
-		return new ViewModel ( array (
-				'formSales' => $formSales,
-				'formSalesItem' => $formSalesItem 
-		) );
+	return new ViewModel();
 	}
 	public function InvoiceApproveAction() {
-		$formSales = new \Sales\Form\SalesForm ( $this->getServiceLocator ()->get ( 'Doctrine\ORM\EntityManager' ) );
-		$formSalesItem = new \Sales\Form\SalesItemForm ( $this->getServiceLocator ()->get ( 'Doctrine\ORM\EntityManager' ) );
-		
-		$this->DisableForms ( $formSales );
-		$formSales->get ( 'deliveryDate' )->setAttribute ( "disabled", true);
-		
-		return new ViewModel ( array (
-				'formSales' => $formSales,
-				'formSalesItem' => $formSalesItem 
-		) );
+	return new ViewModel();
 	}
 	public function InvoicePrintAction() {
-		$formSales = new \Sales\Form\SalesForm ( $this->getServiceLocator ()->get ( 'Doctrine\ORM\EntityManager' ) );
-		$formSalesItem = new \Sales\Form\SalesItemForm ( $this->getServiceLocator ()->get ( 'Doctrine\ORM\EntityManager' ) );
-		
-		return new ViewModel ( array (
-				'formSales' => $formSales,
-				'formSalesItem' => $formSalesItem 
-		) );
+	return new ViewModel();
 	}
 	public function PaymentRecordAction() {
-		$formSales = new \Sales\Form\SalesForm ( $this->getServiceLocator ()->get ( 'Doctrine\ORM\EntityManager' ) );
-		$formSalesItem = new \Sales\Form\SalesItemForm ( $this->getServiceLocator ()->get ( 'Doctrine\ORM\EntityManager' ) );
-		$formPaymentDetail = new \Sales\Form\PaymentDetail ( $this->getServiceLocator ()->get ( 'Doctrine\ORM\EntityManager' ) );
-		
-		$this->DisableForms ( $formSales );
-		
-		return new ViewModel ( array (
-				'formSales' => $formSales,
-				'formSalesItem' => $formSalesItem,
-				'formPaymentDetail' => $formPaymentDetail 
-		) );
+	return new ViewModel();
 	}
 	public function ReturnAddAction() {
 		$formSales = new \Sales\Form\SalesForm ( $this->getServiceLocator ()->get ( 'Doctrine\ORM\EntityManager' ) );
@@ -161,24 +113,10 @@ class SalesController extends BaseController {
 		) );
 	}
 	public function ReturnAction() {
-		$formSales = new \Sales\Form\SalesForm ( $this->getServiceLocator ()->get ( 'Doctrine\ORM\EntityManager' ) );
-		$formSalesItem = new \Sales\Form\SalesItemForm ( $this->getServiceLocator ()->get ( 'Doctrine\ORM\EntityManager' ) );
-		
-		return new ViewModel ( array (
-				'formSales' => $formSales,
-				'formSalesItem' => $formSalesItem 
-		) );
+	return new ViewModel();
 	}
 	public function ReturnApproveAction() {
-		$formSales = new \Sales\Form\SalesForm ( $this->getServiceLocator ()->get ( 'Doctrine\ORM\EntityManager' ) );
-		$formSalesItem = new \Sales\Form\SalesItemForm ( $this->getServiceLocator ()->get ( 'Doctrine\ORM\EntityManager' ) );
-		
-		$this->DisableForms ( $formSales );
-		
-		return new ViewModel ( array (
-				'formSales' => $formSales,
-				'formSalesItem' => $formSalesItem 
-		) );
+	return new ViewModel();
 	}
 	
 	public function DisableForms($formSales) {

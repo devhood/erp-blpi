@@ -51,15 +51,24 @@ class SalesItemForm extends Form {
 		) );
 		
 		$this->add ( array (
-				'name' => 'quantity',
+				'name' => 'price',
 				'type' => 'Text',
 				'attributes' => array (
 						'class' => 'form-control',
-						'id' => 'quantity' 
+						'id' => 'price' 
 				)
 				 
 		) );
 		
+		$this->add ( array (
+				'name' => 'quantity',
+				'type' => 'Text',
+				'attributes' => array (
+						'class' => 'form-control',
+						'id' => 'quantity'
+				)
+					
+		) );
 		$this->add ( array (
 				'name' => 'sales',
 				'type' => 'Text',

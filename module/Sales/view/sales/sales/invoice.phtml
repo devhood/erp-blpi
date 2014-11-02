@@ -61,8 +61,7 @@
 					<td><?php echo $record->getDeliveryDate() ?></td>
 					<td><?php echo $record->getOrderedBy() ?></td>
 					<td><?php //echo $record->getCustomer() ? $record->getCustomer()->getCustomerName() : "" ?></td>
-					<td><a class="edit"
-						href="<?php echo $this->basePath('/sales/delivery/edit/'.$record->getSalesId()) ?>">Edit</a></td>
+					<td><a class="edit" href="<?php echo $this->basePath('/sales/delivery/edit/'.$record->getSalesId()) ?>">Edit</a></td>
 				</tr>
 				<?php endforeach; ?>
 			</tbody>
