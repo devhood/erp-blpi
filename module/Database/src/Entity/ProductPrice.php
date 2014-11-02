@@ -36,16 +36,6 @@ class ProductPrice
     private $recordStatus;
 
     /**
-     * @var \Database\Entity\Currencies
-     *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\Currencies")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="currency_id", referencedColumnName="currency_id", nullable=true)
-     * })
-     */
-    private $currency;
-
-    /**
      * @var \Database\Entity\PriceTypes
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\PriceTypes")
@@ -54,6 +44,16 @@ class ProductPrice
      * })
      */
     private $priceType;
+
+    /**
+     * @var \Database\Entity\Currencies
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Currencies")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="currency_id", referencedColumnName="currency_id", nullable=true)
+     * })
+     */
+    private $currency;
 
     /**
      * @var \Database\Entity\Products
@@ -123,29 +123,6 @@ class ProductPrice
     }
 
     /**
-     * Set currency
-     *
-     * @param \Database\Entity\Currencies $currency
-     * @return ProductPrice
-     */
-    public function setCurrency(\Database\Entity\Currencies $currency = null)
-    {
-        $this->currency = $currency;
-
-        return $this;
-    }
-
-    /**
-     * Get currency
-     *
-     * @return \Database\Entity\Currencies 
-     */
-    public function getCurrency()
-    {
-        return $this->currency;
-    }
-
-    /**
      * Set priceType
      *
      * @param \Database\Entity\PriceTypes $priceType
@@ -166,6 +143,29 @@ class ProductPrice
     public function getPriceType()
     {
         return $this->priceType;
+    }
+
+    /**
+     * Set currency
+     *
+     * @param \Database\Entity\Currencies $currency
+     * @return ProductPrice
+     */
+    public function setCurrency(\Database\Entity\Currencies $currency = null)
+    {
+        $this->currency = $currency;
+
+        return $this;
+    }
+
+    /**
+     * Get currency
+     *
+     * @return \Database\Entity\Currencies 
+     */
+    public function getCurrency()
+    {
+        return $this->currency;
     }
 
     /**

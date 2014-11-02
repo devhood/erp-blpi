@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Sales
  *
- * @ORM\Table(name="Sales", uniqueConstraints={@ORM\UniqueConstraint(name="sono_UNIQUE", columns={"sono"}), @ORM\UniqueConstraint(name="drno_UNIQUE", columns={"drno"}), @ORM\UniqueConstraint(name="sino_UNIQUE", columns={"sino"}), @ORM\UniqueConstraint(name="rmrno_UNIQUE", columns={"rmrno"}), @ORM\UniqueConstraint(name="cmno_UNIQUE", columns={"cmno"}), @ORM\UniqueConstraint(name="pmno_UNIQUE", columns={"pmno"})}, indexes={@ORM\Index(name="fk_Sales_Transaction_Status1_idx", columns={"transaction_status_id"}), @ORM\Index(name="fk_Sales_Inventory_Locations1_idx", columns={"inventory_location_id"}), @ORM\Index(name="fk_Sales_Address1_idx", columns={"shipping_address_id"}), @ORM\Index(name="fk_Sales_Address2_idx", columns={"billing_address_id"}), @ORM\Index(name="fk_Sales_Customers1_idx", columns={"customer_id"}), @ORM\Index(name="fk_Sales_Transaction_Types1_idx", columns={"transaction_type_id"}), @ORM\Index(name="fk_Sales_Order_Source1_idx", columns={"order_source_id"}), @ORM\Index(name="fk_Sales_Payment_Terms1_idx", columns={"payment_term_id"}), @ORM\Index(name="fk_Sales_Price_Types1_idx", columns={"price_type_id"})})
+ * @ORM\Table(name="Sales", uniqueConstraints={@ORM\UniqueConstraint(name="sono_UNIQUE", columns={"sono"}), @ORM\UniqueConstraint(name="drno_UNIQUE", columns={"drno"}), @ORM\UniqueConstraint(name="sino_UNIQUE", columns={"sino"}), @ORM\UniqueConstraint(name="rmrno_UNIQUE", columns={"rmrno"}), @ORM\UniqueConstraint(name="cmno_UNIQUE", columns={"cmno"}), @ORM\UniqueConstraint(name="pmno_UNIQUE", columns={"pmno"})}, indexes={@ORM\Index(name="fk_Sales_Transaction_Status1_idx", columns={"transaction_status_id"}), @ORM\Index(name="fk_Sales_Inventory_Locations1_idx", columns={"location_id"}), @ORM\Index(name="fk_Sales_Address1_idx", columns={"shipping_address_id"}), @ORM\Index(name="fk_Sales_Address2_idx", columns={"billing_address_id"}), @ORM\Index(name="fk_Sales_Customers1_idx", columns={"customer_id"}), @ORM\Index(name="fk_Sales_Transaction_Types1_idx", columns={"transaction_type_id"}), @ORM\Index(name="fk_Sales_Order_Source1_idx", columns={"order_source_id"}), @ORM\Index(name="fk_Sales_Payment_Terms1_idx", columns={"payment_term_id"}), @ORM\Index(name="fk_Sales_Price_Types1_idx", columns={"price_type_id"}), @ORM\Index(name="fk_Sales_Shipping_Modes1_idx", columns={"shipping_mode_id"})})
  * @ORM\Entity
  */
 class Sales
@@ -62,13 +62,6 @@ class Sales
      * @ORM\Column(name="pmno", type="string", length=45, precision=0, scale=0, nullable=true, unique=false)
      */
     private $pmno;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="shipping_mode_id", type="integer", precision=0, scale=0, nullable=true, unique=false)
-     */
-    private $shippingModeId;
 
     /**
      * @var integer
@@ -183,6 +176,26 @@ class Sales
     private $salesNotes;
 
     /**
+     * @var \Database\Entity\TransactionStatus
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\TransactionStatus")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="transaction_status_id", referencedColumnName="transaction_status_id", nullable=true)
+     * })
+     */
+    private $transactionStatus;
+
+    /**
+     * @var \Database\Entity\InventoryLocations
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\InventoryLocations")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="location_id", referencedColumnName="location_id", nullable=true)
+     * })
+     */
+    private $location;
+
+    /**
      * @var \Database\Entity\Address
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\Address")
@@ -213,14 +226,14 @@ class Sales
     private $customer;
 
     /**
-     * @var \Database\Entity\InventoryLocations
+     * @var \Database\Entity\TransactionTypes
      *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\InventoryLocations")
+     * @ORM\ManyToOne(targetEntity="Database\Entity\TransactionTypes")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="inventory_location_id", referencedColumnName="location_id", nullable=true)
+     *   @ORM\JoinColumn(name="transaction_type_id", referencedColumnName="transaction_type_id", nullable=true)
      * })
      */
-    private $inventoryLocation;
+    private $transactionType;
 
     /**
      * @var \Database\Entity\OrderSource
@@ -253,24 +266,14 @@ class Sales
     private $priceType;
 
     /**
-     * @var \Database\Entity\TransactionStatus
+     * @var \Database\Entity\ShippingModes
      *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\TransactionStatus")
+     * @ORM\ManyToOne(targetEntity="Database\Entity\ShippingModes")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="transaction_status_id", referencedColumnName="transaction_status_id", nullable=true)
+     *   @ORM\JoinColumn(name="shipping_mode_id", referencedColumnName="shipping_mode_id", nullable=true)
      * })
      */
-    private $transactionStatus;
-
-    /**
-     * @var \Database\Entity\TransactionTypes
-     *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\TransactionTypes")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="transaction_type_id", referencedColumnName="transaction_type_id", nullable=true)
-     * })
-     */
-    private $transactionType;
+    private $shippingMode;
 
 
     /**
@@ -419,29 +422,6 @@ class Sales
     public function getPmno()
     {
         return $this->pmno;
-    }
-
-    /**
-     * Set shippingModeId
-     *
-     * @param integer $shippingModeId
-     * @return Sales
-     */
-    public function setShippingModeId($shippingModeId)
-    {
-        $this->shippingModeId = $shippingModeId;
-
-        return $this;
-    }
-
-    /**
-     * Get shippingModeId
-     *
-     * @return integer 
-     */
-    public function getShippingModeId()
-    {
-        return $this->shippingModeId;
     }
 
     /**
@@ -813,6 +793,52 @@ class Sales
     }
 
     /**
+     * Set transactionStatus
+     *
+     * @param \Database\Entity\TransactionStatus $transactionStatus
+     * @return Sales
+     */
+    public function setTransactionStatus(\Database\Entity\TransactionStatus $transactionStatus = null)
+    {
+        $this->transactionStatus = $transactionStatus;
+
+        return $this;
+    }
+
+    /**
+     * Get transactionStatus
+     *
+     * @return \Database\Entity\TransactionStatus 
+     */
+    public function getTransactionStatus()
+    {
+        return $this->transactionStatus;
+    }
+
+    /**
+     * Set location
+     *
+     * @param \Database\Entity\InventoryLocations $location
+     * @return Sales
+     */
+    public function setLocation(\Database\Entity\InventoryLocations $location = null)
+    {
+        $this->location = $location;
+
+        return $this;
+    }
+
+    /**
+     * Get location
+     *
+     * @return \Database\Entity\InventoryLocations 
+     */
+    public function getLocation()
+    {
+        return $this->location;
+    }
+
+    /**
      * Set shippingAddress
      *
      * @param \Database\Entity\Address $shippingAddress
@@ -882,26 +908,26 @@ class Sales
     }
 
     /**
-     * Set inventoryLocation
+     * Set transactionType
      *
-     * @param \Database\Entity\InventoryLocations $inventoryLocation
+     * @param \Database\Entity\TransactionTypes $transactionType
      * @return Sales
      */
-    public function setInventoryLocation(\Database\Entity\InventoryLocations $inventoryLocation = null)
+    public function setTransactionType(\Database\Entity\TransactionTypes $transactionType = null)
     {
-        $this->inventoryLocation = $inventoryLocation;
+        $this->transactionType = $transactionType;
 
         return $this;
     }
 
     /**
-     * Get inventoryLocation
+     * Get transactionType
      *
-     * @return \Database\Entity\InventoryLocations 
+     * @return \Database\Entity\TransactionTypes 
      */
-    public function getInventoryLocation()
+    public function getTransactionType()
     {
-        return $this->inventoryLocation;
+        return $this->transactionType;
     }
 
     /**
@@ -974,48 +1000,25 @@ class Sales
     }
 
     /**
-     * Set transactionStatus
+     * Set shippingMode
      *
-     * @param \Database\Entity\TransactionStatus $transactionStatus
+     * @param \Database\Entity\ShippingModes $shippingMode
      * @return Sales
      */
-    public function setTransactionStatus(\Database\Entity\TransactionStatus $transactionStatus = null)
+    public function setShippingMode(\Database\Entity\ShippingModes $shippingMode = null)
     {
-        $this->transactionStatus = $transactionStatus;
+        $this->shippingMode = $shippingMode;
 
         return $this;
     }
 
     /**
-     * Get transactionStatus
+     * Get shippingMode
      *
-     * @return \Database\Entity\TransactionStatus 
+     * @return \Database\Entity\ShippingModes 
      */
-    public function getTransactionStatus()
+    public function getShippingMode()
     {
-        return $this->transactionStatus;
-    }
-
-    /**
-     * Set transactionType
-     *
-     * @param \Database\Entity\TransactionTypes $transactionType
-     * @return Sales
-     */
-    public function setTransactionType(\Database\Entity\TransactionTypes $transactionType = null)
-    {
-        $this->transactionType = $transactionType;
-
-        return $this;
-    }
-
-    /**
-     * Get transactionType
-     *
-     * @return \Database\Entity\TransactionTypes 
-     */
-    public function getTransactionType()
-    {
-        return $this->transactionType;
+        return $this->shippingMode;
     }
 }

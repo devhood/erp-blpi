@@ -219,6 +219,23 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
+-- Table `blpi`.`Permissions`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `blpi`.`Permissions` ;
+
+CREATE TABLE IF NOT EXISTS `blpi`.`Permissions` (
+  `permission_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `permission_name` VARCHAR(100) NULL DEFAULT NULL,
+  `permission_link` VARCHAR(100) NULL DEFAULT NULL,
+  `record_status` VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (`permission_id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 3
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
+
+
+-- -----------------------------------------------------
 -- Table `blpi`.`Price_Types`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `blpi`.`Price_Types` ;
@@ -331,11 +348,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `blpi`.`shipping_modes`
+-- Table `blpi`.`Shipping_Modes`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `blpi`.`shipping_modes` ;
+DROP TABLE IF EXISTS `blpi`.`Shipping_Modes` ;
 
-CREATE TABLE IF NOT EXISTS `blpi`.`shipping_modes` (
+CREATE TABLE IF NOT EXISTS `blpi`.`Shipping_Modes` (
   `shipping_mode_id` INT NOT NULL AUTO_INCREMENT,
   `shipping_mode_name` VARCHAR(45) NULL,
   `record_status` VARCHAR(45) NULL,
@@ -366,7 +383,7 @@ CREATE TABLE IF NOT EXISTS `blpi`.`Customers` (
   `transaction_limit` FLOAT NULL,
   `payment_term_id` INT NULL,
   `shipping_mode_id` INT NULL,
-  `percent_commision` VARCHAR(45) NULL,
+  `percent_commission` VARCHAR(45) NULL,
   `sales_executive` INT NULL,
   `price_type_id` INT NULL,
   `customer_status` VARCHAR(45) NULL,
@@ -404,10 +421,38 @@ CREATE TABLE IF NOT EXISTS `blpi`.`Customers` (
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Customers_shipping_modes1`
     FOREIGN KEY (`shipping_mode_id`)
-    REFERENCES `blpi`.`shipping_modes` (`shipping_mode_id`)
+    REFERENCES `blpi`.`Shipping_Modes` (`shipping_mode_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `blpi`.`Designation_Permissions`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `blpi`.`Designation_Permissions` ;
+
+CREATE TABLE IF NOT EXISTS `blpi`.`Designation_Permissions` (
+  `dp_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `designation_id` INT(11) NULL DEFAULT NULL,
+  `permission_id` INT(11) NULL DEFAULT NULL,
+  PRIMARY KEY (`dp_id`),
+  INDEX `fk_Designation_Permissions_Permissions1_idx` (`permission_id` ASC),
+  INDEX `fk_Designation_Permissions_Designations1_idx` (`designation_id` ASC),
+  CONSTRAINT `fk_Designation_Permissions_Designations1`
+    FOREIGN KEY (`designation_id`)
+    REFERENCES `blpi`.`Designations` (`designation_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Designation_Permissions_Permissions1`
+    FOREIGN KEY (`permission_id`)
+    REFERENCES `blpi`.`Permissions` (`permission_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 23
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
 
 
 -- -----------------------------------------------------
@@ -503,7 +548,6 @@ CREATE TABLE IF NOT EXISTS `blpi`.`Contacts` (
   `contact_id` INT NOT NULL AUTO_INCREMENT,
   `customer_id` INT NULL,
   `position` VARCHAR(45) NULL,
-  `primary` VARCHAR(45) NULL,
   `full_name` VARCHAR(45) NULL,
   `email` VARCHAR(45) NULL,
   `phone` VARCHAR(45) NULL,
@@ -592,7 +636,7 @@ CREATE TABLE IF NOT EXISTS `blpi`.`Sales` (
   `pmno` VARCHAR(45) NULL,
   `transaction_type_id` INT NULL,
   `customer_id` INT NULL,
-  `inventory_location_id` INT NULL,
+  `location_id` INT NULL,
   `shipping_address_id` INT NULL,
   `billing_address_id` INT NULL,
   `order_source_id` INT NULL,
@@ -618,7 +662,7 @@ CREATE TABLE IF NOT EXISTS `blpi`.`Sales` (
   `sales_notes` TEXT NULL,
   PRIMARY KEY (`sales_id`),
   INDEX `fk_Sales_Transaction_Status1_idx` (`transaction_status_id` ASC),
-  INDEX `fk_Sales_Inventory_Locations1_idx` (`inventory_location_id` ASC),
+  INDEX `fk_Sales_Inventory_Locations1_idx` (`location_id` ASC),
   INDEX `fk_Sales_Address1_idx` (`shipping_address_id` ASC),
   INDEX `fk_Sales_Address2_idx` (`billing_address_id` ASC),
   INDEX `fk_Sales_Customers1_idx` (`customer_id` ASC),
@@ -632,13 +676,14 @@ CREATE TABLE IF NOT EXISTS `blpi`.`Sales` (
   UNIQUE INDEX `rmrno_UNIQUE` (`rmrno` ASC),
   UNIQUE INDEX `cmno_UNIQUE` (`cmno` ASC),
   UNIQUE INDEX `pmno_UNIQUE` (`pmno` ASC),
+  INDEX `fk_Sales_Shipping_Modes1_idx` (`shipping_mode_id` ASC),
   CONSTRAINT `fk_Sales_Transaction_Status1`
     FOREIGN KEY (`transaction_status_id`)
     REFERENCES `blpi`.`Transaction_Status` (`transaction_status_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Sales_Inventory_Locations1`
-    FOREIGN KEY (`inventory_location_id`)
+    FOREIGN KEY (`location_id`)
     REFERENCES `blpi`.`Inventory_Locations` (`location_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
@@ -675,6 +720,11 @@ CREATE TABLE IF NOT EXISTS `blpi`.`Sales` (
   CONSTRAINT `fk_Sales_Price_Types1`
     FOREIGN KEY (`price_type_id`)
     REFERENCES `blpi`.`Price_Types` (`price_type_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Sales_Shipping_Modes1`
+    FOREIGN KEY (`shipping_mode_id`)
+    REFERENCES `blpi`.`Shipping_Modes` (`shipping_mode_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -980,11 +1030,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `blpi`.`DocumentTypes`
+-- Table `blpi`.`Document_Types`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `blpi`.`DocumentTypes` ;
+DROP TABLE IF EXISTS `blpi`.`Document_Types` ;
 
-CREATE TABLE IF NOT EXISTS `blpi`.`DocumentTypes` (
+CREATE TABLE IF NOT EXISTS `blpi`.`Document_Types` (
   `document_type_id` INT NOT NULL AUTO_INCREMENT,
   `document_type_name` VARCHAR(250) NULL,
   `record_status` VARCHAR(45) NULL,
@@ -1003,12 +1053,12 @@ CREATE TABLE IF NOT EXISTS `blpi`.`Documents` (
   `document_type_id` INT NULL,
   `document_link` VARCHAR(250) NULL,
   `product_id` INT NULL,
-  `cutomer_id` INT NULL,
+  `customer_id` INT NULL,
   `sales_id` INT NULL,
   `record_status` VARCHAR(45) NULL,
   PRIMARY KEY (`document_id`),
   INDEX `fk_Documents_Products1_idx` (`product_id` ASC),
-  INDEX `fk_Documents_Customers1_idx` (`cutomer_id` ASC),
+  INDEX `fk_Documents_Customers1_idx` (`customer_id` ASC),
   INDEX `fk_Documents_Sales1_idx` (`sales_id` ASC),
   INDEX `fk_Documents_DocumentTypes1_idx` (`document_type_id` ASC),
   CONSTRAINT `fk_Documents_Products1`
@@ -1017,7 +1067,7 @@ CREATE TABLE IF NOT EXISTS `blpi`.`Documents` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Documents_Customers1`
-    FOREIGN KEY (`cutomer_id`)
+    FOREIGN KEY (`customer_id`)
     REFERENCES `blpi`.`Customers` (`customer_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
@@ -1028,46 +1078,7 @@ CREATE TABLE IF NOT EXISTS `blpi`.`Documents` (
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Documents_DocumentTypes1`
     FOREIGN KEY (`document_type_id`)
-    REFERENCES `blpi`.`DocumentTypes` (`document_type_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `blpi`.`Permissions`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `blpi`.`Permissions` ;
-
-CREATE TABLE IF NOT EXISTS `blpi`.`Permissions` (
-  `permission_id` INT NOT NULL AUTO_INCREMENT,
-  `permission_name` VARCHAR(100) NULL,
-  `permission_link` VARCHAR(100) NULL,
-  `record_status` VARCHAR(45) NULL,
-  PRIMARY KEY (`permission_id`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `blpi`.`Designation_Permissions`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `blpi`.`Designation_Permissions` ;
-
-CREATE TABLE IF NOT EXISTS `blpi`.`Designation_Permissions` (
-  `dp_id` INT NOT NULL AUTO_INCREMENT,
-  `designation_id` INT NULL,
-  `permission_id` INT NULL,
-  PRIMARY KEY (`dp_id`),
-  INDEX `fk_Designation_Permissions_Permissions1_idx` (`permission_id` ASC),
-  INDEX `fk_Designation_Permissions_Designations1_idx` (`designation_id` ASC),
-  CONSTRAINT `fk_Designation_Permissions_Permissions1`
-    FOREIGN KEY (`permission_id`)
-    REFERENCES `blpi`.`Permissions` (`permission_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Designation_Permissions_Designations1`
-    FOREIGN KEY (`designation_id`)
-    REFERENCES `blpi`.`Designations` (`designation_id`)
+    REFERENCES `blpi`.`Document_Types` (`document_type_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -1082,8 +1093,8 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `blpi`;
-INSERT INTO `blpi`.`Suppliers` (`supplier_id`, `supplier_name`, `record_status`) VALUES (1, 'Sample Supplier 1', 'Active');
-INSERT INTO `blpi`.`Suppliers` (`supplier_id`, `supplier_name`, `record_status`) VALUES (2, 'Sample Supplier 2', 'Active');
+INSERT INTO `blpi`.`Suppliers` (`supplier_id`, `supplier_name`, `record_status`) VALUES (1, 'American Internatioal Industries', 'Active');
+INSERT INTO `blpi`.`Suppliers` (`supplier_id`, `supplier_name`, `record_status`) VALUES (2, 'Forsythe Cosmetic Group', 'Active');
 
 COMMIT;
 
@@ -1093,8 +1104,12 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `blpi`;
-INSERT INTO `blpi`.`Brands` (`brand_id`, `brand_name`, `record_status`) VALUES (1, 'Sample Brand 1', 'Active');
-INSERT INTO `blpi`.`Brands` (`brand_id`, `brand_name`, `record_status`) VALUES (2, 'Sample Brand 2', 'Active');
+INSERT INTO `blpi`.`Brands` (`brand_id`, `brand_name`, `record_status`) VALUES (1, 'Ardell', 'Active');
+INSERT INTO `blpi`.`Brands` (`brand_id`, `brand_name`, `record_status`) VALUES (2, 'China Glaze', 'Active');
+INSERT INTO `blpi`.`Brands` (`brand_id`, `brand_name`, `record_status`) VALUES (3, 'Color Club', 'Active');
+INSERT INTO `blpi`.`Brands` (`brand_id`, `brand_name`, `record_status`) VALUES (4, 'GiGi', 'Active');
+INSERT INTO `blpi`.`Brands` (`brand_id`, `brand_name`, `record_status`) VALUES (5, 'Brazilian Blowout', 'Active');
+INSERT INTO `blpi`.`Brands` (`brand_id`, `brand_name`, `record_status`) VALUES (6, 'Osmo', 'Active');
 
 COMMIT;
 
@@ -1116,7 +1131,9 @@ COMMIT;
 START TRANSACTION;
 USE `blpi`;
 INSERT INTO `blpi`.`Payment_Terms` (`payment_term_id`, `payment_term_name`, `record_status`) VALUES (1, 'Cash', 'Active');
-INSERT INTO `blpi`.`Payment_Terms` (`payment_term_id`, `payment_term_name`, `record_status`) VALUES (2, '30 Days', 'Active');
+INSERT INTO `blpi`.`Payment_Terms` (`payment_term_id`, `payment_term_name`, `record_status`) VALUES (2, '15 Days', 'Active');
+INSERT INTO `blpi`.`Payment_Terms` (`payment_term_id`, `payment_term_name`, `record_status`) VALUES (3, '30 Days', 'Active');
+INSERT INTO `blpi`.`Payment_Terms` (`payment_term_id`, `payment_term_name`, `record_status`) VALUES (4, '40 Days', 'Active');
 
 COMMIT;
 
@@ -1136,10 +1153,10 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `blpi`;
-INSERT INTO `blpi`.`Categories` (`category_id`, `category_type`, `category_name`, `record_status`) VALUES (1, 'product', 'Product Category 1', 'Active');
-INSERT INTO `blpi`.`Categories` (`category_id`, `category_type`, `category_name`, `record_status`) VALUES (2, 'product', 'Product Category 2', 'Active');
-INSERT INTO `blpi`.`Categories` (`category_id`, `category_type`, `category_name`, `record_status`) VALUES (3, 'customer', 'Customer Category 1', 'Active');
-INSERT INTO `blpi`.`Categories` (`category_id`, `category_type`, `category_name`, `record_status`) VALUES (4, 'customer', 'Customer Category 2', 'Active');
+INSERT INTO `blpi`.`Categories` (`category_id`, `category_type`, `category_name`, `record_status`) VALUES (1, 'customer', 'Corporate', 'Active');
+INSERT INTO `blpi`.`Categories` (`category_id`, `category_type`, `category_name`, `record_status`) VALUES (2, 'customer', 'Individual', 'Active');
+INSERT INTO `blpi`.`Categories` (`category_id`, `category_type`, `category_name`, `record_status`) VALUES (3, 'product', 'Product Category', 'Active');
+INSERT INTO `blpi`.`Categories` (`category_id`, `category_type`, `category_name`, `record_status`) VALUES (4, 'product', 'Category', 'Active');
 
 COMMIT;
 
@@ -1156,11 +1173,49 @@ COMMIT;
 
 
 -- -----------------------------------------------------
+-- Data for table `blpi`.`Price_Types`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `blpi`;
+INSERT INTO `blpi`.`Price_Types` (`price_type_id`, `price_type_name`, `record_status`) VALUES (1, 'Retail', 'Active');
+INSERT INTO `blpi`.`Price_Types` (`price_type_id`, `price_type_name`, `record_status`) VALUES (2, 'Professional', 'Active');
+INSERT INTO `blpi`.`Price_Types` (`price_type_id`, `price_type_name`, `record_status`) VALUES (3, 'Rustans', 'Active');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `blpi`.`Currencies`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `blpi`;
+INSERT INTO `blpi`.`Currencies` (`currency_id`, `currency_name`, `record_status`) VALUES (1, 'Peso', 'Active');
+INSERT INTO `blpi`.`Currencies` (`currency_id`, `currency_name`, `record_status`) VALUES (2, 'Dollar', 'Active');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `blpi`.`Customer_Types`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `blpi`;
+INSERT INTO `blpi`.`Customer_Types` (`customer_type_id`, `customer_type_name`, `record_status`) VALUES (1, 'Professional', 'Active');
+INSERT INTO `blpi`.`Customer_Types` (`customer_type_id`, `customer_type_name`, `record_status`) VALUES (2, 'Retail', 'Active');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
 -- Data for table `blpi`.`Designations`
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `blpi`;
 INSERT INTO `blpi`.`Designations` (`designation_id`, `designation_name`, `record_status`) VALUES (1, 'Developer', 'Active');
+INSERT INTO `blpi`.`Designations` (`designation_id`, `designation_name`, `record_status`) VALUES (2, 'Sales Executive', 'Active');
+INSERT INTO `blpi`.`Designations` (`designation_id`, `designation_name`, `record_status`) VALUES (3, 'Admin Assistant', 'Active');
+INSERT INTO `blpi`.`Designations` (`designation_id`, `designation_name`, `record_status`) VALUES (4, 'Sales Coordinator', 'Active');
+INSERT INTO `blpi`.`Designations` (`designation_id`, `designation_name`, `record_status`) VALUES (5, 'Sales Assistant', 'Active');
 
 COMMIT;
 
@@ -1176,13 +1231,35 @@ COMMIT;
 
 
 -- -----------------------------------------------------
--- Data for table `blpi`.`DocumentTypes`
+-- Data for table `blpi`.`Shipping_Modes`
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `blpi`;
-INSERT INTO `blpi`.`DocumentTypes` (`document_type_id`, `document_type_name`, `record_status`) VALUES (1, 'product_photo', 'Active');
-INSERT INTO `blpi`.`DocumentTypes` (`document_type_id`, `document_type_name`, `record_status`) VALUES (2, 'sales_invoice', 'Active');
-INSERT INTO `blpi`.`DocumentTypes` (`document_type_id`, `document_type_name`, `record_status`) VALUES (3, 'delivery_receipt', 'Active');
+INSERT INTO `blpi`.`Shipping_Modes` (`shipping_mode_id`, `shipping_mode_name`, `record_status`) VALUES (1, 'Walk-in', 'Active');
+INSERT INTO `blpi`.`Shipping_Modes` (`shipping_mode_id`, `shipping_mode_name`, `record_status`) VALUES (2, 'In-House Delivery', 'Active');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `blpi`.`Transaction_Types`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `blpi`;
+INSERT INTO `blpi`.`Transaction_Types` (`transaction_type_id`, `transaction_type_name`, `record_status`) VALUES (NULL, 'Normal Sales', 'Active');
+INSERT INTO `blpi`.`Transaction_Types` (`transaction_type_id`, `transaction_type_name`, `record_status`) VALUES (NULL, 'Consignment', 'Active');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `blpi`.`Document_Types`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `blpi`;
+INSERT INTO `blpi`.`Document_Types` (`document_type_id`, `document_type_name`, `record_status`) VALUES (1, 'product_photo', 'Active');
+INSERT INTO `blpi`.`Document_Types` (`document_type_id`, `document_type_name`, `record_status`) VALUES (2, 'sales_invoice', 'Active');
+INSERT INTO `blpi`.`Document_Types` (`document_type_id`, `document_type_name`, `record_status`) VALUES (3, 'delivery_receipt', 'Active');
 
 COMMIT;
 

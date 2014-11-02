@@ -88,16 +88,6 @@ class ProductInventories
     private $location;
 
     /**
-     * @var \Database\Entity\Products
-     *
-     * @ORM\ManyToOne(targetEntity="Database\Entity\Products")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="product_id", referencedColumnName="product_id", nullable=true)
-     * })
-     */
-    private $product;
-
-    /**
      * @var \Database\Entity\ProductConditions
      *
      * @ORM\ManyToOne(targetEntity="Database\Entity\ProductConditions")
@@ -106,6 +96,16 @@ class ProductInventories
      * })
      */
     private $condition;
+
+    /**
+     * @var \Database\Entity\Products
+     *
+     * @ORM\ManyToOne(targetEntity="Database\Entity\Products")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="product_id", referencedColumnName="product_id", nullable=true)
+     * })
+     */
+    private $product;
 
 
     /**
@@ -326,29 +326,6 @@ class ProductInventories
     }
 
     /**
-     * Set product
-     *
-     * @param \Database\Entity\Products $product
-     * @return ProductInventories
-     */
-    public function setProduct(\Database\Entity\Products $product = null)
-    {
-        $this->product = $product;
-
-        return $this;
-    }
-
-    /**
-     * Get product
-     *
-     * @return \Database\Entity\Products 
-     */
-    public function getProduct()
-    {
-        return $this->product;
-    }
-
-    /**
      * Set condition
      *
      * @param \Database\Entity\ProductConditions $condition
@@ -369,5 +346,28 @@ class ProductInventories
     public function getCondition()
     {
         return $this->condition;
+    }
+
+    /**
+     * Set product
+     *
+     * @param \Database\Entity\Products $product
+     * @return ProductInventories
+     */
+    public function setProduct(\Database\Entity\Products $product = null)
+    {
+        $this->product = $product;
+
+        return $this;
+    }
+
+    /**
+     * Get product
+     *
+     * @return \Database\Entity\Products 
+     */
+    public function getProduct()
+    {
+        return $this->product;
     }
 }

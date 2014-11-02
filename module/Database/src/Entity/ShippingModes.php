@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * ShippingModes
  *
- * @ORM\Table(name="shipping_modes")
+ * @ORM\Table(name="Shipping_Modes")
  * @ORM\Entity
  */
 class ShippingModes
