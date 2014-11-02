@@ -19,8 +19,6 @@ class ShipmentController extends BaseController
 		$formShipment = new \Shipments\Form\ShipmentForm($em);
 		$formShipmentItem = new \Shipments\Form\ShipmentItemForm($em);
 
-
-		
 		return new ViewModel(array(
 			'formShipment' => $formShipment,
 			'formShipmentItem' => $formShipmentItem,
