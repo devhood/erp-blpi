@@ -72,6 +72,7 @@ class SalesController extends BaseController {
 			$table = self::DBNS . 'Sales';
 			$object = new $table ();
 			$hydrator = new DoctrineHydrator ( $em );
+		
 			$object = $hydrator->hydrate ( $request, $object );
 			$em->persist ( $object );
 			$em->flush ();
@@ -121,6 +122,7 @@ class SalesController extends BaseController {
 		$formSalesItem = new \Sales\Form\SalesItemForm ( $this->getServiceLocator ()->get ( 'Doctrine\ORM\EntityManager' ) );
 		
 		$this->DisableForms ( $formSales );
+		$formSales->get ( 'deliveryDate' )->setAttribute ( "disabled", true);
 		
 		return new ViewModel ( array (
 				'formSales' => $formSales,
@@ -180,19 +182,20 @@ class SalesController extends BaseController {
 	}
 	
 	public function DisableForms($formSales) {
-		$formSales->get ( 'transactionTypes[transactionTypeId]' )->setAttribute ( "disabled", true );
-		$formSales->get ( 'inventoryLocations[inventoryLocationId]' )->setAttribute ( "disabled", true );
-		$formSales->get ( 'customers[customerId]' )->setAttribute ( "disabled", true );
-		$formSales->get ( 'shippingAddress[addressId]' )->setAttribute ( "disabled", true );
-		$formSales->get ( 'billingAddress[addressId]' )->setAttribute ( "disabled", true );
+		$formSales->get ( 'transactionType[transactionTypeId]' )->setAttribute ( "disabled", true );
+		$formSales->get ( 'inventoryLocation[locationId]' )->setAttribute ( "disabled", true );
+		$formSales->get ( 'customer[customerId]' )->setAttribute ( "disabled", true );
+		$formSales->get ( 'shippingAddressId' )->setAttribute ( "disabled", true );
+		$formSales->get ( 'billingAddressId' )->setAttribute ( "disabled", true );
 		$formSales->get ( 'orderSource[orderSourceId]' )->setAttribute ( "disabled", true );
-		$formSales->get ( 'shippingModes[shippingModeId]' )->setAttribute ( "disabled", true );
-		$formSales->get ( 'users[userId]' )->setAttribute ( "disabled", true );
-		$formSales->get ( 'paymentTerms[paymentTermId]' )->setAttribute ( "disabled", true );
-		$formSales->get ( 'priceTypes[priceTypeId]' )->setAttribute ( "disabled", true );
-		$formSales->get ( 'deliveryDate' )->setAttribute ( "disabled", true );
+		$formSales->get ( 'shippingMode[shippingModeId]' )->setAttribute ( "disabled", true );
+		$formSales->get ( 'user[salesExecutiveId]' )->setAttribute ( "disabled", true );
+		$formSales->get ( 'paymentTerm[paymentTermId]' )->setAttribute ( "disabled", true );
+		$formSales->get ( 'priceType[priceTypeId]' )->setAttribute ( "disabled", true );
 		$formSales->get ( 'orderedBy' )->setAttribute ( "disabled", true );
 		$formSales->get ( 'percentVat' )->setAttribute ( "disabled", true);
+		$formSales->get ( 'salesNotes' )->setAttribute ( "disabled", true);
+		
     	
     	return ($formSales);
     }
